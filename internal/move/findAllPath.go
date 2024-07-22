@@ -16,7 +16,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 
 */
 
-func FindAllPaths(myGraph *data.Graph) {
+func FindAllPaths(myGraph *data.Graph)map[int][][]string {
 
 	var path []string
 
@@ -114,5 +114,7 @@ func FindAllPaths(myGraph *data.Graph) {
 
 		fmt.Printf("length: %d, paths: %v\n", i, allPathMap[i])
 	}
+	//----------------------
+	return allPathMap
 	// --------------------------------
 }
