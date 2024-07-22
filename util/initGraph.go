@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (myGraph Graph) InitGraph(tunnelArr []string, start, end uint) error {
+func (myGraph *Graph) InitGraph(tunnelArr []string, start, end uint) error {
 	// set start and end room
 	myGraph.startRoomName = start
 	myGraph.endRoomName = end
@@ -17,6 +17,6 @@ func (myGraph Graph) InitGraph(tunnelArr []string, start, end uint) error {
 		return err
 	}
 
-	fmt.Println(myGraph)
+	//fmt.Println(myGraph)
 	return nil
 }
