@@ -18,8 +18,8 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 			return err
 		}
 		// Retrieve the Room from the map
-		roomA := myGraph.rooms[a]
-		roomB := myGraph.rooms[b]
+		roomA := myGraph.Rooms[a]
+		roomB := myGraph.Rooms[b]
 
 		roomA.name = a
 		roomB.name = b
@@ -27,7 +27,7 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 		roomA.tunnels = append(roomA.tunnels, b)
 		roomB.tunnels = append(roomB.tunnels, a)
 		// Put the modified Room back into the map
-		if a == myGraph.startRoomName || a == myGraph.endRoomName {
+		if a == myGraph.StartRoomName || a == myGraph.EndRoomName {
 			roomA.maxSeats = 100000
 
 		} else {
@@ -35,7 +35,7 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 
 		}
 
-		if b == myGraph.startRoomName || b == myGraph.endRoomName {
+		if b == myGraph.StartRoomName || b == myGraph.EndRoomName {
 			roomB.maxSeats = 100000
 
 		} else {
@@ -46,8 +46,8 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 		roomA.emptySeats = roomA.maxSeats
 		roomB.emptySeats = roomB.maxSeats
 
-		myGraph.rooms[a] = roomA
-		myGraph.rooms[b] = roomB
+		myGraph.Rooms[a] = roomA
+		myGraph.Rooms[b] = roomB
 
 	}
 

@@ -12,14 +12,14 @@ end=6
 */
 type Room struct {
 	name       string //0 , 1 ,2 ,...
-	maxSeats   uint //all seats in room (for start and end = unlimited) for other =1
+	maxSeats   uint   //all seats in room (for start and end = unlimited) for other =1
 	emptySeats uint
 	tunnels    []string //[2,5]
 
 }
 
 type Graph struct {
-	startRoomName string
-	endRoomName   string
-	rooms         map[string]Room //string= room name
+	StartRoomName string
+	EndRoomName   string
+	Rooms         map[string]Room //string= room name
 }
