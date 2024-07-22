@@ -31,8 +31,4 @@ type Graph struct {
 	rooms         map[uint]Room //uint= room name
 }
 
-var (
-	myGraph = Graph{
-		rooms: make(map[uint]Room),
-	}
-)
+
