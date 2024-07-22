@@ -5,11 +5,16 @@ import (
 	data "main/internal/data"
 	"math/rand"
 	"slices"
+	//"strings"
 )
 
 // type ant struct {
 // 	WhereAmI string
 // }
+/*
+To be the first to arrive, ants will need to take the shortest path or paths. They will also need to avoid traffic jams as well as walking all over their fellow ants.
+
+*/
 
 func FindAllPaths(myGraph *data.Graph) {
 
@@ -66,8 +71,10 @@ func FindAllPaths(myGraph *data.Graph) {
 	}
 	fmt.Println("-------All paths:-----------")
 	fmt.Println(len(allPath))
+	//allPathMap := make(map[int][]string)
+
 	for _, path := range allPath {
-		
+		//allPathMap[len(path)]=path
 		fmt.Println(path,"=",len(path))
 		//fmt.Println(allPathStr)
 	}
@@ -77,6 +84,7 @@ func FindAllPaths(myGraph *data.Graph) {
 	}
 	//----------------------------------------------------------------
 	//var allPathNo [][]string
+	//fmt.Println(allPathMap)
 
 	// --------------------------------
 }
