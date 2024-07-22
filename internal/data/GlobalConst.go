@@ -14,7 +14,7 @@ type Room struct {
 	name       string //0 , 1 ,2 ,...
 	maxSeats   uint   //all seats in room (for start and end = unlimited) for other =1
 	emptySeats uint
-	tunnels    []string //[2,5]
+	Tunnels    []string //[2,5]
 
 }
 

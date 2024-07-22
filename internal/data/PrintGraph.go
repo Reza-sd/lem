@@ -13,7 +13,7 @@ func (myGraph *Graph) PrintGraph() {
 	fmt.Println("-------Rooms:------")
 	for i := range myGraph.Rooms {
 		room := myGraph.Rooms[i]
-		fmt.Printf("Room %v: Tunnels: %v, EmptySeats: %d, MaxSeats: %d\n", room.name, room.tunnels, room.emptySeats, room.maxSeats)
+		fmt.Printf("Room %v: Tunnels: %v, EmptySeats: %d, MaxSeats: %d\n", room.name, room.Tunnels, room.emptySeats, room.maxSeats)
 
 	}
 	//fmt.Println("Graph:",myGraph)

@@ -24,8 +24,8 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 		roomA.name = a
 		roomB.name = b
 		// Modify the Room's tunnels
-		roomA.tunnels = append(roomA.tunnels, b)
-		roomB.tunnels = append(roomB.tunnels, a)
+		roomA.Tunnels = append(roomA.Tunnels, b)
+		roomB.Tunnels = append(roomB.Tunnels, a)
 		// Put the modified Room back into the map
 		if a == myGraph.StartRoomName || a == myGraph.EndRoomName {
 			roomA.maxSeats = 100000
