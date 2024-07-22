@@ -13,13 +13,12 @@ import (
 
 func FindAllPaths(myGraph *data.Graph) {
 
-
-	var path  []string
+	var path []string
 
 	var allPath [][]string
 
 	for i := 0; i < 20; i++ {
-		
+
 		path = nil
 		path = append(path, myGraph.StartRoomName)
 		currentRoomName := myGraph.StartRoomName
@@ -47,9 +46,8 @@ func FindAllPaths(myGraph *data.Graph) {
 
 		}
 		fmt.Println(path)
-		allPath = append(allPath,path)
+		allPath = append(allPath, path)
 	}
 	fmt.Println(allPath)
-
 
 }
