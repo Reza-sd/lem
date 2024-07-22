@@ -30,5 +30,3 @@ type Graph struct {
 	endRoomName   uint
 	rooms         map[uint]Room //uint= room name
 }
-
-
