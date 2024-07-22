@@ -91,7 +91,7 @@ func FindAllPaths(myGraph *data.Graph) {
 		//fmt.Println(path, "=", len(path))
 		//fmt.Println(allPathStr)
 	}
-	fmt.Println("number of paths:>>",len(allPathStr))
+	fmt.Println("number of paths:>>", len(allPathStr))
 	fmt.Println()
 	// for _, pathStr := range allPathStr {
 	// 	fmt.Println(pathStr)
@@ -106,11 +106,11 @@ func FindAllPaths(myGraph *data.Graph) {
 	// 	//allPathNo=append(allPathNo, value)
 	// }
 
-
 	for i := 0; i < 100; i++ {
-		
 
-		if allPathMap[i]==nil {continue}
+		if allPathMap[i] == nil {
+			continue
+		}
 
 		fmt.Printf("length: %d, paths: %v\n", i, allPathMap[i])
 	}
