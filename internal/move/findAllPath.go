@@ -20,7 +20,7 @@ func FindAllPaths(myGraph *data.Graph) {
 
 	var allPathStr []string
 
-	for i := 0; i < 20; i++ {
+	for i := 0; i < 500; i++ {
 		pathStr = ""
 		path = nil
 		path = append(path, myGraph.StartRoomName)
@@ -31,7 +31,7 @@ func FindAllPaths(myGraph *data.Graph) {
 
 		for {
 			numberOfTry++
-			if currentRoomName == myGraph.EndRoomName || numberOfTry > 10000 {
+			if currentRoomName == myGraph.EndRoomName || numberOfTry > 1000 {
 				break
 			}
 
@@ -51,7 +51,7 @@ func FindAllPaths(myGraph *data.Graph) {
 			pathStr += "-" + currentRoomName
 
 		}
-		fmt.Println(path)
+		//fmt.Println(path)
 		if path[len(path)-1]!= myGraph.EndRoomName{
 			continue
 		}
@@ -65,10 +65,13 @@ func FindAllPaths(myGraph *data.Graph) {
 		allPath = append(allPath, path)
 	}
 	fmt.Println("-------All paths:-----------")
+	fmt.Println(len(allPath))
 	for _, path := range allPath {
+		
 		fmt.Println(path)
 		//fmt.Println(allPathStr)
 	}
+	fmt.Println(len(allPathStr))
 	for _, pathStr := range allPathStr {
 		fmt.Println(pathStr)
 	}
