@@ -21,6 +21,7 @@ func main() {
 	var myAnts move.Ants
 	myAnts.AntsInit(3,&myGraph)
 	fmt.Println(myAnts.Ants)
+	myAnts.Move(&myGraph)
 	fmt.Println("==================")
 	// var myGraph2 data.Graph
 	// tunnelArr2 := []string{"a-b", "a-c", "reza-3", "4-3","san-2"}

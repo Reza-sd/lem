@@ -21,4 +21,5 @@ type Graph struct {
 	StartRoomName string
 	EndRoomName   string
 	Rooms         map[string]Room //string= room name
+	Paths map[int][][]string 
 }
