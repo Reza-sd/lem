@@ -13,7 +13,7 @@ fmt.Println("End Room:", myGraph.endRoomName)
     fmt.Println("-------Rooms:------")
 for i := range myGraph.rooms{
 	room := myGraph.rooms[i]
-    fmt.Printf("Room %d: Tunnels: %v, EmptySeats: %d, MaxSeats: %d\n", room.name, room.tunnels, room.emptySeats, room.maxSeats)
+    fmt.Printf("Room %v: Tunnels: %v, EmptySeats: %d, MaxSeats: %d\n", room.name, room.tunnels, room.emptySeats, room.maxSeats)
     
 }
 	//fmt.Println("Graph:",myGraph)
