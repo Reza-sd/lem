@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"main/util"
+)
 
 func main() {
+	//var tunnelArr []string
 
-	fmt.Println("hello")
+	util.ReadTunnel()
+
+	fmt.Println("main")
+
 }

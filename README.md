@@ -1,1 +1,4 @@
 # lem
+
+gofmt -l -w .
+
