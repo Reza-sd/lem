@@ -7,5 +7,5 @@ type Ant struct {
 
 
 type Ants struct {
-	Ants map[string]Ant
+	Ants map[int]Ant
 }

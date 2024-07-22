@@ -18,7 +18,9 @@ func main() {
 	move.FindAllPaths(&myGraph)
 
 	fmt.Println("==================")
-
+	var myAnts move.Ants
+	myAnts.AntsInit(5)
+	fmt.Println(myAnts.Ants)
 	// var myGraph2 data.Graph
 	// tunnelArr2 := []string{"a-b", "a-c", "reza-3", "4-3","san-2"}
 	// myGraph2.InitGraph(tunnelArr2, "mio", "0")

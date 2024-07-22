@@ -112,7 +112,7 @@ func FindAllPaths(myGraph *data.Graph)map[int][][]string {
 			continue
 		}
 
-		fmt.Printf("length: %d, paths: %v\n", i, allPathMap[i])
+		fmt.Printf("length: %d,Num %d ,paths: %v\n", i,len(allPathMap[i]), allPathMap[i])
 	}
 	//----------------------
 	return allPathMap
