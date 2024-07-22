@@ -68,7 +68,7 @@ func FindAllPaths(myGraph *data.Graph) {
 	fmt.Println(len(allPath))
 	for _, path := range allPath {
 		
-		fmt.Println(path)
+		fmt.Println(path,"=",len(path))
 		//fmt.Println(allPathStr)
 	}
 	fmt.Println(len(allPathStr))
