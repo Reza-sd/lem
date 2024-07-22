@@ -27,7 +27,15 @@ for w := 0; w<100;w++ {
         break
 	}
 	
+/*
+currentroom
+nextrooms?
+if nextroomsfree?
+nextfreerooms?
+currentroom-nextfreeroom in whitch path?
+path with lower weight will select
 
+*/
 }
 
 //------------------------------
