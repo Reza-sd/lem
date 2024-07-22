@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Println("==================")
 	var myAnts move.Ants
-	myAnts.AntsInit(5,&myGraph)
+	myAnts.AntsInit(3,&myGraph)
 	fmt.Println(myAnts.Ants)
 	fmt.Println("==================")
 	// var myGraph2 data.Graph
