@@ -2,7 +2,7 @@ package move
 
 type Ant struct {
 	Name string
-	CurrentRoom string
+	currentRoomName string
 }
 
 
