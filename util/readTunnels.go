@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func setTunnelToGraph(tunnelArr []string) error {
+func (myGraph Graph)setTunnelToGraph(tunnelArr []string) error {
 
 	//fmt.Println("ReadTunnel")
 
