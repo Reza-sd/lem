@@ -16,7 +16,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 
 */
 
-func AntPath(myGraph *data.Graph, myAnts *Ants,AntNumber int) {
+func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) (nextRoom string) {
 
 	var path []string
 
@@ -66,11 +66,11 @@ func AntPath(myGraph *data.Graph, myAnts *Ants,AntNumber int) {
 			pathStr += "-" + currentRoomName
 
 		}
-		//fmt.Println(path)
+		
 		if path[len(path)-1] != myGraph.EndRoomName {
 			continue
 		}
-		//fmt.Println(pathStr)
+		
 		if slices.Contains(allPathStr, pathStr) {
 			continue
 		}
@@ -78,44 +78,19 @@ func AntPath(myGraph *data.Graph, myAnts *Ants,AntNumber int) {
 		allPathStr = append(allPathStr, pathStr)
 		allPath = append(allPath, path)
 	}
-	fmt.Println("-------All paths:-----------")
-	//fmt.Println(len(allPath))
+	fmt.Println("======All paths for ant:=====")
+	
 	allPathMap := make(map[int][][]string)
-	//allPathMap
-	// mio := [][]string{
-	//     {"path1-step1", "path1-step2", "path1-step3"},
-	//     {"path1-alt-step1", "path1-alt-step2"},
-	// }
-
-	//var mio [][]string
-	//mio=append(mio, path)
-	//allPathMap[4] = mio
-
-	//allPathMap[10] = []string{"a-b", "a-c", "reza-3", "4-3"}
+	
 
 	for _, path := range allPath {
-		//mio=append(mio, path)
-		//allPathMap[len(path)]=mio
+	
 		allPathMap[len(path)] = append(allPathMap[len(path)], path)
 
-		//fmt.Println(path, "=", len(path))
-		//fmt.Println(allPathStr)
 	}
-	fmt.Println("number of paths:>>", len(allPathStr))
+	fmt.Println("*** number of paths for Ant:>>", len(allPathStr))
 	fmt.Println()
-	// for _, pathStr := range allPathStr {
-	// 	fmt.Println(pathStr)
-	// }
-	//----------------------------------------------------------------
-	//var allPathNo [][]string
-	//fmt.Println(allPathMap)
-	// for length, p:= range allPathMap {
-	// 	fmt.Printf("length: %d, paths: %v\n", length, p)
-	// 	fmt.Println()
-	// 	//fmt.Println(value)
-	// 	//allPathNo=append(allPathNo, value)
-	// }
-
+	
 	for i := 0; i < 100; i++ {
 
 		if allPathMap[i] == nil {
@@ -125,7 +100,21 @@ func AntPath(myGraph *data.Graph, myAnts *Ants,AntNumber int) {
 		fmt.Printf("length: %d,Num %d ,paths: %v\n", i, len(allPathMap[i]), allPathMap[i])
 	}
 	//----------------------
-	myGraph.Paths = allPathMap
-	//return allPathMap
-	// --------------------------------
+	for i := 0; i < 100; i++ {
+
+		if allPathMap[i] == nil {
+			continue
+		}
+
+	
+		if len(allPathMap[i]) > 0 {
+			if len(allPathMap[i][0])>1	{
+				return allPathMap[i][0][1]
+			}
+		
+		}
+	}
+	//---------------------------------
+
+	return ""
 }

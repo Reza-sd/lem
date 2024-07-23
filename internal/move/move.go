@@ -21,12 +21,12 @@ func (myAnts *Ants) Move(myGraph *data.Graph) {
 	fmt.Println(currentRoomName)
 
 	// nextRooms := myGraph.GetFreeRooms(currentRoom)
-	for w := 0; w < 100; w++ {
-		if myGraph.Paths[w] != nil {
-			fmt.Println("length: ", w, "paths: ", myGraph.Paths[w])
-			break
-		}
-	}
+	// for w := 0; w < 100; w++ {
+	// 	if myGraph.Paths[w] != nil {
+	// 		fmt.Println("length: ", w, "paths: ", myGraph.Paths[w])
+	// 		break
+	// 	}
+	// }
 	/*
 	   currentroom
 	   nextrooms?
@@ -43,20 +43,32 @@ func (myAnts *Ants) Move(myGraph *data.Graph) {
 	// randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
 	// nextRandomRoomName := currentTunnerArr[randomNextRoomIndex]
 	// fmt.Println("nextRandomRoomName=", nextRandomRoomName)
-	chooseTheBestPath(myGraph, currentRoomName)
-
+	myAnts.ChooseTheBestPath(myGraph, currentRoomName)
 
 	// ------------------------------
 }
-//==================
-func chooseTheBestPath(myGraph *data.Graph, currentRoomName string){
+
+// ==================
+func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName string) {
 	currentRoom := myGraph.Rooms[currentRoomName]
 	currentTunnerArr := currentRoom.Tunnels
 	//lengthCurrentTunnerArr := len(currentTunnerArr)
 	fmt.Println(currentTunnerArr)
-	for _,tunnelto :=range currentTunnerArr {
+	for _, tunnelto := range currentTunnerArr {
 		fmt.Println(tunnelto)
 	}
+	//------
+	myGraph.StartRoomName = "7"
+	fmt.Println("-->>", AntNextBestAvaliableRoom(myGraph, myAnts, 1))
+	NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, 1)
+	if NextBestAvaliableRoom=="" {
+		fmt.Println("No Path Found")
+        return
+	}
+	fmt.Println("Next Best Avaliable Room= ",NextBestAvaliableRoom)
+	//myAnts.Ants[1].currentRoomName = NextBestAvaliableRoom
+
+	//-------
 }
 
 //==================
