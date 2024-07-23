@@ -79,32 +79,55 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 	// fmt.Println("Next Best Avaliable Room= ", NextBestAvaliableRoom1)
 	//myAnts.Ants[1].currentRoomName = NextBestAvaliableRoom
 	//--------------------------------------------
-	for i:=1;i<=len(myAnts.Ants);i++ {
-		Ant := myAnts.Ants[i]
-		NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, i)
-		if NextBestAvaliableRoom == "" {
-            fmt.Println("No Path Found for Ant: ", Ant.Name)
-            continue
-        }
-		
-		//myGraph.Rooms[NextBestAvaliableRoom].EmptySeats
-		currentRoom := myGraph.Rooms[Ant.CurrentRoomName]
-		newNextRoom := myGraph.Rooms[NextBestAvaliableRoom]
+	for j := 1; j <= 10; j++ {
+		//-------------
+		counter := 0
 
-		currentRoom.EmptySeats=1 //free seat
-		newNextRoom.EmptySeats=0 //not free seat
+		for j := 1; j <= len(myAnts.Ants); j++ {
+			if myAnts.Ants[j].CurrentRoomName== myGraph.EndRoomName {
+				counter++
+			}
 
-		myGraph.Rooms[Ant.CurrentRoomName] = currentRoom
-		myGraph.Rooms[NextBestAvaliableRoom] = newNextRoom
+		}
+		if counter == len(myAnts.Ants) {
+			break
+		}
 
-		
-		
-		Ant.CurrentRoomName = NextBestAvaliableRoom
-		Ant.VisitedRooms = append(Ant.VisitedRooms, Ant.CurrentRoomName)
-		myAnts.Ants[i] = Ant
+		// -----------
+		fmt.Println("---iiiteration=", j)
+		for i := 1; i <= len(myAnts.Ants); i++ {
+			Ant := myAnts.Ants[i]
+			if Ant.CurrentRoomName== myGraph.EndRoomName {
+			continue
+			}
+			NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, i)
+			fmt.Println("find= ",i,"next",NextBestAvaliableRoom)
+			if NextBestAvaliableRoom == "" {
+				//fmt.Println("No Path Found for Ant: ", Ant.Name)
+				continue
+			}
+
+			//myGraph.Rooms[NextBestAvaliableRoom].EmptySeats
+			currentRoom := myGraph.Rooms[Ant.CurrentRoomName]
+			newNextRoom := myGraph.Rooms[NextBestAvaliableRoom]
+
+			currentRoom.EmptySeats = 1 //free seat
+			newNextRoom.EmptySeats = 0 //not free seat
+
+			if NextBestAvaliableRoom==myGraph.EndRoomName{
+				newNextRoom.EmptySeats = 10000
+			}
+
+			myGraph.Rooms[Ant.CurrentRoomName] = currentRoom
+			myGraph.Rooms[NextBestAvaliableRoom] = newNextRoom
+
+			Ant.CurrentRoomName = NextBestAvaliableRoom
+			Ant.VisitedRooms = append(Ant.VisitedRooms, Ant.CurrentRoomName)
+			myAnts.Ants[i] = Ant
+		}
+		fmt.Println(myAnts)
+		//-------
 	}
-	fmt.Println(myAnts)
-	//-------
 }
 
 //==================

@@ -56,9 +56,9 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 				continue
 			}
 
-			if myGraph.Rooms[nextRandomRoomName].EmptySeats == 0 {
-				continue
-			}
+			// if myGraph.Rooms[nextRandomRoomName].EmptySeats == 0 {
+			// 	continue
+			// }
 
 			if slices.Contains(path, nextRandomRoomName) {
 				continue
@@ -81,7 +81,7 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 		allPathStr = append(allPathStr, pathStr)
 		allPath = append(allPath, path)
 	}
-	fmt.Println("======All paths for ant:=====")
+	//fmt.Println("======All paths for ant:=====")
 
 	allPathMap := make(map[int][][]string)
 
@@ -90,7 +90,7 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 		allPathMap[len(path)] = append(allPathMap[len(path)], path)
 
 	}
-	fmt.Println("*** number of paths for Ant:>>", len(allPathStr))
+	//fmt.Println("*** number of paths for Ant:>>", len(allPathStr))
 	fmt.Println()
 
 	for i := 0; i < 100; i++ {
@@ -99,20 +99,27 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 			continue
 		}
 
-		fmt.Printf("length: %d,Num %d ,paths: %v\n", i, len(allPathMap[i]), allPathMap[i])
+		//fmt.Printf("length: %d,Num %d ,paths: %v\n", i, len(allPathMap[i]), allPathMap[i])
 	}
 	//----------------------
 	for i := 0; i < 100; i++ {
 
-		if allPathMap[i] == nil {
+		if allPathMap[i] == nil  {
 			continue
 		}
-
-		if len(allPathMap[i]) > 0 {
-			if len(allPathMap[i][0]) > 1 {
-				return allPathMap[i][0][1]
+		fmt.Println("-->",allPathMap[i])
+	
+		for _, pathsArrays := range allPathMap[i] {
+			if  len(pathsArrays) == 1  {
+				continue
 			}
-
+			fmt.Println("==>",myGraph.Rooms[pathsArrays[1]].EmptySeats)
+			if myGraph.Rooms[pathsArrays[1]].EmptySeats >= 1 {
+		
+				return pathsArrays[1]
+			
+			}
+	
 		}
 	}
 	//---------------------------------
