@@ -95,6 +95,7 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 
 		// -----------
 		fmt.Println("---iiiteration=", j)
+
 		for i := 1; i <= len(myAnts.Ants); i++ {
 			Ant := myAnts.Ants[i]
 			if Ant.CurrentRoomName== myGraph.EndRoomName {

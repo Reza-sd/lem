@@ -102,27 +102,43 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 		//fmt.Printf("length: %d,Num %d ,paths: %v\n", i, len(allPathMap[i]), allPathMap[i])
 	}
 	//----------------------
+	//var costRooms map[int]string
+	    costAvalableRooms := make(map[int][]string)
+
 	for i := 0; i < 100; i++ {
 
 		if allPathMap[i] == nil  {
 			continue
 		}
-		fmt.Println("-->",allPathMap[i])
+		//fmt.Println("-->",allPathMap[i])
 	
 		for _, pathsArrays := range allPathMap[i] {
 			if  len(pathsArrays) == 1  {
 				continue
 			}
-			fmt.Println("==>",myGraph.Rooms[pathsArrays[1]].EmptySeats)
+			//fmt.Println("==>",myGraph.Rooms[pathsArrays[1]].EmptySeats)
 			if myGraph.Rooms[pathsArrays[1]].EmptySeats >= 1 {
-		
-				return pathsArrays[1]
+				costAvalableRooms[i]=append(costAvalableRooms[i], pathsArrays[1])
+				//return pathsArrays[1]
 			
 			}
 	
 		}
 	}
 	//---------------------------------
+	//fmt.Println(costAvalableRooms)
+
+	for i := 0; i < 100; i++ {
+		if costAvalableRooms[i] == nil {
+            continue
+        }
+		l := len(costAvalableRooms[i])
+		r := rand.Intn(l)
+       // fmt.Println(i,costAvalableRooms[i])
+		fmt.Println(i,costAvalableRooms[i],costAvalableRooms[i][r])
+		return costAvalableRooms[i][r]
+
+	}
 
 	return ""
 }
