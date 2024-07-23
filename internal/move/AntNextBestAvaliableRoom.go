@@ -132,10 +132,11 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 		if costAvalableRooms[i] == nil {
             continue
         }
+		//costAvalableRooms[i]=append(costAvalableRooms[i], "")
 		l := len(costAvalableRooms[i])
 		r := rand.Intn(l)
-       // fmt.Println(i,costAvalableRooms[i])
-		fmt.Println(i,costAvalableRooms[i],costAvalableRooms[i][r])
+       fmt.Println(i,costAvalableRooms)
+		fmt.Println("cost=",i,"avaliable=",costAvalableRooms[i],"rand=",costAvalableRooms[i][r])
 		return costAvalableRooms[i][r]
 
 	}
