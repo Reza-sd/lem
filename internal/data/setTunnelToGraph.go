@@ -43,14 +43,19 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 
 		}
 
-		roomA.emptySeats = roomA.maxSeats
-		roomB.emptySeats = roomB.maxSeats
+		roomA.EmptySeats = roomA.maxSeats
+		roomB.EmptySeats = roomB.maxSeats
 
 		myGraph.Rooms[a] = roomA
 		myGraph.Rooms[b] = roomB
 
 	}
-
+	// -------------
+	roomTest := myGraph.Rooms["7"]
+	roomTest.EmptySeats = 0
+	myGraph.Rooms["7"] = roomTest
+	fmt.Println(">>>>", myGraph.Rooms["7"].EmptySeats)
+	//-----------
 	//fmt.Println(myGraph)
 	return nil
 }

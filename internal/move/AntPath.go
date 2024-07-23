@@ -16,7 +16,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 
 */
 
-func FindAllPaths(myGraph *data.Graph) {
+func AntPath(myGraph *data.Graph) {
 
 	var path []string
 
