@@ -1,10 +1,9 @@
 package move
 
 type Ant struct {
-	Name string
+	Name            string
 	currentRoomName string
 }
-
 
 type Ants struct {
 	Ants map[int]Ant
