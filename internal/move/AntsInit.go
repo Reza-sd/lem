@@ -8,6 +8,7 @@ import (
 func (myAnts *Ants) AntsInit(num int, myGraph *data.Graph) {
 
 	myAnts.Ants = make(map[int]Ant)
+	//myAnts.AntsNumber = num
 
 	fisrtVisited := []string{myGraph.StartRoomName}
 
