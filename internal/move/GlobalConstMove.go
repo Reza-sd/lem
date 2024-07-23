@@ -2,8 +2,8 @@ package move
 
 type Ant struct {
 	Name            string
-	currentRoomName string
-	VisitedRooms   []string
+	CurrentRoomName string
+	VisitedRooms    []string
 }
 
 type Ants struct {

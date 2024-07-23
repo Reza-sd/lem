@@ -17,6 +17,5 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 		return err
 	}
 
-	
 	return nil
 }

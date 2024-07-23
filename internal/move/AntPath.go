@@ -17,6 +17,9 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 */
 
 func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) (nextRoom string) {
+	Ant := myAnts.Ants[AntNumber]
+	myGraph.StartRoomName = Ant.CurrentRoomName
+	startRoom := Ant.CurrentRoomName
 
 	var path []string
 
@@ -28,8 +31,8 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 	for i := 0; i < 500; i++ {
 		pathStr = ""
 		path = nil
-		path = append(path, myGraph.StartRoomName)
-		currentRoomName := myGraph.StartRoomName
+		path = append(path, startRoom)
+		currentRoomName := startRoom
 		pathStr = currentRoomName
 
 		numberOfTry := 0
@@ -47,7 +50,7 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 			randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
 			nextRandomRoomName := currentTunnerArr[randomNextRoomIndex]
 
-			Ant := myAnts.Ants[AntNumber]
+			//Ant := myAnts.Ants[AntNumber]
 
 			if slices.Contains(Ant.VisitedRooms, nextRandomRoomName) {
 				continue
@@ -66,11 +69,11 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 			pathStr += "-" + currentRoomName
 
 		}
-		
+
 		if path[len(path)-1] != myGraph.EndRoomName {
 			continue
 		}
-		
+
 		if slices.Contains(allPathStr, pathStr) {
 			continue
 		}
@@ -79,18 +82,17 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 		allPath = append(allPath, path)
 	}
 	fmt.Println("======All paths for ant:=====")
-	
+
 	allPathMap := make(map[int][][]string)
-	
 
 	for _, path := range allPath {
-	
+
 		allPathMap[len(path)] = append(allPathMap[len(path)], path)
 
 	}
 	fmt.Println("*** number of paths for Ant:>>", len(allPathStr))
 	fmt.Println()
-	
+
 	for i := 0; i < 100; i++ {
 
 		if allPathMap[i] == nil {
@@ -106,12 +108,11 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 			continue
 		}
 
-	
 		if len(allPathMap[i]) > 0 {
-			if len(allPathMap[i][0])>1	{
+			if len(allPathMap[i][0]) > 1 {
 				return allPathMap[i][0][1]
 			}
-		
+
 		}
 	}
 	//---------------------------------

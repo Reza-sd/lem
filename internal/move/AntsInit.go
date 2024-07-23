@@ -13,8 +13,11 @@ func (myAnts *Ants) AntsInit(num int, myGraph *data.Graph) {
 
 	for i := 1; i <= num; i++ {
 		name := fmt.Sprintf("L%d", i)
-		myAnts.Ants[i] = Ant{Name: name,VisitedRooms:fisrtVisited, currentRoomName: myGraph.StartRoomName}
+		myAnts.Ants[i] = Ant{Name: name, VisitedRooms: fisrtVisited, CurrentRoomName: myGraph.StartRoomName}
 
 	}
+	//-----
+
+	//------
 
 }

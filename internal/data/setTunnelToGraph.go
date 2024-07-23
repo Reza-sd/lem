@@ -50,12 +50,12 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 		myGraph.Rooms[b] = roomB
 
 	}
-	// -------------
-	// roomTest := myGraph.Rooms["7"]
+	// // -----simulate not emtpy--------
+	// roomTest := myGraph.Rooms["6"]
 	// roomTest.EmptySeats = 0
-	// myGraph.Rooms["7"] = roomTest
-	// fmt.Println(">>>>", myGraph.Rooms["7"].EmptySeats)
-	//-----------
+	// myGraph.Rooms["6"] = roomTest
+	// fmt.Println(">>>>", myGraph.Rooms["6"].EmptySeats)
+	// //-----------
 	//fmt.Println(myGraph)
 	return nil
 }
