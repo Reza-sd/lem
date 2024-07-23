@@ -17,7 +17,6 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 		return err
 	}
 
-	//myGraph.Rooms["7"].emptySeats = 0
-	//fmt.Println(myGraph)
+	
 	return nil
 }

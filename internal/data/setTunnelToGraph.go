@@ -51,10 +51,10 @@ func (myGraph Graph) setTunnelToGraph(tunnelArr []string) error {
 
 	}
 	// -------------
-	roomTest := myGraph.Rooms["7"]
-	roomTest.EmptySeats = 0
-	myGraph.Rooms["7"] = roomTest
-	fmt.Println(">>>>", myGraph.Rooms["7"].EmptySeats)
+	// roomTest := myGraph.Rooms["7"]
+	// roomTest.EmptySeats = 0
+	// myGraph.Rooms["7"] = roomTest
+	// fmt.Println(">>>>", myGraph.Rooms["7"].EmptySeats)
 	//-----------
 	//fmt.Println(myGraph)
 	return nil

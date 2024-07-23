@@ -16,7 +16,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 
 */
 
-func AntPath(myGraph *data.Graph) {
+func AntPath(myGraph *data.Graph, myAnts *Ants,AntNumber int) {
 
 	var path []string
 
@@ -46,6 +46,12 @@ func AntPath(myGraph *data.Graph) {
 
 			randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
 			nextRandomRoomName := currentTunnerArr[randomNextRoomIndex]
+
+			Ant := myAnts.Ants[AntNumber]
+
+			if slices.Contains(Ant.VisitedRooms, nextRandomRoomName) {
+				continue
+			}
 
 			if myGraph.Rooms[nextRandomRoomName].EmptySeats == 0 {
 				continue
