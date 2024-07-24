@@ -84,7 +84,7 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 		counter := 0
 
 		for j := 1; j <= len(myAnts.Ants); j++ {
-			if myAnts.Ants[j].CurrentRoomName== myGraph.EndRoomName {
+			if myAnts.Ants[j].CurrentRoomName == myGraph.EndRoomName {
 				counter++
 			}
 
@@ -98,11 +98,11 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 
 		for i := 1; i <= len(myAnts.Ants); i++ {
 			Ant := myAnts.Ants[i]
-			if Ant.CurrentRoomName== myGraph.EndRoomName {
-			continue
+			if Ant.CurrentRoomName == myGraph.EndRoomName {
+				continue
 			}
 			NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, i)
-			fmt.Println("find= ",i,"next",NextBestAvaliableRoom)
+			fmt.Println("find= ", i, "next", NextBestAvaliableRoom)
 			if NextBestAvaliableRoom == "" {
 				//fmt.Println("No Path Found for Ant: ", Ant.Name)
 				continue
@@ -115,7 +115,7 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 			currentRoom.EmptySeats = 1 //free seat
 			newNextRoom.EmptySeats = 0 //not free seat
 
-			if NextBestAvaliableRoom==myGraph.EndRoomName{
+			if NextBestAvaliableRoom == myGraph.EndRoomName {
 				newNextRoom.EmptySeats = 10000
 			}
 
