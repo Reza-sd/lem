@@ -1,134 +1,134 @@
 package move
 
-import (
-	"fmt"
-	data "main/internal/data"
-	//"math/rand"
-)
+// import (
+// 	"fmt"
+// 	data "main/internal/data"
+// 	//"math/rand"
+// )
 
-func (myAnts *Ants) Move2(myGraph *data.Graph) {
+// func (myAnts *Ants) Move2(myGraph *data.Graph) {
 
-	fmt.Println("Move Ants")
+// 	fmt.Println("Move Ants")
 
-	for _, ant := range myAnts.Ants {
-		fmt.Println("Ant:", ant.Name, "Current Room:", ant.CurrentRoomName)
-		//fmt.Println("Shortest Path:", ant.ShortestPath)
-	}
-	//------------------------------
+// 	for _, ant := range myAnts.Ants {
+// 		fmt.Println("Ant:", ant.Name, "Current Room:", ant.CurrentRoomName)
+// 		//fmt.Println("Shortest Path:", ant.ShortestPath)
+// 	}
+// 	//------------------------------
 
-	// what are the next free rooms in the graph
-	currentRoomName := myAnts.Ants[1].CurrentRoomName
-	fmt.Println(currentRoomName)
+// 	// what are the next free rooms in the graph
+// 	currentRoomName := myAnts.Ants[1].CurrentRoomName
+// 	fmt.Println(currentRoomName)
 
-	// nextRooms := myGraph.GetFreeRooms(currentRoom)
-	// for w := 0; w < 100; w++ {
-	// 	if myGraph.Paths[w] != nil {
-	// 		fmt.Println("length: ", w, "paths: ", myGraph.Paths[w])
-	// 		break
-	// 	}
-	// }
-	/*
-	   currentroom
-	   nextrooms?
-	   if nextroomsfree?
-	   nextfreerooms?
-	   currentroom-nextfreeroom in whitch path?
-	   path with lower weight will select
-	*/
-	// whats the random next room
-	// currentRoom := myGraph.Rooms[currentRoomName]
-	// currentTunnerArr := currentRoom.Tunnels
-	// lengthCurrentTunnerArr := len(currentTunnerArr)
+// 	// nextRooms := myGraph.GetFreeRooms(currentRoom)
+// 	// for w := 0; w < 100; w++ {
+// 	// 	if myGraph.Paths[w] != nil {
+// 	// 		fmt.Println("length: ", w, "paths: ", myGraph.Paths[w])
+// 	// 		break
+// 	// 	}
+// 	// }
+// 	/*
+// 	   currentroom
+// 	   nextrooms?
+// 	   if nextroomsfree?
+// 	   nextfreerooms?
+// 	   currentroom-nextfreeroom in whitch path?
+// 	   path with lower weight will select
+// 	*/
+// 	// whats the random next room
+// 	// currentRoom := myGraph.Rooms[currentRoomName]
+// 	// currentTunnerArr := currentRoom.Tunnels
+// 	// lengthCurrentTunnerArr := len(currentTunnerArr)
 
-	// randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
-	// nextRandomRoomName := currentTunnerArr[randomNextRoomIndex]
-	// fmt.Println("nextRandomRoomName=", nextRandomRoomName)
-	myAnts.ChooseTheBestPath(myGraph, currentRoomName)
+// 	// randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
+// 	// nextRandomRoomName := currentTunnerArr[randomNextRoomIndex]
+// 	// fmt.Println("nextRandomRoomName=", nextRandomRoomName)
+// 	myAnts.ChooseTheBestPath(myGraph, currentRoomName)
 
-	// ------------------------------
-}
+// 	// ------------------------------
+// }
 
-// ==================
-func (myAnts *Ants) ChooseTheBestPath2(myGraph *data.Graph, currentRoomName string) {
-	currentRoom := myGraph.Rooms[currentRoomName]
-	currentTunnerArr := currentRoom.Tunnels
-	//lengthCurrentTunnerArr := len(currentTunnerArr)
-	fmt.Println(currentTunnerArr)
-	for _, tunnelto := range currentTunnerArr {
-		fmt.Println(tunnelto)
-	}
-	//-----------------
-	// -----simulate not emtpy--------
-	roomTest := myGraph.Rooms["6"]
-	roomTest.EmptySeats = 0
-	myGraph.Rooms["6"] = roomTest
-	fmt.Println(">>>>", myGraph.Rooms["6"].EmptySeats)
-	//-------test----
-	//myGraph.StartRoomName = "7"
-	// Ant1 := myAnts.Ants[1]
-	// Ant1.CurrentRoomName = "2"
-	// Ant1.VisitedRooms = []string{"1", "2"}
-	// myAnts.Ants[1] = Ant1
-	// //----------test--------------
-	// fmt.Println("-->>", AntNextBestAvaliableRoom(myGraph, myAnts, 1))
-	// NextBestAvaliableRoom1 := AntNextBestAvaliableRoom(myGraph, myAnts, 1)
-	// if NextBestAvaliableRoom1 == "" {
-	// 	fmt.Println("No Path Found")
-	// 	return
-	// }
-	// fmt.Println("Next Best Avaliable Room= ", NextBestAvaliableRoom1)
-	//myAnts.Ants[1].currentRoomName = NextBestAvaliableRoom
-	//--------------------------------------------
-	for j := 1; j <= 10; j++ {
-		//-------------
-		counter := 0
+// // ==================
+// func (myAnts *Ants) ChooseTheBestPath2(myGraph *data.Graph, currentRoomName string) {
+// 	currentRoom := myGraph.Rooms[currentRoomName]
+// 	currentTunnerArr := currentRoom.Tunnels
+// 	//lengthCurrentTunnerArr := len(currentTunnerArr)
+// 	fmt.Println(currentTunnerArr)
+// 	for _, tunnelto := range currentTunnerArr {
+// 		fmt.Println(tunnelto)
+// 	}
+// 	//-----------------
+// 	// -----simulate not emtpy--------
+// 	roomTest := myGraph.Rooms["6"]
+// 	roomTest.EmptySeats = 0
+// 	myGraph.Rooms["6"] = roomTest
+// 	fmt.Println(">>>>", myGraph.Rooms["6"].EmptySeats)
+// 	//-------test----
+// 	//myGraph.StartRoomName = "7"
+// 	// Ant1 := myAnts.Ants[1]
+// 	// Ant1.CurrentRoomName = "2"
+// 	// Ant1.VisitedRooms = []string{"1", "2"}
+// 	// myAnts.Ants[1] = Ant1
+// 	// //----------test--------------
+// 	// fmt.Println("-->>", AntNextBestAvaliableRoom(myGraph, myAnts, 1))
+// 	// NextBestAvaliableRoom1 := AntNextBestAvaliableRoom(myGraph, myAnts, 1)
+// 	// if NextBestAvaliableRoom1 == "" {
+// 	// 	fmt.Println("No Path Found")
+// 	// 	return
+// 	// }
+// 	// fmt.Println("Next Best Avaliable Room= ", NextBestAvaliableRoom1)
+// 	//myAnts.Ants[1].currentRoomName = NextBestAvaliableRoom
+// 	//--------------------------------------------
+// 	for j := 1; j <= 10; j++ {
+// 		//-------------
+// 		counter := 0
 
-		for j := 1; j <= len(myAnts.Ants); j++ {
-			if myAnts.Ants[j].CurrentRoomName == myGraph.EndRoomName {
-				counter++
-			}
+// 		for j := 1; j <= len(myAnts.Ants); j++ {
+// 			if myAnts.Ants[j].CurrentRoomName == myGraph.EndRoomName {
+// 				counter++
+// 			}
 
-		}
-		if counter == len(myAnts.Ants) {
-			break
-		}
+// 		}
+// 		if counter == len(myAnts.Ants) {
+// 			break
+// 		}
 
-		// -----------
-		fmt.Println("---iiiteration=", j)
+// 		// -----------
+// 		fmt.Println("---iiiteration=", j)
 
-		for i := 1; i <= len(myAnts.Ants); i++ {
-			Ant := myAnts.Ants[i]
-			if Ant.CurrentRoomName == myGraph.EndRoomName {
-				continue
-			}
-			NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, i)
-			fmt.Println("find= ", i, "next", NextBestAvaliableRoom)
-			if NextBestAvaliableRoom == "" {
-				//fmt.Println("No Path Found for Ant: ", Ant.Name)
-				continue
-			}
+// 		for i := 1; i <= len(myAnts.Ants); i++ {
+// 			Ant := myAnts.Ants[i]
+// 			if Ant.CurrentRoomName == myGraph.EndRoomName {
+// 				continue
+// 			}
+// 			NextBestAvaliableRoom := AntNextBestAvaliableRoom(myGraph, myAnts, i)
+// 			fmt.Println("find= ", i, "next", NextBestAvaliableRoom)
+// 			if NextBestAvaliableRoom == "" {
+// 				//fmt.Println("No Path Found for Ant: ", Ant.Name)
+// 				continue
+// 			}
 
-			//myGraph.Rooms[NextBestAvaliableRoom].EmptySeats
-			currentRoom := myGraph.Rooms[Ant.CurrentRoomName]
-			newNextRoom := myGraph.Rooms[NextBestAvaliableRoom]
+// 			//myGraph.Rooms[NextBestAvaliableRoom].EmptySeats
+// 			currentRoom := myGraph.Rooms[Ant.CurrentRoomName]
+// 			newNextRoom := myGraph.Rooms[NextBestAvaliableRoom]
 
-			currentRoom.EmptySeats = 1 //free seat
-			newNextRoom.EmptySeats = 0 //not free seat
+// 			currentRoom.EmptySeats = 1 //free seat
+// 			newNextRoom.EmptySeats = 0 //not free seat
 
-			if NextBestAvaliableRoom == myGraph.EndRoomName {
-				newNextRoom.EmptySeats = 10000
-			}
+// 			if NextBestAvaliableRoom == myGraph.EndRoomName {
+// 				newNextRoom.EmptySeats = 10000
+// 			}
 
-			myGraph.Rooms[Ant.CurrentRoomName] = currentRoom
-			myGraph.Rooms[NextBestAvaliableRoom] = newNextRoom
+// 			myGraph.Rooms[Ant.CurrentRoomName] = currentRoom
+// 			myGraph.Rooms[NextBestAvaliableRoom] = newNextRoom
 
-			Ant.CurrentRoomName = NextBestAvaliableRoom
-			Ant.VisitedRooms = append(Ant.VisitedRooms, Ant.CurrentRoomName)
-			myAnts.Ants[i] = Ant
-		}
-		fmt.Println(myAnts)
-		//-------
-	}
-}
+// 			Ant.CurrentRoomName = NextBestAvaliableRoom
+// 			Ant.VisitedRooms = append(Ant.VisitedRooms, Ant.CurrentRoomName)
+// 			myAnts.Ants[i] = Ant
+// 		}
+// 		fmt.Println(myAnts)
+// 		//-------
+// 	}
+// }
 
-//==================
+// //==================

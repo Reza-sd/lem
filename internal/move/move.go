@@ -6,60 +6,12 @@ import (
 	//"math/rand"
 )
 
-func (myAnts *Ants) Move(myGraph *data.Graph) {
-
-	fmt.Println("Move Ants")
-
-	for _, ant := range myAnts.Ants {
-		fmt.Println("Ant:", ant.Name, "Current Room:", ant.CurrentRoomName)
-		
-	}
-	//------------------------------
-
-	currentRoomName := myAnts.Ants[1].CurrentRoomName
-	fmt.Println(currentRoomName)
-
-
-	myAnts.ChooseTheBestPath(myGraph, currentRoomName)
-
-	// ------------------------------
-}
-
 // ==================
-func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName string) {
-	currentRoom := myGraph.Rooms[currentRoomName]
-	currentTunnerArr := currentRoom.Tunnels
-	//lengthCurrentTunnerArr := len(currentTunnerArr)
-	fmt.Println(currentTunnerArr)
-	for _, tunnelto := range currentTunnerArr {
-		fmt.Println(tunnelto)
-	}
-	//-----------------
-	// -----simulate not emtpy--------
-	// roomTest := myGraph.Rooms["6"]
-	// roomTest.EmptySeats = 0
-	// myGraph.Rooms["6"] = roomTest
-	// fmt.Println(">>>>", myGraph.Rooms["6"].EmptySeats)
-	//-------test----
-	//myGraph.StartRoomName = "7"
-	// Ant1 := myAnts.Ants[1]
-	// Ant1.CurrentRoomName = "2"
-	// Ant1.VisitedRooms = []string{"1", "2"}
-	// myAnts.Ants[1] = Ant1
-	// //----------test--------------
-	// fmt.Println("-->>", AntNextBestAvaliableRoom(myGraph, myAnts, 1))
-	// NextBestAvaliableRoom1 := AntNextBestAvaliableRoom(myGraph, myAnts, 1)
-	// if NextBestAvaliableRoom1 == "" {
-	// 	fmt.Println("No Path Found")
-	// 	return
-	// }
-	// fmt.Println("Next Best Avaliable Room= ", NextBestAvaliableRoom1)
-	//myAnts.Ants[1].currentRoomName = NextBestAvaliableRoom
-	//--------------------------------------------
+func (myAnts *Ants) Move(myGraph *data.Graph) {
+	//--------------------------------------
 	for j := 1; j <= 10; j++ {
-		//-------------
+		//--------check if all Ants arrived---------------
 		counter := 0
-
 		for j := 1; j <= len(myAnts.Ants); j++ {
 			if myAnts.Ants[j].CurrentRoomName == myGraph.EndRoomName {
 				counter++
@@ -70,8 +22,8 @@ func (myAnts *Ants) ChooseTheBestPath(myGraph *data.Graph, currentRoomName strin
 			break
 		}
 
-		// -----------
-		fmt.Println("---iiiteration=", j)
+		// -------------------
+		fmt.Println("---iteration=", j)
 
 		for i := 1; i <= len(myAnts.Ants); i++ {
 			Ant := myAnts.Ants[i]
