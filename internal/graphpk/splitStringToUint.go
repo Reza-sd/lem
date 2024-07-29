@@ -13,17 +13,6 @@ func splitStringToUint(input string) (string, string, error) {
 		return "", "", fmt.Errorf("invalid input format")
 	}
 
-	// // Convert the first part to uint
-	// first, err := strconv.ParseUint(parts[0], 10, 32)
-	// if err != nil {
-	// 	return 0, 0, fmt.Errorf("failed to parse first part: %v", err)
-	// }
-
-	// // Convert the second part to uint
-	// second, err := strconv.ParseUint(parts[1], 10, 32)
-	// if err != nil {
-	// 	return 0, 0, fmt.Errorf("failed to parse second part: %v", err)
-	// }
 
 	return parts[0], parts[1], nil
 }
