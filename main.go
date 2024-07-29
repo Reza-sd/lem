@@ -20,6 +20,9 @@ func main() {
 	myAnts.AntsInit(3, &myGraph)
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")
-	myAnts.Move(&myGraph)
-
+	//myAnts.Move(&myGraph)
+	ant1 :=myAnts.AntsMap[1]
+	fmt.Println(ant1)
+	ant1.MoveOneStepForwardRandomly(&myGraph)
+	fmt.Println(ant1)
 }
