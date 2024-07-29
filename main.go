@@ -13,7 +13,7 @@ func main() {
 	myGraph.InitGraph(tunnelArr, "1", "0")
 	myGraph.PrintGraph()
 
-	move.FindAllPaths(&myGraph)
+	//move.FindAllPaths(&myGraph)
 
 	fmt.Println("==================")
 	var myAnts move.Ants
@@ -21,8 +21,28 @@ func main() {
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")
 	//myAnts.Move(&myGraph)
-	ant1 :=myAnts.AntsMap[1]
+	ant1 := myAnts.AntsMap[1]
+	ant2 := myAnts.AntsMap[2]
+	ant3 := myAnts.AntsMap[3]
+	fmt.Println("\n step 0:")
 	fmt.Println(ant1)
+	fmt.Println(ant2)
+	fmt.Println(ant3)
+	fmt.Println("\n step 1:")
 	ant1.MoveOneStepForwardRandomly(&myGraph)
-	fmt.Println(ant1)
+	ant2.MoveOneStepForwardRandomly(&myGraph)
+	ant3.MoveOneStepForwardRandomly(&myGraph)
+	fmt.Println("\n step 2:")
+	ant1.MoveOneStepForwardRandomly(&myGraph)
+	ant2.MoveOneStepForwardRandomly(&myGraph)
+	ant3.MoveOneStepForwardRandomly(&myGraph)
+	fmt.Println("\n step 3:")
+	ant1.MoveOneStepForwardRandomly(&myGraph)
+	ant2.MoveOneStepForwardRandomly(&myGraph)
+	ant3.MoveOneStepForwardRandomly(&myGraph)
+	fmt.Println("\n step 4:")
+	ant1.MoveOneStepForwardRandomly(&myGraph)
+	ant2.MoveOneStepForwardRandomly(&myGraph)
+	ant3.MoveOneStepForwardRandomly(&myGraph)
+
 }

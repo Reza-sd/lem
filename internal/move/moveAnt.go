@@ -9,31 +9,34 @@ import (
 
 // ------------------------------------------------
 func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
-	fmt.Println("move theAnt")
+	//fmt.Println("move theAnt")
 
 	// -----check if its already in End room----
 	if theAnt.CurrentRoomName == theGraph.EndRoomName {
 		return
 	}
-	
+
 	nextRandomAvailableRoomName := nextRandomAvailableRoomName(theAnt, theGraph)
 
-	
-
 	if nextRandomAvailableRoomName == "" {
-		theAnt.VisitedRoomsArr=append(theAnt.VisitedRoomsArr, "*")
+		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
 		return
 	}
-	
+
 	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
-	currentRoom.EmptySeats++
+	currentRoom.EmptySeats = 1
+	theGraph.Rooms[theAnt.CurrentRoomName] = currentRoom
+	//fmt.Println()
 	nextRoom := theGraph.Rooms[nextRandomAvailableRoomName]
-	nextRoom.EmptySeats--
+	nextRoom.EmptySeats = 0
 
-	theAnt.VisitedRoomsArr=append(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName)
+	if nextRandomAvailableRoomName == theGraph.EndRoomName {
+		nextRoom.EmptySeats = 1000
+	}
+	theGraph.Rooms[nextRandomAvailableRoomName] = nextRoom
+	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName)
 	theAnt.CurrentRoomName = nextRandomAvailableRoomName
-
-
+	fmt.Println(theAnt)
 }
 
 // ------------------------------------------------
