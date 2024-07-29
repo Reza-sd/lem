@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	data "main/internal/data"
-	move "main/internal/move"
+	graphpk "main/internal/graphpk"
+	"main/internal/antpk"
 )
 
 func main() {
 
-	var myGraph data.Graph
+	var myGraph graphpk.Graph
 	tunnelArr := []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"}
 	myGraph.InitGraph(tunnelArr, "1", "0")
 	myGraph.PrintGraph()
@@ -16,7 +16,7 @@ func main() {
 	//move.FindAllPaths(&myGraph)
 
 	fmt.Println("==================")
-	var myAnts move.Ants
+	var myAnts antpk.Ants
 	myAnts.AntsInit(3, &myGraph)
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")

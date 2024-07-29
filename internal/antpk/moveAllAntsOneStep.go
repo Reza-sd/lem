@@ -1,11 +1,11 @@
-package move
+package antpk
 
 import (
 	"fmt"
-	"main/internal/data"
+	"main/internal/graphpk"
 )
 
-func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *data.Graph) {
+func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 
 	for i:=1;i<=allAnts.AntsNumber;i++{
 		theAnt :=allAnts.AntsMap[i]

@@ -1,11 +1,11 @@
-package move
+package antpk
 
 import (
 	"fmt"
-	data "main/internal/data"
+	graphpk "main/internal/graphpk"
 )
 
-func (myAnts *Ants) AntsInit(numberOfAnts int, myGraph *data.Graph) {
+func (myAnts *Ants) AntsInit(numberOfAnts int, myGraph *graphpk.Graph) {
 
 	myAnts.AntsMap = make(map[int]Ant)
 	myAnts.AntsNumber = numberOfAnts

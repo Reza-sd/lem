@@ -1,14 +1,14 @@
-package move
+package antpk
 
 import (
 	//"fmt"
-	data "main/internal/data"
+	graphpk "main/internal/graphpk"
 	"math/rand"
 	"slices"
 )
 
 // ------------------------------------------------
-func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
+func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *graphpk.Graph) {
 	//fmt.Println("move theAnt")
 
 	// -----check if its already in End room----
@@ -40,7 +40,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
 }
 
 // ------------------------------------------------
-func nextRandomAvailableRoomName(theAnt *Ant, theGraph *data.Graph) string {
+func nextRandomAvailableRoomName(theAnt *Ant, theGraph *graphpk.Graph) string {
 	for i := 0; i < 50; i++ {
 		currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
 		currentTunnerArr := currentRoom.Tunnels

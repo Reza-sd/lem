@@ -1,4 +1,4 @@
-package move
+package antpk
 
 type Ant struct {
 	Name            string

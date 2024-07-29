@@ -1,4 +1,4 @@
-package data
+package graphpk
 
 import (
 	"fmt"
