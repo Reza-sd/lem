@@ -1,7 +1,7 @@
 package move
 
 import (
-	"fmt"
+	//"fmt"
 	data "main/internal/data"
 	"math/rand"
 	"slices"
@@ -36,7 +36,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
 	theGraph.Rooms[nextRandomAvailableRoomName] = nextRoom
 	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName)
 	theAnt.CurrentRoomName = nextRandomAvailableRoomName
-	fmt.Println(theAnt)
+	//fmt.Println(theAnt)
 }
 
 // ------------------------------------------------
