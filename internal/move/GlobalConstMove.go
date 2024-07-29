@@ -3,11 +3,11 @@ package move
 type Ant struct {
 	Name            string
 	CurrentRoomName string
-	VisitedRooms    []string
+	VisitedRoomsArr []string
 	AssignedPath    []string
 }
 
 type Ants struct {
-	//AntsNumber int
-	Ants map[int]Ant
+	AntsMap    map[int]Ant
+	AntsNumber int
 }

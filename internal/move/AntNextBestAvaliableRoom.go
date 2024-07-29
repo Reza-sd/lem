@@ -17,7 +17,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 */
 
 func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) (nextRoom string) {
-	Ant := myAnts.Ants[AntNumber]
+	Ant := myAnts.AntsMap[AntNumber]
 	myGraph.StartRoomName = Ant.CurrentRoomName
 	startRoom := Ant.CurrentRoomName
 
@@ -52,7 +52,7 @@ func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) 
 
 			//Ant := myAnts.Ants[AntNumber]
 
-			if slices.Contains(Ant.VisitedRooms, nextRandomRoomName) {
+			if slices.Contains(Ant.VisitedRoomsArr, nextRandomRoomName) {
 				continue
 			}
 

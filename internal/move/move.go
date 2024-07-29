@@ -12,21 +12,21 @@ func (myAnts *Ants) Move(myGraph *data.Graph) {
 	for j := 1; j <= 10; j++ {
 		//--------check if all Ants arrived---------------
 		counter := 0
-		for j := 1; j <= len(myAnts.Ants); j++ {
-			if myAnts.Ants[j].CurrentRoomName == myGraph.EndRoomName {
+		for j := 1; j <= len(myAnts.AntsMap); j++ {
+			if myAnts.AntsMap[j].CurrentRoomName == myGraph.EndRoomName {
 				counter++
 			}
 
 		}
-		if counter == len(myAnts.Ants) {
+		if counter == len(myAnts.AntsMap) {
 			break
 		}
 
 		// -------------------
 		fmt.Println("---iteration=", j)
 
-		for i := 1; i <= len(myAnts.Ants); i++ {
-			Ant := myAnts.Ants[i]
+		for i := 1; i <= len(myAnts.AntsMap); i++ {
+			Ant := myAnts.AntsMap[i]
 			if Ant.CurrentRoomName == myGraph.EndRoomName {
 				continue
 			}
@@ -52,8 +52,8 @@ func (myAnts *Ants) Move(myGraph *data.Graph) {
 			myGraph.Rooms[NextBestAvaliableRoom] = newNextRoom
 
 			Ant.CurrentRoomName = NextBestAvaliableRoom
-			Ant.VisitedRooms = append(Ant.VisitedRooms, Ant.CurrentRoomName)
-			myAnts.Ants[i] = Ant
+			Ant.VisitedRoomsArr = append(Ant.VisitedRoomsArr, Ant.CurrentRoomName)
+			myAnts.AntsMap[i] = Ant
 		}
 		fmt.Println(myAnts)
 		//-------
