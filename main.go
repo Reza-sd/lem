@@ -21,6 +21,11 @@ func main() {
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")
 	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	//myAnts.Move(&myGraph)
 	// ant1 := myAnts.AntsMap[1]
 	// ant2 := myAnts.AntsMap[2]

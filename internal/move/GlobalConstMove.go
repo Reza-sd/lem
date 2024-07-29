@@ -8,6 +8,7 @@ type Ant struct {
 }
 
 type Ants struct {
-	AntsMap    map[int]Ant
 	AntsNumber int
+	AntsMap    map[int]Ant
+
 }
