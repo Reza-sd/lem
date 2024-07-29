@@ -16,7 +16,7 @@ To be the first to arrive, ants will need to take the shortest path or paths. Th
 
 */
 
-func AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) (nextRoom string) {
+func NO_AntNextBestAvaliableRoom(myGraph *data.Graph, myAnts *Ants, AntNumber int) (nextRoom string) {
 	Ant := myAnts.AntsMap[AntNumber]
 	myGraph.StartRoomName = Ant.CurrentRoomName
 	startRoom := Ant.CurrentRoomName

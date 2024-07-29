@@ -17,7 +17,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
 	}
 
 	nextRandomAvailableRoomName := nextRandomAvailableRoomName(theAnt, theGraph)
-
+	// in the case of no available free next room
 	if nextRandomAvailableRoomName == "" {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
 		return
@@ -29,7 +29,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *data.Graph) {
 	//fmt.Println()
 	nextRoom := theGraph.Rooms[nextRandomAvailableRoomName]
 	nextRoom.EmptySeats = 0
-
+	//for the End node (has free seats always)
 	if nextRandomAvailableRoomName == theGraph.EndRoomName {
 		nextRoom.EmptySeats = 1000
 	}
