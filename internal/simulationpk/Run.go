@@ -15,7 +15,7 @@ func (theModel *Model) Run(NumberOfTry int) {
 	var tempGraph graphpk.Graph
 	var tempAnts antpk.Ants
 
-	myTravelPlan = antpk.TravelPlan{Steps: 10000}
+	
 
 	for i := 1; i <= NumberOfTry; i++ {
 

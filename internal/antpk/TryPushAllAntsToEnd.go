@@ -16,25 +16,20 @@ func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan 
 		}
 
 		if counter >= 10 { // max try
-			//success = false
-			//break
+		
 			return
 		}
 
 		allAnts.MoveAllAntsOneStepRandomly(theGraph)
 		counter++
 	}
-	//allAnts
-	//if !success { return}
-	if counter >= theTravelPlan.Steps || counter == 0 {
+	
+	if counter >= theTravelPlan.Steps && theTravelPlan.Steps  != 0 {
 		return
 	}
-	// fmt.Println("counter=",counter)
-	// fmt.Println("theTravelPlan.Steps=",theTravelPlan.Steps)
 
-	if counter != 0 {
 		theTravelPlan.Steps = counter
 		theTravelPlan.SuccessfulPlan = *allAnts
-	}
+
 
 }
