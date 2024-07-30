@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"main/internal/simulationpk"
 )
 
@@ -15,6 +16,9 @@ func main() {
 		TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
 	}
 	model1:= lem1.ModelInit()
-	model1.Run(200)
+	myTravelPlan := model1.Run(200)
+	fmt.Println("")
+	fmt.Println("Steps: ", myTravelPlan.Steps)
+	myTravelPlan.SuccessfulPlan.PrintAllAnts()
 
 }

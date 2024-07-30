@@ -1,12 +1,12 @@
 package simulationpk
 
 import (
-	"fmt"
+	//"fmt"
 	"main/internal/antpk"
 	graphpk "main/internal/graphpk"
 )
 
-func (theModel *Model) Run(NumberOfTry int) {
+func (theModel *Model) Run(NumberOfTry int)(finalTravelPlan antpk.TravelPlan) {
 
 	baseGraph := theModel.baseGraph
 	baseAnts := theModel.baseAnts
@@ -29,8 +29,9 @@ func (theModel *Model) Run(NumberOfTry int) {
 
 	}
 
-	fmt.Println("")
-	fmt.Println("Steps: ", myTravelPlan.Steps)
+	// fmt.Println("")
+	// fmt.Println("Steps: ", myTravelPlan.Steps)
 
-	myTravelPlan.SuccessfulPlan.PrintAllAnts()
+	//myTravelPlan.SuccessfulPlan.PrintAllAnts()
+	return myTravelPlan
 }
