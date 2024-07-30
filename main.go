@@ -23,6 +23,7 @@ func main() {
 	for i := 1; i <= 2; i++ {
 		fmt.Println("try=", i)
 		myTravelPlan = antpk.TravelPlan{Steps: 10000}
+		
 		myGraph=baseGraph
 		//myAnts.MoveAllAntsToStart(&myGraph)
 		myAnts=baseAnts
