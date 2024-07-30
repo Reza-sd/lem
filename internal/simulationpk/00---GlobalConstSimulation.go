@@ -6,19 +6,17 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-//model + behaviour
-type Lem struct{
+// model + behaviour
+type Lem struct {
 	NumberOfAnts int
-	StartRoom string
-	EndRoom string
-	TunnelArr []string
+	StartRoom    string
+	EndRoom      string
+	TunnelArr    []string
 
 	baseModel Model
-
 }
 
-type Model struct{
-
+type Model struct {
 	baseGraph graphpk.Graph
-	baseAnts antpk.Ants
+	baseAnts  antpk.Ants
 }

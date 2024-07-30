@@ -2,19 +2,18 @@ package simulationpk
 
 import (
 	// "fmt"
-	 "main/internal/antpk"
-	 graphpk "main/internal/graphpk"
+	"main/internal/antpk"
+	graphpk "main/internal/graphpk"
 )
 
-func (myLem *Lem)ModelInit( ){
+func (myLem *Lem) ModelInit() {
 
-//myLem.baseModel.baseAnts=
+	//myLem.baseModel.baseAnts=
 
 	NumberOfAnts := myLem.NumberOfAnts
-	StartRoom :=myLem.StartRoom
-	EndRoom :=myLem.EndRoom
+	StartRoom := myLem.StartRoom
+	EndRoom := myLem.EndRoom
 
-	
 	tunnelArr := myLem.TunnelArr
 
 	var baseGraph graphpk.Graph
@@ -23,7 +22,7 @@ func (myLem *Lem)ModelInit( ){
 	var baseAnts antpk.Ants
 	baseAnts.AntsInit(NumberOfAnts, &baseGraph)
 
-	myLem.baseModel.baseAnts=baseAnts
-	myLem.baseModel.baseGraph=baseGraph
+	myLem.baseModel.baseAnts = baseAnts
+	myLem.baseModel.baseGraph = baseGraph
 
 }
