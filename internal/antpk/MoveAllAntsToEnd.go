@@ -6,7 +6,7 @@ import (
 	"main/internal/graphpk"
 )
 
-func (allAnts *Ants) PushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan) {
+func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan) {
 	counter := 0
 	//success := true
 	for {
