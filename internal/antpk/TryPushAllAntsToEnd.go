@@ -8,7 +8,7 @@ import (
 
 func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan) {
 	counter := 0
-	//success := true
+
 	for {
 
 		if theGraph.CurrentAntsInEndRoom == allAnts.AntsNumber {
