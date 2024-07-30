@@ -46,9 +46,9 @@ func main() {
 	
 
 	}
-
-	fmt.Println("number Steps: ", myTravelPlan.Steps)
 	fmt.Println("")
+	fmt.Println("Steps: ", myTravelPlan.Steps)
+	
 	myTravelPlan.SuccessfulPlan.PrintAllAnts()
 
 }
