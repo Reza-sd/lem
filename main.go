@@ -15,70 +15,39 @@ func main() {
 	var baseAnts antpk.Ants
 	baseAnts.AntsInit(3, &baseGraph)
 
+
 	var myTravelPlan antpk.TravelPlan
 	var myGraph graphpk.Graph
 	var myAnts antpk.Ants
 
-	//antpk.AntsCopy(&baseAnts, &myAnts)
 
-	for i := 1; i <= 20; i++ {
+
+	for i := 1; i <= 2; i++ {
 		fmt.Println("try=", i)
 		myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
-		myGraph = baseGraph
-		//myAnts.MoveAllAntsToStart(&myGraph)
-		//myAnts = baseAnts
+		
+	
+		graphpk.GraphCopy(baseGraph,&myGraph)
 		antpk.AntsCopy(baseAnts, &myAnts)
 
-		myGraph.PrintGraph()
-		//myAnts.MoveAllAntsToStart(&myGraph)
-		myAnts.PrintAllAnts()
-		//fmt.Println("number Steps1: ", myTravelPlan.Steps)
+		//myGraph.PrintGraph()
+	
+		//myAnts.PrintAllAnts()
+		
 
 		myAnts.TryPushAllAntsToEnd(&myGraph, &myTravelPlan)
-		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
+
 		fmt.Println("number Steps: ", myTravelPlan.Steps)
 		myTravelPlan.SuccessfulPlan.PrintAllAnts()
-		myAnts = antpk.Ants{} //reset myAnts after each try
-		//myGraph.PrintGraph()
 
-		//myAnts.PrintAllAnts()
-		//myTravelPlan = antpk.TravelPlan{Steps: 10000}
+		myAnts = antpk.Ants{} //reset myAnts after each try
+		myGraph = graphpk.Graph{}
+	
 
 	}
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	// fmt.Println("number of ants in end room: ", myGraph.CurrentAntsInEndRoom)
-	// fmt.Println("number Steps: ", myTravelPlan.Steps)
-	// fmt.Println("successfull plan: ")
-	// myTravelPlan.SuccessfulPlan.PrintAllAnts()
-	//myAnts.Move(&myGraph)
-	// ant1 := myAnts.AntsMap[1]
-	// ant2 := myAnts.AntsMap[2]
-	// ant3 := myAnts.AntsMap[3]
-	// fmt.Println("\n step 0:")
-	// fmt.Println(ant1)
-	// fmt.Println(ant2)
-	// fmt.Println(ant3)
-	// fmt.Println("\n step 1:")
-	// ant1.MoveOneStepForwardRandomly(&myGraph)
-	// ant2.MoveOneStepForwardRandomly(&myGraph)
-	// ant3.MoveOneStepForwardRandomly(&myGraph)
-	// fmt.Println("\n step 2:")
-	// ant1.MoveOneStepForwardRandomly(&myGraph)
-	// ant2.MoveOneStepForwardRandomly(&myGraph)
-	// ant3.MoveOneStepForwardRandomly(&myGraph)
-	// fmt.Println("\n step 3:")
-	// ant1.MoveOneStepForwardRandomly(&myGraph)
-	// ant2.MoveOneStepForwardRandomly(&myGraph)
-	// ant3.MoveOneStepForwardRandomly(&myGraph)
-	// fmt.Println("\n step 4:")
-	// ant1.MoveOneStepForwardRandomly(&myGraph)
-	// ant2.MoveOneStepForwardRandomly(&myGraph)
-	// ant3.MoveOneStepForwardRandomly(&myGraph)
+	
+	
+	
 
 }
