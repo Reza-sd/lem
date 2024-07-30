@@ -19,28 +19,28 @@ func main() {
 	var myGraph graphpk.Graph
 	var myAnts antpk.Ants
 
+	//antpk.AntsCopy(&baseAnts, &myAnts)
 
 	for i := 1; i <= 2; i++ {
 		fmt.Println("try=", i)
 		myTravelPlan = antpk.TravelPlan{Steps: 10000}
-		
-		myGraph=baseGraph
+
+		myGraph = baseGraph
 		//myAnts.MoveAllAntsToStart(&myGraph)
-		myAnts=baseAnts
+		myAnts = baseAnts
 
 		myGraph.PrintGraph()
 		//myAnts.MoveAllAntsToStart(&myGraph)
 		myAnts.PrintAllAnts()
 		//fmt.Println("number Steps1: ", myTravelPlan.Steps)
-		
 
 		myAnts.TryPushAllAntsToEnd(&myGraph, &myTravelPlan)
 		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
 		fmt.Println("number Steps: ", myTravelPlan.Steps)
 		myTravelPlan.SuccessfulPlan.PrintAllAnts()
-		
+
 		//myGraph.PrintGraph()
-		
+
 		//myAnts.PrintAllAnts()
 		//myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
