@@ -27,7 +27,8 @@ func main() {
 
 		myGraph = baseGraph
 		//myAnts.MoveAllAntsToStart(&myGraph)
-		myAnts = baseAnts
+		//myAnts = baseAnts
+		antpk.AntsCopy(baseAnts, &myAnts)
 
 		myGraph.PrintGraph()
 		//myAnts.MoveAllAntsToStart(&myGraph)
