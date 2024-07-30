@@ -14,7 +14,7 @@ func (myGraph *Graph) Reset() {
 
 		if room.name == myGraph.StartRoomName || room.name == myGraph.EndRoomName {
 			room.maxSeats = 100000
-			room.EmptySeats = room.maxSeats
+			room.EmptySeats = 100000
 		}
 	}
 
