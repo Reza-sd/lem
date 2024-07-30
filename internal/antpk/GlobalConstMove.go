@@ -10,5 +10,4 @@ type Ant struct {
 type Ants struct {
 	AntsNumber int
 	AntsMap    map[int]Ant
-
 }

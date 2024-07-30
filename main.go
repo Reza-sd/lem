@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	graphpk "main/internal/graphpk"
 	"main/internal/antpk"
+	graphpk "main/internal/graphpk"
 )
 
 func main() {

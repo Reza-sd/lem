@@ -13,6 +13,5 @@ func splitStringToUint(input string) (string, string, error) {
 		return "", "", fmt.Errorf("invalid input format")
 	}
 
-
 	return parts[0], parts[1], nil
 }
