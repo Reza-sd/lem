@@ -17,6 +17,6 @@ type TravelPlan struct {
 	SuccessfulPlan Ants
 }
 
-type FinalTravelPlan struct {
-	FinalTravelPlan TravelPlan
-}
+// type FinalTravelPlan struct {
+// 	FinalTravelPlan TravelPlan
+// }

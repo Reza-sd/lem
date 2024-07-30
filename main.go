@@ -20,11 +20,11 @@ func main() {
 	var myGraph graphpk.Graph
 	var myAnts antpk.Ants
 
+	myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
-
-	for i := 1; i <= 2; i++ {
-		fmt.Println("try=", i)
-		myTravelPlan = antpk.TravelPlan{Steps: 10000}
+	for i := 1; i <= 200; i++ {
+		//fmt.Println("try=", i)
+		//myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
 		
 	
@@ -38,16 +38,17 @@ func main() {
 
 		myAnts.TryPushAllAntsToEnd(&myGraph, &myTravelPlan)
 
-		fmt.Println("number Steps: ", myTravelPlan.Steps)
-		myTravelPlan.SuccessfulPlan.PrintAllAnts()
+		//fmt.Println("number Steps: ", myTravelPlan.Steps)
+		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
 
 		myAnts = antpk.Ants{} //reset myAnts after each try
 		myGraph = graphpk.Graph{}
 	
 
 	}
-	
-	
-	
+
+	fmt.Println("number Steps: ", myTravelPlan.Steps)
+	fmt.Println("")
+	myTravelPlan.SuccessfulPlan.PrintAllAnts()
 
 }
