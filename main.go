@@ -4,17 +4,7 @@ import (
 	"main/internal/simulationpk"
 )
 
-// "fmt"
-// "main/internal/antpk"
-// graphpk "main/internal/graphpk"
 
-// type Lem struct{
-// 	NumberOfAnts int
-// 	StartRoom string
-// 	EndRoom string
-// 	TunnelArr []string
-
-// }
 
 func main() {
 
