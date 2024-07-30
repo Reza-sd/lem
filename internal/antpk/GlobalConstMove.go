@@ -14,4 +14,5 @@ type Ants struct {
 
 type TravelPlan struct {
 	Steps    int
+	SuccessfulPlan Ants
 }

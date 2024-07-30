@@ -30,6 +30,8 @@ func main() {
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	fmt.Println("number of ants in end room: ", myGraph.CurrentAntsInEndRoom)
 	fmt.Println("number Steps: ", myTravelPlan.Steps)
+	fmt.Println("successfull plan: ")
+	myTravelPlan.SuccessfulPlan.PrintAllAnts()
 	//myAnts.Move(&myGraph)
 	// ant1 := myAnts.AntsMap[1]
 	// ant2 := myAnts.AntsMap[2]

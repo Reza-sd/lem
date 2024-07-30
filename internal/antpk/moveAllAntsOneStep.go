@@ -14,5 +14,5 @@ func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 		allAnts.AntsMap[i] = theAnt
 	}
 	//fmt.Println(allAnts)
-	allAnts.PrintAllAnts()
+	//allAnts.PrintAllAnts()
 }
