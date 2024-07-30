@@ -13,10 +13,6 @@ type Ants struct {
 }
 
 type TravelPlan struct {
-	Steps          int
-	SuccessfulPlan Ants
+	Steps       int
+	TheBestPlan Ants
 }
-
-// type FinalTravelPlan struct {
-// 	FinalTravelPlan TravelPlan
-// }
