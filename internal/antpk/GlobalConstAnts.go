@@ -4,7 +4,7 @@ type Ant struct {
 	Name            string
 	CurrentRoomName string
 	VisitedRoomsArr []string
-	AssignedPath    []string
+	//AssignedPath    []string
 }
 
 type Ants struct {
