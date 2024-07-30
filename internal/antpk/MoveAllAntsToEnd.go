@@ -2,27 +2,39 @@ package antpk
 
 import (
 	//"fmt"
+	//"fmt"
 	"main/internal/graphpk"
 )
 
 func (allAnts *Ants) PushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan) {
 	counter := 0
-	success := true
+	//success := true
 	for {
-		counter++
-		if counter>=10{ // max try
-			success = false
-			break
-		}
+
 		if theGraph.CurrentAntsInEndRoom == allAnts.AntsNumber {
 			break
 		}
-		allAnts.MoveAllAntsOneStepRandomly(theGraph)
 
+		if counter >= 10 { // max try
+			//success = false
+			//break
+			return
+		}
+
+		allAnts.MoveAllAntsOneStepRandomly(theGraph)
+		counter++
 	}
 	//allAnts
-	if !success { return}
+	//if !success { return}
+	if counter >= theTravelPlan.Steps || counter == 0 {
+		return
+	}
+	// fmt.Println("counter=",counter)
+	// fmt.Println("theTravelPlan.Steps=",theTravelPlan.Steps)
 
-	theTravelPlan.Steps = counter
-	theTravelPlan.SuccessfulPlan = *allAnts
+	if counter != 0 {
+		theTravelPlan.Steps = counter
+		theTravelPlan.SuccessfulPlan = *allAnts
+	}
+
 }

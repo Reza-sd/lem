@@ -20,18 +20,28 @@ func main() {
 	myAnts.AntsInit(3, &myGraph)
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")
-	myTravelPlan := antpk.TravelPlan{Steps: 0}
-	myAnts.PushAllAntsToEnd(&myGraph, &myTravelPlan)
+	myTravelPlan := antpk.TravelPlan{Steps: 10000}
+
+	for i := 1; i <= 2; i++ {
+
+		//fmt.Println("number Steps1: ", myTravelPlan.Steps)
+		fmt.Println("try=", i)
+		myAnts.PushAllAntsToEnd(&myGraph, &myTravelPlan)
+		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
+		myTravelPlan.SuccessfulPlan.PrintAllAnts()
+		fmt.Println("number Steps2: ", myTravelPlan.Steps)
+
+	}
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	fmt.Println("number of ants in end room: ", myGraph.CurrentAntsInEndRoom)
-	fmt.Println("number Steps: ", myTravelPlan.Steps)
-	fmt.Println("successfull plan: ")
-	myTravelPlan.SuccessfulPlan.PrintAllAnts()
+	// fmt.Println("number of ants in end room: ", myGraph.CurrentAntsInEndRoom)
+	// fmt.Println("number Steps: ", myTravelPlan.Steps)
+	// fmt.Println("successfull plan: ")
+	// myTravelPlan.SuccessfulPlan.PrintAllAnts()
 	//myAnts.Move(&myGraph)
 	// ant1 := myAnts.AntsMap[1]
 	// ant2 := myAnts.AntsMap[2]
