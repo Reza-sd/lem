@@ -26,10 +26,12 @@ func main() {
 
 		//fmt.Println("number Steps1: ", myTravelPlan.Steps)
 		fmt.Println("try=", i)
+
 		myAnts.PushAllAntsToEnd(&myGraph, &myTravelPlan)
 		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
+		fmt.Println("number Steps: ", myTravelPlan.Steps)
 		myTravelPlan.SuccessfulPlan.PrintAllAnts()
-		fmt.Println("number Steps2: ", myTravelPlan.Steps)
+		
 
 	}
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
