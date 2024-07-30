@@ -6,26 +6,26 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func (myLem *Lem) Run(NumberOfTry int) {
+func (theModel *Model) Run(NumberOfTry int) {
 
-	baseGraph := myLem.baseModel.baseGraph
-	baseAnts := myLem.baseModel.baseAnts
+	baseGraph := theModel.baseGraph
+	baseAnts := theModel.baseAnts
 
 	var myTravelPlan antpk.TravelPlan
-	var myGraph graphpk.Graph
-	var myAnts antpk.Ants
+	var tempGraph graphpk.Graph
+	var tempAnts antpk.Ants
 
 	myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
 	for i := 1; i <= NumberOfTry; i++ {
 
-		graphpk.GraphCopy(baseGraph, &myGraph)
-		antpk.AntsCopy(baseAnts, &myAnts)
+		graphpk.GraphCopy(baseGraph, &tempGraph)
+		antpk.AntsCopy(baseAnts, &tempAnts)
 
-		myAnts.TryPushAllAntsToEnd(&myGraph, &myTravelPlan)
+		tempAnts.TryPushAllAntsToEnd(&tempGraph, &myTravelPlan)
 
-		myAnts = antpk.Ants{} //reset myAnts after each try
-		myGraph = graphpk.Graph{}
+		tempAnts = antpk.Ants{} //reset myAnts after each try
+		tempGraph = graphpk.Graph{}
 
 	}
 

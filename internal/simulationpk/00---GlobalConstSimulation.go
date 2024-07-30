@@ -13,7 +13,7 @@ type Lem struct {
 	EndRoom      string
 	TunnelArr    []string
 
-	baseModel Model
+	//baseModel Model
 }
 
 type Model struct {

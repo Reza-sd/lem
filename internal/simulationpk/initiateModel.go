@@ -6,7 +6,7 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func (myLem *Lem) ModelInit() {
+func (myLem *Lem) ModelInit() (theModel Model){
 
 	//myLem.baseModel.baseAnts=
 
@@ -22,7 +22,7 @@ func (myLem *Lem) ModelInit() {
 	var baseAnts antpk.Ants
 	baseAnts.AntsInit(NumberOfAnts, &baseGraph)
 
-	myLem.baseModel.baseAnts = baseAnts
-	myLem.baseModel.baseGraph = baseGraph
-
+	theModel.baseAnts = baseAnts
+	theModel.baseGraph = baseGraph
+	return theModel
 }

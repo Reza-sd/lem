@@ -24,7 +24,7 @@ func main() {
 		EndRoom:      "0",
 		TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
 	}
-	lem1.ModelInit()
-	lem1.Run(200)
+	model1:= lem1.ModelInit()
+	model1.Run(200)
 
 }
