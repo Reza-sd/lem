@@ -21,7 +21,7 @@ func main() {
 
 	//antpk.AntsCopy(&baseAnts, &myAnts)
 
-	for i := 1; i <= 2; i++ {
+	for i := 1; i <= 20; i++ {
 		fmt.Println("try=", i)
 		myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
@@ -39,7 +39,7 @@ func main() {
 		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
 		fmt.Println("number Steps: ", myTravelPlan.Steps)
 		myTravelPlan.SuccessfulPlan.PrintAllAnts()
-
+		myAnts = antpk.Ants{} //reset myAnts after each try
 		//myGraph.PrintGraph()
 
 		//myAnts.PrintAllAnts()
