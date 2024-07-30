@@ -11,3 +11,7 @@ type Ants struct {
 	AntsNumber int
 	AntsMap    map[int]Ant
 }
+
+type TravelPlan struct {
+	Steps    int
+}

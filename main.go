@@ -20,12 +20,16 @@ func main() {
 	myAnts.AntsInit(3, &myGraph)
 	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
 	fmt.Println("-----------------")
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
-	myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	myTravelPlan := antpk.TravelPlan{Steps: 0}
+	myAnts.PushAllAntsToEnd(&myGraph, &myTravelPlan)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
+	fmt.Println("number of ants in end room: ", myGraph.CurrentAntsInEndRoom)
+	fmt.Println("number Steps: ", myTravelPlan.Steps)
 	//myAnts.Move(&myGraph)
 	// ant1 := myAnts.AntsMap[1]
 	// ant2 := myAnts.AntsMap[2]

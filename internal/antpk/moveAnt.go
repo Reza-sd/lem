@@ -32,6 +32,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *graphpk.Graph) {
 	//for the End node (has free seats always)
 	if nextRandomAvailableRoomName == theGraph.EndRoomName {
 		nextRoom.EmptySeats = 1000
+		theGraph.CurrentAntsInEndRoom++
 	}
 	theGraph.Rooms[nextRandomAvailableRoomName] = nextRoom
 	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName)
