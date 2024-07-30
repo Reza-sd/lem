@@ -10,19 +10,20 @@ import (
 func (myLem *Lem)Run(NumberOfTry int){
 
 
-	NumberOfAnts := myLem.NumberOfAnts
-	StartRoom :=myLem.StartRoom
-	EndRoom :=myLem.EndRoom
+	// NumberOfAnts := myLem.NumberOfAnts
+	// StartRoom :=myLem.StartRoom
+	// EndRoom :=myLem.EndRoom
 
 	
-	tunnelArr := myLem.TunnelArr
+	// tunnelArr := myLem.TunnelArr
 
-	var baseGraph graphpk.Graph
-	baseGraph.InitGraph(tunnelArr, StartRoom, EndRoom)
+	// var baseGraph graphpk.Graph
+	// baseGraph.InitGraph(tunnelArr, StartRoom, EndRoom)
 
-	var baseAnts antpk.Ants
-	baseAnts.AntsInit(NumberOfAnts, &baseGraph)
-
+	// var baseAnts antpk.Ants
+	// baseAnts.AntsInit(NumberOfAnts, &baseGraph)
+	baseGraph :=myLem.baseModel.baseGraph
+	baseAnts :=myLem.baseModel.baseAnts
 
 	var myTravelPlan antpk.TravelPlan
 	var myGraph graphpk.Graph
