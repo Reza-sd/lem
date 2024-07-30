@@ -1,10 +1,10 @@
 package graphpk
 
 import (
-	//"fmt"
+//"fmt"
 )
 
-func (myGraph *Graph) Reset(){
+func (myGraph *Graph) Reset() {
 	myGraph.CurrentAntsInEndRoom = 0
 
 	for _, room := range myGraph.Rooms {
@@ -13,11 +13,9 @@ func (myGraph *Graph) Reset(){
 		room.maxSeats = 1
 
 		if room.name == myGraph.StartRoomName || room.name == myGraph.EndRoomName {
-            room.maxSeats = 100000
+			room.maxSeats = 100000
 			room.EmptySeats = room.maxSeats
-        }
+		}
 	}
-
-	
 
 }

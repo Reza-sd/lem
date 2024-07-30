@@ -11,19 +11,23 @@ func main() {
 	var myGraph graphpk.Graph
 	tunnelArr := []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"}
 	myGraph.InitGraph(tunnelArr, "1", "0")
-	myGraph.PrintGraph()
+	//myGraph.PrintGraph()
 
 	//move.FindAllPaths(&myGraph)
 
-	fmt.Println("==================")
+	//fmt.Println("==================")
 	var myAnts antpk.Ants
 	myAnts.AntsInit(3, &myGraph)
-	fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
-	fmt.Println("-----------------")
-	myTravelPlan := antpk.TravelPlan{Steps: 10000}
+	//fmt.Println("myAnts.Ants= ", myAnts.AntsMap)
+	//fmt.Println("-----------------")
+	//myTravelPlan := antpk.TravelPlan{Steps: 10000}
+	var myTravelPlan antpk.TravelPlan
 
 	for i := 1; i <= 2; i++ {
-
+		myTravelPlan = antpk.TravelPlan{Steps: 10000}
+		myGraph.PrintGraph()
+		//myAnts.MoveAllAntsToStart(&myGraph)
+		myAnts.PrintAllAnts()
 		//fmt.Println("number Steps1: ", myTravelPlan.Steps)
 		fmt.Println("try=", i)
 
@@ -31,7 +35,11 @@ func main() {
 		//myTravelPlan.SuccessfulPlan.PrintAllAnts()
 		fmt.Println("number Steps: ", myTravelPlan.Steps)
 		myTravelPlan.SuccessfulPlan.PrintAllAnts()
-		myTravelPlan = antpk.TravelPlan{Steps: 10000}
+		myGraph.Reset()
+		//myGraph.PrintGraph()
+		myAnts.MoveAllAntsToStart(&myGraph)
+		//myAnts.PrintAllAnts()
+		//myTravelPlan = antpk.TravelPlan{Steps: 10000}
 
 	}
 	// myAnts.MoveAllAntsOneStepRandomly(&myGraph)
