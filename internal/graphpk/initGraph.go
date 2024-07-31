@@ -16,6 +16,6 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 		fmt.Println("Error:", err)
 		return err
 	}
-
+	myGraph.NumberOfAllRoom=len(myGraph.Rooms)
 	return nil
 }

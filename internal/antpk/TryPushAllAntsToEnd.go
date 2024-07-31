@@ -6,7 +6,7 @@ import (
 	"main/internal/graphpk"
 )
 //=====================TryPushAllAntsToEnd===================================
-func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan) {
+func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
 	counter := 0
 	//--------------------------------
 	for {
@@ -15,7 +15,7 @@ func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan 
 			break
 		}
 
-		if counter >= 200 { // max try
+		if counter >= maxTry { // max try
 
 			return
 		}

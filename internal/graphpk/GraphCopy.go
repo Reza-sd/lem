@@ -5,7 +5,7 @@ func GraphCopy(baseGraph Graph, secondGraph *Graph) {
 	secondGraph.StartRoomName = baseGraph.StartRoomName
 	secondGraph.EndRoomName = baseGraph.EndRoomName
 	secondGraph.CurrentAntsInEndRoom = 0
-
+	secondGraph.NumberOfAllRoom=baseGraph.CurrentAntsInEndRoom
 	//----------------------------------
 	secondGraph.Rooms = make(map[string]Room)
 	var room Room
