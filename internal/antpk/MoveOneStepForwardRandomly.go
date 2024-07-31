@@ -21,6 +21,7 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *graphpk.Graph) {
 	// in the case of no available free next room
 	if nextRandomAvailableRoomName == "" {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
+
 		return
 	}
 
@@ -78,10 +79,10 @@ func nextRandomAvailableRoomName(theAnt *Ant, theGraph *graphpk.Graph) string {
 			continue
 			}
 		*/
-		// if nextRoom.LastAntCameFromRoomName==theAnt.CurrentRoomName {
-		// 	fmt.Println("nextRoom.LastAntCameFromRoomName= ",nextRoom.LastAntCameFromRoomName)
-		// 	continue
-		// }
+		if nextRoom.LastAntCameFromRoomName == theAnt.CurrentRoomName {
+			fmt.Println("nextRoom.LastAntCameFromRoomName :  ", nextRoom.LastAntCameFromRoomName, theAnt.CurrentRoomName)
+			//continue
+		}
 		//-------------------------------------
 		return nextRandomAvailableRoomName
 

@@ -26,8 +26,8 @@ func main() {
 	lem1 := modelpk.Lem{
 		NumberOfAnts: 2,
 		StartRoom:    "0",
-		EndRoom:      "3",
-		TunnelArr:    []string{"0-3"},
+		EndRoom:      "2",
+		TunnelArr:    []string{"0-1", "1-2"},
 	}
 
 	/*
@@ -43,7 +43,7 @@ func main() {
 	//-----------------------------------
 	//report
 	fmt.Println("")
-	fmt.Println("Steps :", theBestFoundTravelPlan.Steps)
+	fmt.Println("Steps :", theBestFoundTravelPlan.FinalSequence)
 	theBestFoundTravelPlan.TheBestPlan.PrintAllAnts()
 	//-----------------------------------
 	fmt.Println("time : (", durationRandomSimulator.Seconds(), "Seconds =", durationRandomSimulator.Minutes(), "Minutes)")

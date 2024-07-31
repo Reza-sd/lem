@@ -4,7 +4,8 @@ func AntsCopy(baseAnts Ants, secondAnts *Ants) {
 
 	//myAnts.AntsMap = make(map[int]Ant)
 	secondAnts.AntsMap = make(map[int]Ant)
-	secondAnts.AntsNumber = baseAnts.AntsNumber
+	secondAnts.NumberOfAnts = baseAnts.NumberOfAnts
+	secondAnts.NumberOfSequence = baseAnts.NumberOfSequence
 	var ant Ant
 
 	for key, value := range baseAnts.AntsMap {

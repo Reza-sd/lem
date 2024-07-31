@@ -6,8 +6,9 @@ import (
 )
 
 func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
+	//stepCounter :=0
 
-	for i := 1; i <= allAnts.AntsNumber; i++ {
+	for i := 1; i <= allAnts.NumberOfAnts; i++ {
 		theAnt := allAnts.AntsMap[i]
 		if theAnt.CurrentRoomName == theGraph.EndRoomName {
 			// already arrived
@@ -22,4 +23,5 @@ func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 		allAnts.AntsMap[i] = theAnt
 	}
 
+	//allAnts.Step++
 }

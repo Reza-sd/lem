@@ -12,14 +12,14 @@ import (
 func RandomSimulator(theModel *modelpk.Model) (theBestFoundTravelPlan antpk.TravelPlan) {
 
 	var myTravelPlan antpk.TravelPlan
-	maxTryToPushAllAntsToEnd := theModel.BaseAnts.AntsNumber * theModel.BaseGraph.NumberOfAllRoom * 10
+	maxTryToPushAllAntsToEnd := theModel.BaseAnts.NumberOfAnts * theModel.BaseGraph.NumberOfAllRoom * 10
 	// runRandomSimulator(theModel *Model,NumberOfTry int)
 	for {
 
 		myTravelPlan = runRandomSimulator(theModel, maxTryToPushAllAntsToEnd)
 		//myTravelPlan = simulationpk.RandomSimulator(&model1)
 
-		if myTravelPlan.Steps != 0 {
+		if myTravelPlan.FinalSequence != 0 {
 			break
 		}
 	}

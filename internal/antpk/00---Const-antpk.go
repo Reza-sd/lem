@@ -4,15 +4,17 @@ type Ant struct {
 	Name            string
 	CurrentRoomName string
 	VisitedRoomsArr []string
+	NumberOfSteps   int
 	//AssignedPath    []string
 }
 
 type Ants struct {
-	AntsNumber int
-	AntsMap    map[int]Ant
+	NumberOfAnts     int
+	AntsMap          map[int]Ant
+	NumberOfSequence int
 }
 
 type TravelPlan struct {
-	Steps       int
-	TheBestPlan Ants
+	FinalSequence int
+	TheBestPlan   Ants
 }
