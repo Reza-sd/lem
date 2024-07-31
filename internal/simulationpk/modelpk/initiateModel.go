@@ -6,9 +6,9 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func ModelGeneratorA(myLem Lem) (theModel Model) {
+func ModelGeneratorA(myLem *Lem) (theModel Model) {
 
-	//myLem.baseModel.baseAnts=
+	
 
 	NumberOfAnts := myLem.NumberOfAnts
 	StartRoom := myLem.StartRoom

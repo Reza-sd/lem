@@ -6,10 +6,7 @@ import (
 
 func (myGraph *Graph) setTunnelToGraph(tunnelArr []string) error {
 
-	//fmt.Println("ReadTunnel")
 
-	//tunnelArr := []string{"0-4", "0-6","1-3","4-3"}
-	//fmt.Println(tunnelArr[0])
 
 	for _, tunnel := range tunnelArr {
 		a, b, err := splitStringToUint(tunnel)
