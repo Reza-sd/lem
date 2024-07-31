@@ -25,7 +25,7 @@ func main() {
 		NumberOfAnts: 20,
 		StartRoom:    "0",
 		EndRoom:      "3",
-		TunnelArr:    []string{"0-1","0-3","1-2","3-2"},
+		TunnelArr:    []string{"0-3"},
 	}
 
 	/*
