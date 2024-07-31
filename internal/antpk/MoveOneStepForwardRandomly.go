@@ -26,6 +26,16 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 		return
 	}
 	//---------------------------------------------
+	//Tunnel := currentRoomName + "-" + MovedRoomName
+	OfferedTunnel :=theAnt.CurrentRoomName+"-"+nextRandomAvailableRoomName
+	if slices.Contains(theGraph.UsedTunnelsInLastSequence,OfferedTunnel){
+		
+		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
+		theAnt.NumberOfSteps++
+		//nextRoom.LastAntCameFromRoomName =""
+		return
+
+	}
 	// if theAnt.CurrentRoomName ==  theGraph.startroom && nextRandomAvailableRoomName== theGraph.EndRoom ??
 	//Used Tunnel in this sequence
 
