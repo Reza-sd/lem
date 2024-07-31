@@ -34,13 +34,13 @@ func main() {
 	startTime := time.Now() //
 	//lem1=lem3
 	model1 := lem1.ModelInit()
-	myTravelPlan := model1.Run(1)
+	// myTravelPlan := model1.Run(1)
 
-	for myTravelPlan.Steps==0{
+	// for myTravelPlan.Steps==0{
 
-		myTravelPlan = model1.Run(500)
-	}
-	
+	// 	myTravelPlan = model1.Run(500)
+	// }
+	myTravelPlan := model1.Run(500)
 	fmt.Println("")
 	fmt.Println("Steps :", myTravelPlan.Steps)
 	myTravelPlan.TheBestPlan.PrintAllAnts()
