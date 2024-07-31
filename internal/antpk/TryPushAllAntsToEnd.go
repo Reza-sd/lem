@@ -5,7 +5,8 @@ import (
 	//"fmt"
 	"main/internal/graphpk"
 )
-//=====================TryPushAllAntsToEnd===================================
+
+// =====================TryPushAllAntsToEnd===================================
 func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
 	counter := 0
 	//--------------------------------

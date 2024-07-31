@@ -22,6 +22,6 @@ type Graph struct {
 	EndRoomName          string
 	CurrentAntsInEndRoom int
 	Rooms                map[string]Room //string= room name
-	NumberOfAllRoom	int
+	NumberOfAllRoom      int
 	//Paths                map[int][][]string
 }
