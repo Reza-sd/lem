@@ -21,7 +21,7 @@ func main() {
 	// 	EndRoom:      "1",
 	// 	TunnelArr:    []string{"0-2","2-3","3-1"},
 	// }
-		lem1 := simulationpk.Lem{
+	lem1 := simulationpk.Lem{
 		NumberOfAnts: 20,
 		StartRoom:    "0",
 		EndRoom:      "3",
@@ -45,6 +45,6 @@ func main() {
 	fmt.Println("Steps :", myTravelPlan.Steps)
 	myTravelPlan.TheBestPlan.PrintAllAnts()
 	fmt.Println("time =", time.Since(startTime).Seconds(), "Seconds")
-	fmt.Println("time=",time.Since(startTime).Minutes(),"Minutes")
+	fmt.Println("time=", time.Since(startTime).Minutes(), "Minutes")
 	//fmt.Println("time=",time.Since(startTime).Abs().Hours(),"Abs Hours")
 }

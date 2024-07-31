@@ -22,8 +22,8 @@ func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *graphpk.Graph) {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
 		return
 	}
-	
-// if theAnt.CurrentRoomName ==  theGraph.startroom && nextRandomAvailableRoomName== theGraph.EndRoom ??
+
+	// if theAnt.CurrentRoomName ==  theGraph.startroom && nextRandomAvailableRoomName== theGraph.EndRoom ??
 
 	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
 	currentRoom.EmptySeats = 1
