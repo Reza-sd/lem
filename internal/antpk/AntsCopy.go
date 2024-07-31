@@ -17,7 +17,7 @@ func AntsCopy(baseAnts Ants, secondAnts *Ants) {
 		ant.CurrentRoomName = value.CurrentRoomName
 		ant.VisitedRoomsArr = []string{value.VisitedRoomsArr[0]}
 		//make([]string, len(value.VisitedRoomsArr))
-
+		//copy(ant.VisitedRoomsArr,value.VisitedRoomsArr)
 		secondAnts.AntsMap[key] = ant
 
 	}
