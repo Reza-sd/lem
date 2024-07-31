@@ -42,7 +42,8 @@ func main() {
 	fmt.Println("Steps :", theBestFoundTravelPlan.Steps)
 	theBestFoundTravelPlan.TheBestPlan.PrintAllAnts()
 
-	fmt.Println("time =", time.Since(startTime).Seconds(), "Seconds")
-	fmt.Println("time=", time.Since(startTime).Minutes(), "Minutes")
-	//fmt.Println("time=",time.Since(startTime).Abs().Hours(),"Abs Hours")
+	duration :=time.Since(startTime)
+
+	fmt.Println("time : (", duration.Seconds(), "Seconds =",duration.Minutes(), "Minutes)")
+	
 }
