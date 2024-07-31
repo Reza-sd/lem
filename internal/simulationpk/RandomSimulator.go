@@ -11,7 +11,7 @@ import (
 func RandomSimulator(theModel *Model) (theBestFoundTravelPlan antpk.TravelPlan) {
 
 	var myTravelPlan antpk.TravelPlan
-	maxTryToPushAllAntsToEnd := theModel.baseAnts.AntsNumber * theModel.baseGraph.NumberOfAllRoom * 10
+	maxTryToPushAllAntsToEnd := theModel.baseAnts.AntsNumber * theModel.baseGraph.NumberOfAllRoom //* 10
 	// runRandomSimulator(theModel *Model,NumberOfTry int)
 	for {
 
