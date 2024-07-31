@@ -7,11 +7,13 @@ import (
 	"main/internal/graphpk"
 )
 
-// =====================TryPushAllAntsToEnd===================================
+// =====================TryPushAllAntsToEnd========================
 func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
 	//counter := 0
+	fmt.Println("UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	allAnts.NumberOfSequence = 0
 	theGraph.UsedTunnelsInLastSequence = make(map[string]string)
+	fmt.Println("0-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	//--------------------------------
 	for {
 		//if all ants have arrived

@@ -30,10 +30,11 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 	v, ok := theGraph.UsedTunnelsInLastSequence[theAnt.CurrentRoomName]
 	if ok && v == nextRandomAvailableRoomName {
 
-		fmt.Println("mio")
+		//fmt.Println("mio")
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
 		theAnt.NumberOfSteps++
 		delete(theGraph.UsedTunnelsInLastSequence, theAnt.CurrentRoomName)
+		fmt.Println("d-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	}
 	//Tunnel := currentRoomName + "-" + MovedRoomName
 	//OfferedTunnel :=theAnt.CurrentRoomName+"-"+nextRandomAvailableRoomName
