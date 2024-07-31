@@ -1,17 +1,18 @@
-package simulationpk
+package randomsimulator
 
 import (
 	//"fmt"
 	"fmt"
 	"main/internal/antpk"
 	graphpk "main/internal/graphpk"
+	"main/internal/simulationpk/modelpk"
 )
 
 // ====================================================================
-func RandomSimulator(theModel *Model) (theBestFoundTravelPlan antpk.TravelPlan) {
+func RandomSimulator(theModel *modelpk.Model) (theBestFoundTravelPlan antpk.TravelPlan) {
 
 	var myTravelPlan antpk.TravelPlan
-	maxTryToPushAllAntsToEnd := theModel.baseAnts.AntsNumber * theModel.baseGraph.NumberOfAllRoom //* 10
+	maxTryToPushAllAntsToEnd := theModel.BaseAnts.AntsNumber * theModel.BaseGraph.NumberOfAllRoom * 10
 	// runRandomSimulator(theModel *Model,NumberOfTry int)
 	for {
 
@@ -27,10 +28,10 @@ func RandomSimulator(theModel *Model) (theBestFoundTravelPlan antpk.TravelPlan) 
 }
 
 // ====================================================================
-func runRandomSimulator(theModel *Model, NumberOfTry int) (finalTravelPlan antpk.TravelPlan) {
+func runRandomSimulator(theModel *modelpk.Model, NumberOfTry int) (finalTravelPlan antpk.TravelPlan) {
 
-	baseGraph := theModel.baseGraph
-	baseAnts := theModel.baseAnts
+	baseGraph := theModel.BaseGraph
+	baseAnts := theModel.BaseAnts
 
 	var tempTravelPlan antpk.TravelPlan
 	var tempGraph graphpk.Graph

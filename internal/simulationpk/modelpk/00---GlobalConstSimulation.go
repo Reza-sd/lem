@@ -1,4 +1,4 @@
-package simulationpk
+package modelpk
 
 import (
 	//"fmt"
@@ -17,6 +17,6 @@ type Lem struct {
 }
 
 type Model struct {
-	baseGraph graphpk.Graph
-	baseAnts  antpk.Ants
+	BaseGraph graphpk.Graph
+	BaseAnts  antpk.Ants
 }

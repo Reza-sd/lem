@@ -1,4 +1,4 @@
-package simulationpk
+package modelpk
 
 import (
 	// "fmt"
@@ -22,7 +22,7 @@ func (myLem *Lem) ModelInit() (theModel Model) {
 	var baseAnts antpk.Ants
 	baseAnts.AntsInit(NumberOfAnts, &baseGraph)
 
-	theModel.baseAnts = baseAnts
-	theModel.baseGraph = baseGraph
+	theModel.BaseAnts = baseAnts
+	theModel.BaseGraph = baseGraph
 	return theModel
 }

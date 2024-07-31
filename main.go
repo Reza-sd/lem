@@ -3,18 +3,19 @@ package main
 import (
 	"fmt"
 	//"main/internal/antpk"
-	"main/internal/simulationpk"
+	"main/internal/simulationpk/modelpk"
+	"main/internal/simulationpk/randomsimulator"
 	"time"
 )
 
 func main() {
 
-	lem1 := simulationpk.Lem{
-		NumberOfAnts: 3,
-		StartRoom:    "1",
-		EndRoom:      "0",
-		TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
-	}
+	// lem1 := simulationpk.Lem{
+	// 	NumberOfAnts: 3,
+	// 	StartRoom:    "1",
+	// 	EndRoom:      "0",
+	// 	TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
+	// }
 
 	// lem2 := simulationpk.Lem{
 	// 	NumberOfAnts: 5,
@@ -22,22 +23,22 @@ func main() {
 	// 	EndRoom:      "1",
 	// 	TunnelArr:    []string{"0-2","2-3","3-1"},
 	// }
-	// lem1 := simulationpk.Lem{
-	// 	NumberOfAnts: 3,
-	// 	StartRoom:    "0",
-	// 	EndRoom:      "END",
-	// 	TunnelArr:    []string{"0-3","3-END"},
-	// }
+	lem1 := modelpk.Lem{
+		NumberOfAnts: 2,
+		StartRoom:    "0",
+		EndRoom:      "3",
+		TunnelArr:    []string{"0-3"},
+	}
 
 	/*
 	   "0-2","2-3","3-1"
 	*/
 
 	//lem1=lem3
-	model1 := lem1.ModelInit()
+	baseModel1 := lem1.ModelInit()
 	// -----------------------------------------
 	startTimeSinceCallRandomSimulator := time.Now()
-	theBestFoundTravelPlan := simulationpk.RandomSimulator(&model1)
+	theBestFoundTravelPlan := randomsimulator.RandomSimulator(&baseModel1)
 	durationRandomSimulator := time.Since(startTimeSinceCallRandomSimulator)
 	//-----------------------------------
 	//report
