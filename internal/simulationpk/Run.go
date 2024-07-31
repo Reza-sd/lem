@@ -7,7 +7,7 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func (theModel *Model) Run(NumberOfTry int) (finalTravelPlan antpk.TravelPlan) {
+func runRandomSimulator(theModel *Model, NumberOfTry int) (finalTravelPlan antpk.TravelPlan) {
 
 	baseGraph := theModel.baseGraph
 	baseAnts := theModel.baseAnts
