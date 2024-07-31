@@ -9,7 +9,7 @@ import (
 )
 
 // ------------------------------------------------
-func (theAnt *Ant) MoveOneStepForwardRandomly(theGraph *graphpk.Graph) {
+func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 	//fmt.Println("move theAnt")
 
 	// -----check if its already in End room----

@@ -18,7 +18,7 @@ func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 		//lastUsedTunnel
 
 		//-----------------------------------------
-		theAnt.MoveOneStepForwardRandomly(theGraph)
+		theAnt.MoveTheAntOneStepRandomly(theGraph)
 
 		allAnts.AntsMap[i] = theAnt
 	}
