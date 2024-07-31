@@ -4,7 +4,7 @@ import (
 	"fmt"
 	//"main/internal/antpk"
 	"main/internal/simulationpk/modelpk"
-	"main/internal/simulationpk/randomsimulator"
+	"main/internal/simulationpk/randomsimulatorpk"
 	"time"
 )
 
@@ -38,7 +38,7 @@ func main() {
 	baseModel1 := modelpk.ModelGeneratorA(&lem1)
 	// -----------------------------------------
 	startTimeSinceCallRandomSimulator := time.Now()
-	theBestFoundTravelPlan := randomsimulator.RandomSimulator(&baseModel1)
+	theBestFoundTravelPlan := randomsimulatorpk.RandomSimulator(&baseModel1)
 	durationRandomSimulator := time.Since(startTimeSinceCallRandomSimulator)
 	//-----------------------------------
 	//report

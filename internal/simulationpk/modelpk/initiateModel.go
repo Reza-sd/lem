@@ -8,8 +8,6 @@ import (
 
 func ModelGeneratorA(myLem *Lem) (theModel Model) {
 
-	
-
 	NumberOfAnts := myLem.NumberOfAnts
 	StartRoom := myLem.StartRoom
 	EndRoom := myLem.EndRoom

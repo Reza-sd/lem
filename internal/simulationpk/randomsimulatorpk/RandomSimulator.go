@@ -1,4 +1,4 @@
-package randomsimulator
+package randomsimulatorpk
 
 import (
 	//"fmt"
