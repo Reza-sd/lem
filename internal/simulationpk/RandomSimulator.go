@@ -11,10 +11,11 @@ import (
 func RandomSimulator(theModel *Model) (theBestFoundTravelPlan antpk.TravelPlan) {
 
 	var myTravelPlan antpk.TravelPlan
+	maxTryToPushAllAntsToEnd := theModel.baseAnts.AntsNumber * theModel.baseGraph.NumberOfAllRoom * 10
 	// runRandomSimulator(theModel *Model,NumberOfTry int)
 	for {
 
-		myTravelPlan = runRandomSimulator(theModel, 200)
+		myTravelPlan = runRandomSimulator(theModel, maxTryToPushAllAntsToEnd)
 		//myTravelPlan = simulationpk.RandomSimulator(&model1)
 
 		if myTravelPlan.Steps != 0 {
@@ -30,8 +31,6 @@ func runRandomSimulator(theModel *Model, NumberOfTry int) (finalTravelPlan antpk
 
 	baseGraph := theModel.baseGraph
 	baseAnts := theModel.baseAnts
-	//maxTry := 200 //?
-	maxTryToPushAllAntsToEnd := theModel.baseAnts.AntsNumber * theModel.baseGraph.NumberOfAllRoom * 10
 
 	var tempTravelPlan antpk.TravelPlan
 	var tempGraph graphpk.Graph
@@ -42,11 +41,11 @@ func runRandomSimulator(theModel *Model, NumberOfTry int) (finalTravelPlan antpk
 		graphpk.GraphCopy(baseGraph, &tempGraph)
 		antpk.AntsCopy(baseAnts, &tempAnts)
 
-		tempAnts.TryPushAllAntsToEnd(&tempGraph, &tempTravelPlan, maxTryToPushAllAntsToEnd)
+		tempAnts.TryPushAllAntsToEnd(&tempGraph, &tempTravelPlan, NumberOfTry)
 
 	}
 	// ------------------
-	fmt.Println("maxTryToPushAllAntsToEnd=", maxTryToPushAllAntsToEnd)
+	fmt.Println("maxTryToPushAllAntsToEnd=", NumberOfTry)
 	//--------------------
 	return tempTravelPlan
 }
