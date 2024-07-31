@@ -11,7 +11,7 @@ import (
 func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
 	//counter := 0
 	allAnts.NumberOfSequence = 0
-	theGraph.UsedTunnelsInLastSequence = []string{}
+	theGraph.UsedTunnelsInLastSequence = make(map[string]string)
 	//--------------------------------
 	for {
 		//if all ants have arrived

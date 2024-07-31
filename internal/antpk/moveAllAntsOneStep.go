@@ -22,9 +22,10 @@ func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 		theAnt.MoveTheAntOneStepRandomly(theGraph)
 		MovedRoomName := theAnt.CurrentRoomName
 
-		Tunnel := currentRoomName + "-" + MovedRoomName
+		//Tunnel := currentRoomName + "-" + MovedRoomName
 
-		theGraph.UsedTunnelsInLastSequence = append(theGraph.UsedTunnelsInLastSequence, Tunnel)
+		theGraph.UsedTunnelsInLastSequence[currentRoomName] = MovedRoomName
+		//append(theGraph.UsedTunnelsInLastSequence, Tunnel)
 		allAnts.AntsMap[i] = theAnt
 
 	}
