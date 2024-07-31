@@ -31,7 +31,7 @@ func main() {
 	// }
 	//----------------------------
 	lem1 := modelpk.Lem{
-		NumberOfAnts: 4,
+		NumberOfAnts: 6,
 		StartRoom:    "0",
 		EndRoom:      "1",
 		TunnelArr:    []string{"0-1"},
