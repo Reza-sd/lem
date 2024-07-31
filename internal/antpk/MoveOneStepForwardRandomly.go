@@ -3,6 +3,7 @@ package antpk
 import (
 	//"fmt"
 	//"fmt"
+	"fmt"
 	graphpk "main/internal/graphpk"
 	"math/rand"
 	"slices"
@@ -29,8 +30,12 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 	//Tunnel := currentRoomName + "-" + MovedRoomName
 	OfferedTunnel :=theAnt.CurrentRoomName+"-"+nextRandomAvailableRoomName
 	if slices.Contains(theGraph.UsedTunnelsInLastSequence,OfferedTunnel){
-		
+
+		fmt.Println(OfferedTunnel)
+		fmt.Println(theGraph.UsedTunnelsInLastSequence)
+
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
+		
 		theAnt.NumberOfSteps++
 		//nextRoom.LastAntCameFromRoomName =""
 		return
@@ -43,7 +48,7 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
 	currentRoom.EmptySeats = 1
 	theGraph.Rooms[theAnt.CurrentRoomName] = currentRoom
-	//fmt.Println()
+	fmt.Println()
 	nextRoom := theGraph.Rooms[nextRandomAvailableRoomName]
 	nextRoom.EmptySeats = 0
 
