@@ -35,7 +35,7 @@ func main() {
 	*/
 
 	//lem1=lem3
-	baseModel1 := lem1.ModelInit()
+	baseModel1 := modelpk.ModelGeneratorA(lem1)
 	// -----------------------------------------
 	startTimeSinceCallRandomSimulator := time.Now()
 	theBestFoundTravelPlan := randomsimulator.RandomSimulator(&baseModel1)
