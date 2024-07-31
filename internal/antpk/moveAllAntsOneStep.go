@@ -7,7 +7,7 @@ import (
 
 func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 	//stepCounter :=0
-
+	//listOfUsedTunnelInThisSequence
 	for i := 1; i <= allAnts.NumberOfAnts; i++ {
 		theAnt := allAnts.AntsMap[i]
 		if theAnt.CurrentRoomName == theGraph.EndRoomName {
@@ -18,9 +18,15 @@ func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 		//lastUsedTunnel
 
 		//-----------------------------------------
+		currentRoomName := theAnt.CurrentRoomName
 		theAnt.MoveTheAntOneStepRandomly(theGraph)
+		MovedRoomName := theAnt.CurrentRoomName
 
+		Tunnel := currentRoomName + "-" + MovedRoomName
+
+		theGraph.UsedTunnelsInLastSequence = append(theGraph.UsedTunnelsInLastSequence, Tunnel)
 		allAnts.AntsMap[i] = theAnt
+
 	}
 
 	//allAnts.Step++

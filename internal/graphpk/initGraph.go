@@ -10,6 +10,7 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 	myGraph.EndRoomName = end
 	// Initialize rooms map
 	myGraph.Rooms = make(map[string]Room)
+	myGraph.UsedTunnelsInLastSequence = []string{}
 
 	err := myGraph.setTunnelToGraph(tunnelArr)
 	if err != nil {

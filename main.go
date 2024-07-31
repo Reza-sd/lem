@@ -29,17 +29,15 @@ func main() {
 	// 	EndRoom:      "2",
 	// 	TunnelArr:    []string{"0-1", "1-2"},
 	// }
-//----------------------------
-lem1 := modelpk.Lem{
-	NumberOfAnts: 3,
-	StartRoom:    "0",
-	EndRoom:      "1",
-	TunnelArr:    []string{"0-1"},
-}
+	//----------------------------
+	lem1 := modelpk.Lem{
+		NumberOfAnts: 3,
+		StartRoom:    "0",
+		EndRoom:      "1",
+		TunnelArr:    []string{"0-1"},
+	}
 
-
-
-//------------------------
+	//------------------------
 	/*
 	   "0-2","2-3","3-1"
 	*/
