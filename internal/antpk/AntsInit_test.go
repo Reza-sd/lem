@@ -24,7 +24,7 @@ func Test_AntsInit(t *testing.T) {
 
 	})
 	//------------
-	t.Run(`001-return an error when numberOfAnts< 0`, func(t *testing.T) {
+	t.Run(`0-1-return an error when numberOfAnts< 0`, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := -2
@@ -37,7 +37,7 @@ func Test_AntsInit(t *testing.T) {
 
 	})
 	//------------
-	t.Run(`0-1-return an error when numberOfAnts > MaxHandleableAntsNumber`, func(t *testing.T) {
+	t.Run(`0-2-return an error when numberOfAnts > MaxHandleableAntsNumber`, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := MaxHandleableAntsNumber + 1
