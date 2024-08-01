@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	//"main/internal/antpk"
+	"log/slog"
+	"main/internal/logstack"
 	"main/internal/simulationpk/modelpk"
 	"main/internal/simulationpk/randomsimulatorpk"
 	"time"
-	"main/internal/logstack"
-	"log/slog"
 )
+
 // ----------------const----------------
 const (
 	pkgName      = "main"
@@ -22,25 +23,24 @@ var (
 	}
 )
 
-//--------------------------------------------
+// --------------------------------------------
 func main() {
-//--------------------
-funcName := "main"
-var opName, opDes string
-//var err error
-//fmt.Println(os.Getwd())
-//------------------
-//err = logstack.LoadLoggerStack()
-opName, opDes = "LoadLoggerStack", "load log stack"
-if err := logstack.LoadLoggerStack(); err != nil {
-	slog.Error(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
-	return
-} else {
-	slog.Info(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
-}
+	// --------------------
+	funcName := "main"
+	var opName, opDes string
+	// var err error
+	// fmt.Println(os.Getwd())
+	// ------------------
+	// err = logstack.LoadLoggerStack()
+	opName, opDes = "LoadLoggerStack", "load log stack"
+	if err := logstack.LoadLoggerStack(); err != nil {
+		slog.Error(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
+		return
+	} else {
+		slog.Info(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
+	}
 
-
-//------------------------
+	//------------------------
 	// lem1 := simulationpk.Lem{
 	// 	NumberOfAnts: 3,
 	// 	StartRoom:    "1",

@@ -7,7 +7,7 @@ import (
 
 func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) error {
 	funcName := "AntsInit"
-	//var err error 
+	//var err error
 	//-----input validation-----
 	if numberOfAnts < 1 || numberOfAnts > MaxHandleableAntsNumber {
 		//return logger.ErrMsg(funcName, `numberOfAnts[1-max]`, err)
