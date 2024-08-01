@@ -2,7 +2,7 @@ package antpk
 
 import (
 	"fmt"
-	)
+)
 
 func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) error {
 	funcName := "AntsInit"
@@ -13,7 +13,7 @@ func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) err
 	}
 	//-------
 	if startRoomName == "" {
-		return logger.RWarnStr(funcName, "startRoomName ? EMPTY", "is not valid", "check if startRoomName not empty")	
+		return logger.RWarnStr(funcName, "startRoomName ? EMPTY", "is not valid", "check if startRoomName not empty")
 	}
 	//--------------------------
 	myAntGroup.AntsMap = make(map[int]Ant) //initiate map

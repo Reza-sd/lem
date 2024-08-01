@@ -18,7 +18,7 @@ var (
 	//loggerToFile *slog.Logger
 	//loggerToCli  *slog.Logger
 
-	logger LogCollector
+	//logger LogCollector
 	//----------------------------
 	logHandlerOptsCli = &slog.HandlerOptions{
 		Level: slog.LevelDebug,
@@ -28,9 +28,9 @@ var (
 	loggerToCli       = slog.New(logHandler)
 	LogFilesDirectory = "./"
 	//--------------------------
-	todayDate            = time.Now().Format("2006-01-02")
-	logFileAddress       = LogFilesDirectory + "log-" + todayDate + ".json"
-	logFile, errOpenFile = os.OpenFile(logFileAddress, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	todayDate      = time.Now().Format("2006-01-02")
+	logFileAddress = LogFilesDirectory + "log-" + todayDate + ".json"
+	logFile, _     = os.OpenFile(logFileAddress, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	//-------------------------------
 	logHandlerOptsFile = &slog.HandlerOptions{
 		Level:     slog.LevelDebug,
@@ -46,12 +46,12 @@ type LogCollector struct {
 }
 
 // ---------------------------------
-func (l LogCollector) ErrMsg(FuncName string, OperationName string, RetunedError error) error {
+func (l *LogCollector) ErrMsg(FuncName string, OperationName string, RetunedError error) error {
 	return errMsg(FuncName, OperationName, RetunedError)
 }
 
 // ---------------------------------
-func (l LogCollector) Info(FuncName string, OperationName string, operationDescription string) {
+func (l *LogCollector) Info(FuncName string, OperationName string, operationDescription string) {
 
 	operationDescription = " success: " + operationDescription
 
@@ -61,7 +61,7 @@ func (l LogCollector) Info(FuncName string, OperationName string, operationDescr
 }
 
 // ---------------------------------
-func (l LogCollector) RErr(FuncName string, OperationName string, err error, operationDescription string) error {
+func (l *LogCollector) RErr(FuncName string, OperationName string, err error, operationDescription string) error {
 
 	l.Error(FuncName, OperationName, err, operationDescription)
 
@@ -69,7 +69,7 @@ func (l LogCollector) RErr(FuncName string, OperationName string, err error, ope
 }
 
 // ---------------------------------
-func (l LogCollector) Error(FuncName string, OperationName string, err error, operationDescription string) {
+func (l *LogCollector) Error(FuncName string, OperationName string, err error, operationDescription string) {
 
 	operationDescription = " fail: " + operationDescription
 
@@ -85,7 +85,7 @@ func (l *LogCollector) RWarn(FuncName string, OperationName string, err error, o
 }
 
 // ----------------RWarnStr-----------------
-func (l LogCollector) RWarnStr(FuncName string, OperationName string, errStr string, operationDescription string) error {
+func (l *LogCollector) RWarnStr(FuncName string, OperationName string, errStr string, operationDescription string) error {
 
 	err := errors.New(errStr)
 
@@ -93,7 +93,7 @@ func (l LogCollector) RWarnStr(FuncName string, OperationName string, errStr str
 }
 
 // ----------------Warn-----------------
-func (l LogCollector) Warn(FuncName string, OperationName string, err error, operationDescription string) {
+func (l *LogCollector) Warn(FuncName string, OperationName string, err error, operationDescription string) {
 
 	operationDescription = " !!!: " + operationDescription
 
