@@ -16,13 +16,16 @@ func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) err
 	//--------------------------
 	myAntGroup.AntsMap = make(map[int]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
+	myAntGroup.NumberOfSequence = 0
 
 	for i := 1; i <= numberOfAnts; i++ {
 		name := fmt.Sprintf("L%d", i) //Generate name for each Ant
 		myAntGroup.AntsMap[i] = Ant{
-			Name:            name,
-			VisitedRoomsArr: []string{startRoomName}, CurrentRoomName: startRoomName,
-			StepNumber: 0,
+			Name: name,
+
+			CurrentRoomName: startRoomName,
+			VisitedRoomsArr: []string{startRoomName},
+			StepNumber:      0,
 		}
 
 	}

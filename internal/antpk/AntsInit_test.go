@@ -1,6 +1,7 @@
 package antpk
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -19,7 +20,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assertIfAntsInitReturnError(t, err, expectError)
+		assert_If_AntsInit_ReturnError(t, err, expectError)
 
 	})
 	//------------
@@ -32,7 +33,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assertIfAntsInitReturnError(t, err, expectError)
+		assert_If_AntsInit_ReturnError(t, err, expectError)
 
 	})
 	//------------
@@ -45,7 +46,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assertIfAntsInitReturnError(t, err, expectError)
+		assert_If_AntsInit_ReturnError(t, err, expectError)
 
 	})
 	//------------
@@ -58,13 +59,47 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assertIfAntsInitReturnError(t, err, expectError)
+		assert_If_AntsInit_ReturnError(t, err, expectError)
+
+	})
+	//------------
+	t.Run(`3-check if the values of myAntGroup correct `, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := 1
+		startRoomName := "room_4"
+		//expectError := false //no error = nil
+		expectedmyAntGroup := AntGroup{
+			NumberOfAnts: 1,
+			AntsMap: map[int]Ant{
+				1: {Name: "L1",
+					CurrentRoomName: "room_4",
+					VisitedRoomsArr: []string{"room_4"},
+					StepNumber:      0,
+				},
+			},
+			NumberOfSequence: 0,
+		}
+		//---Act---
+		myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedmyAntGroup)
 
 	})
 }
 
 // ================================================
-func assertIfAntsInitReturnError(t testing.TB, err error, expectError bool) {
+func assert_If_Two_AntGroup_Same(t testing.TB, antGroup1 AntGroup, antGroup2 AntGroup) {
+	t.Helper()
+
+	if !reflect.DeepEqual(antGroup1, antGroup2) {
+		t.Errorf("function returned error ")
+	}
+
+}
+
+// ================================================
+func assert_If_AntsInit_ReturnError(t testing.TB, err error, expectError bool) {
 	t.Helper()
 
 	if err == nil && expectError {
