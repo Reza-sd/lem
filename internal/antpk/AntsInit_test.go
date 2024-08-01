@@ -1,48 +1,63 @@
 package antpk
 
 import (
-	
 	"testing"
 )
-//========================================
-var (
 
-)
-//=========================================
+// ========================================
+var ()
+
+// =========================================
 func Test_AntsInit(t *testing.T) {
 	//------------
-	t.Run("0-an example of non-struct type", func(t *testing.T) {
+	t.Run(`0-return an error when numberOfAnts=0`, func(t *testing.T) {
 		//---Arrange---
-		// var myantgroup AntGroup
-
-		// ExpectedAntGroup1 := AntGroup{
-		// 	NumberOfAnts: 1,
-		// 	AntsMap: map[int]Ant{
-		// 		1: {Name: "Ant1",
-		// 			CurrentRoomName: "room_1",
-		// 			VisitedRoomsArr: []string{"room_0", "room_1"},
-		// 			StepNumber:      1,
-		// 		},
-		// 	},
-		// 	NumberOfSequence: 2,
-		// }
-		// numberOfAnts := 1
-		//expectation := false
+		var myAntGroup AntGroup
+		numberOfAnts := 0
+		startRoomName := "L1"
+		expectError := true
 		//---Act---
-		//err:= myantgroup.AntsInit(numberOfAnts,myGraph)
+		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		//assertIfStruct(t, "miio") fail test
-		//assertIfStruct(t, "mio", expectation)
+		assertIfAntsInitReturnError(t, err, expectError)
+
+	})
+	//------------
+	t.Run(`1-return an error when startRoomName="" `, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := 1
+		startRoomName := ""
+		expectError := true
+		//---Act---
+		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assertIfAntsInitReturnError(t, err, expectError)
+
+	})
+	//------------
+	t.Run(`2-return nil error when startRoomName="L1" and numberOfAnts>0 `, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := 1
+		startRoomName := "L1"
+		expectError := false //no error = nil
+		//---Act---
+		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assertIfAntsInitReturnError(t, err, expectError)
+
 	})
 }
-//================================================
-func assert(t testing.TB, s interface{}, expectation bool) {
+
+// ================================================
+func assertIfAntsInitReturnError(t testing.TB, err error, expectError bool) {
 	t.Helper()
 
-	// v := reflect.ValueOf(s)
-	// if v.Kind() != reflect.Struct && expectation {
-	// 	t.Errorf("not struct")
-	// }
+	if err == nil && expectError {
+		t.Errorf("function returned error ")
+	}
 
 }
+
 //================================================
