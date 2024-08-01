@@ -8,8 +8,7 @@ import (
 // --------------const-----------------------------
 
 const (
-	LogFilesDirectory = "../../logs/"
-	pkgName           = "logStack"
+	pkgName = "logStack"
 )
 
 // -----------var----------------------

@@ -8,7 +8,7 @@ import (
 )
 
 // -------------------------------------------
-func loadLoggerToFile() error {
+func loadLoggerToFile(LogFilesDirectory string) error {
 	//-------------------------------
 	funcName := "loadLoggerToFile"
 	var opName, opDes string

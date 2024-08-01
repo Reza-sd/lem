@@ -12,8 +12,9 @@ import (
 
 // ----------------const----------------
 const (
-	pkgName      = "main"
-	rootFromMain = "../.."
+	pkgName           = "main"
+	rootFromMain      = "../.."
+	LogFilesDirectory = rootFromMain + "/logs/"
 )
 
 // ------------------logger-instance------------
@@ -33,7 +34,7 @@ func main() {
 	// ------------------
 	// err = logstack.LoadLoggerStack()
 	opName, opDes = "LoadLoggerStack", "load log stack"
-	if err := logstack.LoadLoggerStack(); err != nil {
+	if err := logstack.LoadLoggerStack(LogFilesDirectory); err != nil {
 		slog.Error(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
 		return
 	} else {

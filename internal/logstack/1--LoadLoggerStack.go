@@ -6,14 +6,14 @@ import (
 )
 
 // -------------------------------
-func LoadLoggerStack() error {
+func LoadLoggerStack(LogFilesDirectory string) error {
 	//---------------------------------
 	funcName := "LoadLoggerStack"
 	var opName, opDes string
 	//----------------loadLoggerToFile-----------------
 
 	opName, opDes = "loadLoggerToFile", "loading logger to File stack"
-	if err := loadLoggerToFile(); err != nil {
+	if err := loadLoggerToFile(LogFilesDirectory); err != nil {
 		return RSlogErr(pkgName, funcName, opName, opDes, err)
 	} else {
 		slog.Info(LogMsg(pkgName, funcName, opName, opDes, err))
