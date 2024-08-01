@@ -5,17 +5,18 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func (myAnts *AntGroup) AntsInit(numberOfAnts int, myGraph *graphpk.Graph) {
+func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, myGraph *graphpk.Graph) {
 
-	myAnts.AntsMap = make(map[int]Ant)
-	myAnts.NumberOfAnts = numberOfAnts
+	myAntGroup.AntsMap = make(map[int]Ant)
+	myAntGroup.NumberOfAnts = numberOfAnts
 	//myAnts.UsedTunnelsInLastSequence=[]string{}
 
 	for i := 1; i <= numberOfAnts; i++ {
 		name := fmt.Sprintf("L%d", i) //Generate name for each Ant
-		myAnts.AntsMap[i] = Ant{
+		myAntGroup.AntsMap[i] = Ant{
 			Name:            name,
 			VisitedRoomsArr: []string{myGraph.StartRoomName}, CurrentRoomName: myGraph.StartRoomName,
+			StepNumber: 0,
 		}
 
 	}

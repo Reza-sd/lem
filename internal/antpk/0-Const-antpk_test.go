@@ -17,14 +17,14 @@ var (
 		Name:            "reza",
 		CurrentRoomName: "room_1",
 		VisitedRoomsArr: []string{"room_0", "room_1"},
-		StepNumber:      2,
+		StepNumber:      1,
 	}
 	//-------Ant type example-----------
 	ant2 = Ant{
 		Name:            "L3",
 		CurrentRoomName: "mio_5",
 		VisitedRoomsArr: []string{"mio_7", "mio_3", "mio_5"},
-		StepNumber:      3,
+		StepNumber:      2,
 	}
 	//--------AntGroup type example---------
 	antGroup1 = AntGroup{
@@ -33,7 +33,7 @@ var (
 			1: {Name: "Ant1",
 				CurrentRoomName: "room_1",
 				VisitedRoomsArr: []string{"room_0", "room_1"},
-				StepNumber:      2,
+				StepNumber:      1,
 			},
 		},
 		NumberOfSequence: 2,
@@ -65,8 +65,8 @@ var (
 	//------------------
 )
 
-// ---------------------------------------------
-func TestHello(t *testing.T) {
+// ==================================
+func Test_Const_antpk(t *testing.T) {
 	//------------
 	t.Run("0-an example of non-struct type", func(t *testing.T) {
 		//---Arrange---
