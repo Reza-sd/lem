@@ -37,8 +37,8 @@ func (l LogCollector) Info(FuncName string, OperationName string, operationDescr
 
 	operationDescription = " success: " + operationDescription
 
-	//loggerToCli.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
-	loggerToFile.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
+	loggerToCli.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
+	//loggerToFile.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
 }
 
 // ---------------------------------
@@ -55,12 +55,12 @@ func (l LogCollector) Error(FuncName string, OperationName string, err error, op
 	operationDescription = " fail: " + operationDescription
 
 	loggerToCli.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
-	loggerToFile.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
+	//loggerToFile.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
 
 }
 
 // ---------------RWarn------------------
-func (l LogCollector) RWarn(FuncName string, OperationName string, err error, operationDescription string) error {
+func (l *LogCollector) RWarn(FuncName string, OperationName string, err error, operationDescription string) error {
 	l.Warn(FuncName, OperationName, err, operationDescription)
 	return errMsg(FuncName, OperationName, err)
 }
@@ -79,7 +79,7 @@ func (l LogCollector) Warn(FuncName string, OperationName string, err error, ope
 	operationDescription = " !!!: " + operationDescription
 
 	loggerToCli.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
-	loggerToFile.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
+	//loggerToFile.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
 
 }
 
