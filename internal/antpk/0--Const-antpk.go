@@ -7,6 +7,9 @@ import (
 const (
 	MaxHandleableAntsNumber = 200
 	pkgName                 = "antpk"
+	//LogFilesDirectory =
+		rootFromAntpk      = "../.."
+	LogFilesDirectory = rootFromAntpk + "/logs/"
 )
 
 var (

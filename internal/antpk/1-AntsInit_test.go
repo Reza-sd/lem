@@ -3,13 +3,23 @@ package antpk
 import (
 	"reflect"
 	"testing"
+	"main/internal/logstack"
+	"log/slog"
 )
 
 // ========================================
-var ()
 
 // =========================================
 func Test_AntsInit(t *testing.T) {
+	funcName:="Test_AntsInit"
+	//---------------
+	opName, opDes := "LoadLoggerStack", "load log stack"
+	if err := logstack.LoadLoggerStack(LogFilesDirectory); err != nil {
+		slog.Error(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
+		return
+	} else {
+		slog.Info(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
+	}
 	//------------
 	t.Run(`0-return an error when numberOfAnts=0`, func(t *testing.T) {
 		//---Arrange---

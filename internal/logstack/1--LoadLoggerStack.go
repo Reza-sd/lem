@@ -11,6 +11,7 @@ func LoadLoggerStack(LogFilesDirectory string) error {
 	funcName := "LoadLoggerStack"
 	var opName, opDes string
 	//----------------loadLoggerToFile-----------------
+	//check if LogFilesDirectory valid and exist or make dir
 
 	opName, opDes = "loadLoggerToFile", "loading logger to File stack"
 	if err := loadLoggerToFile(LogFilesDirectory); err != nil {
