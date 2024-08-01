@@ -24,6 +24,19 @@ func Test_AntsInit(t *testing.T) {
 
 	})
 	//------------
+	t.Run(`001-return an error when numberOfAnts< 0`, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := -2
+		startRoomName := "L1"
+		expectError := true
+		//---Act---
+		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assert_If_AntsInit_ReturnError(t, err, expectError)
+
+	})
+	//------------
 	t.Run(`0-1-return an error when numberOfAnts > MaxHandleableAntsNumber`, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
@@ -63,7 +76,7 @@ func Test_AntsInit(t *testing.T) {
 
 	})
 	//------------
-	t.Run(`3-check if the values of myAntGroup correct `, func(t *testing.T) {
+	t.Run(`3-check if the values of myAntGroup correct (1 ant) `, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := 1
@@ -73,6 +86,35 @@ func Test_AntsInit(t *testing.T) {
 			NumberOfAnts: 1,
 			AntsMap: map[int]Ant{
 				1: {Name: "L1",
+					CurrentRoomName: "room_4",
+					VisitedRoomsArr: []string{"room_4"},
+					StepNumber:      0,
+				},
+			},
+			NumberOfSequence: 0,
+		}
+		//---Act---
+		myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedmyAntGroup)
+
+	})
+	//------------
+	t.Run(`4-check if the values of myAntGroup correct (2 ant)`, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := 2
+		startRoomName := "room_4"
+		//expectError := false //no error = nil
+		expectedmyAntGroup := AntGroup{
+			NumberOfAnts: 2,
+			AntsMap: map[int]Ant{
+				1: {Name: "L1",
+					CurrentRoomName: "room_4",
+					VisitedRoomsArr: []string{"room_4"},
+					StepNumber:      0,
+				},
+				2: {Name: "L2",
 					CurrentRoomName: "room_4",
 					VisitedRoomsArr: []string{"room_4"},
 					StepNumber:      0,
