@@ -1,6 +1,6 @@
 package antpk
 
-func AntsCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
+func AntGroupCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
 	funcName := "AntsCopy"
 	//myAnts.AntsMap = make(map[int]Ant)
 	//------------input validation-------------------
