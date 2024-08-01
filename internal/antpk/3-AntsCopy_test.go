@@ -57,10 +57,10 @@ func Test_AntsCopy(t *testing.T) {
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
-			NumberOfAnts: 999999,
+			NumberOfAnts: 1,
 			AntsMap: map[int]Ant{
 				1: {Name: "L1",
-					CurrentRoomName: "room_0",
+					CurrentRoomName: "roooooom_0",
 					VisitedRoomsArr: []string{"room_0"},
 					StepNumber:      0,
 				},
