@@ -71,7 +71,7 @@ func main() {
 	//report
 	fmt.Println("")
 	fmt.Println("Steps :", theBestFoundTravelPlan.FinalSequence)
-	theBestFoundTravelPlan.TheBestPlan.PrintAllAnts()
+	theBestFoundTravelPlan.TheBestPlan.ToString()
 	//-----------------------------------
 	fmt.Println("time : (", durationRandomSimulator.Seconds(), "Seconds =", durationRandomSimulator.Minutes(), "Minutes)")
 
