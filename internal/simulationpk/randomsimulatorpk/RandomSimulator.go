@@ -35,7 +35,7 @@ func runRandomSimulator(theModel *modelpk.Model, NumberOfTry int) (finalTravelPl
 
 	var tempTravelPlan antpk.TravelPlan
 	var tempGraph graphpk.Graph
-	var tempAnts antpk.Ants
+	var tempAnts antpk.AntGroup
 
 	for i := 1; i <= NumberOfTry; i++ {
 

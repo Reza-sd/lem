@@ -17,7 +17,7 @@ func ModelGeneratorA(myLem *Lem) (theModel Model) {
 	var baseGraph graphpk.Graph
 	baseGraph.InitGraph(tunnelArr, StartRoom, EndRoom)
 
-	var baseAnts antpk.Ants
+	var baseAnts antpk.AntGroup
 	baseAnts.AntsInit(NumberOfAnts, &baseGraph)
 
 	theModel.BaseAnts = baseAnts

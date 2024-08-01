@@ -8,7 +8,7 @@ type Ant struct {
 	//AssignedPath    []string
 }
 
-type Ants struct {
+type AntGroup struct {
 	NumberOfAnts     int
 	AntsMap          map[int]Ant
 	NumberOfSequence int
@@ -16,5 +16,5 @@ type Ants struct {
 
 type TravelPlan struct {
 	FinalSequence int
-	TheBestPlan   Ants
+	TheBestPlan   AntGroup
 }

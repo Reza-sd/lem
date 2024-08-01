@@ -8,7 +8,7 @@ import (
 )
 
 // =====================TryPushAllAntsToEnd========================
-func (allAnts *Ants) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
+func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int) {
 	//counter := 0
 	fmt.Println("UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	allAnts.NumberOfSequence = 0

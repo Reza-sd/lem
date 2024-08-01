@@ -5,7 +5,7 @@ import (
 	"main/internal/graphpk"
 )
 
-func (allAnts *Ants) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
+func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) {
 	//stepCounter :=0
 	//listOfUsedTunnelInThisSequence
 	for i := 1; i <= allAnts.NumberOfAnts; i++ {

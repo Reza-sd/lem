@@ -1,6 +1,6 @@
 package antpk
 
-func AntsCopy(baseAnts Ants, secondAnts *Ants) {
+func AntsCopy(baseAnts AntGroup, secondAnts *AntGroup) {
 
 	//myAnts.AntsMap = make(map[int]Ant)
 	secondAnts.AntsMap = make(map[int]Ant)

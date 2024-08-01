@@ -18,5 +18,5 @@ type Lem struct {
 
 type Model struct {
 	BaseGraph graphpk.Graph
-	BaseAnts  antpk.Ants
+	BaseAnts  antpk.AntGroup
 }

@@ -5,7 +5,7 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-func (myAnts *Ants) AntsInit(numberOfAnts int, myGraph *graphpk.Graph) {
+func (myAnts *AntGroup) AntsInit(numberOfAnts int, myGraph *graphpk.Graph) {
 
 	myAnts.AntsMap = make(map[int]Ant)
 	myAnts.NumberOfAnts = numberOfAnts
