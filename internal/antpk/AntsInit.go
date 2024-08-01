@@ -7,8 +7,8 @@ import (
 
 func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) error {
 	//-----input validation-----
-	if numberOfAnts < 1 {
-		return fmt.Errorf("number of Ants < 1")
+	if numberOfAnts < 1 || numberOfAnts > MaxHandleableAntsNumber {
+		return fmt.Errorf("number of Ants is not in [1-200]")
 	}
 	if startRoomName == "" {
 		return fmt.Errorf("startRoomName is EMPTY ")

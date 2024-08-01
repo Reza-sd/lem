@@ -1,5 +1,9 @@
 package antpk
 
+const (
+	MaxHandleableAntsNumber = 200
+)
+
 type Ant struct {
 	Name            string
 	CurrentRoomName string

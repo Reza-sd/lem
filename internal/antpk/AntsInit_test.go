@@ -23,6 +23,19 @@ func Test_AntsInit(t *testing.T) {
 
 	})
 	//------------
+	t.Run(`0-1-return an error when numberOfAnts > MaxHandleableAntsNumber`, func(t *testing.T) {
+		//---Arrange---
+		var myAntGroup AntGroup
+		numberOfAnts := MaxHandleableAntsNumber + 1
+		startRoomName := "L1"
+		expectError := true
+		//---Act---
+		err := myAntGroup.AntsInit(numberOfAnts, startRoomName)
+		//---Assert----
+		assertIfAntsInitReturnError(t, err, expectError)
+
+	})
+	//------------
 	t.Run(`1-return an error when startRoomName="" `, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
