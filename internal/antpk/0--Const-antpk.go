@@ -1,7 +1,18 @@
 package antpk
 
+import (
+	"main/internal/logstack"
+)
+
 const (
 	MaxHandleableAntsNumber = 200
+	pkgName                 = "antpk"
+)
+
+var (
+	logger = logstack.LogCollector{
+		PackageName: pkgName,
+	}
 )
 
 type Ant struct {
