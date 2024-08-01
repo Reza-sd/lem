@@ -80,23 +80,12 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := 1
-		startRoomName := "room_4"
-		//expectError := false //no error = nil
-		expectedmyAntGroup := AntGroup{
-			NumberOfAnts: 1,
-			AntsMap: map[int]Ant{
-				1: {Name: "L1",
-					CurrentRoomName: "room_4",
-					VisitedRoomsArr: []string{"room_4"},
-					StepNumber:      0,
-				},
-			},
-			NumberOfSequence: 0,
-		}
+		startRoomName := "room_0"
+		expectedAntGroup := sample_AntGroup_1ant_initmode_room_0
 		//---Act---
 		myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedmyAntGroup)
+		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
 
 	})
 	//------------
@@ -104,28 +93,12 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := 2
-		startRoomName := "room_4"
-		//expectError := false //no error = nil
-		expectedmyAntGroup := AntGroup{
-			NumberOfAnts: 2,
-			AntsMap: map[int]Ant{
-				1: {Name: "L1",
-					CurrentRoomName: "room_4",
-					VisitedRoomsArr: []string{"room_4"},
-					StepNumber:      0,
-				},
-				2: {Name: "L2",
-					CurrentRoomName: "room_4",
-					VisitedRoomsArr: []string{"room_4"},
-					StepNumber:      0,
-				},
-			},
-			NumberOfSequence: 0,
-		}
+		startRoomName := "room_0"
+		expectedAntGroup := sample_AntGroup_2ants_initmode_room_0
 		//---Act---
 		myAntGroup.AntsInit(numberOfAnts, startRoomName)
 		//---Assert----
-		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedmyAntGroup)
+		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
 
 	})
 }
