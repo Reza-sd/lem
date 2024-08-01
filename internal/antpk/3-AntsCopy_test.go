@@ -7,7 +7,7 @@ import (
 
 func Test_AntsCopy(t *testing.T) {
 	//------------
-	t.Run(`0-return an error if baseAntGroup does not have any item`, func(t *testing.T) {
+	t.Run(`1-return an error if baseAntGroup does not have any item`, func(t *testing.T) {
 		//---Arrange---
 		var secondAntGroup AntGroup
 		var baseAntGroup AntGroup
@@ -18,7 +18,7 @@ func Test_AntsCopy(t *testing.T) {
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
 	//------------
-	t.Run(`1-return nil error if baseAntGroup have one item`, func(t *testing.T) {
+	t.Run(`2-return nil error if baseAntGroup have one item`, func(t *testing.T) {
 		//---Arrange---
 		var secondAntGroup AntGroup
 		//var baseAntGroup AntGroup
@@ -30,10 +30,8 @@ func Test_AntsCopy(t *testing.T) {
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
 	//------------------
-	t.Run(`2-return n same copy of baseAntGroup`, func(t *testing.T) {
+	t.Run(`3-return n same copy of baseAntGroup one item`, func(t *testing.T) {
 		//---Arrange---
-		//var secondAntGroup AntGroup
-		//var baseAntGroup AntGroup
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		secondAntGroup := AntGroup{
 			NumberOfAnts: 1,
@@ -46,12 +44,37 @@ func Test_AntsCopy(t *testing.T) {
 			},
 			NumberOfSequence: 0,
 		}
-		//expectError := true
 		//---Act---
 		AntGroupCopy(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, baseAntGroup, secondAntGroup)
 	})
+	//------------------
+	t.Run(`4-return n same copy of baseAntGroup two item`, func(t *testing.T) {
+		//---Arrange---
+		baseAntGroup := sample_AntGroup_2ants_initmode_room_0
+		secondAntGroup := AntGroup{
+			NumberOfAnts: 2,
+			AntsMap: map[int]Ant{
+				1: {Name: "L1",
+					CurrentRoomName: "room_0",
+					VisitedRoomsArr: []string{"room_0"},
+					StepNumber:      0,
+				},
+				2: {Name: "L2",
+					CurrentRoomName: "room_0",
+					VisitedRoomsArr: []string{"room_0"},
+					StepNumber:      0,
+				},
+			},
+			NumberOfSequence: 0,
+		}
+		//---Act---
+		AntGroupCopy(baseAntGroup, &secondAntGroup)
+		//---Assert----
+		assert_If_Two_AntGroup_SameCopy(t, baseAntGroup, secondAntGroup)
+	})
+	//--------------------------
 }
 
 // ================================================
