@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	//"main/internal/antpk"
-	//"log/slog"
+
 	"main/internal/logstack"
 	"main/internal/simulationpk/modelpk"
 	"main/internal/simulationpk/randomsimulatorpk"
