@@ -8,7 +8,7 @@ const (
 	MaxHandleableAntsNumber = 200
 	pkgName                 = "antpk"
 	//LogFilesDirectory =
-		rootFromAntpk      = "../.."
+	rootFromAntpk     = "../.."
 	LogFilesDirectory = rootFromAntpk + "/logs/"
 )
 

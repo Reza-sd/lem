@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	//"main/internal/antpk"
-	"log/slog"
+	//"log/slog"
 	"main/internal/logstack"
 	"main/internal/simulationpk/modelpk"
 	"main/internal/simulationpk/randomsimulatorpk"
@@ -12,9 +12,7 @@ import (
 
 // ----------------const----------------
 const (
-	pkgName           = "main"
-	rootFromMain      = "../.."
-	LogFilesDirectory = rootFromMain + "/logs/"
+	pkgName = "main"
 )
 
 // ------------------logger-instance------------
@@ -26,20 +24,6 @@ var (
 
 // --------------------------------------------
 func main() {
-	// --------------------
-	funcName := "main"
-	var opName, opDes string
-	// var err error
-	// fmt.Println(os.Getwd())
-	// ------------------
-	// err = logstack.LoadLoggerStack()
-	opName, opDes = "LoadLoggerStack", "load log stack"
-	if err := logstack.LoadLoggerStack(LogFilesDirectory); err != nil {
-		slog.Error(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
-		return
-	} else {
-		slog.Info(logstack.LogMsg(logger.PackageName, funcName, opName, opDes, err))
-	}
 
 	//------------------------
 	// lem1 := simulationpk.Lem{
