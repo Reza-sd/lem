@@ -18,7 +18,7 @@ func LoadLoggerStack() error {
 	} else {
 		slog.Info(LogMsg(pkgName, funcName, opName, opDes, err))
 	}
-	//----------------loadLoggerToFile-----------------
+	//----------------loadLoggerToCli-----------------
 	opName, opDes = "loadLoggerToCli", "loading logger to Cli stack"
 	if err := loadLoggerToCli(); err != nil {
 		return RSlogErr(pkgName, funcName, opName, opDes, err)

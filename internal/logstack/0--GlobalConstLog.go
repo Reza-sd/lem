@@ -18,8 +18,6 @@ var (
 	loggerToCli  *slog.Logger
 
 	logger LogCollector
-
-	//funcsAccessList  map[string]map[string]map[string]bool
 )
 
 // ===================struct=========================
@@ -38,12 +36,13 @@ func (l LogCollector) Info(FuncName string, OperationName string, operationDescr
 	operationDescription = " success: " + operationDescription
 
 	loggerToCli.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
-	//loggerToFile.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
+
+	loggerToFile.Info(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil))
 }
 
 // ---------------------------------
 func (l LogCollector) RErr(FuncName string, OperationName string, err error, operationDescription string) error {
-	//return errMsg + logger.Error
+
 	l.Error(FuncName, OperationName, err, operationDescription)
 
 	return errMsg(FuncName, OperationName, err) //optional return
@@ -55,7 +54,7 @@ func (l LogCollector) Error(FuncName string, OperationName string, err error, op
 	operationDescription = " fail: " + operationDescription
 
 	loggerToCli.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
-	//loggerToFile.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
+	loggerToFile.Error(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
 
 }
 
@@ -79,7 +78,7 @@ func (l LogCollector) Warn(FuncName string, OperationName string, err error, ope
 	operationDescription = " !!!: " + operationDescription
 
 	loggerToCli.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
-	//loggerToFile.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
+	loggerToFile.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
 
 }
 
