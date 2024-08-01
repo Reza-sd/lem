@@ -1,5 +1,7 @@
 package antpk
 
+//import "fmt"
+
 func AntGroupCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
 	funcName := "AntsCopy"
 	//myAnts.AntsMap = make(map[int]Ant)
@@ -12,21 +14,31 @@ func AntGroupCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
 	//-----------------------------
 	secondAntGroup.AntsMap = make(map[int]Ant)
 	secondAntGroup.NumberOfAnts = baseAntGroup.NumberOfAnts
-	//secondAnts.NumberOfSequence = baseAnts.NumberOfSequence
+	secondAntGroup.NumberOfSequence = baseAntGroup.NumberOfSequence
 
-	var ant Ant
+	var tempAnt Ant
 
-	for key, value := range baseAntGroup.AntsMap {
+	for key, ant := range baseAntGroup.AntsMap {
 
-		ant = secondAntGroup.AntsMap[key]
-		ant.Name = value.Name
-		ant.StepNumber = value.StepNumber
-		ant.CurrentRoomName = value.CurrentRoomName
-		ant.VisitedRoomsArr = []string{value.VisitedRoomsArr[0]}
-		//make([]string, len(value.VisitedRoomsArr))
-		//copy(ant.VisitedRoomsArr,value.VisitedRoomsArr)
-		secondAntGroup.AntsMap[key] = ant
+		tempAnt = secondAntGroup.AntsMap[key]
+		tempAnt.Name = ant.Name
+		tempAnt.StepNumber = ant.StepNumber
+		tempAnt.CurrentRoomName = ant.CurrentRoomName
+
+		tempAnt.VisitedRoomsArr = deepCopySlice(ant.VisitedRoomsArr)
+		secondAntGroup.AntsMap[key] = tempAnt
 
 	}
 	return nil
 }
+
+// -------------
+func deepCopySlice(original []string) []string {
+	copy := make([]string, len(original))
+	for i, item := range original {
+		copy[i] = item
+	}
+	return copy
+}
+
+//-------------
