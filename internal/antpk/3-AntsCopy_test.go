@@ -11,7 +11,7 @@ func Test_AntsCopy(t *testing.T) {
 		//---Arrange---
 		var secondAntGroup AntGroup
 		var baseAntGroup AntGroup
-		expectError := false
+		expectError := true
 		//---Act---
 		err := AntGroupCopy(baseAntGroup, &secondAntGroup)
 		//---Assert----
@@ -54,7 +54,7 @@ func Test_AntsCopy(t *testing.T) {
 		//---Arrange---
 		baseAntGroup := sample_AntGroup_2ants_initmode_room_0
 		secondAntGroup := AntGroup{
-			NumberOfAnts: 2,
+			NumberOfAnts:     2,
 			NumberOfSequence: 0,
 			AntsMap: map[int]Ant{
 				1: {Name: "L1",
@@ -68,7 +68,6 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			
 		}
 		//---Act---
 		AntGroupCopy(baseAntGroup, &secondAntGroup)
@@ -92,7 +91,7 @@ func assert_If_Two_AntGroup_SameCopy(t testing.TB, antGroup1 AntGroup, antGroup2
 func assert_If_AntsCopy_ReturnError(t testing.TB, err error, expectError bool) {
 	t.Helper()
 
-	if err != nil && expectError {
+	if err == nil && expectError {
 		t.Errorf("function returned error ")
 	}
 
