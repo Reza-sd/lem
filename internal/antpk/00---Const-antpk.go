@@ -4,7 +4,7 @@ type Ant struct {
 	Name            string
 	CurrentRoomName string
 	VisitedRoomsArr []string
-	NumberOfSteps   int
+	StepNumber      int
 	//AssignedPath    []string
 }
 
