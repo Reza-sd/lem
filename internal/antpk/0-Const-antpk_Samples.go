@@ -49,7 +49,7 @@ var (
 		NumberOfSequence: 0,
 	}
 	//------------------
-	sample_AntGroup_1ant_initmode_room_0 = AntGroup{
+	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 1,
 		AntsMap: map[int]Ant{
 			1: {Name: "L1",

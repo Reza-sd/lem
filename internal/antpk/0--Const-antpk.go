@@ -4,20 +4,6 @@ import (
 	"main/internal/logstack"
 )
 
-const (
-	MaxHandleableAntsNumber = 200
-	pkgName                 = "antpk"
-	//LogFilesDirectory =
-	rootFromAntpk     = "../.."
-	LogFilesDirectory = rootFromAntpk + "/logs/"
-)
-
-var (
-	logger = logstack.LogCollector{
-		PackageName: pkgName,
-	}
-)
-
 type Ant struct {
 	Name            string
 	CurrentRoomName string
@@ -36,3 +22,17 @@ type TravelPlan struct {
 	FinalSequence int
 	TheBestPlan   AntGroup
 }
+
+const (
+	MaxHandleableAntsNumber = 200
+	pkgName                 = "antpk"
+	//LogFilesDirectory =
+	rootFromAntpk     = "../.."
+	LogFilesDirectory = rootFromAntpk + "/logs/"
+)
+
+var (
+	logger = logstack.LogCollector{
+		PackageName: pkgName,
+	}
+)
