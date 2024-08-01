@@ -1,13 +1,13 @@
 package modelpk
 
 import (
-	// "fmt"
+	"fmt"
 	"main/internal/antpk"
 	graphpk "main/internal/graphpk"
 )
 
-func ModelGeneratorA(myLem *Lem) (theModel Model) {
-
+func ModelGeneratorA(myLem *Lem) (Model, error) {
+	var theModel Model
 	NumberOfAnts := myLem.NumberOfAnts
 	StartRoom := myLem.StartRoom
 	EndRoom := myLem.EndRoom
@@ -18,9 +18,12 @@ func ModelGeneratorA(myLem *Lem) (theModel Model) {
 	baseGraph.InitGraph(tunnelArr, StartRoom, EndRoom)
 
 	var baseAnts antpk.AntGroup
-	baseAnts.AntsInit(NumberOfAnts, baseGraph.StartRoomName)
+	errBaseAntsAntsInit := baseAnts.AntsInit(NumberOfAnts, baseGraph.StartRoomName)
 
+	if errBaseAntsAntsInit != nil {
+		return theModel, fmt.Errorf("number of Ants is not in [1-200]")
+	}
 	theModel.BaseAnts = baseAnts
 	theModel.BaseGraph = baseGraph
-	return theModel
+	return theModel, nil
 }

@@ -43,7 +43,11 @@ func main() {
 	*/
 
 	//lem1=lem3
-	baseModel1 := modelpk.ModelGeneratorA(&lem1)
+	baseModel1, errBaseModel1 := modelpk.ModelGeneratorA(&lem1)
+	if errBaseModel1 != nil {
+		fmt.Println("errBaseModel1 ", errBaseModel1)
+		return
+	}
 	// -----------------------------------------
 	startTimeSinceCallRandomSimulator := time.Now()
 	theBestFoundTravelPlan := randomsimulatorpk.RandomSimulator(&baseModel1)
