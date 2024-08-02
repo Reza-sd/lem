@@ -14,7 +14,7 @@ type Room struct {
 	maxSeats                uint   //all seats in room (for start and end = unlimited) for other =1
 	EmptySeats              uint
 	Tunnels                 []string //[2,5]
-	LastAntCameFromRoomName string   //[step]who
+	//LastAntCameFromRoomName string   //[step]who
 }
 
 type Graph struct {
