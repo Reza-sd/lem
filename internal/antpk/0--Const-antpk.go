@@ -23,6 +23,11 @@ type TravelPlan struct {
 	TheBestPlan   AntGroup
 }
 
+type TravelHistory struct{
+	UsedTunnels map[int]map[string]string
+	//seq 3 roomA:roomB
+}
+
 const (
 	MaxHandleableAntsNumber = 200
 	pkgName                 = "antpk"
