@@ -12,8 +12,8 @@ func GraphCopy(baseGraph Graph, secondGraph *Graph) {
 
 	for roomName, value := range baseGraph.Rooms {
 
-		room.name = value.name
-		room.maxSeats = value.maxSeats
+		room.Name = value.Name
+		room.MaxSeats = value.MaxSeats
 		room.EmptySeats = value.EmptySeats
 		room.Tunnels = value.Tunnels
 

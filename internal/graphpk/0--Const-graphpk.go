@@ -10,10 +10,10 @@ L2-0 L3-0
 $
 */
 type Room struct {
-	name                    string //0 , 1 ,2 ,...
-	maxSeats                uint   //all seats in room (for start and end = unlimited) for other =1
-	EmptySeats              uint
-	Tunnels                 []string //[2,5]
+	Name       string //0 , 1 ,2 ,...
+	MaxSeats   uint   //all seats in room (for start and end = unlimited) for other =1
+	EmptySeats uint
+	Tunnels    []string //[2,5]
 	//LastAntCameFromRoomName string   //[step]who
 }
 

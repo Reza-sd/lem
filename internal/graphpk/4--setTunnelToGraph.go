@@ -16,30 +16,30 @@ func (myGraph *Graph) setTunnelToGraph(tunnelArr []string) error {
 		roomA := myGraph.Rooms[a]
 		roomB := myGraph.Rooms[b]
 
-		roomA.name = a
-		roomB.name = b
+		roomA.Name = a
+		roomB.Name = b
 		// Modify the Room's tunnels
 		roomA.Tunnels = append(roomA.Tunnels, b)
 		roomB.Tunnels = append(roomB.Tunnels, a)
 		// Put the modified Room back into the map
 		if a == myGraph.StartRoomName || a == myGraph.EndRoomName {
-			roomA.maxSeats = 100000
+			roomA.MaxSeats = 100000
 
 		} else {
-			roomA.maxSeats = 1
+			roomA.MaxSeats = 1
 
 		}
 
 		if b == myGraph.StartRoomName || b == myGraph.EndRoomName {
-			roomB.maxSeats = 100000
+			roomB.MaxSeats = 100000
 
 		} else {
-			roomB.maxSeats = 1
+			roomB.MaxSeats = 1
 
 		}
 
-		roomA.EmptySeats = roomA.maxSeats
-		roomB.EmptySeats = roomB.maxSeats
+		roomA.EmptySeats = roomA.MaxSeats
+		roomB.EmptySeats = roomB.MaxSeats
 
 		myGraph.Rooms[a] = roomA
 		myGraph.Rooms[b] = roomB
