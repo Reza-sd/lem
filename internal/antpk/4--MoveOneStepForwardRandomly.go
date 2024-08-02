@@ -10,7 +10,7 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph,travelHistory *TravelHistory) {
+func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHistory *TravelHistory) {
 	//fmt.Println("move theAnt")
 
 	// -----check if its already in End room----
@@ -18,7 +18,7 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph,travelHisto
 		return
 	}
 
-	nextRandomAvailableRoomName ,_ := theAnt.nextRandomAvailableRoomName(theGraph,travelHistory)
+	nextRandomAvailableRoomName, _ := theAnt.nextRandomAvailableRoomName(theGraph, travelHistory)
 	// in the case of no available free next room
 	if nextRandomAvailableRoomName == "" {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")

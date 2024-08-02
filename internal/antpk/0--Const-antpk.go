@@ -16,8 +16,7 @@ type AntGroup struct {
 	NumberOfAnts     int
 	NumberOfSequence int
 	AntsMap          map[int]Ant
-	
-	
+	UsedTunnel       TravelHistory
 }
 
 type TravelPlan struct {
@@ -26,7 +25,7 @@ type TravelPlan struct {
 }
 
 type TravelHistory struct {
-	UsedTunnels map[int]map[string]string
+	UsedTunnelsMap map[int]map[string]string
 	//seq 3 roomA:roomB
 }
 

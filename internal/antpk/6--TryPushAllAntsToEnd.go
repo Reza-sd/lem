@@ -8,7 +8,7 @@ import (
 )
 
 // =====================TryPushAllAntsToEnd========================
-func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int,travelHistory *TravelHistory) {
+func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int, travelHistory *TravelHistory) {
 	//counter := 0
 	//fmt.Println("UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	allAnts.NumberOfSequence = 0
@@ -26,7 +26,7 @@ func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelP
 			return
 		}
 
-		allAnts.MoveAllAntsOneStepRandomly(theGraph,travelHistory)
+		allAnts.MoveAllAntsOneStepRandomly(theGraph, travelHistory)
 		//fmt.Println("allAnts.Step=",allAnts.Step)
 		//counter++
 		allAnts.NumberOfSequence++

@@ -32,7 +32,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHi
 			continue
 		}
 		//---to check if the offered tunnel(from,to) is used in this sequence----
-		tunnelArr, ok := travelHistory.UsedTunnels[theAnt.StepNumber+1]
+		tunnelArr, ok := travelHistory.UsedTunnelsMap[theAnt.StepNumber+1]
 		if ok {
 			if tunnelArr[theAnt.CurrentRoomName] == nextRandomAvailableRoomName {
 				continue
