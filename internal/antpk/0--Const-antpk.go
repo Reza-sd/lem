@@ -23,7 +23,7 @@ type TravelPlan struct {
 	TheBestPlan   AntGroup
 }
 
-type TravelHistory struct{
+type TravelHistory struct {
 	UsedTunnels map[int]map[string]string
 	//seq 3 roomA:roomB
 }

@@ -10,15 +10,17 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHistory TravelHistory) (string,error) {
-	funcName:="nextRandomAvailableRoomName"
-	currentRoomObjectFromGraph , ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
-	if !ok1{
-		return "",logger.RWarnStr(funcName,"ok1","the graph does not have this room","check if graph has this room name")
+func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHistory TravelHistory) (string, error) {
+	funcName := "nextRandomAvailableRoomName"
+	//-------------------
+	currentRoomObjectFromGraph, ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
+	if !ok1 {
+		return "", logger.RWarnStr(funcName, "ok1", "the graph does not have this room", "check if graph has this room name")
 	}
+	//----------------
 	currentTunnerArr := currentRoomObjectFromGraph.Tunnels
 	lengthCurrentTunnerArr := len(currentTunnerArr)
-
+	//------------
 
 	for i := 0; i < 50; i++ {
 
@@ -30,9 +32,9 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHis
 			continue
 		}
 		//---to check if the offered tunnel(from,to) is used in this sequence----
-		tunnelArr, ok:= travelHistory.UsedTunnels[theAnt.StepNumber+1]
-		if ok{
-			if tunnelArr[theAnt.CurrentRoomName]==nextRandomAvailableRoomName {
+		tunnelArr, ok := travelHistory.UsedTunnels[theAnt.StepNumber+1]
+		if ok {
+			if tunnelArr[theAnt.CurrentRoomName] == nextRandomAvailableRoomName {
 				continue
 			}
 		}
@@ -46,9 +48,9 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHis
 		//-----------------------------
 
 		//-------------------------------------
-		return nextRandomAvailableRoomName,nil
+		return nextRandomAvailableRoomName, nil
 
 	}
 
-	return "",nil
+	return "", nil
 }
