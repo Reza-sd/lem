@@ -21,9 +21,9 @@ var (
 		EndRoomName:          "room_1",
 		CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      2,
-		Rooms:                map[string]Room{
-			"room_0":Sample_room_0_startRoom,
-			"room_1":Sample_room_1_EndRoom,
+		Rooms: map[string]Room{
+			"room_0": Sample_room_0_startRoom,
+			"room_1": Sample_room_1_EndRoom,
 		},
 	}
 
