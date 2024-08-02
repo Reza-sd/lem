@@ -7,7 +7,7 @@ import (
 func (myGraph *Graph) setTunnelToGraph(tunnelArr []string) error {
 
 	for _, tunnel := range tunnelArr {
-		a, b, err := splitStringToUint(tunnel)
+		a, b, err := splitStringToParts(tunnel)
 		if err != nil {
 			fmt.Println("Error:", err)
 			return err
