@@ -12,7 +12,7 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 	// Initialize rooms map
 	myGraph.Rooms = make(map[string]Room)
 
-	err := myGraph.setTunnelToGraph(tunnelArr)
+	err := myGraph.setTunnelAndSeatsToGraphRooms(tunnelArr)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return err

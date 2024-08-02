@@ -1,5 +1,9 @@
 package graphpk
 
+import (
+	"main/internal/logstack"
+)
+
 /*
 "0-4","0-6","1-3","4-3","5-2","3-5","4-2","2-1","7-6","7-2","7-4","6-5"
 
@@ -24,3 +28,17 @@ type Graph struct {
 	NumberOfAllRoom      int
 	Rooms                map[string]Room
 }
+
+const (
+	//MaxHandleableAntsNumber = 200
+	pkgName = "graphpk"
+	//LogFilesDirectory =
+	//rootFromAntpk     = "../.."
+	//LogFilesDirectory = rootFromAntpk + "/logs/"
+)
+
+var (
+	logger = logstack.LogCollector{
+		PackageName: pkgName,
+	}
+)
