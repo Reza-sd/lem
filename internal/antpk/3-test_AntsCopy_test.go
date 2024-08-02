@@ -6,6 +6,7 @@ import (
 )
 
 func Test_AntsCopy(t *testing.T) {
+	//t.Skip()
 	//------------
 	t.Run(`1-return an error if baseAntGroup does not have any item`, func(t *testing.T) {
 		//---Arrange---
@@ -123,3 +124,5 @@ func assert_If_AntsCopy_ReturnError(t testing.TB, err error, expectError bool) {
 	}
 
 }
+
+// ================================================

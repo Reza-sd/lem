@@ -5,8 +5,8 @@ import (
 	//"fmt"
 	"fmt"
 	graphpk "main/internal/graphpk"
-	"math/rand"
-	"slices"
+	//"math/rand"
+	//"slices"
 )
 
 // ==========================================================
@@ -80,49 +80,6 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 	theAnt.CurrentRoomName = nextRandomAvailableRoomName
 	theAnt.StepNumber++
 	//fmt.Println(theAnt)
-}
-
-// ==========================================================
-func nextRandomAvailableRoomName(theAnt *Ant, theGraph *graphpk.Graph) string {
-	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
-	currentTunnerArr := currentRoom.Tunnels
-	lengthCurrentTunnerArr := len(currentTunnerArr)
-
-	for i := 0; i < 50; i++ {
-
-		randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
-		nextRandomAvailableRoomName := currentTunnerArr[randomNextRoomIndex]
-		// check if I visited before
-		if slices.Contains(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName) {
-			continue
-		}
-
-		nextRoom := theGraph.Rooms[nextRandomAvailableRoomName]
-		// check if the next selected room empty seat
-		if nextRoom.EmptySeats == 0 {
-			continue
-		}
-		//-----------------------------
-		//Used Tunnel in this sequence
-
-		//--------------------------------------
-		/*
-			if lastUsedTunnel == selectedTunnel {
-			continue
-			}
-		*/
-		// if nextRoom.LastAntCameFromRoomName == theAnt.CurrentRoomName {
-		// 	fmt.Println("nextRoom.LastAntCameFromRoomName :  ", nextRoom.LastAntCameFromRoomName, theAnt.CurrentRoomName)
-		// 	//continue
-		// }
-		//-------------------------------------
-		return nextRandomAvailableRoomName
-
-	}
-
-	//nextRoom.LastAntCameFromRoomName =""
-	// no avaliable next room
-	return ""
 }
 
 // ==========================================================
