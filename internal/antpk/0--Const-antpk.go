@@ -26,7 +26,6 @@ type TravelPlan struct {
 
 type TravelHistory struct {
 	UsedTunnelsMap map[int]map[string]string
-	
 }
 
 const (

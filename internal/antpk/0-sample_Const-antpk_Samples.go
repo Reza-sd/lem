@@ -47,6 +47,9 @@ var (
 			},
 		},
 		SequenceNumber: 0,
+		UsedTunnel: TravelHistory{
+			UsedTunnelsMap: make(map[int]map[string]string),
+		},
 	}
 	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{

@@ -18,7 +18,7 @@ func ModelGeneratorA(myLem *Lem) (Model, error) {
 	baseGraph.InitGraph(tunnelArr, StartRoom, EndRoom)
 
 	var baseAnts antpk.AntGroup
-	errBaseAntsAntsInit := baseAnts.AntsInit(NumberOfAnts, baseGraph.StartRoomName)
+	errBaseAntsAntsInit := baseAnts.AntGroupInit(NumberOfAnts, baseGraph.StartRoomName)
 
 	if errBaseAntsAntsInit != nil {
 		return theModel, fmt.Errorf("number of Ants is not in [1-200]")

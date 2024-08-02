@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) error {
+func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts int, startRoomName string) error {
 	funcName := "AntsInit"
 	//var err error
 	//-----input validation-----
@@ -19,7 +19,8 @@ func (myAntGroup *AntGroup) AntsInit(numberOfAnts int, startRoomName string) err
 	myAntGroup.AntsMap = make(map[int]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
 	myAntGroup.SequenceNumber = 0
-
+	myAntGroup.UsedTunnel.UsedTunnelsMap = map[int]map[string]string{}
+	//--------------------------
 	for i := 1; i <= numberOfAnts; i++ {
 		name := fmt.Sprintf("L%d", i) //Generate name for each Ant
 		myAntGroup.AntsMap[i] = Ant{

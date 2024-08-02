@@ -98,6 +98,9 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
+			UsedTunnel: TravelHistory{
+				UsedTunnelsMap: make(map[int]map[string]string),
+			},
 		}
 		ifSame := true
 		//---Act---
