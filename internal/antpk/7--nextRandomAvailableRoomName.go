@@ -14,7 +14,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHis
 	funcName:="nextRandomAvailableRoomName"
 	currentRoomObjectFromGraph , ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
 	if !ok1{
-		return "",logger.RWarnStr(funcName)
+		return "",logger.RWarnStr(funcName,"ok1","the graph does not have this room","check if graph has this room name")
 	}
 	currentTunnerArr := currentRoomObjectFromGraph.Tunnels
 	lengthCurrentTunnerArr := len(currentTunnerArr)
@@ -46,9 +46,9 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHis
 		//-----------------------------
 
 		//-------------------------------------
-		return nextRandomAvailableRoomName
+		return nextRandomAvailableRoomName,nil
 
 	}
 
-	return ""
+	return "",nil
 }
