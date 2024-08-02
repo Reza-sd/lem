@@ -10,7 +10,7 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHistory TravelHistory) (string, error) {
+func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHistory *TravelHistory) (string, error) {
 	funcName := "nextRandomAvailableRoomName"
 	//-------------------
 	currentRoomObjectFromGraph, ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
@@ -49,7 +49,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHi
 
 		//-------------------------------------
 		return nextRandomAvailableRoomName, nil
-			
+
 	}
 
 	return "", nil

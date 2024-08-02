@@ -14,8 +14,10 @@ type Ant struct {
 
 type AntGroup struct {
 	NumberOfAnts     int
-	AntsMap          map[int]Ant
 	NumberOfSequence int
+	AntsMap          map[int]Ant
+	
+	
 }
 
 type TravelPlan struct {

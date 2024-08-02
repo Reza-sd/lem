@@ -10,7 +10,7 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
+func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph,travelHistory *TravelHistory) {
 	//fmt.Println("move theAnt")
 
 	// -----check if its already in End room----
@@ -18,7 +18,7 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 		return
 	}
 
-	nextRandomAvailableRoomName := theAnt.nextRandomAvailableRoomName(theGraph)
+	nextRandomAvailableRoomName ,_ := theAnt.nextRandomAvailableRoomName(theGraph,travelHistory)
 	// in the case of no available free next room
 	if nextRandomAvailableRoomName == "" {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
@@ -28,16 +28,16 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph) {
 		return
 	}
 	//---------------------------------------------
-	v, ok := theGraph.UsedTunnelsInLastSequence[theAnt.CurrentRoomName]
-	if ok && v == nextRandomAvailableRoomName {
+	// v, ok := theGraph.UsedTunnelsInLastSequence[theAnt.CurrentRoomName]
+	// if ok && v == nextRandomAvailableRoomName {
 
-		//fmt.Println("mio")
-		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
-		theAnt.StepNumber++
-		delete(theGraph.UsedTunnelsInLastSequence, theAnt.CurrentRoomName)
-		fmt.Println("d-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
-		return
-	}
+	// 	//fmt.Println("mio")
+	// 	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
+	// 	theAnt.StepNumber++
+	// 	delete(theGraph.UsedTunnelsInLastSequence, theAnt.CurrentRoomName)
+	// 	fmt.Println("d-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
+	// 	return
+	// }
 	//Tunnel := currentRoomName + "-" + MovedRoomName
 	//OfferedTunnel :=theAnt.CurrentRoomName+"-"+nextRandomAvailableRoomName
 	// if slices.Contains(theGraph.UsedTunnelsInLastSequence,OfferedTunnel){
