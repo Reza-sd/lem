@@ -10,20 +10,23 @@ import (
 )
 
 // ==========================================================
-func nextRandomAvailableRoomName(theAnt *Ant, theGraph *graphpk.Graph) string {
-	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
-	currentTunnerArr := currentRoom.Tunnels
+func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph) string {
+	currentRoomObjectFromGraph := theGraph.Rooms[theAnt.CurrentRoomName]
+	currentTunnerArr := currentRoomObjectFromGraph.Tunnels
 	lengthCurrentTunnerArr := len(currentTunnerArr)
 
 	for i := 0; i < 50; i++ {
 
 		randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
 		nextRandomAvailableRoomName := currentTunnerArr[randomNextRoomIndex]
+
 		// check if I visited before
 		if slices.Contains(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName) {
 			continue
 		}
+		//---------------------
 
+		//---------------------
 		nextRoom := theGraph.Rooms[nextRandomAvailableRoomName]
 		// check if the next selected room empty seat
 		if nextRoom.EmptySeats == 0 {
