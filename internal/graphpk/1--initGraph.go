@@ -9,6 +9,7 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 	// set start and end room
 	myGraph.StartRoomName = start
 	myGraph.EndRoomName = end
+	myGraph.CurrentAntsInEndRoom = 0
 	// Initialize rooms map
 	myGraph.Rooms = make(map[string]Room)
 
