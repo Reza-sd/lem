@@ -14,7 +14,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph,travelHis
 	funcName:="nextRandomAvailableRoomName"
 	currentRoomObjectFromGraph , ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
 	if !ok1{
-		return "",logger.RWarnStr(funcName,"ok1")
+		return "",logger.RWarnStr(funcName)
 	}
 	currentTunnerArr := currentRoomObjectFromGraph.Tunnels
 	lengthCurrentTunnerArr := len(currentTunnerArr)
