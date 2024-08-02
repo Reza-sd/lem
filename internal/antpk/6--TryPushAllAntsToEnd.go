@@ -11,7 +11,7 @@ import (
 func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int, travelHistory *TravelHistory) {
 	//counter := 0
 	//fmt.Println("UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
-	allAnts.NumberOfSequence = 0
+	allAnts.SequenceNumber = 0
 	//theGraph.UsedTunnelsInLastSequence = make(map[string]string)
 	//fmt.Println("0-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
 	//--------------------------------
@@ -21,7 +21,7 @@ func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelP
 			break
 		}
 
-		if allAnts.NumberOfSequence >= maxTry { // max try
+		if allAnts.SequenceNumber >= maxTry { // max try
 
 			return
 		}
@@ -29,18 +29,18 @@ func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelP
 		allAnts.MoveAllAntsOneStepRandomly(theGraph, travelHistory)
 		//fmt.Println("allAnts.Step=",allAnts.Step)
 		//counter++
-		allAnts.NumberOfSequence++
-		fmt.Println("counter=", allAnts.NumberOfSequence)
+		allAnts.SequenceNumber++
+		fmt.Println("counter=", allAnts.SequenceNumber)
 		//allAnts.Step=0
 
 	}
 	//---------------------------------
 	// check if steps are less than previous steps
-	if allAnts.NumberOfSequence >= theTravelPlan.FinalSequence && theTravelPlan.FinalSequence != 0 {
+	if allAnts.SequenceNumber >= theTravelPlan.FinalSequence && theTravelPlan.FinalSequence != 0 {
 		return
 	}
 
-	theTravelPlan.FinalSequence = allAnts.NumberOfSequence
+	theTravelPlan.FinalSequence = allAnts.SequenceNumber
 	theTravelPlan.TheBestPlan = *allAnts
 
 }

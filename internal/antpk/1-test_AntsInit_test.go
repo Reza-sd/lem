@@ -108,7 +108,7 @@ func assert_If_Two_AntGroup_Same(t testing.TB, antGroup1 AntGroup, antGroup2 Ant
 	t.Helper()
 
 	if !reflect.DeepEqual(antGroup1, antGroup2) {
-		t.Errorf("function returned error ")
+		t.Errorf("\n>>>not same: \n antGroup1=%v<<\n antGroup2=%v<<",antGroup1,antGroup2)
 	}
 
 }

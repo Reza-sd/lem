@@ -14,7 +14,7 @@ func Test_(t *testing.T) {
 		var baseAntGroup AntGroup
 		expectError := true
 		//---Act---
-		err := AntGroupCopy(baseAntGroup, &secondAntGroup)
+		err := AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})

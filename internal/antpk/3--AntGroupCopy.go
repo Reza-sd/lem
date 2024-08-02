@@ -2,7 +2,7 @@ package antpk
 
 //import "fmt"
 
-func AntGroupCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
+func AntGroupCopyAtFirstRoom(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
 	funcName := "AntsCopy"
 	//myAnts.AntsMap = make(map[int]Ant)
 	//------------input validation-------------------
@@ -12,10 +12,11 @@ func AntGroupCopy(baseAntGroup AntGroup, secondAntGroup *AntGroup) error {
 	}
 
 	//-----------------------------
-	secondAntGroup.AntsMap = make(map[int]Ant)
+	secondAntGroup.AntsMap = map[int]Ant{}
 	secondAntGroup.NumberOfAnts = baseAntGroup.NumberOfAnts
-	secondAntGroup.NumberOfSequence = baseAntGroup.NumberOfSequence
-
+	secondAntGroup.SequenceNumber = 0
+	secondAntGroup.UsedTunnel.UsedTunnelsMap = map[int]map[string]string{}
+	//-----------------------------
 	var tempAnt Ant
 
 	for key, ant := range baseAntGroup.AntsMap {

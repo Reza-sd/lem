@@ -14,7 +14,7 @@ func Test_AntsCopy(t *testing.T) {
 		var baseAntGroup AntGroup
 		expectError := true
 		//---Act---
-		err := AntGroupCopy(baseAntGroup, &secondAntGroup)
+		err := AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
@@ -26,7 +26,7 @@ func Test_AntsCopy(t *testing.T) {
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		expectError := false //nil
 		//---Act---
-		err := AntGroupCopy(baseAntGroup, &secondAntGroup)
+		err := AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
@@ -44,11 +44,14 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			NumberOfSequence: 0,
+			SequenceNumber: 0,
+			UsedTunnel: TravelHistory{
+				UsedTunnelsMap: make(map[int]map[string]string),
+			},
 		}
 		ifSame := true
 		//---Act---
-		AntGroupCopy(baseAntGroup, &secondAntGroup)
+		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -66,11 +69,11 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			NumberOfSequence: 0,
+			SequenceNumber: 0,
 		}
 		ifSame := false //not same
 		//---Act---
-		AntGroupCopy(baseAntGroup, &secondAntGroup)
+		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -81,8 +84,8 @@ func Test_AntsCopy(t *testing.T) {
 
 		baseAntGroup := sample_AntGroup_2ants_initmode_room_0
 		compareAntGroup := AntGroup{
-			NumberOfAnts:     2,
-			NumberOfSequence: 0,
+			NumberOfAnts:   2,
+			SequenceNumber: 0,
 			AntsMap: map[int]Ant{
 				1: {Name: "L1",
 					CurrentRoomName: "room_0",
@@ -98,7 +101,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := true
 		//---Act---
-		AntGroupCopy(baseAntGroup, &secondAntGroup)
+		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
