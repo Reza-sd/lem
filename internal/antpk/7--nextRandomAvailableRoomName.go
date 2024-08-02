@@ -27,7 +27,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHi
 		randomNextRoomIndex := rand.Intn(lengthCurrentTunnerArr)
 		nextRandomAvailableRoomName := currentTunnerArr[randomNextRoomIndex]
 
-		// check if I visited before
+		//---check if I visited before---------
 		if slices.Contains(theAnt.VisitedRoomsArr, nextRandomAvailableRoomName) {
 			continue
 		}
@@ -49,7 +49,7 @@ func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHi
 
 		//-------------------------------------
 		return nextRandomAvailableRoomName, nil
-
+			
 	}
 
 	return "", nil
