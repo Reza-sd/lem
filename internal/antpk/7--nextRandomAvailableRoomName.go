@@ -10,7 +10,7 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) nextRandomAvailableRoomName(theGraph *graphpk.Graph, travelHistory *TravelHistory) (string, error) {
+func (theAnt *Ant) nextRandomAvailableRoomNamePassableTunnel(theGraph *graphpk.Graph, travelHistory *TravelHistory) (string, error) {
 	funcName := "nextRandomAvailableRoomName"
 	//-------------------
 	currentRoomObjectFromGraph, ok1 := theGraph.Rooms[theAnt.CurrentRoomName]

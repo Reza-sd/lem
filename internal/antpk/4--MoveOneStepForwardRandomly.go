@@ -18,7 +18,7 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHist
 		return
 	}
 
-	nextRandomAvailableRoomName, _ := theAnt.nextRandomAvailableRoomName(theGraph, travelHistory)
+	nextRandomAvailableRoomName, _ := theAnt.nextRandomAvailableRoomNamePassableTunnel(theGraph, travelHistory)
 	// in the case of no available free next room
 	if nextRandomAvailableRoomName == "" {
 		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
