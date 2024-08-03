@@ -19,14 +19,16 @@ type AntGroup struct {
 	UsedTunnel     TravelHistory
 }
 
+type TravelHistory struct {
+	UsedTunnelsMap map[int]map[string]string
+}
+
 type TravelPlan struct {
 	FinalSequence int
 	TheBestPlan   AntGroup
 }
 
-type TravelHistory struct {
-	UsedTunnelsMap map[int]map[string]string
-}
+
 
 const (
 	MaxHandleableAntsNumber = 200

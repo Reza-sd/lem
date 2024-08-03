@@ -10,23 +10,23 @@ func Test_AntsCopy(t *testing.T) {
 	//------------
 	t.Run(`1-return an error if baseAntGroup does not have any item`, func(t *testing.T) {
 		//---Arrange---
-		var secondAntGroup AntGroup
+		//var secondAntGroup AntGroup
 		var baseAntGroup AntGroup
 		expectError := true
 		//---Act---
-		err := AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
+		_,err := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
 	//------------
 	t.Run(`2-return nil error if baseAntGroup have one item`, func(t *testing.T) {
 		//---Arrange---
-		var secondAntGroup AntGroup
+		//var secondAntGroup AntGroup
 		//var baseAntGroup AntGroup
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		expectError := false //nil
 		//---Act---
-		err := AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
+		_,err := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
@@ -34,7 +34,7 @@ func Test_AntsCopy(t *testing.T) {
 	t.Run(`3-return n same copy of baseAntGroup one item`, func(t *testing.T) {
 		//---Arrange---
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
-		var secondAntGroup AntGroup
+		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
 			AntsMap: map[int]Ant{
@@ -51,7 +51,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := true
 		//---Act---
-		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
+		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -59,7 +59,7 @@ func Test_AntsCopy(t *testing.T) {
 	t.Run(`4-return not same copy of baseAntGroup one item`, func(t *testing.T) {
 		//---Arrange---
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
-		var secondAntGroup AntGroup
+		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
 			AntsMap: map[int]Ant{
@@ -73,14 +73,14 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := false //not same
 		//---Act---
-		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
+		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
 	//------------------
 	t.Run(`5-return n same copy of baseAntGroup two item`, func(t *testing.T) {
 		//---Arrange---
-		var secondAntGroup AntGroup
+		//var secondAntGroup AntGroup
 
 		baseAntGroup := sample_AntGroup_2ants_initmode_room_0
 		compareAntGroup := AntGroup{
@@ -104,7 +104,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := true
 		//---Act---
-		AntGroupCopyAtFirstRoom(baseAntGroup, &secondAntGroup)
+		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})

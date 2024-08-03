@@ -25,8 +25,8 @@ func Test_GraphCopyFresh(t *testing.T) {
 	//secondGraph := Graph{}
 
 	// Call the function to copy
-	secondGraph:= GraphCopyFresh(baseGraph)
-    result,_:=secondGraph.ToString()
+	secondGraph := GraphFreshCopy(baseGraph)
+	result, _ := secondGraph.ToString()
 	fmt.Println(result)
 	// Test cases
 	t.Run("Copy basic properties", func(t *testing.T) {
