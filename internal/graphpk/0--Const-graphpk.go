@@ -20,7 +20,6 @@ type Room struct {
 	Tunnels    []string
 }
 
-//room.Tunnels = value.Tunnels
 
 type Graph struct {
 	StartRoomName        string

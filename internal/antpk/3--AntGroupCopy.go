@@ -17,32 +17,36 @@ func AntGroupCopyAtFirstRoom(baseAntGroup AntGroup, secondAntGroup *AntGroup) er
 	secondAntGroup.SequenceNumber = 0
 	secondAntGroup.UsedTunnel.UsedTunnelsMap = map[int]map[string]string{}
 	//-----------------------------
-	var tempAnt Ant
+	//var tempAnt Ant
 
 	for key, ant := range baseAntGroup.AntsMap {
 
-		tempAnt = secondAntGroup.AntsMap[key]
-		tempAnt.Name = ant.Name
-		tempAnt.StepNumber = ant.StepNumber
-		tempAnt.CurrentRoomName = ant.CurrentRoomName
+		secondAntGroup.AntsMap[key]=Ant{
+			Name: ant.Name,
+			CurrentRoomName: ant.CurrentRoomName,
+			VisitedRoomsArr: append([]string(nil), ant.VisitedRoomsArr...),
+			StepNumber:      ant.StepNumber,
 
-		tempAnt.VisitedRoomsArr = deepCopySlice(ant.VisitedRoomsArr)
+		}
 
-		
-
-		secondAntGroup.AntsMap[key] = tempAnt
+		// tempAnt = secondAntGroup.AntsMap[key]
+		// tempAnt.Name = ant.Name
+		// tempAnt.StepNumber = ant.StepNumber
+		// tempAnt.CurrentRoomName = ant.CurrentRoomName
+		// tempAnt.VisitedRoomsArr = deepCopySlice(ant.VisitedRoomsArr)
+		// secondAntGroup.AntsMap[key] = tempAnt
 
 	}
 	return nil
 }
 
 // -------------
-func deepCopySlice(original []string) []string {
-	copy := make([]string, len(original))
-	for i, item := range original {
-		copy[i] = item
-	}
-	return copy
-}
+// func deepCopySlice(original []string) []string {
+// 	copy := make([]string, len(original))
+// 	for i, item := range original {
+// 		copy[i] = item
+// 	}
+// 	return copy
+// }
 
 //-------------

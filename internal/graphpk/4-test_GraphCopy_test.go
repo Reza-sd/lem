@@ -22,10 +22,10 @@ func Test_GraphCopyFresh(t *testing.T) {
 	}
 
 	// Create an empty second graph
-	secondGraph := Graph{}
+	//secondGraph := Graph{}
 
 	// Call the function to copy
-	GraphCopyFresh(baseGraph, &secondGraph)
+	secondGraph:= GraphCopyFresh(baseGraph)
     result,_:=secondGraph.ToString()
 	fmt.Println(result)
 	// Test cases
