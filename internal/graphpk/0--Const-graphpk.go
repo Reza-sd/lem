@@ -20,7 +20,6 @@ type Room struct {
 	Tunnels    []string
 }
 
-
 type Graph struct {
 	StartRoomName        string
 	EndRoomName          string

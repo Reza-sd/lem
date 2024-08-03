@@ -14,7 +14,7 @@ func Test_AntsCopy(t *testing.T) {
 		var baseAntGroup AntGroup
 		expectError := true
 		//---Act---
-		_,err := AntGroupCopyAtFirstRoom(baseAntGroup)
+		_, err := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
@@ -26,7 +26,7 @@ func Test_AntsCopy(t *testing.T) {
 		baseAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		expectError := false //nil
 		//---Act---
-		_,err := AntGroupCopyAtFirstRoom(baseAntGroup)
+		_, err := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_AntsCopy_ReturnError(t, err, expectError)
 	})
@@ -51,7 +51,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := true
 		//---Act---
-		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
+		secondAntGroup, _ := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -73,7 +73,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := false //not same
 		//---Act---
-		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
+		secondAntGroup, _ := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -104,7 +104,7 @@ func Test_AntsCopy(t *testing.T) {
 		}
 		ifSame := true
 		//---Act---
-		secondAntGroup,_:=AntGroupCopyAtFirstRoom(baseAntGroup)
+		secondAntGroup, _ := AntGroupCopyAtFirstRoom(baseAntGroup)
 		//---Assert----
 		assert_If_Two_AntGroup_SameCopy(t, compareAntGroup, secondAntGroup, ifSame)
 	})
@@ -116,7 +116,7 @@ func assert_If_Two_AntGroup_SameCopy(t testing.TB, antGroup1 AntGroup, antGroup2
 	t.Helper()
 
 	if !reflect.DeepEqual(antGroup1, antGroup2) && ifSame {
-		t.Errorf("not same \n antGroup1= %v \n antGroup2= %v ",antGroup1,antGroup2)
+		t.Errorf("not same \n antGroup1= %v \n antGroup2= %v ", antGroup1, antGroup2)
 	}
 
 }

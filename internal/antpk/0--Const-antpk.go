@@ -9,7 +9,6 @@ type Ant struct {
 	CurrentRoomName string
 	VisitedRoomsArr []string
 	StepNumber      int
-
 }
 
 type AntGroup struct {
@@ -27,8 +26,6 @@ type TravelPlan struct {
 	FinalSequence int
 	TheBestPlan   AntGroup
 }
-
-
 
 const (
 	MaxHandleableAntsNumber = 200

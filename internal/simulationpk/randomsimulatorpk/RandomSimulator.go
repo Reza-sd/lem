@@ -39,8 +39,8 @@ func runRandomSimulator(theModel *modelpk.Model, NumberOfTry int, travelHistory 
 
 	for i := 1; i <= NumberOfTry; i++ {
 
-		graphpk.GraphFreshCopy(baseGraph, &tempGraph)
-		antpk.AntGroupCopyAtFirstRoom(baseAnts, &tempAnts)
+		tempGraph = graphpk.GraphFreshCopy(baseGraph)
+		tempAnts, _ = antpk.AntGroupCopyAtFirstRoom(baseAnts)
 
 		tempAnts.TryPushAllAntsToEnd(&tempGraph, &tempTravelPlan, NumberOfTry, travelHistory)
 
