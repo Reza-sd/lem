@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestGraphCopyFresh(t *testing.T) {
+func Test_GraphCopyFresh(t *testing.T) {
 	// Create a base graph for testing
 	baseGraph := Graph{
 		StartRoomName:        "start",

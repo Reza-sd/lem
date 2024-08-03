@@ -9,7 +9,7 @@ type Ant struct {
 	CurrentRoomName string
 	VisitedRoomsArr []string
 	StepNumber      int
-	//AssignedPath    []string
+
 }
 
 type AntGroup struct {
