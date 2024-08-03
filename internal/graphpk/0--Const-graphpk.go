@@ -14,12 +14,13 @@ L2-0 L3-0
 $
 */
 type Room struct {
-	Name       string //0 , 1 ,2 ,...
-	MaxSeats   uint   //all seats in room (for start and end = unlimited) for other =1
+	Name       string
+	MaxSeats   uint
 	EmptySeats uint
-	Tunnels    []string //[2,5]
-	//LastAntCameFromRoomName string   //[step]who
+	Tunnels    []string
 }
+
+//room.Tunnels = value.Tunnels
 
 type Graph struct {
 	StartRoomName        string
