@@ -1,11 +1,12 @@
 package graphpk
 
 import (
-	"fmt"
+	//"fmt"
 )
 
 // =======================================================
 func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
+	funcName:="InitGraph"
 	// set start and end room
 	myGraph.StartRoomName = start
 	myGraph.EndRoomName = end
@@ -15,8 +16,8 @@ func (myGraph *Graph) InitGraph(tunnelArr []string, start, end string) error {
 
 	err := myGraph.setTunnelAndSeatsToGraphRooms(tunnelArr)
 	if err != nil {
-		fmt.Println("Error:", err)
-		return err
+		//fmt.Println("Error:", err)
+		return logger.RWarn(funcName,"setTunnelAndSeatsToGraphRooms",err,"setTunnelAndSeatsToGraphRooms ")
 	}
 	myGraph.NumberOfAllRoom = len(myGraph.Rooms)
 	return nil
