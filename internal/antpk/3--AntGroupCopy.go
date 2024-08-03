@@ -26,10 +26,9 @@ func AntGroupCopyAtFirstRoom(baseAntGroup AntGroup, secondAntGroup *AntGroup) er
 		tempAnt.StepNumber = ant.StepNumber
 		tempAnt.CurrentRoomName = ant.CurrentRoomName
 
-		//tempAnt.VisitedRoomsArr = deepCopySlice(ant.VisitedRoomsArr)
+		tempAnt.VisitedRoomsArr = deepCopySlice(ant.VisitedRoomsArr)
 
-		tempAnt.VisitedRoomsArr = make([]string, len(ant.VisitedRoomsArr))
-		copy(ant.VisitedRoomsArr, tempAnt.VisitedRoomsArr)
+		
 
 		secondAntGroup.AntsMap[key] = tempAnt
 

@@ -1,6 +1,7 @@
 package graphpk
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -25,7 +26,8 @@ func Test_GraphCopyFresh(t *testing.T) {
 
 	// Call the function to copy
 	GraphCopyFresh(baseGraph, &secondGraph)
-
+    result,_:=secondGraph.ToString()
+	fmt.Println(result)
 	// Test cases
 	t.Run("Copy basic properties", func(t *testing.T) {
 		if secondGraph.StartRoomName != baseGraph.StartRoomName {

@@ -17,21 +17,21 @@ func GraphCopyFresh(baseGraph Graph, secondGraph *Graph) {
 		room.EmptySeats = value.EmptySeats
 
 		//copy(value.Tunnels,room.Tunnels)
-		room.Tunnels= make([]string, len(value.Tunnels))
-		copy(value.Tunnels,room.Tunnels)
-		//room.Tunnels = deepCopySlice(value.Tunnels)
+		// room.Tunnels= make([]string, len(value.Tunnels))
+		// copy(value.Tunnels,room.Tunnels)
+		room.Tunnels = deepCopySlice(value.Tunnels)
 		secondGraph.Rooms[roomName] = room
 
 	}
 }
 
 // ======================
-// func deepCopySlice(original []string) []string {
-// 	copy := make([]string, len(original))
-// 	for i, item := range original {
-// 		copy[i] = item
-// 	}
-// 	return copy
-// }
+func deepCopySlice(original []string) []string {
+	copy := make([]string, len(original))
+	for i, item := range original {
+		copy[i] = item
+	}
+	return copy
+}
 
 //======================
