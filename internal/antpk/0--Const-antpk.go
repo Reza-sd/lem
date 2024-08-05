@@ -16,7 +16,7 @@ type AntGroup struct {
 	currentSequenceNumber int
 	AntsDb                map[string]Ant
 	UsedTunnel            map[int]map[string]string
-	AntsInEndRoom         []string
+	notArrivedAntsName    []string
 }
 
 // type TravelHistory struct {
