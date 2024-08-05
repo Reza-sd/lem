@@ -32,6 +32,10 @@ func (allAnts *AntGroup) TryMoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) 
 				continue
 			}
 
+			if theAnt.StepNumber == allAnts.CurrentSequenceNumber {
+				continue
+			}
+
 			canIMove, moveTo, err := CanImoveWhere(theAnt.Name, *allAnts, *theGraph)
 
 			if err != nil {
@@ -82,9 +86,17 @@ func (allAnts *AntGroup) TryMoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) 
 		if !okTheAnt {
 			return logger.RWarnStr(funcName, "AntsDb", "the ant does not exist", "")
 		}
-		theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
-		theAnt.StepNumber++
-		allAnts.AntsDb[theAntName] = theAnt
+
+		if theAnt.StepNumber != allAnts.CurrentSequenceNumber {
+			theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
+			theAnt.StepNumber++
+			allAnts.AntsDb[theAntName] = theAnt
+
+		}
+
+		if theAnt.CurrentRoomName == theGraph.EndRoomName {
+			delete(allAnts.NotArrivedAntsName, theAntName)
+		}
 
 	}
 

@@ -63,8 +63,15 @@ func main() {
 		fmt.Println("errBaseModel1 ", errBaseModel1)
 		return
 	}
+	//fmt.Println(baseModel1.BaseAnts)
 	baseModel1.BaseAnts.Print()
 	baseModel1.BaseGraph.Print()
+	baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
+	baseModel1.BaseAnts.Print()
+	baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
+	baseModel1.BaseAnts.Print()
+	baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
+	baseModel1.BaseAnts.Print()
 	baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
 	baseModel1.BaseAnts.Print()
 	// -----------------------------------------
