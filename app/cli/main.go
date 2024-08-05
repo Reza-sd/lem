@@ -5,8 +5,8 @@ import (
 
 	"main/internal/logstack"
 	"main/internal/simulationpk/modelpk"
-	"main/internal/simulationpk/randomsimulatorpk"
-	"time"
+	//"main/internal/simulationpk/randomsimulatorpk"
+	//"time"
 )
 
 // ----------------const----------------
@@ -47,9 +47,9 @@ func main() {
 	//----------------------------
 	lem1 := modelpk.Lem{
 		NumberOfAnts: 3,
-		StartRoom:    "0",
-		EndRoom:      "1",
-		TunnelArr:    []string{"0-1"},
+		StartRoom:    "A",
+		EndRoom:      "B",
+		TunnelArr:    []string{"A-B"},
 	}
 
 	//------------------------
@@ -63,16 +63,20 @@ func main() {
 		fmt.Println("errBaseModel1 ", errBaseModel1)
 		return
 	}
+	baseModel1.BaseAnts.Print()
+	baseModel1.BaseGraph.Print()
+	baseModel1.BaseAnts.MoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
+	baseModel1.BaseAnts.Print()
 	// -----------------------------------------
-	startTimeSinceCallRandomSimulator := time.Now()
-	theBestFoundTravelPlan := randomsimulatorpk.RandomSimulator(&baseModel1)
-	durationRandomSimulator := time.Since(startTimeSinceCallRandomSimulator)
+	//startTimeSinceCallRandomSimulator := time.Now()
+	//theBestFoundTravelPlan := randomsimulatorpk.RandomSimulator(&baseModel1)
+	//durationRandomSimulator := time.Since(startTimeSinceCallRandomSimulator)
 	//-----------------------------------
 	//report
-	fmt.Println("")
-	fmt.Println("Steps :", theBestFoundTravelPlan.FinalSequence)
-	theBestFoundTravelPlan.TheBestPlan.ToString()
+	//fmt.Println("")
+	//fmt.Println("Steps :", theBestFoundTravelPlan.FinalSequence)
+	//theBestFoundTravelPlan.TheBestPlan.ToString()
 	//-----------------------------------
-	fmt.Println("time : (", durationRandomSimulator.Seconds(), "Seconds =", durationRandomSimulator.Minutes(), "Minutes)")
+	//fmt.Println("time : (", durationRandomSimulator.Seconds(), "Seconds =", durationRandomSimulator.Minutes(), "Minutes)")
 
 }

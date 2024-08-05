@@ -2,6 +2,7 @@ package antpk
 
 import (
 	"main/internal/graphpk"
+	//"strings"
 )
 
 // ==================Samples=============================
@@ -31,6 +32,7 @@ var (
 			"L2": ant2,
 		},
 		CurrentSequenceNumber: 2,
+		NotArrivedAntsName:    []string{"L1", "L2"},
 	}
 	//------------------
 	travelPlan1 = TravelPlan{
