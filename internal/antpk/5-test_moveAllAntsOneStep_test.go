@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 
 	t.Run("1-", func(t *testing.T) {
@@ -22,8 +21,8 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{
-				0:{"":""},
+			UsedTunnel: map[int]map[string]string{
+				0: {"": ""},
 			},
 			NotArrivedAntsName: []string{"L1"},
 		}
@@ -38,11 +37,11 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"room_1": graphpk.Sample_room_1_EndRoom,
 			},
 		}
-		 myAntGroup.Print()
-		 myGraph.Print()
-		 myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
-		 myAntGroup.Print()
-		 myGraph.Print()
+		myAntGroup.Print()
+		myGraph.Print()
+		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.Print()
+		myGraph.Print()
 	})
 
 }

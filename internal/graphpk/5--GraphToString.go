@@ -23,7 +23,8 @@ func (myGraph *Graph) ToString() (string, error) {
 // ---------------------------------
 func (myGraph *Graph) Print() {
 	fmt.Println("\n----------Graph------------")
-	fmt.Println(myGraph.ToString())
+	str, _ := myGraph.ToString()
+	fmt.Println(str)
 	fmt.Println("---------------------------")
 }
 

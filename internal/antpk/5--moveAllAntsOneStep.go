@@ -11,10 +11,10 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 
 	for _, theAntName := range allAnts.NotArrivedAntsName {
 
-		theAnt,okTheAnt := allAnts.AntsDb[theAntName]
+		theAnt, okTheAnt := allAnts.AntsDb[theAntName]
 
-		if !okTheAnt{
-			 return logger.RWarnStr(funcName, "AntsDb", "the ant does not exist","")
+		if !okTheAnt {
+			return logger.RWarnStr(funcName, "AntsDb", "the ant does not exist", "")
 		}
 
 		if theAnt.CurrentRoomName == theGraph.EndRoomName {
@@ -36,8 +36,8 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 		} else {
 			seq := allAnts.CurrentSequenceNumber
 			from := theAnt.CurrentRoomName
-			_=seq
-			_=from
+			_ = seq
+			_ = from
 			allAnts.UsedTunnel[seq][from] = moveTo
 
 			theAnt.CurrentRoomName = moveTo

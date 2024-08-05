@@ -32,7 +32,8 @@ func (allAnts *AntGroup) ToString() (string, error) {
 // --------------------
 func (allAnts *AntGroup) Print() {
 	fmt.Println("\n----------AntGroup------------")
-	fmt.Println(allAnts.ToString())
+	str, _ := allAnts.ToString()
+	fmt.Println(str)
 	fmt.Println("---------------------------")
 }
 
