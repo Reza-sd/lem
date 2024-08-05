@@ -10,16 +10,19 @@ import (
 // =====================================================
 func WhatsMyNextMove(antName string, theAntGroup AntGroup, theGraph graphpk.Graph) (string, error) {
 	funcName := "WhatsMyNextMove"
-	theAnt := theAntGroup.AntsDb[antName]
+	theAnt,okAnt := theAntGroup.AntsDb[antName]
+	if !okAnt {
+		return "", logger.RWarnStr(funcName, "okAnt", "the AntGroup does not have this Ant", "check if ant avaliable in antsgroup")
+	}
 	//Am I able to move?
 	if theAnt.CurrentRoomName == theGraph.EndRoomName {
 		//already arrived
 		return "*", nil //means stop
 	}
 	//-------------------
-	currentRoomObjectFromGraph, ok1 := theGraph.Rooms[theAnt.CurrentRoomName]
-	if !ok1 {
-		return "", logger.RWarnStr(funcName, "ok1", "the graph does not have this room", "check if graph has this room name")
+	currentRoomObjectFromGraph, okRoom := theGraph.Rooms[theAnt.CurrentRoomName]
+	if !okRoom {
+		return "", logger.RWarnStr(funcName, "okRoom", "the graph does not have this room", "check if graph has this room name")
 	}
 	//----------------
 	currentConnectionsArr := currentRoomObjectFromGraph.Connections

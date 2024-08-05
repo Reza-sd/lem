@@ -2,6 +2,7 @@ package antpk
 
 import (
 	//"reflect"
+	"fmt"
 	"main/internal/graphpk"
 	"testing"
 	//"main/internal/simulationpk/modelpk"
@@ -11,7 +12,7 @@ import (
 func Test_MoveTheAntOneStepRandomly(t *testing.T) {
 	//t.Skip()
 	//------------
-	t.Run(`1-return an error if baseAntGroup does not have any item`, func(t *testing.T) {
+	t.Run(`1-return `, func(t *testing.T) {
 		theAnt := Ant{
 			Name:            "L1",
 			CurrentRoomName: "room_0",
@@ -40,5 +41,7 @@ func Test_MoveTheAntOneStepRandomly(t *testing.T) {
 
 		myAntGroup.Print()
 		myGraph.Print()
+		nextMove,_:=WhatsMyNextMove("L1",myAntGroup,myGraph)
+		fmt.Println(">>>nextMove=",nextMove)
 	})
 }
