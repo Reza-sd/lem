@@ -14,13 +14,13 @@ type Ant struct {
 type AntGroup struct {
 	NumberOfAnts   int
 	SequenceNumber int
-	AntsMap        map[int]Ant
-	UsedTunnel     TravelHistory
+	AntsMap        map[string]Ant
+	UsedTunnel     map[int]map[string]string
 }
 
-type TravelHistory struct {
-	UsedTunnelsMap map[int]map[string]string
-}
+// type TravelHistory struct {
+// 	UsedTunnelsMap map[int]map[string]string
+// }
 
 type TravelPlan struct {
 	FinalSequence int

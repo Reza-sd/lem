@@ -37,17 +37,16 @@ func Test_AntsCopy(t *testing.T) {
 		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
-			AntsMap: map[int]Ant{
-				1: {Name: "L1",
+			AntsMap: map[string]Ant{
+				"L1": {Name: "L1",
 					CurrentRoomName: "room_0",
 					VisitedRoomsArr: []string{"room_0"},
 					StepNumber:      0,
 				},
 			},
 			SequenceNumber: 0,
-			UsedTunnel: TravelHistory{
-				UsedTunnelsMap: make(map[int]map[string]string),
-			},
+			UsedTunnel:  make(map[int]map[string]string),
+			
 		}
 		ifSame := true
 		//---Act---
@@ -62,8 +61,8 @@ func Test_AntsCopy(t *testing.T) {
 		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
-			AntsMap: map[int]Ant{
-				1: {Name: "L1",
+			AntsMap: map[string]Ant{
+				"L1": {Name: "L1",
 					CurrentRoomName: "roooooom_0",
 					VisitedRoomsArr: []string{"room_0"},
 					StepNumber:      0,
@@ -86,21 +85,20 @@ func Test_AntsCopy(t *testing.T) {
 		compareAntGroup := AntGroup{
 			NumberOfAnts:   2,
 			SequenceNumber: 0,
-			AntsMap: map[int]Ant{
-				1: {Name: "L1",
+			AntsMap: map[string]Ant{
+				"L1": {Name: "L1",
 					CurrentRoomName: "room_0",
 					VisitedRoomsArr: []string{"room_0"},
 					StepNumber:      0,
 				},
-				2: {Name: "L2",
+				"L2": {Name: "L2",
 					CurrentRoomName: "room_0",
 					VisitedRoomsArr: []string{"room_0"},
 					StepNumber:      0,
 				},
 			},
-			UsedTunnel: TravelHistory{
-				UsedTunnelsMap: make(map[int]map[string]string),
-			},
+			UsedTunnel: make(map[int]map[string]string),
+			
 		}
 		ifSame := true
 		//---Act---

@@ -22,9 +22,9 @@ var (
 
 	antGroup3 = AntGroup{
 		NumberOfAnts: 2,
-		AntsMap: map[int]Ant{
-			1: ant1,
-			2: ant2,
+		AntsMap: map[string]Ant{
+			"L1": ant1,
+			"L2": ant2,
 		},
 		SequenceNumber: 2,
 	}
@@ -36,37 +36,33 @@ var (
 	//------------------
 	sample_AntGroup_2ants_initmode_room_0 = AntGroup{
 		NumberOfAnts: 2,
-		AntsMap: map[int]Ant{
-			1: {Name: "L1",
+		AntsMap: map[string]Ant{
+			"L1": {Name: "L1",
 				CurrentRoomName: "room_0",
 				VisitedRoomsArr: []string{"room_0"},
 				StepNumber:      0,
 			},
-			2: {Name: "L2",
+			"L2": {Name: "L2",
 				CurrentRoomName: "room_0",
 				VisitedRoomsArr: []string{"room_0"},
 				StepNumber:      0,
 			},
 		},
 		SequenceNumber: 0,
-		UsedTunnel: TravelHistory{
-			UsedTunnelsMap: make(map[int]map[string]string),
-		},
+		UsedTunnel:     map[int]map[string]string{},
 	}
 	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 1,
-		AntsMap: map[int]Ant{
-			1: {Name: "L1",
+		AntsMap: map[string]Ant{
+			"L1": {Name: "L1",
 				CurrentRoomName: "room_0",
 				VisitedRoomsArr: []string{"room_0"},
 				StepNumber:      0,
 			},
 		},
 		SequenceNumber: 0,
-		UsedTunnel: TravelHistory{
-			UsedTunnelsMap: make(map[int]map[string]string),
-		},
+		UsedTunnel:     make(map[int]map[string]string),
 	}
 	//------------------
 )

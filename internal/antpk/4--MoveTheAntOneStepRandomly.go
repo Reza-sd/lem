@@ -10,8 +10,15 @@ import (
 )
 
 // ==========================================================
-func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHistory *TravelHistory) {
+func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHistory *TravelHistory) error {
+	funcName := "MoveTheAntOneStepRandomly"
 	//fmt.Println("move theAnt")
+	//----------------input validation--healthy Ant----------------
+	if theAnt.StepNumber != len(theAnt.VisitedRoomsArr)-1 {
+		return logger.RWarn(funcName)
+	}
+
+	//---------------------------------------------------
 
 	// -----check if its already in End room----
 	if theAnt.CurrentRoomName == theGraph.EndRoomName {
@@ -28,32 +35,6 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHist
 		return
 	}
 	//---------------------------------------------
-	// v, ok := theGraph.UsedTunnelsInLastSequence[theAnt.CurrentRoomName]
-	// if ok && v == nextRandomAvailableRoomName {
-
-	// 	//fmt.Println("mio")
-	// 	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
-	// 	theAnt.StepNumber++
-	// 	delete(theGraph.UsedTunnelsInLastSequence, theAnt.CurrentRoomName)
-	// 	fmt.Println("d-UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
-	// 	return
-	// }
-	//Tunnel := currentRoomName + "-" + MovedRoomName
-	//OfferedTunnel :=theAnt.CurrentRoomName+"-"+nextRandomAvailableRoomName
-	// if slices.Contains(theGraph.UsedTunnelsInLastSequence,OfferedTunnel){
-
-	// 	fmt.Println(OfferedTunnel)
-	// 	fmt.Println(theGraph.UsedTunnelsInLastSequence)
-
-	// 	theAnt.VisitedRoomsArr = append(theAnt.VisitedRoomsArr, "*")
-
-	// 	theAnt.NumberOfSteps++
-	// 	//nextRoom.LastAntCameFromRoomName =""
-	// 	return
-
-	// }
-	// if theAnt.CurrentRoomName ==  theGraph.startroom && nextRandomAvailableRoomName== theGraph.EndRoom ??
-	//Used Tunnel in this sequence
 
 	//---------------------------------------------
 	currentRoom := theGraph.Rooms[theAnt.CurrentRoomName]
@@ -64,11 +45,7 @@ func (theAnt *Ant) MoveTheAntOneStepRandomly(theGraph *graphpk.Graph, travelHist
 	nextRoom.EmptySeats = 0
 
 	//---------------
-	// nextRoom.LastAntCameFromRoomName = theAnt.CurrentRoomName
 
-	// fmt.Println("nextRoom.LastAntCameFromRoomName==", nextRoom.LastAntCameFromRoomName, theAnt.Name)
-	//------------------------
-	//for the End node (has free seats always)
 	if nextRandomAvailableRoomName == theGraph.EndRoomName {
 		nextRoom.EmptySeats = 1000
 		theGraph.CurrentAntsInEndRoom++
