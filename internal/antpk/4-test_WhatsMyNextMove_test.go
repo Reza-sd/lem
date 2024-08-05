@@ -195,8 +195,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			currentSequenceNumber: 1,
 			UsedTunnel: map[int]map[string]string{
 				1: {
-					"room_0":    "room_1",
-					//"country": "USA",
+					"room_0": "room_1",
 				},
 			},
 		}
