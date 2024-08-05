@@ -32,7 +32,10 @@ var (
 			"L2": ant2,
 		},
 		CurrentSequenceNumber: 2,
-		NotArrivedAntsName:    []string{"L1", "L2"},
+		NotArrivedAntsName: map[string]bool{
+			"L1": true,
+			"L2": true,
+		},
 	}
 	//------------------
 	travelPlan1 = TravelPlan{

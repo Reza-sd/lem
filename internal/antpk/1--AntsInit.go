@@ -21,6 +21,7 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts int, startRoomName string)
 	myAntGroup.CurrentSequenceNumber = 0
 	myAntGroup.UsedTunnel = map[int]map[string]string{}
 	//--------------------------
+	//myAntGroup
 	for i := 1; i <= numberOfAnts; i++ {
 		name := fmt.Sprintf("L%d", i) //Generate name for each Ant
 		myAntGroup.AntsDb[name] = Ant{
@@ -30,7 +31,9 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts int, startRoomName string)
 			VisitedRoomsArr: []string{startRoomName},
 			StepNumber:      0,
 		}
-		myAntGroup.NotArrivedAntsName = append(myAntGroup.NotArrivedAntsName, name)
+		myAntGroup.NotArrivedAntsName = make(map[string]bool)
+		myAntGroup.NotArrivedAntsName[name] = true
+		//myAntGroup.NotArrivedAntsName = append(myAntGroup.NotArrivedAntsName, name)
 
 	}
 	return nil

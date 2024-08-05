@@ -40,7 +40,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		}
 		myAntGroup.Print()
 		//myGraph.Print()
-		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.TryMoveAllAntsOneStepRandomly(&myGraph)
 		myAntGroup.Print()
 		expSequenceNumbebr := 1
 		expUsedTunnel := map[int]map[string]string{
@@ -96,7 +96,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		}
 		myAntGroup.Print()
 		//myGraph.Print()
-		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.TryMoveAllAntsOneStepRandomly(&myGraph)
 		expSequenceNumbebr := 1
 		expUsedTunnel := map[int]map[string]string{
 			1: {
@@ -107,7 +107,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel, expNotArrivedAntsName)
 
 		myAntGroup.Print()
-		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.TryMoveAllAntsOneStepRandomly(&myGraph)
 
 		expSequenceNumbebr = 2
 		expUsedTunnel = map[int]map[string]string{
@@ -172,14 +172,14 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		}
 		myAntGroup.Print()
 		//myGraph.Print()
-		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.TryMoveAllAntsOneStepRandomly(&myGraph)
 		expSequenceNumbebr := 1
 		expUsedTunnel := map[int]map[string]string{
 			1: {
 				"room_0": "room_1",
 			},
 		}
-		expNotArrivedAntsName := []string{"L2", "L3"}
+		expNotArrivedAntsName := []string{"L3", "L2"}
 		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel, expNotArrivedAntsName)
 
 		// myAntGroup.Print()
