@@ -26,7 +26,7 @@ var (
 			"L1": ant1,
 			"L2": ant2,
 		},
-		SequenceNumber: 2,
+		currentSequenceNumber: 2,
 	}
 	//------------------
 	travelPlan1 = TravelPlan{
@@ -48,8 +48,8 @@ var (
 				StepNumber:      0,
 			},
 		},
-		SequenceNumber: 0,
-		UsedTunnel:     map[int]map[string]string{},
+		currentSequenceNumber: 0,
+		UsedTunnel:            map[int]map[string]string{},
 	}
 	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
@@ -61,8 +61,8 @@ var (
 				StepNumber:      0,
 			},
 		},
-		SequenceNumber: 0,
-		UsedTunnel:     make(map[int]map[string]string),
+		currentSequenceNumber: 0,
+		UsedTunnel:            make(map[int]map[string]string),
 	}
 	//------------------
 )

@@ -23,8 +23,8 @@ func Test_MoveTheAntOneStepRandomly(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			SequenceNumber: 0,
-			UsedTunnel:     map[int]map[string]string{},
+			currentSequenceNumber: 0,
+			UsedTunnel:            map[int]map[string]string{},
 		}
 		//travelHistory :=myAntGroup.UsedTunnel
 		myGraph := graphpk.Graph{

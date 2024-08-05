@@ -7,7 +7,7 @@ import (
 func (allAnts *AntGroup) ToString() (string, error) {
 
 	var antGroupString string
-	antGroupString = fmt.Sprintf("NumberOfAnts=%v, SequenceNumber=%v, UsedTunnel=%v \n", allAnts.NumberOfAnts, allAnts.SequenceNumber, allAnts.UsedTunnel)
+	antGroupString = fmt.Sprintf("NumberOfAnts=%v, SequenceNumber=%v, UsedTunnel=%v \n", allAnts.NumberOfAnts, allAnts.currentSequenceNumber, allAnts.UsedTunnel)
 	count := allAnts.NumberOfAnts
 	if count == 0 {
 		antGroupString = "<< NO ANT,Empty AntGroup >>"
