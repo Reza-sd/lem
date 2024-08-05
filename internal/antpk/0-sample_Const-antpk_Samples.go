@@ -22,7 +22,7 @@ var (
 
 	antGroup3 = AntGroup{
 		NumberOfAnts: 2,
-		AntsMap: map[string]Ant{
+		AntsDb: map[string]Ant{
 			"L1": ant1,
 			"L2": ant2,
 		},
@@ -36,7 +36,7 @@ var (
 	//------------------
 	sample_AntGroup_2ants_initmode_room_0 = AntGroup{
 		NumberOfAnts: 2,
-		AntsMap: map[string]Ant{
+		AntsDb: map[string]Ant{
 			"L1": {Name: "L1",
 				CurrentRoomName: "room_0",
 				VisitedRoomsArr: []string{"room_0"},
@@ -54,7 +54,7 @@ var (
 	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 1,
-		AntsMap: map[string]Ant{
+		AntsDb: map[string]Ant{
 			"L1": {Name: "L1",
 				CurrentRoomName: "room_0",
 				VisitedRoomsArr: []string{"room_0"},

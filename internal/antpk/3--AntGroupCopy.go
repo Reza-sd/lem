@@ -14,13 +14,13 @@ func AntGroupCopyAtFirstRoom(original AntGroup) (AntGroup, error) {
 	copy = AntGroup{
 		NumberOfAnts:   original.NumberOfAnts,
 		SequenceNumber: original.SequenceNumber,
-		AntsMap:        make(map[string]Ant, len(original.AntsMap)),
+		AntsDb:         make(map[string]Ant, len(original.AntsDb)),
 		UsedTunnel:     map[int]map[string]string{},
 	}
 
-	for key, ant := range original.AntsMap {
+	for key, ant := range original.AntsDb {
 
-		copy.AntsMap[key] = Ant{
+		copy.AntsDb[key] = Ant{
 			Name:            ant.Name,
 			CurrentRoomName: ant.CurrentRoomName,
 			VisitedRoomsArr: append([]string(nil), ant.VisitedRoomsArr...),

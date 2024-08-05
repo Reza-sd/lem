@@ -16,14 +16,14 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts int, startRoomName string)
 		return logger.RWarnStr(funcName, "startRoomName ? EMPTY", "is not valid", "check if startRoomName not empty")
 	}
 	//--------------------------
-	myAntGroup.AntsMap = make(map[string]Ant) //initiate map
+	myAntGroup.AntsDb = make(map[string]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
 	myAntGroup.SequenceNumber = 0
 	myAntGroup.UsedTunnel = map[int]map[string]string{}
 	//--------------------------
 	for i := 1; i <= numberOfAnts; i++ {
 		name := fmt.Sprintf("L%d", i) //Generate name for each Ant
-		myAntGroup.AntsMap[name] = Ant{
+		myAntGroup.AntsDb[name] = Ant{
 			Name: name,
 
 			CurrentRoomName: startRoomName,

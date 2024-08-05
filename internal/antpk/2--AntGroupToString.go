@@ -16,7 +16,7 @@ func (allAnts *AntGroup) ToString() (string, error) {
 
 	for i := 1; i <= count; i++ {
 
-		ant := allAnts.AntsMap[fmt.Sprintf("L%v",i)]
+		ant := allAnts.AntsDb[fmt.Sprintf("L%v", i)]
 		antStr := fmt.Sprintf("antName=%v, CurrentRoom=%v, StepNumber=%v, VisitedRooms=%v", ant.Name, ant.CurrentRoomName, ant.StepNumber, ant.VisitedRoomsArr)
 		antGroupString += antStr
 		if i != allAnts.NumberOfAnts {

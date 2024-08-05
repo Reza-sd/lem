@@ -37,7 +37,7 @@ func Test_AntsCopy(t *testing.T) {
 		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
-			AntsMap: map[string]Ant{
+			AntsDb: map[string]Ant{
 				"L1": {Name: "L1",
 					CurrentRoomName: "room_0",
 					VisitedRoomsArr: []string{"room_0"},
@@ -45,8 +45,7 @@ func Test_AntsCopy(t *testing.T) {
 				},
 			},
 			SequenceNumber: 0,
-			UsedTunnel:  make(map[int]map[string]string),
-			
+			UsedTunnel:     make(map[int]map[string]string),
 		}
 		ifSame := true
 		//---Act---
@@ -61,7 +60,7 @@ func Test_AntsCopy(t *testing.T) {
 		//var secondAntGroup AntGroup
 		compareAntGroup := AntGroup{
 			NumberOfAnts: 1,
-			AntsMap: map[string]Ant{
+			AntsDb: map[string]Ant{
 				"L1": {Name: "L1",
 					CurrentRoomName: "roooooom_0",
 					VisitedRoomsArr: []string{"room_0"},
@@ -85,7 +84,7 @@ func Test_AntsCopy(t *testing.T) {
 		compareAntGroup := AntGroup{
 			NumberOfAnts:   2,
 			SequenceNumber: 0,
-			AntsMap: map[string]Ant{
+			AntsDb: map[string]Ant{
 				"L1": {Name: "L1",
 					CurrentRoomName: "room_0",
 					VisitedRoomsArr: []string{"room_0"},
@@ -98,7 +97,6 @@ func Test_AntsCopy(t *testing.T) {
 				},
 			},
 			UsedTunnel: make(map[int]map[string]string),
-			
 		}
 		ifSame := true
 		//---Act---

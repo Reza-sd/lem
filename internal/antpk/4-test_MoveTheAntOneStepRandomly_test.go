@@ -20,7 +20,7 @@ func Test_MoveTheAntOneStepRandomly(t *testing.T) {
 		}
 		myAntGroup := AntGroup{
 			NumberOfAnts: 1,
-			AntsMap: map[string]Ant{
+			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
 			SequenceNumber: 0,
