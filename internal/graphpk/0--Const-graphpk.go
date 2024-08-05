@@ -14,10 +14,10 @@ L2-0 L3-0
 $
 */
 type Room struct {
-	Name       string
-	MaxSeats   uint
-	EmptySeats uint
-	Tunnels    []string
+	Name        string
+	MaxSeats    uint
+	EmptySeats  uint
+	Connections []string
 }
 
 type Graph struct {

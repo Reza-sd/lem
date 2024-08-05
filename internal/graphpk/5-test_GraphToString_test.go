@@ -14,10 +14,10 @@ func TestGraphToString(t *testing.T) {
 		NumberOfAllRoom:      4,
 		CurrentAntsInEndRoom: 0,
 		Rooms: map[string]Room{
-			"start": {Name: "start", Tunnels: []string{"A"}, MaxSeats: 100000, EmptySeats: 99995},
-			"A":     {Name: "A", Tunnels: []string{"start", "B"}, MaxSeats: 1, EmptySeats: 0},
-			"B":     {Name: "B", Tunnels: []string{"A", "end"}, MaxSeats: 1, EmptySeats: 1},
-			"end":   {Name: "end", Tunnels: []string{"B"}, MaxSeats: 100000, EmptySeats: 99995},
+			"start": {Name: "start", Connections: []string{"A"}, MaxSeats: 100000, EmptySeats: 99995},
+			"A":     {Name: "A", Connections: []string{"start", "B"}, MaxSeats: 1, EmptySeats: 0},
+			"B":     {Name: "B", Connections: []string{"A", "end"}, MaxSeats: 1, EmptySeats: 1},
+			"end":   {Name: "end", Connections: []string{"B"}, MaxSeats: 100000, EmptySeats: 99995},
 		},
 	}
 

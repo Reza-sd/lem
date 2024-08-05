@@ -13,10 +13,10 @@ func GraphFreshCopy(original Graph) Graph {
 	for name, room := range original.Rooms {
 
 		copy.Rooms[name] = Room{
-			Name:       room.Name,
-			MaxSeats:   room.MaxSeats,
-			EmptySeats: room.EmptySeats,
-			Tunnels:    append([]string(nil), room.Tunnels...),
+			Name:        room.Name,
+			MaxSeats:    room.MaxSeats,
+			EmptySeats:  room.EmptySeats,
+			Connections: append([]string(nil), room.Connections...),
 		}
 	}
 	return copy

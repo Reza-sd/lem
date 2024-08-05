@@ -18,8 +18,8 @@ func (myGraph *Graph) setTunnelAndSeatsToGraphRooms(tunnelArr []string) error {
 		roomA.Name = fromRoom
 		roomB.Name = toRoom
 		// Modify the Room's tunnels
-		roomA.Tunnels = append(roomA.Tunnels, toRoom)
-		roomB.Tunnels = append(roomB.Tunnels, fromRoom)
+		roomA.Connections = append(roomA.Connections, toRoom)
+		roomB.Connections = append(roomB.Connections, fromRoom)
 		//---------------set-seats----------------------
 		// Put the modified Room back into the map
 		if fromRoom == myGraph.StartRoomName || fromRoom == myGraph.EndRoomName {

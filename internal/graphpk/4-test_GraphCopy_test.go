@@ -14,10 +14,10 @@ func Test_GraphCopyFresh(t *testing.T) {
 		CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      4,
 		Rooms: map[string]Room{
-			"start": {Name: "start", Tunnels: []string{"A"}, MaxSeats: 100000, EmptySeats: 100000},
-			"A":     {Name: "A", Tunnels: []string{"start", "B"}, MaxSeats: 1, EmptySeats: 1},
-			"B":     {Name: "B", Tunnels: []string{"A", "end"}, MaxSeats: 1, EmptySeats: 1},
-			"end":   {Name: "end", Tunnels: []string{"B"}, MaxSeats: 100000, EmptySeats: 100000},
+			"start": {Name: "start", Connections: []string{"A"}, MaxSeats: 100000, EmptySeats: 100000},
+			"A":     {Name: "A", Connections: []string{"start", "B"}, MaxSeats: 1, EmptySeats: 1},
+			"B":     {Name: "B", Connections: []string{"A", "end"}, MaxSeats: 1, EmptySeats: 1},
+			"end":   {Name: "end", Connections: []string{"B"}, MaxSeats: 100000, EmptySeats: 100000},
 		},
 	}
 
@@ -68,13 +68,13 @@ func Test_GraphCopyFresh(t *testing.T) {
 			}
 
 			// Check if Tunnels are copied correctly
-			if !reflect.DeepEqual(copiedRoom.Tunnels, value.Tunnels) {
-				t.Errorf("Room %s: Tunnels mismatch. Got %v, want %v", roomName, copiedRoom.Tunnels, value.Tunnels)
+			if !reflect.DeepEqual(copiedRoom.Connections, value.Connections) {
+				t.Errorf("Room %s: Tunnels mismatch. Got %v, want %v", roomName, copiedRoom.Connections, value.Connections)
 			}
 
 			// Ensure that the Tunnels slice is a separate copy
-			if len(value.Tunnels) > 0 && len(copiedRoom.Tunnels) > 0 {
-				if &value.Tunnels[0] == &copiedRoom.Tunnels[0] {
+			if len(value.Connections) > 0 && len(copiedRoom.Connections) > 0 {
+				if &value.Connections[0] == &copiedRoom.Connections[0] {
 					t.Errorf("Room %s: Tunnels slice was not copied, it's the same slice", roomName)
 				}
 			}

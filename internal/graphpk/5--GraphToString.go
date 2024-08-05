@@ -13,7 +13,7 @@ func (myGraph *Graph) ToString() (string, error) {
 	for roomName := range myGraph.Rooms {
 		count++
 		room := myGraph.Rooms[roomName]
-		roomStr := fmt.Sprintf("\n%v-Room= %v, Tunnels= %v, EmptySeats= %d, MaxSeats= %d,", count, room.Name, room.Tunnels, room.EmptySeats, room.MaxSeats)
+		roomStr := fmt.Sprintf("\n%v-Room= %v, Tunnels= %v, EmptySeats= %d, MaxSeats= %d,", count, room.Name, room.Connections, room.EmptySeats, room.MaxSeats)
 		graphString += roomStr
 	}
 	//graphString += "\n"
