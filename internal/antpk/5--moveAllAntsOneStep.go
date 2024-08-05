@@ -39,7 +39,7 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 			from := theAnt.CurrentRoomName
 			// _ = seq
 			// _ = from
-			allAnts.UsedTunnel[seq] = make(map[string]string)
+			allAnts.UsedTunnel[seq] = make(map[string]string) //Initialize
 			allAnts.UsedTunnel[seq][from] = moveTo
 
 			theAnt.CurrentRoomName = moveTo
