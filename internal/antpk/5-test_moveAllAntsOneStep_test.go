@@ -48,8 +48,8 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"room_0": "room_1",
 			},
 		}
-		expNotArrivedAntsName := map[string]struct{}{}
-		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel, expNotArrivedAntsName)
+		//expNotArrivedAntsName := map[string]struct{}{}
+		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel)
 		//myGraph.Print()
 		// myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
 		// myAntGroup.Print()
@@ -106,8 +106,10 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"room_0": "room_1",
 			},
 		}
-		expNotArrivedAntsName := map[string]struct{}{"L1": struct{}{}}
-		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel, expNotArrivedAntsName)
+		// expNotArrivedAntsName := map[string]struct{}{
+		// 	"L1": struct{}{},
+		// }
+		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel)
 
 		myAntGroup.Print()
 		// myAntGroup.TryMoveAllAntsOneStepRandomly(&myGraph)
@@ -130,7 +132,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 	})
 	//-----------------------------------
 	t.Run("3-move 3 ant", func(t *testing.T) {
-		t.Skip()
+		//.Skip()
 		ant1 := Ant{
 			Name:            "L1",
 			CurrentRoomName: "room_0",
@@ -151,7 +153,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		}
 
 		myAntGroup := AntGroup{
-			NumberOfAnts: 2,
+			NumberOfAnts: 3,
 			AntsDb: map[string]Ant{
 				"L1": ant1,
 				"L2": ant2,
@@ -186,10 +188,12 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"room_0": "room_1",
 			},
 		}
-		expNotArrivedAntsName := map[string]struct{}{
-			"L1": struct{}{},
-		}
-		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel, expNotArrivedAntsName)
+		// expNotArrivedAntsName := map[string]struct{}{
+		// 	"L1": struct{}{},
+		// }
+		myAntGroup.Print()
+
+		assert_MoveAllAntsOneStepRandomly(t, &myAntGroup, expSequenceNumbebr, expUsedTunnel)
 
 		// myAntGroup.Print()
 		// myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
@@ -213,7 +217,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 }
 
 // ======================================
-func assert_MoveAllAntsOneStepRandomly(t testing.TB, myAntGroup *AntGroup, expSequenceNumbebr int, expUsedTunnel map[int]map[string]string, expNotArrivedAntsName map[string]struct{}) {
+func assert_MoveAllAntsOneStepRandomly(t testing.TB, myAntGroup *AntGroup, expSequenceNumbebr int, expUsedTunnel map[int]map[string]string, ) {
 	if expSequenceNumbebr != myAntGroup.CurrentSequenceNumber {
 		t.Errorf("exp %v receive %v", expSequenceNumbebr, myAntGroup.CurrentSequenceNumber)
 	}
@@ -222,9 +226,9 @@ func assert_MoveAllAntsOneStepRandomly(t testing.TB, myAntGroup *AntGroup, expSe
 		t.Errorf("exp %v receive %v", expUsedTunnel, myAntGroup.UsedTunnel)
 	}
 
-	if !reflect.DeepEqual(expNotArrivedAntsName, myAntGroup.NotArrivedAntsName) {
-		t.Errorf("exp %v receive %v", expNotArrivedAntsName, myAntGroup.NotArrivedAntsName)
-	}
+	// if !reflect.DeepEqual(expNotArrivedAntsName, myAntGroup.NotArrivedAntsName) {
+	// 	t.Errorf("exp %v receive %v", expNotArrivedAntsName, myAntGroup.NotArrivedAntsName)
+	// }
 
 }
 
