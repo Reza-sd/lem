@@ -10,7 +10,7 @@ import (
 // =====================================================
 func WhatsMyNextMove(antName string, theAntGroup AntGroup, theGraph graphpk.Graph) (string, error) {
 	funcName := "WhatsMyNextMove"
-	theAnt,okAnt := theAntGroup.AntsDb[antName]
+	theAnt, okAnt := theAntGroup.AntsDb[antName]
 	if !okAnt {
 		return "", logger.RWarnStr(funcName, "okAnt", "the AntGroup does not have this Ant", "check if ant avaliable in antsgroup")
 	}

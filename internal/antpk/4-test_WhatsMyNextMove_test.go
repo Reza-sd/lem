@@ -9,7 +9,7 @@ import (
 )
 
 // =======================================
-func Test_MoveTheAntOneStepRandomly(t *testing.T) {
+func Test_WhatsMyNextMove(t *testing.T) {
 	//t.Skip()
 	//------------
 	t.Run(`1-return `, func(t *testing.T) {
@@ -41,7 +41,28 @@ func Test_MoveTheAntOneStepRandomly(t *testing.T) {
 
 		myAntGroup.Print()
 		myGraph.Print()
-		nextMove,_:=WhatsMyNextMove("L1",myAntGroup,myGraph)
-		fmt.Println(">>>nextMove=",nextMove)
+		expectError := true
+		nextMove, err := WhatsMyNextMove("L1d", myAntGroup, myGraph)
+		fmt.Println(">>>nextMove=", nextMove)
+		assert_WhatsMyNextMove(t, err, expectError)
 	})
 }
+
+// =================================
+func assert_WhatsMyNextMove(t testing.TB, err error, expectError bool) {
+	t.Helper()
+
+	if expectError {
+		if err == nil {
+			t.Errorf("function return %v expect %v", err, expectError)
+
+		}
+	} else {
+		if err != nil {
+			t.Errorf("function return %v expect %v", err, expectError)
+		}
+	}
+
+}
+
+//=================================

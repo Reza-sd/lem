@@ -121,8 +121,15 @@ func assert_If_Two_AntGroup_SameCopy(t testing.TB, antGroup1 AntGroup, antGroup2
 func assert_If_AntsCopy_ReturnError(t testing.TB, err error, expectError bool) {
 	t.Helper()
 
-	if err == nil && expectError {
-		t.Errorf("function returned error ")
+	if expectError {
+		if err == nil {
+			t.Errorf("function return %v expect %v", err, expectError)
+
+		}
+	} else {
+		if err != nil {
+			t.Errorf("function return %v expect %v", err, expectError)
+		}
 	}
 
 }
