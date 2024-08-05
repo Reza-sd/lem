@@ -8,6 +8,7 @@ import (
 func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) error {
 
 	funcName := "MoveAllAntsOneStepRandomly"
+	allAnts.CurrentSequenceNumber++
 
 	for _, theAntName := range allAnts.NotArrivedAntsName {
 
@@ -36,8 +37,9 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 		} else {
 			seq := allAnts.CurrentSequenceNumber
 			from := theAnt.CurrentRoomName
-			_ = seq
-			_ = from
+			// _ = seq
+			// _ = from
+			allAnts.UsedTunnel[seq] = make(map[string]string)
 			allAnts.UsedTunnel[seq][from] = moveTo
 
 			theAnt.CurrentRoomName = moveTo
@@ -53,6 +55,5 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 
 	}
 
-	allAnts.CurrentSequenceNumber++
 	return nil
 }
