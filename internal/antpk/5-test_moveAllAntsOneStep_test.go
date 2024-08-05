@@ -8,7 +8,7 @@ import (
 func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 	//-----------------------------------
 	t.Run("1-", func(t *testing.T) {
-
+		t.Skip()
 		theAnt := Ant{
 			Name:            "L1",
 			CurrentRoomName: "room_0",
@@ -49,7 +49,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 	})
 	//-----------------------------------
 	t.Run("2-", func(t *testing.T) {
-		t.Skip()
+		//t.Skip()
 		ant1 := Ant{
 			Name:            "L1",
 			CurrentRoomName: "room_0",
@@ -63,7 +63,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 			StepNumber:      0,
 		}
 		myAntGroup := AntGroup{
-			NumberOfAnts: 1,
+			NumberOfAnts: 2,
 			AntsDb: map[string]Ant{
 				"L1": ant1,
 				"L2": ant2,
@@ -71,7 +71,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 			CurrentSequenceNumber: 0,
 			UsedTunnel:            make(map[int]map[string]string),
 
-			NotArrivedAntsName: []string{"L1"},
+			NotArrivedAntsName: []string{"L1","L2"},
 		}
 
 		myGraph := graphpk.Graph{
@@ -85,9 +85,11 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 			},
 		}
 		myAntGroup.Print()
-		myGraph.Print()
+		//myGraph.Print()
 		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
 		myAntGroup.Print()
-		myGraph.Print()
+		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.Print()
+		//myGraph.Print()
 	})
 }
