@@ -1,15 +1,13 @@
 package antpk
 
 import (
-	
 	"fmt"
 	"main/internal/graphpk"
 	"testing"
-
 )
 
 // =======================================
-func Test_WhatsMyNextMove(t *testing.T) {
+func Test_CanImoveWhere(t *testing.T) {
 	//t.Skip()
 	//------------
 	t.Run("1-return error when ant does not exist", func(t *testing.T) {
@@ -40,9 +38,10 @@ func Test_WhatsMyNextMove(t *testing.T) {
 		}
 
 		expectError := true
-		nextMove, err := WhatsMyNextMove("L1d", myAntGroup, myGraph)
+		canIMoveExpected := false
+		canIMove, nextMove, err := CanImoveWhere("L1d", myAntGroup, myGraph)
 		fmt.Println(">>>nextMove=", nextMove)
-		assert_WhatsMyNextMove(t, err, expectError, nextMove)
+		assert_CanImoveWhere(t, err, expectError, canIMove, canIMoveExpected)
 	})
 	//------------
 	t.Run("2-return error when roon does not exist", func(t *testing.T) {
@@ -73,9 +72,10 @@ func Test_WhatsMyNextMove(t *testing.T) {
 		}
 
 		expectError := true
-		nextMove, err := WhatsMyNextMove("L1", myAntGroup, myGraph)
+		canIMoveExpected := false
+		canIMove, nextMove, err := CanImoveWhere("L1", myAntGroup, myGraph)
 		fmt.Println(">>>nextMove=", nextMove)
-		assert_WhatsMyNextMove(t, err, expectError, nextMove)
+		assert_CanImoveWhere(t, err, expectError, canIMove, canIMoveExpected)
 	})
 	//------------
 	t.Run("3-return error when roon does not exist", func(t *testing.T) {
@@ -105,9 +105,10 @@ func Test_WhatsMyNextMove(t *testing.T) {
 		}
 
 		expectError := true
-		nextMove, err := WhatsMyNextMove("L1", myAntGroup, myGraph)
+		canIMoveExpected := false
+		canIMove, nextMove, err := CanImoveWhere("L1", myAntGroup, myGraph)
 		fmt.Println(">>>nextMove=", nextMove)
-		assert_WhatsMyNextMove(t, err, expectError, nextMove)
+		assert_CanImoveWhere(t, err, expectError, canIMove, canIMoveExpected)
 	})
 	//------------
 	t.Run("4-return nill error when ant and room exist", func(t *testing.T) {
@@ -136,36 +137,43 @@ func Test_WhatsMyNextMove(t *testing.T) {
 			},
 		}
 		expectError := false //nil
-		nextMove, err := WhatsMyNextMove("L1", myAntGroup, myGraph)
+		canIMoveExpected := true
+		canIMove, nextMove, err := CanImoveWhere("L1", myAntGroup, myGraph)
 		fmt.Println(">>>nextMove=", nextMove)
-		assert_WhatsMyNextMove(t, err, expectError, nextMove)
+		assert_CanImoveWhere(t, err, expectError, canIMove, canIMoveExpected)
 	})
 }
 
 // =================================
-func assert_WhatsMyNextMove(t testing.TB, err error, expectError bool, nextMove string) {
+func assert_CanImoveWhere(t testing.TB, err error, expectError bool, canIMove bool, canIMoveExpected bool) {
 	t.Helper()
 
 	if expectError {
 		if err == nil {
-			t.Errorf("function return %v expect %v", err, expectError)
+			t.Errorf(" return= %v expect= %v", err, expectError)
 
-		} else {
-			if nextMove != "" {
-				t.Errorf("function return nextMove= %v expect Empty", nextMove)
-			}
 		}
+		//  else {
+		// 	if nextMove != "" {
+		// 		t.Errorf("function return nextMove= %v expect Empty", nextMove)
+		// 	}
+		// }
 	} else {
 		if err != nil {
-			t.Errorf("function return %v expect %v", err, expectError)
-		} else {
-			if nextMove == "" {
-				t.Errorf("function return nextMove= %v expect Empty", nextMove)
-			}
+			t.Errorf(" return= %v expect= %v", err, expectError)
 		}
+		// else {
+		// 	if nextMove == expectedNextMove {
+		// 		t.Errorf("function return nextMove= %v expect %v", expectedNextMove)
+		// 	}
+		// }
 
 	}
 
+	if canIMove != canIMoveExpected {
+		t.Errorf(">>(canIMove= %v, canIMoveExpected= %v)<<", canIMove, canIMoveExpected)
+
+	}
 }
 
 //=================================

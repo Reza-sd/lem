@@ -8,21 +8,24 @@ import (
 )
 
 // =====================================================
-func WhatsMyNextMove(antName string, theAntGroup AntGroup, theGraph graphpk.Graph) (string, error) {
+func CanImoveWhere(antName string, theAntGroup AntGroup, theGraph graphpk.Graph) (bool, string, error) {
 	funcName := "WhatsMyNextMove"
+	//------------------------------------------
 	theAnt, okAnt := theAntGroup.AntsDb[antName]
 	if !okAnt {
-		return "", logger.RWarnStr(funcName, "okAnt", "the AntGroup does not have this Ant", "check if ant avaliable in antsgroup")
+		return false, "", logger.RWarnStr(funcName, "okAnt", "the AntGroup does not have this Ant", "check if ant avaliable in antsgroup")
 	}
-	//Am I able to move?
+	//--------------------------------------------
 	if theAnt.CurrentRoomName == theGraph.EndRoomName {
 		//already arrived
-		return "*", nil //means stop
+		return false, "", nil //means stop=not move
 	}
-	//-------------------
+	//--------------------------------------------------
+
+	//---------------------------------------------------
 	currentRoomObjectFromGraph, okRoom := theGraph.Rooms[theAnt.CurrentRoomName]
 	if !okRoom {
-		return "", logger.RWarnStr(funcName, "okRoom", "the graph does not have this room", "check if graph has this room name")
+		return false, "", logger.RWarnStr(funcName, "okRoom", "the graph does not have this room", "check if graph has this room name")
 	}
 	//----------------
 	currentConnectionsArr := currentRoomObjectFromGraph.Connections
@@ -49,10 +52,10 @@ func WhatsMyNextMove(antName string, theAntGroup AntGroup, theGraph graphpk.Grap
 			continue
 		}
 		//-----------------------------
-		return nextRandomAvailableRoomName, nil
+		return true, nextRandomAvailableRoomName, nil
 	}
 	//----------------------------------
-	return "*", nil //means stop
+	return false, "", nil //means stop
 
 }
 
