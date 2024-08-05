@@ -6,11 +6,16 @@ import (
 )
 
 func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) error {
+
 	funcName := "MoveAllAntsOneStepRandomly"
 
 	for _, theAntName := range allAnts.NotArrivedAntsName {
 
-		theAnt := allAnts.AntsDb[theAntName]
+		theAnt,okTheAnt := allAnts.AntsDb[theAntName]
+
+		if !okTheAnt{
+			 return logger.RWarnStr(funcName, "AntsDb", "the ant does not exist","")
+		}
 
 		if theAnt.CurrentRoomName == theGraph.EndRoomName {
 			// already arrived
@@ -31,7 +36,8 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 		} else {
 			seq := allAnts.CurrentSequenceNumber
 			from := theAnt.CurrentRoomName
-
+			_=seq
+			_=from
 			allAnts.UsedTunnel[seq][from] = moveTo
 
 			theAnt.CurrentRoomName = moveTo
