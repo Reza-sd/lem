@@ -16,7 +16,7 @@ func (allAnts *AntGroup) ToString() (string, error) {
 	for i := 1; i <= count; i++ {
 
 		ant := allAnts.AntsMap[i]
-		antStr := fmt.Sprintf("ant=%v, CurrentRoom=%v, StepNumber=%v, VisitedRooms=%v", ant.Name, ant.CurrentRoomName, ant.StepNumber, ant.VisitedRoomsArr)
+		antStr := fmt.Sprintf("antName=%v, CurrentRoom=%v, StepNumber=%v, VisitedRooms=%v", ant.Name, ant.CurrentRoomName, ant.StepNumber, ant.VisitedRoomsArr)
 		antGroupString += antStr
 		if i != allAnts.NumberOfAnts {
 			antGroupString += "\n"
@@ -26,3 +26,12 @@ func (allAnts *AntGroup) ToString() (string, error) {
 	return antGroupString, nil
 
 }
+
+// --------------------
+func (allAnts *AntGroup) Print() {
+	fmt.Println("\n----------AntGroup------------")
+	fmt.Println(allAnts.ToString())
+	fmt.Println("---------------------------")
+}
+
+//-------------------------

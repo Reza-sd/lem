@@ -3,6 +3,8 @@ package antpk
 // ==================Samples=============================
 var (
 	//-------Ant type example-----------
+
+	//-------Ant type example-----------
 	ant1 = Ant{
 		Name:            "L1",
 		CurrentRoomName: "room_1",
