@@ -8,12 +8,14 @@ import (
 func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) error {
 
 	funcName := "MoveAllAntsOneStepRandomly"
-	allAnts.CurrentSequenceNumber++
+
 	//-------------------------------
 	if len(allAnts.NotArrivedAntsName) == 0 {
 		return nil
 	}
 	//----------------------------
+	allAnts.CurrentSequenceNumber++
+	//----------------------------------
 	for index, theAntName := range allAnts.NotArrivedAntsName {
 
 		theAnt, okTheAnt := allAnts.AntsDb[theAntName]
@@ -57,6 +59,7 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 			if theAnt.CurrentRoomName == theGraph.EndRoomName {
 				allAnts.NotArrivedAntsName = append(allAnts.NotArrivedAntsName[:index], allAnts.NotArrivedAntsName[index+1:]...)
 			}
+
 		}
 
 		allAnts.AntsDb[theAntName] = theAnt

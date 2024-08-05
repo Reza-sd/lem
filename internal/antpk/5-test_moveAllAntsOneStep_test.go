@@ -43,6 +43,8 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 		//myGraph.Print()
 		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
 		myAntGroup.Print()
+		myAntGroup.MoveAllAntsOneStepRandomly(&myGraph)
+		myAntGroup.Print()
 		//myGraph.Print()
 	})
 	//-----------------------------------
