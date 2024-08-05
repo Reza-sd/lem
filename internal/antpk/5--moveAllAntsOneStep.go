@@ -9,8 +9,12 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 
 	funcName := "MoveAllAntsOneStepRandomly"
 	allAnts.CurrentSequenceNumber++
-
-	for _, theAntName := range allAnts.NotArrivedAntsName {
+	//-------------------------------
+	if len(allAnts.NotArrivedAntsName) == 0 {
+		return nil
+	}
+	//----------------------------
+	for index, theAntName := range allAnts.NotArrivedAntsName {
 
 		theAnt, okTheAnt := allAnts.AntsDb[theAntName]
 
@@ -49,6 +53,10 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 			moveToRoomObject := theGraph.Rooms[moveTo]
 			moveToRoomObject.EmptySeats--
 			theGraph.Rooms[moveTo] = moveToRoomObject
+
+			if theAnt.CurrentRoomName == theGraph.EndRoomName {
+				allAnts.NotArrivedAntsName = append(allAnts.NotArrivedAntsName[:index], allAnts.NotArrivedAntsName[index+1:]...)
+			}
 		}
 
 		allAnts.AntsDb[theAntName] = theAnt
