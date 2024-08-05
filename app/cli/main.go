@@ -75,6 +75,8 @@ func main() {
 	baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
 	baseModel1.BaseAnts.Print()
 	baseModel1.BaseGraph.Print()
+	
+	//baseModel1.
 	// -----------------------------------------
 	//startTimeSinceCallRandomSimulator := time.Now()
 	//theBestFoundTravelPlan := randomsimulatorpk.RandomSimulator(&baseModel1)
