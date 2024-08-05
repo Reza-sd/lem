@@ -2,6 +2,7 @@ package antpk
 
 import (
 	//"fmt"
+	//"fmt"
 	graphpk "main/internal/graphpk"
 	"math/rand"
 	"slices"
@@ -30,6 +31,10 @@ func CanImoveWhere(antName string, theAntGroup AntGroup, theGraph graphpk.Graph)
 	//----------------
 	currentConnectionsArr := currentRoomObjectFromGraph.Connections
 	lengthcurrentConnectionsArr := len(currentConnectionsArr)
+
+	if lengthcurrentConnectionsArr == 0 { //no any connection to other
+		return false, "", nil
+	}
 	//------------
 	for i := 0; i < 50; i++ {
 		randomNextRoomIndex := rand.Intn(lengthcurrentConnectionsArr)
@@ -42,6 +47,7 @@ func CanImoveWhere(antName string, theAntGroup AntGroup, theGraph graphpk.Graph)
 		UsedTunnelMap, ok := theAntGroup.UsedTunnel[theAntGroup.currentSequenceNumber]
 		if ok {
 			if UsedTunnelMap[theAnt.CurrentRoomName] == nextRandomAvailableRoomName {
+				//print("wow")
 				continue
 			}
 		}

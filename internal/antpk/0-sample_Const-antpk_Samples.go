@@ -1,5 +1,9 @@
 package antpk
 
+import (
+	"main/internal/graphpk"
+)
+
 // ==================Samples=============================
 var (
 	//-------Ant type example-----------
@@ -65,6 +69,19 @@ var (
 		UsedTunnel:            make(map[int]map[string]string),
 	}
 	//------------------
+	sample_room_0_startRoom = graphpk.Room{
+		Name:        "room_0",
+		MaxSeats:    1000,
+		EmptySeats:  1000,
+		Connections: []string{"room_1"},
+	}
+	//------------------------
+	sample_room_1_EndRoom = graphpk.Room{
+		Name:        "room_1",
+		MaxSeats:    1000,
+		EmptySeats:  1000,
+		Connections: []string{"room_0"},
+	}
 )
 
 // ===============================================
