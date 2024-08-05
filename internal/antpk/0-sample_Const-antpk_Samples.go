@@ -32,9 +32,9 @@ var (
 			"L2": ant2,
 		},
 		CurrentSequenceNumber: 2,
-		NotArrivedAntsName: map[string]bool{
-			"L1": true,
-			"L2": true,
+		NotArrivedAntsName: map[string]struct{}{
+			"L1": struct{}{},
+			"L2": struct{}{},
 		},
 	}
 	//------------------
