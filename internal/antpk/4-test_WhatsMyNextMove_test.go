@@ -1,7 +1,7 @@
 package antpk
 
 import (
-	"fmt"
+	//"fmt"
 	"main/internal/graphpk"
 	"testing"
 )
@@ -107,7 +107,7 @@ func Test_CanImoveWhere(t *testing.T) {
 		expectError := false //nil
 		canIMoveExpected := true
 		canIMove, nextMove, err := CanImoveWhere("L1", myAntGroup, myGraph)
-		fmt.Println("--->>> nextMove=", nextMove)
+		println("--->>> nextMove=", nextMove)
 		assert_CanImoveWhere(t, err, expectError, canIMove, canIMoveExpected)
 	})
 	//------------

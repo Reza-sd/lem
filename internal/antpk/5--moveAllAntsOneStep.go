@@ -8,7 +8,6 @@ import (
 func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) error {
 	funcName := "MoveAllAntsOneStepRandomly"
 
-	// for i := 1; i <= allAnts.NumberOfAnts; i++ {
 	for _, theAntName := range allAnts.NotArrivedAntsName {
 
 		theAnt := allAnts.AntsDb[theAntName]
@@ -17,8 +16,6 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 			// already arrived
 			continue
 		}
-
-		//canIMove, _, err := CanImoveWhere("L1", myAntGroup, myGraph)
 
 		canIMove, moveTo, err := CanImoveWhere(theAnt.Name, *allAnts, *theGraph)
 
@@ -42,19 +39,14 @@ func (allAnts *AntGroup) MoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) err
 			theAnt.StepNumber++
 
 			moveToRoomObject := theGraph.Rooms[moveTo]
-			moveToRoomObject.EmptySeats = 0
+			moveToRoomObject.EmptySeats--
 			theGraph.Rooms[moveTo] = moveToRoomObject
 		}
-		//currentRoomName := theAnt.CurrentRoomName
-		//theAnt.MoveTheAntOneStepRandomly(theGraph, travelHistory)
-		//MovedRoomName := theAnt.CurrentRoomName
 
-		//theGraph.UsedTunnelsInLastSequence[currentRoomName] = MovedRoomName
-
-		//allAnts.AntsMap[i] = theAnt
 		allAnts.AntsDb[theAntName] = theAnt
 
 	}
-	//allAnts.currentSequenceNumber++
+
+	allAnts.CurrentSequenceNumber++
 	return nil
 }
