@@ -44,7 +44,7 @@ func CanImoveWhere(antName string, theAntGroup AntGroup, theGraph graphpk.Graph)
 			continue
 		}
 		//---to check if the offered tunnel(from,to) is used in this sequence----
-		UsedTunnelMap, ok := theAntGroup.UsedTunnel[theAntGroup.currentSequenceNumber]
+		UsedTunnelMap, ok := theAntGroup.UsedTunnel[theAntGroup.CurrentSequenceNumber]
 		if ok {
 			if UsedTunnelMap[theAnt.CurrentRoomName] == nextRandomAvailableRoomName {
 				//print("wow")

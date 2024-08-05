@@ -22,7 +22,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            map[int]map[string]string{},
 		}
 
@@ -56,7 +56,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            map[int]map[string]string{},
 		}
 
@@ -91,7 +91,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            map[int]map[string]string{},
 		}
 		myGraph := graphpk.Graph{
@@ -123,7 +123,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            map[int]map[string]string{},
 		}
 		myGraph := graphpk.Graph{
@@ -155,7 +155,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            map[int]map[string]string{},
 		}
 		myGraph := graphpk.Graph{
@@ -192,7 +192,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			AntsDb: map[string]Ant{
 				"L1": theAnt,
 			},
-			currentSequenceNumber: 1,
+			CurrentSequenceNumber: 1,
 			UsedTunnel: map[int]map[string]string{
 				1: {
 					"room_0": "room_1",

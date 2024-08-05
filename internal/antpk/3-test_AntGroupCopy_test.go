@@ -44,7 +44,7 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			UsedTunnel:            make(map[int]map[string]string),
 		}
 		ifSame := true
@@ -67,7 +67,7 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 		}
 		ifSame := false //not same
 		//---Act---
@@ -83,7 +83,7 @@ func Test_AntsCopy(t *testing.T) {
 		baseAntGroup := sample_AntGroup_2ants_initmode_room_0
 		compareAntGroup := AntGroup{
 			NumberOfAnts:          2,
-			currentSequenceNumber: 0,
+			CurrentSequenceNumber: 0,
 			AntsDb: map[string]Ant{
 				"L1": {Name: "L1",
 					CurrentRoomName: "room_0",

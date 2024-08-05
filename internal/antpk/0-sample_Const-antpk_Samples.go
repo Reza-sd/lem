@@ -30,7 +30,7 @@ var (
 			"L1": ant1,
 			"L2": ant2,
 		},
-		currentSequenceNumber: 2,
+		CurrentSequenceNumber: 2,
 	}
 	//------------------
 	travelPlan1 = TravelPlan{
@@ -52,7 +52,7 @@ var (
 				StepNumber:      0,
 			},
 		},
-		currentSequenceNumber: 0,
+		CurrentSequenceNumber: 0,
 		UsedTunnel:            map[int]map[string]string{},
 	}
 	//------------------
@@ -65,7 +65,7 @@ var (
 				StepNumber:      0,
 			},
 		},
-		currentSequenceNumber: 0,
+		CurrentSequenceNumber: 0,
 		UsedTunnel:            make(map[int]map[string]string),
 	}
 	//------------------
