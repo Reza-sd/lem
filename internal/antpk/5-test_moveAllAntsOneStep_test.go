@@ -21,9 +21,8 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel: map[int]map[string]string{
-				0: {"": ""},
-			},
+			UsedTunnel:            make(map[int]map[string]string),
+
 			NotArrivedAntsName: []string{"L1"},
 		}
 
