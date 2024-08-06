@@ -10,19 +10,20 @@ import (
 // =====================TryPushAllAntsToEnd========================
 func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph) {
 	//counter:=0
-
-	
-
-	for i := 1; i < 20; i++ {
+	numOfTry :=theGraph.NumberOfAllRoom*allAnts.NumberOfAnts
+	for i := 1; i < (numOfTry); i++ {
 
 		if len(allAnts.NotArrivedAntsName) == 0 {
 			break
 		}
+		//---------
+
+
+
+		//----------
 		allAnts.TryMoveAllAntsOneStepRandomly(theGraph)
 
 	}
-
-
 
 }
 

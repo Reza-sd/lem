@@ -65,7 +65,7 @@ func main() {
 	}
 	//fmt.Println(baseModel1.BaseAnts)
 	//baseModel1.BaseAnts.Print()
-	//baseModel1.BaseGraph.Print()
+	baseModel1.BaseGraph.Print()
 	baseModel1.BaseAnts.TryPushAllAntsToEnd(&baseModel1.BaseGraph)
 	baseModel1.BaseAnts.Print()
 	// baseModel1.BaseAnts.ResetFactory(baseModel1.BaseGraph.StartRoomName)
