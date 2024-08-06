@@ -2,15 +2,14 @@ package graphpk
 
 func (theGraph *Graph) ResetFactory() {
 
-	for roomName,_:=range theGraph.Rooms{
+	for roomName, _ := range theGraph.Rooms {
 
-		roomObject :=theGraph.Rooms[roomName]
+		roomObject := theGraph.Rooms[roomName]
 
-		if roomName!=theGraph.StartRoomName && roomName!=theGraph.EndRoomName{
-			roomObject.EmptySeats=1
-			theGraph.Rooms[roomName]=roomObject
+		if roomName != theGraph.StartRoomName && roomName != theGraph.EndRoomName {
+			roomObject.EmptySeats = 1
+			theGraph.Rooms[roomName] = roomObject
 		}
-		
+
 	}
 }
-
