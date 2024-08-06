@@ -15,7 +15,7 @@ func AntGroupCopyAtFirstRoom(original AntGroup) (AntGroup, error) {
 		NumberOfAnts:          original.NumberOfAnts,
 		CurrentSequenceNumber: original.CurrentSequenceNumber,
 		AntsDb:                make(map[string]Ant, len(original.AntsDb)),
-		UsedTunnel:            map[int]map[string]string{},
+		UsedTunnel:            make(map[string][]string),
 	}
 
 	for key, ant := range original.AntsDb {

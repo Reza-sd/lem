@@ -19,7 +19,7 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts int, startRoomName string)
 	myAntGroup.AntsDb = make(map[string]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
 	myAntGroup.CurrentSequenceNumber = 0
-	myAntGroup.UsedTunnel = map[int]map[string]string{}
+	myAntGroup.UsedTunnel = make(map[string][]string)
 	myAntGroup.NotArrivedAntsName = make(map[string]struct{})
 	//--------------------------
 	//myAntGroup

@@ -45,7 +45,7 @@ func Test_AntsCopy(t *testing.T) {
 				},
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            make(map[int]map[string]string),
+			UsedTunnel:            make(map[string][]string),
 		}
 		ifSame := true
 		//---Act---
@@ -96,7 +96,7 @@ func Test_AntsCopy(t *testing.T) {
 					StepNumber:      0,
 				},
 			},
-			UsedTunnel: make(map[int]map[string]string),
+			UsedTunnel: make(map[string][]string),
 		}
 		ifSame := true
 		//---Act---

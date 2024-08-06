@@ -22,7 +22,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{},
+			UsedTunnel:            make(map[string][]string),
 		}
 
 		myGraph := graphpk.Graph{
@@ -56,7 +56,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{},
+			UsedTunnel:            make(map[string][]string),
 		}
 
 		myGraph := graphpk.Graph{
@@ -91,7 +91,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{},
+			UsedTunnel:            make(map[string][]string),
 		}
 		myGraph := graphpk.Graph{
 			StartRoomName:        "room_0",
@@ -123,7 +123,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{},
+			UsedTunnel:            make(map[string][]string),
 		}
 		myGraph := graphpk.Graph{
 			StartRoomName:        "room_0",
@@ -155,7 +155,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            map[int]map[string]string{},
+			UsedTunnel:            make(map[string][]string),
 		}
 		myGraph := graphpk.Graph{
 			StartRoomName:        "room_0",
@@ -164,7 +164,7 @@ func Test_CanImoveWhere(t *testing.T) {
 			NumberOfAllRoom:      2,
 			Rooms: map[string]graphpk.Room{
 				"room_0": graphpk.Sample_room_0_startRoom,
-				"room_1": graphpk.Room{
+				"room_1": {
 					Name:        "room_1",
 					MaxSeats:    1000,
 					EmptySeats:  0, //<----------0
@@ -192,11 +192,7 @@ func Test_CanImoveWhere(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 1,
-			UsedTunnel: map[int]map[string]string{
-				1: {
-					"room_0": "room_1",
-				},
-			},
+			UsedTunnel:            map[string][]string{"room_0": {"room_1"}},
 		}
 		myGraph := graphpk.Graph{
 			StartRoomName:        "room_0",
@@ -239,4 +235,5 @@ func assert_CanImoveWhere(t testing.TB, err error, expectError bool, canIMove bo
 	}
 }
 
+//make(map[string][]string)
 //=================================

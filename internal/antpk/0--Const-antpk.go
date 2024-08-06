@@ -15,8 +15,9 @@ type AntGroup struct {
 	NumberOfAnts          int
 	CurrentSequenceNumber int
 	AntsDb                map[string]Ant
-	UsedTunnel            map[int]map[string]string
-	NotArrivedAntsName    map[string]struct{}
+	//UsedTunnelinThisSeq	map[string]string//
+	UsedTunnel         map[string][]string
+	NotArrivedAntsName map[string]struct{}
 }
 
 // type TravelHistory struct {

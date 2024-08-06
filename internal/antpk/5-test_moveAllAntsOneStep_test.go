@@ -23,9 +23,9 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"L1": theAnt,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            make(map[int]map[string]string),
+			UsedTunnel:            make(map[string][]string),
 
-			NotArrivedAntsName: map[string]struct{}{"L1": struct{}{}},
+			NotArrivedAntsName: map[string]struct{}{"L1": {}},
 		}
 
 		myGraph := graphpk.Graph{
@@ -79,11 +79,11 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"L2": ant2,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            make(map[int]map[string]string),
+			UsedTunnel:            make(map[string][]string),
 
 			NotArrivedAntsName: map[string]struct{}{
-				"L1": struct{}{},
-				"L2": struct{}{},
+				"L1": {},
+				"L2": {},
 			},
 		}
 
@@ -160,12 +160,12 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 				"L3": ant3,
 			},
 			CurrentSequenceNumber: 0,
-			UsedTunnel:            make(map[int]map[string]string),
+			UsedTunnel:            make(map[string][]string),
 
 			NotArrivedAntsName: map[string]struct{}{
-				"L1": struct{}{},
-				"L2": struct{}{},
-				"L3": struct{}{},
+				"L1": {},
+				"L2": {},
+				"L3": {},
 			},
 		}
 
@@ -217,7 +217,7 @@ func Test_MoveAllAntsOneStepRandomly(t *testing.T) {
 }
 
 // ======================================
-func assert_MoveAllAntsOneStepRandomly(t testing.TB, myAntGroup *AntGroup, expSequenceNumbebr int, expUsedTunnel map[int]map[string]string, ) {
+func assert_MoveAllAntsOneStepRandomly(t testing.TB, myAntGroup *AntGroup, expSequenceNumbebr int, expUsedTunnel map[int]map[string]string) {
 	if expSequenceNumbebr != myAntGroup.CurrentSequenceNumber {
 		t.Errorf("exp %v receive %v", expSequenceNumbebr, myAntGroup.CurrentSequenceNumber)
 	}
