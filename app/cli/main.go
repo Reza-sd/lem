@@ -5,7 +5,7 @@ import (
 
 	"main/internal/logstack"
 	"main/internal/simulationpk/modelpk"
-	//"main/internal/simulationpk/randomsimulatorpk"
+	"main/internal/simulationpk/randomsimulatorpk"
 	//"time"
 )
 
@@ -25,12 +25,12 @@ var (
 func main() {
 
 	//------------------------
-	lem1 := modelpk.Lem{
-		NumberOfAnts: 3,
-		StartRoom:    "1",
-		EndRoom:      "0",
-		TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
-	}
+	// lem1 := modelpk.Lem{
+	// 	NumberOfAnts: 3,
+	// 	StartRoom:    "1",
+	// 	EndRoom:      "0",
+	// 	TunnelArr:    []string{"0-4", "0-6", "1-3", "4-3", "5-2", "3-5", "4-2", "2-1", "7-6", "7-2", "7-4", "6-5"},
+	// }
 
 	// lem2 := simulationpk.Lem{
 	// 	NumberOfAnts: 5,
@@ -45,12 +45,12 @@ func main() {
 	// 	TunnelArr:    []string{"0-1", "1-2"},
 	// }
 	//----------------------------
-	// lem1 := modelpk.Lem{
-	// 	NumberOfAnts: 3,
-	// 	StartRoom:    "A",
-	// 	EndRoom:      "B",
-	// 	TunnelArr:    []string{"A-B"},
-	// }
+	lem1 := modelpk.Lem{
+		NumberOfAnts: 3,
+		StartRoom:    "A",
+		EndRoom:      "B",
+		TunnelArr:    []string{"A-B"},
+	}
 
 	//------------------------
 	/*
@@ -63,29 +63,10 @@ func main() {
 		fmt.Println("errBaseModel1 ", errBaseModel1)
 		return
 	}
-	//fmt.Println(baseModel1.BaseAnts)
-	//baseModel1.BaseAnts.Print()
-	baseModel1.BaseGraph.Print()
-	baseModel1.BaseAnts.TryPushAllAntsToEnd(&baseModel1.BaseGraph)
-	baseModel1.BaseAnts.Print()
-	// baseModel1.BaseAnts.ResetFactory(baseModel1.BaseGraph.StartRoomName)
-	// baseModel1.BaseGraph.ResetFactory()
-	baseModel1.ResetFactory()
-	//baseModel1.BaseAnts.Print()
-	//baseModel1.BaseGraph.Print()
-	baseModel1.BaseAnts.TryPushAllAntsToEnd(&baseModel1.BaseGraph)
-	baseModel1.BaseAnts.Print()
-	//baseModel1.BaseGraph.Print()
-	// baseModel1.BaseGraph.Print()
-	// baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
-	// baseModel1.BaseAnts.Print()
-	// baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
-	// baseModel1.BaseAnts.Print()
-	// baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
-	// baseModel1.BaseAnts.Print()
-	// baseModel1.BaseAnts.TryMoveAllAntsOneStepRandomly(&baseModel1.BaseGraph)
-	// baseModel1.BaseAnts.Print()
-	// baseModel1.BaseGraph.Print()
+
+	bestPlan:=randomsimulatorpk.BestPlan(&baseModel1)
+	bestPlan.TheBestPlan.Print()
+
 
 	//baseModel1.
 	// -----------------------------------------

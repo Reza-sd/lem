@@ -38,10 +38,10 @@ var (
 		},
 	}
 	//------------------
-	travelPlan1 = TravelPlan{
-		FinalSequence: 2,
-		TheBestPlan:   antGroup3,
-	}
+	// travelPlan1 = TravelPlan{
+	// 	FinalSequence: 2,
+	// 	TheBestPlan:   antGroup3,
+	// }
 	//------------------
 	sample_AntGroup_2ants_initmode_room_0 = AntGroup{
 		NumberOfAnts: 2,
