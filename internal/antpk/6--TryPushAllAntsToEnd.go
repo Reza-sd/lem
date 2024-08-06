@@ -10,6 +10,9 @@ import (
 // =====================TryPushAllAntsToEnd========================
 func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph) {
 	//counter:=0
+
+	
+
 	for i := 1; i < 20; i++ {
 
 		if len(allAnts.NotArrivedAntsName) == 0 {
@@ -18,6 +21,8 @@ func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph) {
 		allAnts.TryMoveAllAntsOneStepRandomly(theGraph)
 
 	}
+
+
 
 }
 
