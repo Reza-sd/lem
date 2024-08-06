@@ -3,11 +3,26 @@ package antpk
 import (
 	//"fmt"
 	//"fmt"
-	"fmt"
+	//"fmt"
 	"main/internal/graphpk"
 )
 
 // =====================TryPushAllAntsToEnd========================
+func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph){
+	//counter:=0
+for i:=1;i<20;i++{
+
+	if len(allAnts.NotArrivedAntsName)==0 {
+		break
+	}
+	allAnts.TryMoveAllAntsOneStepRandomly(theGraph)
+	
+}
+
+
+}
+
+/*
 func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelPlan *TravelPlan, maxTry int, travelHistory *TravelHistory) {
 	//counter := 0
 	//fmt.Println("UsedTunnelsInLastSequence", theGraph.UsedTunnelsInLastSequence)
@@ -44,3 +59,4 @@ func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph, theTravelP
 	theTravelPlan.TheBestPlan = *allAnts
 
 }
+*/
