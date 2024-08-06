@@ -1,6 +1,5 @@
 package graphpk
 
-func (theGraph *Graph)ResetFactory(){
+func (theGraph *Graph) ResetFactory() {
 
-	
 }

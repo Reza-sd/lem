@@ -8,17 +8,16 @@ import (
 )
 
 // =====================TryPushAllAntsToEnd========================
-func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph){
+func (allAnts *AntGroup) TryPushAllAntsToEnd(theGraph *graphpk.Graph) {
 	//counter:=0
-for i:=1;i<20;i++{
+	for i := 1; i < 20; i++ {
 
-	if len(allAnts.NotArrivedAntsName)==0 {
-		break
+		if len(allAnts.NotArrivedAntsName) == 0 {
+			break
+		}
+		allAnts.TryMoveAllAntsOneStepRandomly(theGraph)
+
 	}
-	allAnts.TryMoveAllAntsOneStepRandomly(theGraph)
-	
-}
-
 
 }
 
