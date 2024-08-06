@@ -57,7 +57,10 @@ func (allAnts *AntGroup) TryMoveAllAntsOneStepRandomly(theGraph *graphpk.Graph) 
 				// _ = seq
 				// _ = from
 				currentRoomObject := theGraph.Rooms[from]
-				currentRoomObject.EmptySeats = 1
+				if from != theGraph.EndRoomName || from != theGraph.StartRoomName {
+					currentRoomObject.EmptySeats = 1
+				}
+
 				theGraph.Rooms[from] = currentRoomObject
 
 				//allAnts.UsedTunnel[seq] = make(map[string]string) //
