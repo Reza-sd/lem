@@ -19,10 +19,10 @@ func BestPlan(theModel *modelpk.Model) *TravelPlan {
 	for i := 1; i < 300; i++ {
 
 		theModel.BaseAnts.TryPushAllAntsToEnd(&theModel.BaseGraph)
-		if theModel.BaseAnts.CurrentSequenceNumber<bestPlan.FinalSequence && len(theModel.BaseAnts.NotArrivedAntsName)==0 {
-			bestPlan.FinalSequence=theModel.BaseAnts.CurrentSequenceNumber
+		if theModel.BaseAnts.CurrentSequenceNumber < bestPlan.FinalSequence && len(theModel.BaseAnts.NotArrivedAntsName) == 0 {
+			bestPlan.FinalSequence = theModel.BaseAnts.CurrentSequenceNumber
 			//(bestPlan.FinalSequence)
-			bestPlan.TheBestPlan, _ =antpk.AntGroupCopyAtFirstRoom(theModel.BaseAnts) 
+			bestPlan.TheBestPlan, _ = antpk.AntGroupCopyAtFirstRoom(theModel.BaseAnts)
 		}
 		theModel.ResetFactory()
 	}

@@ -64,9 +64,8 @@ func main() {
 		return
 	}
 
-	bestPlan:=randomsimulatorpk.BestPlan(&baseModel1)
+	bestPlan := randomsimulatorpk.BestPlan(&baseModel1)
 	bestPlan.TheBestPlan.Print()
-
 
 	//baseModel1.
 	// -----------------------------------------
