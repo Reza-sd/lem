@@ -3,15 +3,15 @@ package graphpk
 var (
 	//------------------------
 	Sample_room_0_startRoom = Room{
-		Name:       0,
-		MaxSeats:    1000,
+		Name: 0,
+		//MaxSeats:    1000,
 		EmptySeats:  1000,
 		Connections: []mtg{1},
 	}
 	//------------------------
 	Sample_room_1_EndRoom = Room{
-		Name:        1,
-		MaxSeats:    1000,
+		Name: 1,
+		//MaxSeats:    1000,
 		EmptySeats:  1000,
 		Connections: []mtg{0},
 	}
@@ -21,7 +21,7 @@ var (
 		EndRoomName:          1,
 		CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      2,
-		Rooms: map[mtg]Room{
+		RoomsDb: map[mtg]Room{
 			0: Sample_room_0_startRoom,
 			1: Sample_room_1_EndRoom,
 		},

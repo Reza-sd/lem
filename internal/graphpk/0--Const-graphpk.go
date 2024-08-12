@@ -16,10 +16,10 @@ $
 //==============data structure=======================
 type mtg = uint16 //my type graph pk
 type Room struct {
-	Name        mtg
-	MaxSeats    mtg
-	EmptySeats  mtg
-	Connections []mtg
+	Name mtg
+	//MaxSeats    mtg
+	EmptySeats mtg
+	//Connections []mtg
 }
 
 type Graph struct {
@@ -27,8 +27,13 @@ type Graph struct {
 	EndRoomName          mtg
 	CurrentAntsInEndRoom mtg
 	NumberOfAllRoom      mtg
-	Rooms                map[mtg]Room
+	RoomsDb              map[mtg]Room
+	TunnelsDb            map[mtg][]mtg
 }
+
+// type Tunnel struct{
+// 	db map[mtg][]mtg
+// }
 
 // =========================================================
 const (

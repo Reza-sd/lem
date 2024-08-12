@@ -1,48 +1,56 @@
 package graphpk
 
-func (myGraph *Graph) setTunnelAndSeatsToGraphRooms(tunnelArr []string) error {
-	funcName := "setTunnelToGraph"
+func (myGraph *Graph) setTunnelsToGraphRooms(tunnelMap map[mtg][]mtg) error {
+	//funcName := "setTunnelToGraph"
 	//-----------------------------
-	for _, tunnel := range tunnelArr {
+	for key, tunnelSlice := range tunnelMap {
 		//-----------------------------
-		fromRoom, toRoom, errSplitstr := splitStringToParts(tunnel)
-		if errSplitstr != nil {
+		// fromRoom, toRoom, errSplitstr := splitStringToParts(tunnel)
+		// if errSplitstr != nil {
 
-			return logger.RWarn(funcName, "splitStringToParts", errSplitstr, "split tunnel string to its parts")
-		}
+		// 	return logger.RWarn(funcName, "splitStringToParts", errSplitstr, "split tunnel string to its parts")
+		// }
+		//---------------------------------
+		roomFrom := myGraph.Rooms[key]
+		// for toRoomName := range tunnelSlice {
+
+		// }
+		roomFrom.Connections = tunnelSlice
+		//roomFrom.Connections=append(roomFrom.Connections, tunnelSlice...)
+		myGraph.Rooms[key] = roomFrom
 		//-----------------------------
 		// Retrieve the Room from the map
-		roomA := myGraph.Rooms[fromRoom]
-		roomB := myGraph.Rooms[toRoom]
+		// roomA := myGraph.Rooms[key]
+		// roomB := myGraph.Rooms[toRoom]
 
-		roomA.Name = fromRoom
-		roomB.Name = toRoom
-		// Modify the Room's tunnels
-		roomA.Connections = append(roomA.Connections, toRoom)
-		roomB.Connections = append(roomB.Connections, fromRoom)
+		// roomA.Name = fromRoom
+		// roomB.Name = toRoom
+		// // Modify the Room's tunnels
+		// roomA.Connections = append(roomA.Connections, toRoom)
+		// roomB.Connections = append(roomB.Connections, fromRoom)
 		//---------------set-seats----------------------
 		// Put the modified Room back into the map
-		if fromRoom == myGraph.StartRoomName || fromRoom == myGraph.EndRoomName {
-			roomA.MaxSeats = 100000
+		// if fromRoom == myGraph.StartRoomName || fromRoom == myGraph.EndRoomName {
+		// 	roomA.MaxSeats = 100000
 
-		} else {
-			roomA.MaxSeats = 1
+		// } else {
+		// 	roomA.MaxSeats = 1
 
-		}
+		// }
 
-		if toRoom == myGraph.StartRoomName || toRoom == myGraph.EndRoomName {
-			roomB.MaxSeats = 100000
+		// if toRoom == myGraph.StartRoomName || toRoom == myGraph.EndRoomName {
+		// 	roomB.MaxSeats = 100000
 
-		} else {
-			roomB.MaxSeats = 1
+		// } else {
+		// 	roomB.MaxSeats = 1
 
-		}
-		//--------------------------------------------
-		roomA.EmptySeats = roomA.MaxSeats
-		roomB.EmptySeats = roomB.MaxSeats
+		// }
+		// //--------------------------------------------
+		// roomA.EmptySeats = roomA.MaxSeats
+		// roomB.EmptySeats = roomB.MaxSeats
 
-		myGraph.Rooms[fromRoom] = roomA
-		myGraph.Rooms[toRoom] = roomB
+		// myGraph.Rooms[fromRoom] = roomA
+		// myGraph.Rooms[toRoom] = roomB
 
 	}
 
