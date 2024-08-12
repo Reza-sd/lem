@@ -15,25 +15,26 @@ $
 */
 //==============data structure=======================
 type mtg = uint16 //my type graph pk
-// type Room struct {
-// 	//Name mtg
-// 	//MaxSeats    mtg
-// 	HasEmptySeat bool
-// 	//Connections []mtg
-// }
+type Room struct {
+	//Name mtg
+	//MaxSeats    mtg
+	HasEmptySeat bool
+
+	Connections []mtg
+}
 
 type Graph struct {
 	//StartRoomName        mtg
 	EndRoomName          mtg
 	CurrentAntsInEndRoom mtg
 	NumberOfAllRoom      mtg
-	RoomsDb              map[mtg]bool //HasEmptySeat
-	TunnelsDb            map[mtg][]mtg
+	RoomsDb              map[mtg]Room //HasEmptySeat
+	//TunnelsDb            map[mtg][]mtg
 }
 
-// type Tunnel struct{
-// 	db map[mtg][]mtg
-// }
+type Tunnel struct{
+	db map[mtg][]mtg
+}
 
 // =========================================================
 const (
