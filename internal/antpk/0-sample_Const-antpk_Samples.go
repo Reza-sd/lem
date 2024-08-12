@@ -1,9 +1,7 @@
 package antpk
 
-import (
 //"main/internal/graphpk"
 //"strings"
-)
 
 // ==================Samples=============================
 var (
@@ -13,14 +11,14 @@ var (
 	ant1 = Ant{
 		Name:            1,
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []t{0},
+		VisitedRoomsArr: []mt{0},
 		StepNumber:      0,
 	}
 	// //-------Ant type example-----------
 	ant2 = Ant{
 		Name:            2,
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []t{0},
+		VisitedRoomsArr: []mt{0},
 		StepNumber:      0,
 	}
 	// //-------AntGroup type example------
@@ -60,17 +58,28 @@ var (
 	// 	CurrentSequenceNumber: 0,
 	// 	UsedTunnel:            make(map[string][]string),
 	// }
-	// //------------------
+	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 1,
-		AntsDb: map[t]Ant{
+		AntsDb: map[mt]Ant{
 			1: ant1,
 		},
 		CurrentSequenceNumber: 0,
-		UsedTunnel:            make(map[t][]t),
-		NotArrivedAntsName:    make(map[t]struct{}),
+		UsedTunnel:            make(map[mt][]mt),
+		NotArrivedAntsName:    make(map[mt]struct{}),
 	}
-	// //------------------
+	//----------------------
+	Sample_AntGroup_2ant_initmode_room_0 = AntGroup{
+		NumberOfAnts: 2,
+		AntsDb: map[mt]Ant{
+			1: ant1,
+			2: ant2,
+		},
+		CurrentSequenceNumber: 0,
+		UsedTunnel:            make(map[mt][]mt),
+		NotArrivedAntsName:    make(map[mt]struct{}),
+	}
+	//--------------------------------------
 	// sample_room_0_startRoom = graphpk.Room{
 	// 	Name:        "room_0",
 	// 	MaxSeats:    1000,
