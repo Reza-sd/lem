@@ -13,21 +13,23 @@ L1-0 L2-6 L3-4
 L2-0 L3-0
 $
 */
+//==============data structure=======================
+type a=uint16
 type Room struct {
-	Name        string
-	MaxSeats    uint
-	EmptySeats  uint
-	Connections []string
+	Name        a
+	MaxSeats    a
+	EmptySeats  a
+	Connections []a
 }
 
 type Graph struct {
-	StartRoomName        string
-	EndRoomName          string
-	CurrentAntsInEndRoom int
-	NumberOfAllRoom      int
-	Rooms                map[string]Room
+	StartRoomName        a
+	EndRoomName          a
+	CurrentAntsInEndRoom a
+	NumberOfAllRoom      a
+	Rooms                map[a]Room
 }
-
+//=========================================================
 const (
 	//MaxHandleableAntsNumber = 200
 	pkgName = "graphpk"
@@ -41,3 +43,4 @@ var (
 		PackageName: pkgName,
 	}
 )
+//=========================================================

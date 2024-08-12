@@ -6,12 +6,13 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
+type z=uint16
 // model + behaviour
 type Lem struct {
-	NumberOfAnts int
-	StartRoom    string
-	EndRoom      string
-	TunnelArr    []string
+	NumberOfAnts z
+	StartRoom    z
+	EndRoom      z
+	TunnelArr    []z
 
 	//baseModel Model
 }

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 
-	"main/internal/logstack"
-	"main/internal/simulationpk/modelpk"
-	"main/internal/simulationpk/randomsimulatorpk"
+ 	 "main/internal/logstack"
+	_ "main/internal/simulationpk/modelpk"
+	_ "main/internal/simulationpk/randomsimulatorpk"
 	//"time"
 )
 
@@ -45,27 +45,27 @@ func main() {
 	// 	TunnelArr:    []string{"0-1", "1-2"},
 	// }
 	//----------------------------
-	lem1 := modelpk.Lem{
-		NumberOfAnts: 3,
-		StartRoom:    "A",
-		EndRoom:      "B",
-		TunnelArr:    []string{"A-B"},
-	}
+	// lem1 := modelpk.Lem{
+	// 	NumberOfAnts: 3,
+	// 	StartRoom:    "A",
+	// 	EndRoom:      "B",
+	// 	TunnelArr:    []string{"A-B"},
+	// }
 
-	//------------------------
-	/*
-	   "0-2","2-3","3-1"
-	*/
+	// //------------------------
+	// /*
+	//    "0-2","2-3","3-1"
+	// */
 
-	//lem1=lem3
-	baseModel1, errBaseModel1 := modelpk.ModelGeneratorA(&lem1)
-	if errBaseModel1 != nil {
-		fmt.Println("errBaseModel1 ", errBaseModel1)
-		return
-	}
+	// //lem1=lem3
+	// baseModel1, errBaseModel1 := modelpk.ModelGeneratorA(&lem1)
+	// if errBaseModel1 != nil {
+	// 	fmt.Println("errBaseModel1 ", errBaseModel1)
+	// 	return
+	// }
 
-	bestPlan := randomsimulatorpk.BestPlan(&baseModel1)
-	bestPlan.TheBestPlan.Print()
+	// bestPlan := randomsimulatorpk.BestPlan(&baseModel1)
+	// bestPlan.TheBestPlan.Print()
 
 	//baseModel1.
 	// -----------------------------------------
