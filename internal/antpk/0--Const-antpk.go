@@ -2,6 +2,7 @@ package antpk
 
 import (
 	"main/internal/logstack"
+	_ "main/internal/graphpk"
 )
 
 type t=uint16
