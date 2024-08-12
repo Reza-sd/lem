@@ -5,10 +5,10 @@ import (
 )
 
 type Ant struct {
-	Name            string
-	CurrentRoomName string
-	VisitedRoomsArr []string
-	StepNumber      int
+	Name            uint
+	CurrentRoomName uint
+	VisitedRoomsArr []uint
+	StepNumber      uint
 }
 
 type AntGroup struct {
