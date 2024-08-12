@@ -15,19 +15,19 @@ $
 */
 //==============data structure=======================
 type mtg = uint16 //my type graph pk
-type Room struct {
-	Name mtg
-	//MaxSeats    mtg
-	EmptySeats mtg
-	//Connections []mtg
-}
+// type Room struct {
+// 	//Name mtg
+// 	//MaxSeats    mtg
+// 	HasEmptySeat bool
+// 	//Connections []mtg
+// }
 
 type Graph struct {
 	//StartRoomName        mtg
 	EndRoomName          mtg
 	CurrentAntsInEndRoom mtg
 	NumberOfAllRoom      mtg
-	RoomsDb              map[mtg]Room
+	RoomsDb              map[mtg]bool //HasEmptySeat
 	TunnelsDb            map[mtg][]mtg
 }
 

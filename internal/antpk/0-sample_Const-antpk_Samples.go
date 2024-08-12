@@ -9,14 +9,14 @@ var (
 
 	// //-------Ant type example-----------
 	ant1 = Ant{
-		Name:            1,
+		//Name:            1,
 		CurrentRoomName: 0,
 		VisitedRoomsArr: []mta{0},
 		StepNumber:      0,
 	}
 	// //-------Ant type example-----------
 	ant2 = Ant{
-		Name:            2,
+		//Name:            2,
 		CurrentRoomName: 0,
 		VisitedRoomsArr: []mta{0},
 		StepNumber:      0,

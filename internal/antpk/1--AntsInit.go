@@ -19,7 +19,7 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mta) error {
 	//myAntGroup
 	for i := mta(1); i <= numberOfAnts; i++ {
 		myAntGroup.AntsDb[i] = Ant{
-			Name: i,
+			//Name: i,
 
 			CurrentRoomName: 0,
 			VisitedRoomsArr: []mta{0},

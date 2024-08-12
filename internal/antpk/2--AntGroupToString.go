@@ -19,7 +19,7 @@ func (allAnts *AntGroup) ToString() (string, error) {
 
 		//ant := allAnts.AntsDb[fmt.Sprintf("L%v", i)]
 		ant := allAnts.AntsDb[i]
-		antStr := fmt.Sprintf("%v-antName=%v, CurrentRoom=%v, StepNumber=%v, VisitedRooms=%v", i, ant.Name, ant.CurrentRoomName, ant.StepNumber, ant.VisitedRoomsArr)
+		antStr := fmt.Sprintf("%v-antName=%v, CurrentRoom=%v, StepNumber=%v, VisitedRooms=%v", i, i, ant.CurrentRoomName, ant.StepNumber, ant.VisitedRoomsArr)
 		antGroupString += antStr
 		if i != allAnts.NumberOfAnts {
 			antGroupString += "\n"

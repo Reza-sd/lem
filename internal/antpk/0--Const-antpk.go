@@ -9,7 +9,7 @@ import (
 type mta = uint16 //my type ant pk
 
 type Ant struct {
-	Name            mta
+	//Name            mta
 	CurrentRoomName mta
 	VisitedRoomsArr []mta
 	StepNumber      mta
