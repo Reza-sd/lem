@@ -28,7 +28,7 @@ type AntGroup struct {
 
 const (
 	//MaxHandleableAntsNumber = 1100
-	pkgName                 = "antpk"
+	pkgName = "antpk"
 	//LogFilesDirectory =
 	rootFromAntpk     = "../.."
 	LogFilesDirectory = rootFromAntpk + "/logs/"
@@ -36,7 +36,7 @@ const (
 
 var (
 	MaxHandleableAntsNumber = mt(1100)
-	logger = logstack.LogCollector{
+	logger                  = logstack.LogCollector{
 		PackageName: pkgName,
 	}
 )

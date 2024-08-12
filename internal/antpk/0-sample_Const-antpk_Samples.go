@@ -66,7 +66,7 @@ var (
 		},
 		CurrentSequenceNumber: 0,
 		UsedTunnel:            make(map[mt][]mt),
-		NotArrivedAntsName:    make(map[mt]struct{}),
+		NotArrivedAntsName:    map[mt]struct{}{1: {}},
 	}
 	//----------------------
 	Sample_AntGroup_2ant_initmode_room_0 = AntGroup{
@@ -77,7 +77,7 @@ var (
 		},
 		CurrentSequenceNumber: 0,
 		UsedTunnel:            make(map[mt][]mt),
-		NotArrivedAntsName:    make(map[mt]struct{}),
+		NotArrivedAntsName:    map[mt]struct{}{1: {}, 2: {}},
 	}
 	//--------------------------------------
 	// sample_room_0_startRoom = graphpk.Room{
