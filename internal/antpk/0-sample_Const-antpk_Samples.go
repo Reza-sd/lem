@@ -17,12 +17,12 @@ var (
 		StepNumber:      0,
 	}
 	// //-------Ant type example-----------
-	// ant2 = Ant{
-	// 	Name:            "L2",
-	// 	CurrentRoomName: "mio_5",
-	// 	VisitedRoomsArr: []string{"mio_7", "mio_3", "mio_5"},
-	// 	StepNumber:      2,
-	// }
+	ant2 = Ant{
+		Name:            2,
+		CurrentRoomName: 0,
+		VisitedRoomsArr: []t{0},
+		StepNumber:      0,
+	}
 	// //-------AntGroup type example------
 
 	// antGroup3 = AntGroup{

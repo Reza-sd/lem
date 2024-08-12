@@ -4,7 +4,7 @@ import (
 	"main/internal/logstack"
 	_ "main/internal/graphpk"
 )
-
+//====================struct====data structure==================
 type t=uint16
 
 type Ant struct {
@@ -23,14 +23,7 @@ type AntGroup struct {
 	NotArrivedAntsName map[t]struct{}
 }
 
-// type TravelHistory struct {
-// 	UsedTunnelsMap map[int]map[string]string
-// }
-
-// type TravelPlan struct {
-// 	FinalSequence int
-// 	TheBestPlan   AntGroup
-// }
+//======================================================
 
 const (
 	MaxHandleableAntsNumber = 200
@@ -45,3 +38,4 @@ var (
 		PackageName: pkgName,
 	}
 )
+//======================================================
