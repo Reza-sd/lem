@@ -15,7 +15,7 @@ func (allAnts *AntGroup) ToString() (string, error) {
 		return antGroupString, nil
 	}
 
-	for i := mt(1); i <= count; i++ {
+	for i := mta(1); i <= count; i++ {
 
 		//ant := allAnts.AntsDb[fmt.Sprintf("L%v", i)]
 		ant := allAnts.AntsDb[i]

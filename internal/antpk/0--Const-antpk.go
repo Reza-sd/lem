@@ -6,22 +6,22 @@ import (
 )
 
 // ====================struct====data structure==================
-type mt = uint16 //my type
+type mta = uint16 //my type ant pk
 
 type Ant struct {
-	Name            mt
-	CurrentRoomName mt
-	VisitedRoomsArr []mt
-	StepNumber      mt
+	Name            mta
+	CurrentRoomName mta
+	VisitedRoomsArr []mta
+	StepNumber      mta
 }
 
 type AntGroup struct {
-	NumberOfAnts          mt
-	CurrentSequenceNumber mt
-	AntsDb                map[mt]Ant
+	NumberOfAnts          mta
+	CurrentSequenceNumber mta
+	AntsDb                map[mta]Ant
 	//UsedTunnelinThisSeq	map[string]string//
-	UsedTunnel         map[mt][]mt
-	NotArrivedAntsName map[mt]struct{}
+	UsedTunnel         map[mta][]mta
+	NotArrivedAntsName map[mta]struct{}
 }
 
 //======================================================
@@ -35,7 +35,7 @@ const (
 )
 
 var (
-	MaxHandleableAntsNumber = mt(1100)
+	MaxHandleableAntsNumber = mta(1100)
 	logger                  = logstack.LogCollector{
 		PackageName: pkgName,
 	}

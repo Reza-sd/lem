@@ -14,20 +14,20 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-type a = uint16
+type mtg = uint16 //my type graph pk
 type Room struct {
-	Name        a
-	MaxSeats    a
-	EmptySeats  a
-	Connections []a
+	Name        mtg
+	MaxSeats    mtg
+	EmptySeats  mtg
+	Connections []mtg
 }
 
 type Graph struct {
-	StartRoomName        a
-	EndRoomName          a
-	CurrentAntsInEndRoom a
-	NumberOfAllRoom      a
-	Rooms                map[a]Room
+	StartRoomName        mtg
+	EndRoomName          mtg
+	CurrentAntsInEndRoom mtg
+	NumberOfAllRoom      mtg
+	Rooms                map[mtg]Room
 }
 
 // =========================================================

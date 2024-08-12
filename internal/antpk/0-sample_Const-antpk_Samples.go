@@ -11,14 +11,14 @@ var (
 	ant1 = Ant{
 		Name:            1,
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []mt{0},
+		VisitedRoomsArr: []mta{0},
 		StepNumber:      0,
 	}
 	// //-------Ant type example-----------
 	ant2 = Ant{
 		Name:            2,
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []mt{0},
+		VisitedRoomsArr: []mta{0},
 		StepNumber:      0,
 	}
 	// //-------AntGroup type example------
@@ -33,23 +33,23 @@ var (
 	//------------------
 	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 1,
-		AntsDb: map[mt]Ant{
+		AntsDb: map[mta]Ant{
 			1: ant1,
 		},
 		CurrentSequenceNumber: 0,
-		UsedTunnel:            make(map[mt][]mt),
-		NotArrivedAntsName:    map[mt]struct{}{1: {}},
+		UsedTunnel:            make(map[mta][]mta),
+		NotArrivedAntsName:    map[mta]struct{}{1: {}},
 	}
 	//----------------------
 	Sample_AntGroup_2ant_initmode_room_0 = AntGroup{
 		NumberOfAnts: 2,
-		AntsDb: map[mt]Ant{
+		AntsDb: map[mta]Ant{
 			1: ant1,
 			2: ant2,
 		},
 		CurrentSequenceNumber: 0,
-		UsedTunnel:            make(map[mt][]mt),
-		NotArrivedAntsName:    map[mt]struct{}{1: {}, 2: {}},
+		UsedTunnel:            make(map[mta][]mta),
+		NotArrivedAntsName:    map[mta]struct{}{1: {}, 2: {}},
 	}
 	//--------------------------------------
 	// sample_room_0_startRoom = graphpk.Room{

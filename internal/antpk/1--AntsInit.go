@@ -2,7 +2,7 @@ package antpk
 
 //"fmt"
 
-func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mt) error {
+func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mta) error {
 	funcName := "AntsInit"
 	//var err error
 	//-----input validation-----
@@ -10,19 +10,19 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mt) error {
 		return logger.RWarnStr(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
 	}
 	//--------------------------
-	myAntGroup.AntsDb = make(map[mt]Ant) //initiate map
+	myAntGroup.AntsDb = make(map[mta]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
 	myAntGroup.CurrentSequenceNumber = 0
-	myAntGroup.UsedTunnel = make(map[mt][]mt)
-	myAntGroup.NotArrivedAntsName = make(map[mt]struct{})
+	myAntGroup.UsedTunnel = make(map[mta][]mta)
+	myAntGroup.NotArrivedAntsName = make(map[mta]struct{})
 	//--------------------------
 	//myAntGroup
-	for i := mt(1); i <= numberOfAnts; i++ {
+	for i := mta(1); i <= numberOfAnts; i++ {
 		myAntGroup.AntsDb[i] = Ant{
 			Name: i,
 
 			CurrentRoomName: 0,
-			VisitedRoomsArr: []mt{0},
+			VisitedRoomsArr: []mta{0},
 			StepNumber:      0,
 		}
 
