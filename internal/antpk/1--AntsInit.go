@@ -2,17 +2,13 @@ package antpk
 
 //"fmt"
 
-func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mt, startRoomName mt) error {
+func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mt) error {
 	funcName := "AntsInit"
 	//var err error
 	//-----input validation-----
 	if numberOfAnts < 1 || numberOfAnts > MaxHandleableAntsNumber {
 		return logger.RWarnStr(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
 	}
-	//-------
-	// if startRoomName == "" {
-	// 	return logger.RWarnStr(funcName, "startRoomName ? EMPTY", "is not valid", "check if startRoomName not empty")
-	// }
 	//--------------------------
 	myAntGroup.AntsDb = make(map[mt]Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
@@ -25,8 +21,8 @@ func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts mt, startRoomName mt) erro
 		myAntGroup.AntsDb[i] = Ant{
 			Name: i,
 
-			CurrentRoomName: startRoomName,
-			VisitedRoomsArr: []mt{startRoomName},
+			CurrentRoomName: 0,
+			VisitedRoomsArr: []mt{0},
 			StepNumber:      0,
 		}
 
