@@ -1,11 +1,12 @@
 package antpk
 
 import (
-	"main/internal/logstack"
 	_ "main/internal/graphpk"
+	"main/internal/logstack"
 )
-//====================struct====data structure==================
-type t=uint16
+
+// ====================struct====data structure==================
+type t = uint16
 
 type Ant struct {
 	Name            t
@@ -38,4 +39,5 @@ var (
 		PackageName: pkgName,
 	}
 )
+
 //======================================================

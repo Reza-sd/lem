@@ -3,7 +3,7 @@ package main
 import (
 	_ "fmt"
 
- 	 "main/internal/logstack"
+	"main/internal/logstack"
 	_ "main/internal/simulationpk/modelpk"
 	_ "main/internal/simulationpk/randomsimulatorpk"
 	//"time"

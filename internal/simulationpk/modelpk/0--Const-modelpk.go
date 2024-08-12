@@ -6,7 +6,8 @@ import (
 	graphpk "main/internal/graphpk"
 )
 
-type z=uint16
+type z = uint16
+
 // model + behaviour
 type Lem struct {
 	NumberOfAnts z

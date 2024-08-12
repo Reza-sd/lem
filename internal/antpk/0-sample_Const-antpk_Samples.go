@@ -1,8 +1,8 @@
 package antpk
 
 import (
-	//"main/internal/graphpk"
-	//"strings"
+//"main/internal/graphpk"
+//"strings"
 )
 
 // ==================Samples=============================
@@ -61,18 +61,15 @@ var (
 	// 	UsedTunnel:            make(map[string][]string),
 	// }
 	// //------------------
-	// Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
-	// 	NumberOfAnts: 1,
-	// 	AntsDb: map[string]Ant{
-	// 		"L1": {Name: "L1",
-	// 			CurrentRoomName: "room_0",
-	// 			VisitedRoomsArr: []string{"room_0"},
-	// 			StepNumber:      0,
-	// 		},
-	// 	},
-	// 	CurrentSequenceNumber: 0,
-	// 	UsedTunnel:            make(map[string][]string),
-	// }
+	Sample_AntGroup_1ant_initmode_room_0 = AntGroup{
+		NumberOfAnts: 1,
+		AntsDb: map[t]Ant{
+			1: ant1,
+		},
+		CurrentSequenceNumber: 0,
+		UsedTunnel:            make(map[t][]t),
+		NotArrivedAntsName:    make(map[t]struct{}),
+	}
 	// //------------------
 	// sample_room_0_startRoom = graphpk.Room{
 	// 	Name:        "room_0",
