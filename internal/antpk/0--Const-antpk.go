@@ -12,12 +12,12 @@ type Ant struct {
 }
 
 type AntGroup struct {
-	NumberOfAnts          int
-	CurrentSequenceNumber int
-	AntsDb                map[string]Ant
+	NumberOfAnts          uint16
+	CurrentSequenceNumber uint16
+	AntsDb                map[uint16]Ant
 	//UsedTunnelinThisSeq	map[string]string//
-	UsedTunnel         map[string][]string
-	NotArrivedAntsName map[string]struct{}
+	UsedTunnel         map[uint16][]uint16
+	NotArrivedAntsName map[uint16]struct{}
 }
 
 // type TravelHistory struct {
