@@ -4,20 +4,22 @@ import (
 	"main/internal/logstack"
 )
 
+type t=uint16
+
 type Ant struct {
-	Name            uint16
-	CurrentRoomName uint16
-	VisitedRoomsArr []uint16
-	StepNumber      uint16
+	Name            t
+	CurrentRoomName t
+	VisitedRoomsArr []t
+	StepNumber      t
 }
 
 type AntGroup struct {
-	NumberOfAnts          uint16
-	CurrentSequenceNumber uint16
-	AntsDb                map[uint16]Ant
+	NumberOfAnts          t
+	CurrentSequenceNumber t
+	AntsDb                map[t]Ant
 	//UsedTunnelinThisSeq	map[string]string//
-	UsedTunnel         map[uint16][]uint16
-	NotArrivedAntsName map[uint16]struct{}
+	UsedTunnel         map[t][]t
+	NotArrivedAntsName map[t]struct{}
 }
 
 // type TravelHistory struct {
