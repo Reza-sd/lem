@@ -23,7 +23,7 @@ type Room struct {
 }
 
 type Graph struct {
-	StartRoomName        mtg
+	//StartRoomName        mtg
 	EndRoomName          mtg
 	CurrentAntsInEndRoom mtg
 	NumberOfAllRoom      mtg

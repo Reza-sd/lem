@@ -3,27 +3,27 @@ package graphpk
 var (
 	//------------------------
 	Sample_room_0_startRoom = Room{
-		Name:        "room_0",
+		Name:       0,
 		MaxSeats:    1000,
 		EmptySeats:  1000,
-		Connections: []string{"room_1"},
+		Connections: []mtg{1},
 	}
 	//------------------------
 	Sample_room_1_EndRoom = Room{
-		Name:        "room_1",
+		Name:        1,
 		MaxSeats:    1000,
 		EmptySeats:  1000,
-		Connections: []string{"room_0"},
+		Connections: []mtg{0},
 	}
 	// ------------------------
 	Sample_graph_1 = Graph{
-		StartRoomName:        "room_0",
-		EndRoomName:          "room_1",
+		//StartRoomName:        "room_0",
+		EndRoomName:          1,
 		CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      2,
-		Rooms: map[string]Room{
-			"room_0": Sample_room_0_startRoom,
-			"room_1": Sample_room_1_EndRoom,
+		Rooms: map[mtg]Room{
+			0: Sample_room_0_startRoom,
+			1: Sample_room_1_EndRoom,
 		},
 	}
 
