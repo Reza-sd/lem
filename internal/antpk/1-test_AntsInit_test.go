@@ -15,7 +15,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := mt(0)
-		//startRoomName := mt(0)
+		
 		expectError := true
 		//---Act---
 		err := myAntGroup.AntGroupInit(numberOfAnts)
@@ -29,7 +29,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := MaxHandleableAntsNumber + 1
-		//startRoomName := mt(0)
+		
 		expectError := true
 		//---Act---
 		err := myAntGroup.AntGroupInit(numberOfAnts)
@@ -43,7 +43,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := mt(1)
-		//startRoomName := mt(0)
+		
 		expectError := false //no error = nil
 		//---Act---
 		err := myAntGroup.AntGroupInit(numberOfAnts)
@@ -56,7 +56,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := mt(1)
-		//startRoomName := mt(0)
+		
 		expectedAntGroup := Sample_AntGroup_1ant_initmode_room_0
 		//---Act---
 		myAntGroup.AntGroupInit(numberOfAnts)
@@ -69,13 +69,13 @@ func Test_AntsInit(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
 		numberOfAnts := mt(2)
-		//startRoomName := mt(0)
+		
 		expectedAntGroup := Sample_AntGroup_2ant_initmode_room_0
 		//---Act---
 		myAntGroup.AntGroupInit(numberOfAnts)
 		//---Assert----
 		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
-		myAntGroup.Print()
+		//myAntGroup.Print()
 
 	})
 }
