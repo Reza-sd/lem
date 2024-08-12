@@ -10,12 +10,12 @@ var (
 	//-------Ant type example-----------
 
 	// //-------Ant type example-----------
-	// ant1 = Ant{
-	// 	Name:            "L1",
-	// 	CurrentRoomName: "room_1",
-	// 	VisitedRoomsArr: []string{"room_0", "room_1"},
-	// 	StepNumber:      1,
-	// }
+	ant1 = Ant{
+		Name:            1,
+		CurrentRoomName: 0,
+		VisitedRoomsArr: []t{0},
+		StepNumber:      0,
+	}
 	// //-------Ant type example-----------
 	// ant2 = Ant{
 	// 	Name:            "L2",
