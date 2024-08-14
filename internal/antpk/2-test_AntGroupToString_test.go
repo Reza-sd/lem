@@ -2,7 +2,7 @@ package antpk
 
 import (
 	//"reflect"
-	"fmt"
+	//"fmt"
 	"testing"
 )
 
@@ -15,7 +15,7 @@ func Test_ToString(t *testing.T) {
 		//myAntGroup :=Sample_AntGroup_1ant_initmode_room_0
 		// //---Act---
 		returnedString, _ := myAntGroup.ToString()
-		fmt.Println(returnedString)
+		//fmt.Println(returnedString)
 		expectedString = returnedString
 		// //---Assert----
 		assert_If_ToString_return_string(t, returnedString, expectedString)
@@ -29,7 +29,7 @@ func Test_ToString(t *testing.T) {
 		//myAntGroup :=Sample_AntGroup_1ant_initmode_room_0
 		// //---Act---
 		returnedString, _ := myAntGroup.ToString()
-		fmt.Println(returnedString)
+		//fmt.Println(returnedString)
 		expectedString = returnedString
 		// //---Assert----
 		assert_If_ToString_return_string(t, returnedString, expectedString)
@@ -43,7 +43,7 @@ func Test_ToString(t *testing.T) {
 		//myAntGroup :=Sample_AntGroup_1ant_initmode_room_0
 		// //---Act---
 		returnedString, _ := myAntGroup.ToString()
-		fmt.Println(returnedString)
+		//fmt.Println(returnedString)
 		expectedString = returnedString
 		// //---Assert----
 		assert_If_ToString_return_string(t, returnedString, expectedString)
