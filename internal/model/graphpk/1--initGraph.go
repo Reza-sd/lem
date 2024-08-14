@@ -2,11 +2,11 @@ package graphpk
 
 // =======================================================
 
-func (myGraph *Graph) InitGraph(myTunnelMap TunnelMap, EndRoomName mtg) error {
+func (myGraph *Graph) InitGraph(myTunnelMap TunnelMap, EndRoomName Mtg) error {
 
 	myGraph.EndRoomName = EndRoomName
 
-	myGraph.RoomAvailableDb = make(map[mtg]bool)
+	myGraph.RoomAvailableDb = make(map[Mtg]bool)
 
 	myGraph.TunnelsDb = &myTunnelMap
 

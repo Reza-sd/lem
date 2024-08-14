@@ -14,7 +14,7 @@ func Test_AntsInit(t *testing.T) {
 	t.Run(`1-return an error when numberOfAnts=0`, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
-		numberOfAnts := mta(0)
+		numberOfAnts := Mta(0)
 
 		expectError := true
 		//---Act---
@@ -42,7 +42,7 @@ func Test_AntsInit(t *testing.T) {
 	t.Run(`3-return nil error when startRoomName=0 and numberOfAnts>0 `, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
-		numberOfAnts := mta(1)
+		numberOfAnts := Mta(1)
 
 		expectError := false //no error = nil
 		//---Act---
@@ -55,7 +55,7 @@ func Test_AntsInit(t *testing.T) {
 	t.Run(`4-check if the values of myAntGroup correct (1 ant) `, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
-		numberOfAnts := mta(1)
+		numberOfAnts := Mta(1)
 
 		expectedAntGroup := Sample_AntGroup_1ant_initmode_room_0()
 		//---Act---
@@ -68,7 +68,7 @@ func Test_AntsInit(t *testing.T) {
 	t.Run(`5-check if the values of myAntGroup correct (2 ant)`, func(t *testing.T) {
 		//---Arrange---
 		var myAntGroup AntGroup
-		numberOfAnts := mta(2)
+		numberOfAnts := Mta(2)
 
 		expectedAntGroup := Sample_AntGroup_2ant_initmode_room_0()
 		//---Act---

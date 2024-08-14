@@ -5,22 +5,22 @@ import (
 )
 
 // ====================struct====data structure==================
-type mta = uint16 //my type ant pk
+type Mta = uint16 //my type ant pk
 
 type Ant struct {
 	//Name            mta
-	CurrentRoomName mta
-	VisitedRoomsArr []mta
-	StepNumber      mta
+	CurrentRoomName Mta
+	VisitedRoomsArr []Mta
+	StepNumber      Mta
 }
 
 type AntGroup struct {
-	NumberOfAnts          mta
-	CurrentSequenceNumber mta
-	AntsDb                map[mta]Ant
+	NumberOfAnts          Mta
+	CurrentSequenceNumber Mta
+	AntsDb                map[Mta]Ant
 	//UsedTunnelinThisSeq	map[string]string//
-	UsedTunnel         map[mta][]mta
-	NotArrivedAntsName map[mta]struct{}
+	UsedTunnel         map[Mta][]Mta
+	NotArrivedAntsName map[Mta]struct{}
 }
 
 //======================================================
@@ -31,7 +31,7 @@ const (
 	//LogFilesDirectory =
 	rootFromAntpk           = "../.."
 	LogFilesDirectory       = rootFromAntpk + "/logs/"
-	MaxHandleableAntsNumber = mta(1100)
+	MaxHandleableAntsNumber = Mta(1100)
 )
 
 var (

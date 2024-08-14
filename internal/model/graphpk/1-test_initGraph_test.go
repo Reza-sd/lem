@@ -10,7 +10,7 @@ func TestInitGraph(t *testing.T) {
 	testCases := []struct {
 		name          string
 		tunnelMap     TunnelMap
-		endRoomName   mtg
+		endRoomName   Mtg
 		expectedGraph Graph
 	}{
 		{
@@ -24,7 +24,7 @@ func TestInitGraph(t *testing.T) {
 			endRoomName: 4,
 			expectedGraph: Graph{
 				EndRoomName: 4,
-				RoomAvailableDb: map[mtg]bool{
+				RoomAvailableDb: map[Mtg]bool{
 					1: true,
 					2: true,
 					3: true,
@@ -44,7 +44,7 @@ func TestInitGraph(t *testing.T) {
 			endRoomName: 0,
 			expectedGraph: Graph{
 				EndRoomName:     0,
-				RoomAvailableDb: map[mtg]bool{},
+				RoomAvailableDb: map[Mtg]bool{},
 				TunnelsDb:       &TunnelMap{},
 			},
 		},

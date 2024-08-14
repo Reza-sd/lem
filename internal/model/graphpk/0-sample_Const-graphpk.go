@@ -11,7 +11,7 @@ func Sample_graph_1() Graph {
 
 		EndRoomName: 1,
 
-		RoomAvailableDb: map[mtg]bool{
+		RoomAvailableDb: map[Mtg]bool{
 			0: true,
 			1: true,
 		},

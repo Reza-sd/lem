@@ -7,8 +7,7 @@ import (
 )
 
 func Sample_Model1() Model {
-	// myGraph := graphpk.Sample_graph_1()
-	// myAntGroup := antpk.Sample_AntGroup_2ant_initmode_room_0()
+	
 
 	return Model{
 		Graph:    graphpk.Sample_graph_1(),

@@ -14,13 +14,13 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-type mtg = uint16
-type TunnelMap = map[mtg][]mtg
+type Mtg = uint16
+type TunnelMap = map[Mtg][]Mtg
 
 type Graph struct {
-	EndRoomName mtg
+	EndRoomName Mtg
 
-	RoomAvailableDb map[mtg]bool //or on off room of no empty seat
+	RoomAvailableDb map[Mtg]bool //or on off room of no empty seat
 	TunnelsDb       *TunnelMap   //alway fix
 }
 
