@@ -7,6 +7,6 @@ import (
 )
 
 func (theModel *Model) ResetFactory() {
-	theModel.BaseGraph.ResetFactory()
-	theModel.BaseAnts.ResetFactory(theModel.BaseGraph.StartRoomName)
+	theModel.Graph.ResetFactory()
+	theModel.AntGroup.ResetFactory()
 }

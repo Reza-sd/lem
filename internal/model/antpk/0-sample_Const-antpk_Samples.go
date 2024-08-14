@@ -35,7 +35,7 @@ func Sample_ant2() Ant {
 // // }
 // //------------------
 
-//------------------
+// ------------------
 func Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 1,
@@ -48,7 +48,7 @@ func Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 	}
 }
 
-//----------------------
+// ----------------------
 func Sample_AntGroup_2ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 2,
