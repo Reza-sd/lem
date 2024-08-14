@@ -2,7 +2,7 @@ package modelpk
 
 import (
 	antpk "main/internal/model/antgroup"
-	graphpk "main/internal/model/graphpk"
+	graphpk "main/internal/model/graph"
 )
 
 // -------------------------------------------------
