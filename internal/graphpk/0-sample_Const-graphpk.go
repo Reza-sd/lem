@@ -21,7 +21,7 @@ var (
 		EndRoomName:          1,
 		CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      2,
-		RoomsDb: map[mtg]bool{
+		RoomHasEmptySeatDb: map[mtg]bool{
 			0: true,
 			1: true,
 		},
