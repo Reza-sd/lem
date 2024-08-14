@@ -7,8 +7,8 @@ import (
 
 func (myModel *Model) Init(myLem *Lem) error {
 
-	myModel.AntGroup.Init(antpk.Mta(myLem.NumberOfAnts))
-	myModel.Graph.Init(myLem.TunnelMap, antpk.Mta(myLem.EndRoom))
+	myModel.AntGroup.Init(antpk.Mtag(myLem.NumberOfAnts))
+	myModel.Graph.Init(myLem.TunnelMap, antpk.Mtag(myLem.EndRoom))
 	// var theModel Model
 	// NumberOfAnts := myLem.NumberOfAnts
 	// StartRoom := myLem.StartRoom

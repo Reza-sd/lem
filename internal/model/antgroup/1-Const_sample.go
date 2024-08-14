@@ -10,7 +10,7 @@ func Sample_ant1() Ant {
 
 	return Ant{
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []Mta{0},
+		VisitedRoomsArr: []Mtag{0},
 		StepNumber:      0,
 	}
 
@@ -21,7 +21,7 @@ func Sample_ant2() Ant {
 	return Ant{
 		//Name:            2,
 		CurrentRoomName: 0,
-		VisitedRoomsArr: []Mta{0},
+		VisitedRoomsArr: []Mtag{0},
 		StepNumber:      0,
 	}
 }
@@ -39,12 +39,12 @@ func Sample_ant2() Ant {
 func Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 1,
-		AntsDb: map[Mta]Ant{
+		AntsDb: map[Mtag]Ant{
 			1: Sample_ant1(),
 		},
 		CurrentSequenceNumber: 0,
-		UsedTunnel:            make(map[Mta][]Mta),
-		NotArrivedAntsName:    map[Mta]struct{}{1: {}},
+		UsedTunnel:            make(map[Mtag][]Mtag),
+		NotArrivedAntsName:    map[Mtag]struct{}{1: {}},
 	}
 }
 
@@ -52,13 +52,13 @@ func Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 func Sample_AntGroup_2ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 2,
-		AntsDb: map[Mta]Ant{
+		AntsDb: map[Mtag]Ant{
 			1: Sample_ant1(),
 			2: Sample_ant2(),
 		},
 		CurrentSequenceNumber: 0,
-		UsedTunnel:            make(map[Mta][]Mta),
-		NotArrivedAntsName:    map[Mta]struct{}{1: {}, 2: {}},
+		UsedTunnel:            make(map[Mtag][]Mtag),
+		NotArrivedAntsName:    map[Mtag]struct{}{1: {}, 2: {}},
 	}
 }
 
