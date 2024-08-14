@@ -10,9 +10,11 @@ func (myAntGroup *AntGroup) Reset() {
 	for antName := range myAntGroup.AntsDb {
 		myAntGroup.NotArrivedAntsName[antName] = struct{}{}
 		ant := myAntGroup.AntsDb[antName]
-		ant.CurrentRoomName = 0
-		ant.StepNumber = 0
-		ant.VisitedRoomsArr = []Mtag{0}
+		// ant.CurrentRoomName = 0
+		// ant.StepNumber = 0
+		// ant.VisitedRoomsArr = []Mtag{0}
+		//ant.Init()
+		ant.Reset()
 		myAntGroup.AntsDb[antName] = ant
 	}
 
