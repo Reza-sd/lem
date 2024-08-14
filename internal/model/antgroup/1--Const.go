@@ -1,4 +1,4 @@
-package antpk
+package antgroup
 
 import (
 	"main/internal/logstack"
@@ -8,7 +8,6 @@ import (
 // ====================struct====data structure==================
 type Mtag = uint16 //my type ant group pk
 type Ant = ant.Ant
-
 
 type AntGroup struct {
 	NumberOfAnts          Mtag

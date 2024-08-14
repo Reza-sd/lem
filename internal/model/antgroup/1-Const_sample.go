@@ -1,10 +1,8 @@
-package antpk
+package antgroup
 
 import (
-
 	"main/internal/model/antgroup/ant"
 )
-
 
 // ==================Samples=============================
 func Sample_AntGroup_1ant_initmode_room_0() AntGroup {
