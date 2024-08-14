@@ -4,11 +4,10 @@ import (
 	"fmt"
 )
 
-
 // ---------------------------------
 func (myGraph *Graph) Print() {
 	fmt.Println("\n----------Graph------------")
-	str, _ := myGraph.ToString()
+	str := myGraph.ToString()
 	fmt.Println(str)
 	fmt.Println("---------------------------")
 }

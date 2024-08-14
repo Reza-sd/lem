@@ -14,17 +14,14 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-type mtg = uint16 
-
+type mtg = uint16
 
 type Graph struct {
-
 	EndRoomName mtg
 
-	RoomHasEmptySeatDb map[mtg]bool 
+	RoomHasEmptySeatDb map[mtg]bool
 	TunnelsDb          map[mtg][]mtg
 }
-
 
 // =========================================================
 const (

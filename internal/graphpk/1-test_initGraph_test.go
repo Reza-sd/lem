@@ -7,11 +7,11 @@ import (
 
 func TestInitGraph(t *testing.T) {
 	tests := []struct {
-		name           string
-		tunnelMap      map[mtg][]mtg
-		endRoomName    mtg
-		expectedGraph  Graph
-		expectedError  error
+		name          string
+		tunnelMap     map[mtg][]mtg
+		endRoomName   mtg
+		expectedGraph Graph
+		expectedError error
 	}{
 		{
 			name: "Basic initialization",
@@ -51,7 +51,7 @@ func TestInitGraph(t *testing.T) {
 		// 	expectedError: nil,
 		// },
 	}
-//------------------------------------------
+	//------------------------------------------
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			myGraph := &Graph{}
