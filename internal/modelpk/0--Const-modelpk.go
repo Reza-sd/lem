@@ -2,8 +2,8 @@ package modelpk
 
 import (
 	//"fmt"
-	"main/internal/antpk"
-	graphpk "main/internal/graphpk"
+	"main/internal/modelpk/antpk"
+	graphpk "main/internal/modelpk/graphpk"
 )
 
 type z = uint16

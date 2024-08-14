@@ -4,7 +4,7 @@ import (
 	_ "fmt"
 
 	"main/internal/logstack"
-	_ "main/internal/simulationpk/modelpk"
+	
 	_ "main/internal/simulationpk/randomsimulatorpk"
 	//"time"
 )

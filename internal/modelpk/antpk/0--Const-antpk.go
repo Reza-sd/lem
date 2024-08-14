@@ -1,7 +1,7 @@
 package antpk
 
 import (
-	_ "main/internal/graphpk"
+	
 	"main/internal/logstack"
 )
 
