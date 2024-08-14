@@ -29,13 +29,13 @@ const (
 	//MaxHandleableAntsNumber = 1100
 	pkgName = "antpk"
 	//LogFilesDirectory =
-	rootFromAntpk     = "../.."
-	LogFilesDirectory = rootFromAntpk + "/logs/"
+	rootFromAntpk           = "../.."
+	LogFilesDirectory       = rootFromAntpk + "/logs/"
+	MaxHandleableAntsNumber = mta(1100)
 )
 
 var (
-	MaxHandleableAntsNumber = mta(1100)
-	logger                  = logstack.LogCollector{
+	logger = logstack.LogCollector{
 		PackageName: pkgName,
 	}
 )
