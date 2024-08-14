@@ -6,6 +6,7 @@ import (
 	graphpk "main/internal/model/graphpk"
 )
 
+// =====================================
 func Sample_Model1() Model {
 
 	return Model{
@@ -14,13 +15,40 @@ func Sample_Model1() Model {
 	}
 
 }
-func Sample_Lem1() Lem {
+
+// -------------------------
+func Sample_Lem_1ant_2room() Lem {
 	return Lem{
 		NumberOfAnts: 1,
 		EndRoom:      1,
 		TunnelMap: map[Mtm][]Mtm{
 			0: {1},
 			1: {0},
+		},
+	}
+}
+
+// -------------------------
+func Sample_Lem_2ant_2room() Lem {
+	return Lem{
+		NumberOfAnts: 2,
+		EndRoom:      1,
+		TunnelMap: map[Mtm][]Mtm{
+			0: {1},
+			1: {0},
+		},
+	}
+}
+
+// -------------------------
+func Sample_Lem_2ant_3room() Lem {
+	return Lem{
+		NumberOfAnts: 2,
+		EndRoom:      1,
+		TunnelMap: map[Mtm][]Mtm{
+			0: {1},
+			1: {0, 2},
+			2: {1},
 		},
 	}
 }
