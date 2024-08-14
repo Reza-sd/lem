@@ -6,13 +6,12 @@ import (
 	graphpk "main/internal/model/graphpk"
 )
 //-------------------------------------------------
-type z = uint16
+type Mtm = uint16 //my type Model
 
 type Lem struct {
-	NumberOfAnts z
-	StartRoom    z
-	EndRoom      z
-	TunnelArr    []z
+	NumberOfAnts Mtm
+	EndRoom      Mtm
+	TunnelArr    graphpk.TunnelMap
 
 }
 

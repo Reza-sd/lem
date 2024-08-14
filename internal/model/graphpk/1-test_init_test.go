@@ -54,7 +54,7 @@ func TestInitGraph(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			myGraph := &Graph{}
-			err := myGraph.InitGraph(tc.tunnelMap, tc.endRoomName)
+			err := myGraph.Init(tc.tunnelMap, tc.endRoomName)
 
 			myGraph.Print()
 			// Check for errors

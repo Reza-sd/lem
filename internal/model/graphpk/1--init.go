@@ -2,7 +2,7 @@ package graphpk
 
 // =======================================================
 
-func (myGraph *Graph) InitGraph(myTunnelMap TunnelMap, EndRoomName Mtg) error {
+func (myGraph *Graph) Init(myTunnelMap TunnelMap, EndRoomName Mtg) error {
 
 	myGraph.EndRoomName = EndRoomName
 

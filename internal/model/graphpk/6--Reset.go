@@ -1,6 +1,6 @@
 package graphpk
 
-func (myGraph *Graph) ResetFactory() {
+func (myGraph *Graph) Reset() {
 
 	// for roomName, _ := range theGraph.Rooms {
 

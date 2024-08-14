@@ -16,7 +16,7 @@ func Test_ResetFartory(t *testing.T) {
 		myAntGroup.CurrentSequenceNumber = 10
 		//myAntGroup.Print()
 		//---Act---
-		myAntGroup.ResetFactory()
+		myAntGroup.Reset()
 		//---Assert----
 		assert_If_Two_AntGroup_Same(t, myAntGroup, Sample_AntGroup_2ant_initmode_room_0())
 		//myAntGroup.Print()

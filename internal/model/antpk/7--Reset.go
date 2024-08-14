@@ -1,7 +1,7 @@
 package antpk
 
 // =============================================
-func (myAntGroup *AntGroup) ResetFactory() {
+func (myAntGroup *AntGroup) Reset() {
 
 	myAntGroup.CurrentSequenceNumber = 0
 	myAntGroup.UsedTunnel = make(map[Mta][]Mta)

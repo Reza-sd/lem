@@ -2,7 +2,7 @@ package antpk
 
 //"fmt"
 
-func (myAntGroup *AntGroup) AntGroupInit(numberOfAnts Mta) error {
+func (myAntGroup *AntGroup) Init(numberOfAnts Mta) error {
 	funcName := "AntsInit"
 	//var err error
 	//-----input validation-----

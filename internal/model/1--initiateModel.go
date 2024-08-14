@@ -5,9 +5,10 @@ import (
 	//graphpk "main/internal/model/graphpk"
 )
 
-func (myModel *Model)ModelInit(myLem *Lem)  error {
+func (myModel *Model) ModelInit(myLem *Lem) error {
 
-	myModel.AntGroup.AntGroupInit(antpk.Mta(myLem.NumberOfAnts))
+	myModel.AntGroup.Init(antpk.Mta(myLem.NumberOfAnts))
+	myModel.Graph.Init(myLem.TunnelArr, antpk.Mta(myLem.EndRoom))
 	// var theModel Model
 	// NumberOfAnts := myLem.NumberOfAnts
 	// StartRoom := myLem.StartRoom
@@ -26,5 +27,5 @@ func (myModel *Model)ModelInit(myLem *Lem)  error {
 	// }
 	// theModel.BaseAnts = baseAnts
 	// theModel.BaseGraph = baseGraph
-	return  nil
+	return nil
 }

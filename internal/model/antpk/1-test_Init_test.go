@@ -18,7 +18,7 @@ func Test_AntsInit(t *testing.T) {
 
 		expectError := true
 		//---Act---
-		err := myAntGroup.AntGroupInit(numberOfAnts)
+		err := myAntGroup.Init(numberOfAnts)
 		//---Assert----
 		assert_If_AntsInit_ReturnError(t, err, expectError)
 
@@ -32,7 +32,7 @@ func Test_AntsInit(t *testing.T) {
 
 		expectError := true
 		//---Act---
-		err := myAntGroup.AntGroupInit(numberOfAnts)
+		err := myAntGroup.Init(numberOfAnts)
 		//---Assert----
 		assert_If_AntsInit_ReturnError(t, err, expectError)
 
@@ -46,7 +46,7 @@ func Test_AntsInit(t *testing.T) {
 
 		expectError := false //no error = nil
 		//---Act---
-		err := myAntGroup.AntGroupInit(numberOfAnts)
+		err := myAntGroup.Init(numberOfAnts)
 		//---Assert----
 		assert_If_AntsInit_ReturnError(t, err, expectError)
 
@@ -59,7 +59,7 @@ func Test_AntsInit(t *testing.T) {
 
 		expectedAntGroup := Sample_AntGroup_1ant_initmode_room_0()
 		//---Act---
-		myAntGroup.AntGroupInit(numberOfAnts)
+		myAntGroup.Init(numberOfAnts)
 		//---Assert----
 		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
 
@@ -72,7 +72,7 @@ func Test_AntsInit(t *testing.T) {
 
 		expectedAntGroup := Sample_AntGroup_2ant_initmode_room_0()
 		//---Act---
-		myAntGroup.AntGroupInit(numberOfAnts)
+		myAntGroup.Init(numberOfAnts)
 		//---Assert----
 		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
 		//myAntGroup.Print()
