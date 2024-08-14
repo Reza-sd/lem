@@ -19,6 +19,6 @@ type Lem struct {
 }
 
 type Model struct {
-	Graph    *graphpk.Graph
+	Graph    graphpk.Graph
 	AntGroup antpk.AntGroup
 }
