@@ -2,7 +2,7 @@ package modelpk
 
 import (
 	//"fmt"
-	antpk "main/internal/model/antgroup"
+	antgrouppk "main/internal/model/antgroup"
 	graphpk "main/internal/model/graph"
 )
 
@@ -11,7 +11,7 @@ func Sample_Model1() Model {
 
 	return Model{
 		Graph:    graphpk.Sample_graph_1(),
-		AntGroup: antpk.Sample_AntGroup_2ant_initmode_room_0(),
+		AntGroup: antgrouppk.Sample_AntGroup_2ant_initmode_room_0(),
 	}
 
 }
