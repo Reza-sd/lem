@@ -19,7 +19,7 @@ var (
 	Sample_graph_1 = Graph{
 		//StartRoomName:        "room_0",
 		EndRoomName:          1,
-		CurrentAntsInEndRoom: 0,
+		//CurrentAntsInEndRoom: 0,
 		NumberOfAllRoom:      2,
 		RoomHasEmptySeatDb: map[mtg]bool{
 			0: true,

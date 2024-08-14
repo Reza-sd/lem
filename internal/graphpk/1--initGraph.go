@@ -8,7 +8,7 @@ func (myGraph *Graph) InitGraph(tunnelMap map[mtg][]mtg, EndRoomName mtg) error 
 	// set start and end room
 	//myGraph.StartRoomName = start
 	myGraph.EndRoomName = EndRoomName
-	myGraph.CurrentAntsInEndRoom = 0
+	//myGraph.CurrentAntsInEndRoom = 0
 	// Initialize rooms map
 	myGraph.RoomHasEmptySeatDb = make(map[mtg]bool)
 	myGraph.TunnelsDb = make(map[mtg][]mtg)

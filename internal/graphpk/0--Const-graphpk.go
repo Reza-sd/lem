@@ -26,7 +26,7 @@ type mtg = uint16 //my type graph pk
 type Graph struct {
 	//StartRoomName        mtg//always 0
 	EndRoomName mtg
-	CurrentAntsInEndRoom mtg
+	//CurrentAntsInEndRoom mtg
 	NumberOfAllRoom    mtg
 	RoomHasEmptySeatDb map[mtg]bool //HasEmptySeat
 	TunnelsDb          map[mtg][]mtg
