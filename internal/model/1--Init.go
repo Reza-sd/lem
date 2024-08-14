@@ -5,7 +5,7 @@ import (
 	//graphpk "main/internal/model/graphpk"
 )
 
-func (myModel *Model) ModelInit(myLem *Lem) error {
+func (myModel *Model) Init(myLem *Lem) error {
 
 	myModel.AntGroup.Init(antpk.Mta(myLem.NumberOfAnts))
 	myModel.Graph.Init(myLem.TunnelArr, antpk.Mta(myLem.EndRoom))
