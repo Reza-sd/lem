@@ -14,27 +14,17 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-type mtg = uint16 //my type graph pk
-// type Room struct {
-// 	//Name mtg
-// 	//MaxSeats    mtg
-// 	HasEmptySeat bool
+type mtg = uint16 
 
-// 	Connections []mtg
-// }
 
 type Graph struct {
-	//StartRoomName        mtg//always 0
+
 	EndRoomName mtg
-	//CurrentAntsInEndRoom mtg
-	NumberOfAllRoom    mtg
-	RoomHasEmptySeatDb map[mtg]bool //HasEmptySeat
+
+	RoomHasEmptySeatDb map[mtg]bool 
 	TunnelsDb          map[mtg][]mtg
 }
 
-// type TunnelMap struct {
-// 	db map[mtg][]mtg
-// }
 
 // =========================================================
 const (
