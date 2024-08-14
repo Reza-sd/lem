@@ -5,7 +5,6 @@ import (
 
 	"main/internal/logstack"
 
-	_ "main/internal/simulationpk/randomsimulatorpk"
 	//"time"
 )
 
