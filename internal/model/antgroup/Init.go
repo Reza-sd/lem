@@ -18,13 +18,16 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 	//--------------------------
 	//myAntGroup
 	for i := Mtag(1); i <= numberOfAnts; i++ {
-		myAntGroup.AntsDb[i] = Ant{
-			//Name: i,
+		// myAntGroup.AntsDb[i] = Ant{
+		// 	//Name: i,
 
-			CurrentRoomName: 0,
-			VisitedRoomsArr: []Mtag{0},
-			StepNumber:      0,
-		}
+		// 	CurrentRoomName: 0,
+		// 	VisitedRoomsArr: []Mtag{0},
+		// 	StepNumber:      0,
+		// }
+		var myAnt Ant
+		myAnt.Init(i)
+		myAntGroup.AntsDb[i]= myAnt
 
 		myAntGroup.NotArrivedAntsName[i] = struct{}{}
 

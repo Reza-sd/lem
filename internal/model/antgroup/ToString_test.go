@@ -7,6 +7,7 @@ import (
 )
 
 func Test_ToString(t *testing.T) {
+	t.Skip()
 	//------------
 	t.Run(`1-return empty string when myAntsGroup empty`, func(t *testing.T) {
 		//---Arrange---

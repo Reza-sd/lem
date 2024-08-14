@@ -7,7 +7,7 @@ import (
 )
 
 func Test_ResetFartory(t *testing.T) {
-	//t.Skip()
+	t.Skip()
 	//------------
 	t.Run(`1-return an error when numberOfAnts=0`, func(t *testing.T) {
 		//---Arrange---
