@@ -15,7 +15,7 @@ func Test_Print(t *testing.T) {
 		// 	Graph : myGraph,
 		// 	AntGroup :myAntGroup,
 		// }
-		myModel.Print()
-
+		model1 := Sample_Model1()
+		model1.Print()
 	})
 }
