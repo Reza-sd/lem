@@ -27,7 +27,7 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 		// }
 		var myAnt Ant
 		myAnt.Init(i)
-		myAntGroup.AntsDb[i]= myAnt
+		myAntGroup.AntsDb[i] = myAnt
 
 		myAntGroup.NotArrivedAntsName[i] = struct{}{}
 

@@ -1,10 +1,8 @@
 package ant
 
 import (
-	
 	"testing"
 )
-
 
 func Test_ToString(t *testing.T) {
 	t.Skip()

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (myAnt *Ant)Print(){
+func (myAnt *Ant) Print() {
 
 	//fmt.Println("\n----------AntGroup------------")
 	str, _ := myAnt.ToString()
