@@ -15,14 +15,15 @@ $
 */
 //==============data structure=======================
 type mtg = uint16
+type TunnelMap = map[mtg][]mtg
 
 type Graph struct {
 	EndRoomName mtg
 
-	RoomHasEmptySeatDb map[mtg]bool
-	TunnelsDb          map[mtg][]mtg
+	RoomAvailableDb map[mtg]bool //or on off room of no empty seat
+	TunnelsDb       *TunnelMap   //alway fix
 }
-type TunnelMap = map[mtg][]mtg
+
 // =========================================================
 const (
 	//MaxHandleableAntsNumber = 200

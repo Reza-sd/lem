@@ -2,17 +2,16 @@ package graphpk
 
 // =======================================================
 
-func (myGraph *Graph) InitGraph(tunnelMap map[mtg][]mtg, EndRoomName mtg) error {
+func (myGraph *Graph) InitGraph(myTunnelMap TunnelMap, EndRoomName mtg) error {
 
 	myGraph.EndRoomName = EndRoomName
 
-	myGraph.RoomHasEmptySeatDb = make(map[mtg]bool)
-	myGraph.TunnelsDb = make(map[mtg][]mtg)
+	myGraph.RoomAvailableDb = make(map[mtg]bool)
 
-	myGraph.TunnelsDb = tunnelMap
+	myGraph.TunnelsDb = &myTunnelMap
 
-	for key := range myGraph.TunnelsDb {
-		myGraph.RoomHasEmptySeatDb[key] = true
+	for key := range *myGraph.TunnelsDb {
+		myGraph.RoomAvailableDb[key] = true
 	}
 
 	return nil
