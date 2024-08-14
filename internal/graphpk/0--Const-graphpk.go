@@ -32,7 +32,7 @@ type Graph struct {
 	//TunnelsDb            map[mtg][]mtg
 }
 
-type Tunnel struct{
+type Tunnel struct {
 	db map[mtg][]mtg
 }
 

@@ -15,8 +15,8 @@ func (myGraph *Graph) InitGraph(tunnelMap map[mtg][]mtg, EndRoomName mtg) error 
 
 	myGraph.TunnelsDb = tunnelMap
 
-	for key :=range myGraph.TunnelsDb{
-		myGraph.RoomsDb[key]=true
+	for key := range myGraph.TunnelsDb {
+		myGraph.RoomsDb[key] = true
 	}
 	//err := myGraph.setTunnelsToGraphRooms(tunnelMap)
 	// if err != nil {
