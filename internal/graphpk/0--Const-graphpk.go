@@ -22,7 +22,7 @@ type Graph struct {
 	RoomHasEmptySeatDb map[mtg]bool
 	TunnelsDb          map[mtg][]mtg
 }
-
+type TunnelMap = map[mtg][]mtg
 // =========================================================
 const (
 	//MaxHandleableAntsNumber = 200
