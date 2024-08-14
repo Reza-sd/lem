@@ -1,3 +1,4 @@
 log*.json
 zz_log*.json
+*log*.json
 data.env
