@@ -2,17 +2,19 @@ package antpk
 
 import (
 	"main/internal/logstack"
+	"main/internal/model/antgroup/ant"
 )
 
 // ====================struct====data structure==================
 type Mtag = uint16 //my type ant group pk
+type Ant = ant.Ant
 
-type Ant struct {
-	//Name            mta
-	CurrentRoomName Mtag
-	VisitedRoomsArr []Mtag
-	StepNumber      Mtag
-}
+// type Ant struct {
+// 	//Name            mta
+// 	CurrentRoomName Mtag
+// 	VisitedRoomsArr []Mtag
+// 	StepNumber      Mtag
+// }
 
 type AntGroup struct {
 	NumberOfAnts          Mtag
