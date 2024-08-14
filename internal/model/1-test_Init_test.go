@@ -4,11 +4,13 @@ import (
 	"testing"
 )
 
-func Test_Print(t *testing.T) {
-	t.Skip()
-	t.Run(`1-Print`, func(t *testing.T) {
+func Test_Init(t *testing.T) {
 
-		model1 := Sample_Model1()
+	t.Run(`1-Print`, func(t *testing.T) {
+		myLem := Sample_Lem1()
+
+		var model1 Model
+		model1.Init(&myLem)
 		model1.Print()
 	})
 }
