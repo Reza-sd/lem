@@ -1,14 +1,13 @@
 package graphpk
 
-var (
-
+func Sample_graph_1() *Graph {
 	// ------------------------
-	myTunnelMap = TunnelMap{
+	myTunnelMap := TunnelMap{
 		0: {1},
 		1: {0},
 	}
 	//------------------------
-	Sample_graph_1 = Graph{
+	return &Graph{
 
 		EndRoomName: 1,
 
@@ -19,6 +18,4 @@ var (
 		TunnelsDb: &myTunnelMap,
 	}
 
-//------------------------
-
-)
+}
