@@ -10,8 +10,8 @@ import (
 // --------------const-----------------------------
 
 const (
-	pkgName = "logStack"
-	filePrefix = "z-log-"
+	pkgName           = "logStack"
+	logFileNamePrefix = "z-log-"
 )
 
 // -----------var----------------------
@@ -30,7 +30,7 @@ var (
 	LogFilesDirectory = "./"
 	//--------------------------
 	todayDate      = time.Now().Format("2006-01-02")
-	logFileAddress = LogFilesDirectory + filePrefix + todayDate + ".json"
+	logFileAddress = LogFilesDirectory + logFileNamePrefix + todayDate + ".json"
 	logFile, _     = os.OpenFile(logFileAddress, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	//-------------------------------
 	logHandlerOptsFile = &slog.HandlerOptions{
