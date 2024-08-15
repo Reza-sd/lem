@@ -7,7 +7,7 @@ import (
 type SampleAntGroup struct{}
 
 var (
-	mySampleAntGroup = SampleAntGroup{}
+	MySampleAntGroup = SampleAntGroup{}
 )
 
 // ==================Samples=============================
