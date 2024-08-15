@@ -21,9 +21,11 @@ type Model struct {
 	Graph    GraphType
 	AntGroup AntGroupType
 }
-
+type SampleModel struct{}
 var (
 	mySampleGraph =graphpk.SampleGragh{}
 	mySampleAntGroup = antgrouppk.SampleAntGroup{}
+
+	mySampleModel = SampleModel{}
 )
 //-------------------------------------------------
