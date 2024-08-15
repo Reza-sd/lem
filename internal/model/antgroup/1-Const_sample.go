@@ -3,15 +3,15 @@ package antgroup
 import (
 	"main/internal/model/antgroup/ant"
 )
+
 type SampleAntGroup struct{}
 
-var(
-	mySample = SampleAntGroup{}
-
+var (
+	mySampleAntGroup = SampleAntGroup{}
 )
 
 // ==================Samples=============================
-func (s *SampleAntGroup)Sample_AntGroup_1ant_initmode_room_0() AntGroup {
+func (s *SampleAntGroup) Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 1,
 		AntsDb: map[Mtag]Ant{
@@ -24,7 +24,7 @@ func (s *SampleAntGroup)Sample_AntGroup_1ant_initmode_room_0() AntGroup {
 }
 
 // ----------------------
-func (s *SampleAntGroup)Sample_AntGroup_2ant_initmode_room_0() AntGroup {
+func (s *SampleAntGroup) Sample_AntGroup_2ant_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 2,
 		AntsDb: map[Mtag]Ant{

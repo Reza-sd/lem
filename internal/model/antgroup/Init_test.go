@@ -57,7 +57,7 @@ func Test_AntsInit(t *testing.T) {
 		var myAntGroup AntGroup
 		numberOfAnts := Mtag(1)
 
-		expectedAntGroup := mySample.Sample_AntGroup_1ant_initmode_room_0()
+		expectedAntGroup := mySampleAntGroup.Sample_AntGroup_1ant_initmode_room_0()
 		//---Act---
 		myAntGroup.Init(numberOfAnts)
 		//---Assert----
@@ -70,7 +70,7 @@ func Test_AntsInit(t *testing.T) {
 		var myAntGroup AntGroup
 		numberOfAnts := Mtag(2)
 
-		expectedAntGroup := mySample.Sample_AntGroup_2ant_initmode_room_0()
+		expectedAntGroup := mySampleAntGroup.Sample_AntGroup_2ant_initmode_room_0()
 		//---Act---
 		myAntGroup.Init(numberOfAnts)
 		//---Assert----
