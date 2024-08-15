@@ -18,6 +18,7 @@ type AntGroup struct {
 	UsedTunnel         map[Mtag][]Mtag
 	NotArrivedAntsName map[Mtag]struct{}
 }
+
 //-------------
 //======================================================
 
@@ -31,7 +32,6 @@ const (
 )
 
 var (
-
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
 	}

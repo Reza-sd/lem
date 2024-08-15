@@ -1,7 +1,5 @@
 package modelpk
 
-
-
 func (myModel *Model) Init(myLem *Lem) error {
 
 	myModel.AntGroup.Init(Mtm(myLem.NumberOfAnts))

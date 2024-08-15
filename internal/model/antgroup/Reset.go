@@ -13,7 +13,7 @@ func (myAntGroup *AntGroup) Reset() {
 		// ant.CurrentRoomName = 0
 		// ant.StepNumber = 0
 		// ant.VisitedRoomsArr = []Mtag{0}
-		
+
 		ant.Reset()
 		myAntGroup.AntsDb[antName] = ant
 	}

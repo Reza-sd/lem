@@ -10,7 +10,6 @@ type Mtm = antgrouppk.Mtag //my type Model
 type GraphType = graphpk.Graph
 type AntGroupType = antgrouppk.AntGroup
 
-
 type Lem struct {
 	NumberOfAnts Mtm
 	EndRoom      Mtm
@@ -21,6 +20,5 @@ type Model struct {
 	Graph    GraphType
 	AntGroup AntGroupType
 }
-
 
 //-------------------------------------------------
