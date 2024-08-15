@@ -6,7 +6,7 @@ import (
 )
 
 // -------------------------------------------------
-type Mtm = antgrouppk.Mtag //my type Model
+type Mtm = uint16 //my type Model
 type GraphType = graphpk.Graph
 type AntGroupType = antgrouppk.AntGroup
 
