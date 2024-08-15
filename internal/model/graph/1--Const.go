@@ -24,7 +24,6 @@ type Graph struct {
 	TunnelsDb       *TunnelMap   //alway fix
 }
 
-type SampleGragh struct{}
 // =========================================================
 const (
 	//MaxHandleableAntsNumber = 200

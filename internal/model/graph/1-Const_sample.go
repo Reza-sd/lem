@@ -1,5 +1,9 @@
 package graphpk
 
+
+type SampleGragh struct{}
+
+
 func (mySampleGraph *SampleGragh)Sample_graph_1() Graph {
 	// ------------------------
 	myTunnelMap := TunnelMap{

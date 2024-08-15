@@ -1,6 +1,18 @@
 package modelpk
 
+import (
+	antgrouppk "main/internal/model/antgroup"
+	graphpk "main/internal/model/graph"
+)
 
+type SampleModel struct{}
+
+var (
+	mySampleGraph =graphpk.SampleGragh{}
+	mySampleAntGroup = antgrouppk.SampleAntGroup{}
+
+	mySampleModel = SampleModel{}
+)
 // =====================================
 func (s *SampleModel)Sample_Model1() Model {
 

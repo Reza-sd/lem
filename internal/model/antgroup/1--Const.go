@@ -19,7 +19,6 @@ type AntGroup struct {
 	NotArrivedAntsName map[Mtag]struct{}
 }
 //-------------
-type SampleAntGroup struct{}
 //======================================================
 
 const (
@@ -32,8 +31,7 @@ const (
 )
 
 var (
-	mySample = SampleAntGroup{}
-	
+
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
 	}

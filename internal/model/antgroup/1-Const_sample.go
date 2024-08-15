@@ -3,6 +3,12 @@ package antgroup
 import (
 	"main/internal/model/antgroup/ant"
 )
+type SampleAntGroup struct{}
+
+var(
+	mySample = SampleAntGroup{}
+
+)
 
 // ==================Samples=============================
 func (s *SampleAntGroup)Sample_AntGroup_1ant_initmode_room_0() AntGroup {
