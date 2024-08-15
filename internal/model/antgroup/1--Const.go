@@ -2,13 +2,13 @@ package antgroup
 
 import (
 	"main/internal/logstack"
-	"main/internal/model/antgroup/ant"
+	antpk "main/internal/model/antgroup/ant"
 	//"structs"
 )
 
 // ====================struct====data structure==================
 type Mtag = uint16 //my type ant group pk
-type Ant = ant.Ant
+type Ant = antpk.Ant
 
 type AntGroup struct {
 	NumberOfAnts          Mtag
