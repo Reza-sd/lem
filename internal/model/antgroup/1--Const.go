@@ -3,7 +3,6 @@ package antgroup
 import (
 	"main/internal/logstack"
 	antpk "main/internal/model/antgroup/ant"
-	//"structs"
 )
 
 // ====================struct====data structure==================
@@ -19,7 +18,6 @@ type AntGroup struct {
 	NotArrivedAntsName map[Mtag]struct{}
 }
 
-//-------------
 //======================================================
 
 const (
