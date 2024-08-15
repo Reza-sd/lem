@@ -7,6 +7,9 @@ import (
 
 // -------------------------------------------------
 type Mtm = uint16 //my type Model
+type GraphType = graphpk.Graph
+type AntGroupType = antpk.AntGroup
+
 
 type Lem struct {
 	NumberOfAnts Mtm
@@ -15,8 +18,12 @@ type Lem struct {
 }
 
 type Model struct {
-	Graph    graphpk.Graph
-	AntGroup antpk.AntGroup
+	Graph    GraphType
+	AntGroup AntGroupType
 }
 
+var (
+	mySampleGraph =graphpk.SampleGragh{}
+	mySampleAntGroup = antpk.SampleAntGroup{}
+)
 //-------------------------------------------------

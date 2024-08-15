@@ -3,6 +3,7 @@ package antgroup
 import (
 	"main/internal/logstack"
 	"main/internal/model/antgroup/ant"
+	//"structs"
 )
 
 // ====================struct====data structure==================
@@ -17,7 +18,8 @@ type AntGroup struct {
 	UsedTunnel         map[Mtag][]Mtag
 	NotArrivedAntsName map[Mtag]struct{}
 }
-
+//-------------
+type SampleAntGroup struct{}
 //======================================================
 
 const (
@@ -30,6 +32,8 @@ const (
 )
 
 var (
+	mySample = SampleAntGroup{}
+	
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
 	}
