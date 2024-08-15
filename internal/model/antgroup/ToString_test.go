@@ -25,7 +25,7 @@ func Test_ToString(t *testing.T) {
 	t.Run(`2-return  string when myAntsGroup 1 item`, func(t *testing.T) {
 		//---Arrange---
 		//var myAntGroup AntGroup
-		myAntGroup := mySampleAntGroup.Ant1_initmode_room_0()
+		myAntGroup := mySampleAntGroup.Ant_1_initmode_room_0()
 		expectedString := "??"
 		//myAntGroup :=Sample_AntGroup_1ant_initmode_room_0
 		// //---Act---
