@@ -19,7 +19,7 @@ func (s *SampleModel) Sample_Model1() Model {
 
 	return Model{
 		Graph:    mySampleGraph.Sample_graph_1(),
-		AntGroup: mySampleAntGroup.Ant2_initmode_room_0(),
+		AntGroup: mySampleAntGroup.Ant_2_initmode_room_0(),
 	}
 
 }
