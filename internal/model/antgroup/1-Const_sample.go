@@ -24,7 +24,7 @@ func (s *SampleAntGroup) Ant_1_initmode_room_0() AntGroup {
 }
 
 // ----------------------
-func (s *SampleAntGroup) Sample_AntGroup_2ant_initmode_room_0() AntGroup {
+func (s *SampleAntGroup) Ant2_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 2,
 		AntsDb: map[Mtag]Ant{

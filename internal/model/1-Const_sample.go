@@ -8,23 +8,24 @@ import (
 type SampleModel struct{}
 
 var (
-	mySampleGraph =graphpk.SampleGragh{}
+	mySampleGraph    = graphpk.SampleGragh{}
 	mySampleAntGroup = antgrouppk.SampleAntGroup{}
 
 	mySampleModel = SampleModel{}
 )
+
 // =====================================
-func (s *SampleModel)Sample_Model1() Model {
+func (s *SampleModel) Sample_Model1() Model {
 
 	return Model{
 		Graph:    mySampleGraph.Sample_graph_1(),
-		AntGroup: mySampleAntGroup.Sample_AntGroup_2ant_initmode_room_0(),
+		AntGroup: mySampleAntGroup.Ant2_initmode_room_0(),
 	}
 
 }
 
 // -------------------------
-func (s *SampleModel)Sample_Lem_1ant_2room() Lem {
+func (s *SampleModel) Sample_Lem_1ant_2room() Lem {
 	return Lem{
 		NumberOfAnts: 1,
 		EndRoom:      1,
@@ -36,7 +37,7 @@ func (s *SampleModel)Sample_Lem_1ant_2room() Lem {
 }
 
 // -------------------------
-func (s *SampleModel)Sample_Lem_2ant_2room() Lem {
+func (s *SampleModel) Sample_Lem_2ant_2room() Lem {
 	return Lem{
 		NumberOfAnts: 2,
 		EndRoom:      1,
@@ -48,7 +49,7 @@ func (s *SampleModel)Sample_Lem_2ant_2room() Lem {
 }
 
 // -------------------------
-func (s *SampleModel)Sample_Lem_2ant_3room() Lem {
+func (s *SampleModel) Sample_Lem_2ant_3room() Lem {
 	return Lem{
 		NumberOfAnts: 2,
 		EndRoom:      1,
