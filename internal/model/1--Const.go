@@ -1,14 +1,14 @@
 package modelpk
 
 import (
-	antpk "main/internal/model/antgroup"
+	antgrouppk "main/internal/model/antgroup"
 	graphpk "main/internal/model/graph"
 )
 
 // -------------------------------------------------
-type Mtm = uint16 //my type Model
+type Mtm = antgrouppk.Mtag //my type Model
 type GraphType = graphpk.Graph
-type AntGroupType = antpk.AntGroup
+type AntGroupType = antgrouppk.AntGroup
 
 
 type Lem struct {
@@ -24,6 +24,6 @@ type Model struct {
 
 var (
 	mySampleGraph =graphpk.SampleGragh{}
-	mySampleAntGroup = antpk.SampleAntGroup{}
+	mySampleAntGroup = antgrouppk.SampleAntGroup{}
 )
 //-------------------------------------------------
