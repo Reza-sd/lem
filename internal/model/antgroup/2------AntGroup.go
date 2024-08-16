@@ -1,14 +1,5 @@
 package antgroup
 
-import (
-	"main/internal/logstack"
-	antpk "main/internal/model/antgroup/ant"
-)
-
-// ===========ata structure==================
-type Mtag = uint16 //my type ant group pk
-type Ant = antpk.Ant
-
 type AntGroup struct {
 	NumberOfAnts          Mtag
 	CurrentSequenceNumber Mtag
@@ -17,22 +8,3 @@ type AntGroup struct {
 	UsedTunnel         map[Mtag][]Mtag
 	NotArrivedAntsName map[Mtag]struct{}
 }
-
-//======================================================
-
-const (
-	//MaxHandleableAntsNumber = 1100
-	pkgName = "antgroup"
-	//LogFilesDirectory =
-	rootFromAntpk           = "../.."
-	LogFilesDirectory       = rootFromAntpk + "/logs/"
-	MaxHandleableAntsNumber = Mtag(1100)
-)
-
-var (
-	logger = logstack.LogCollector{
-		PackageName: pkgName,
-	}
-)
-
-//======================================================

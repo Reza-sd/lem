@@ -1,7 +1,7 @@
 package ant
 
 import (
-//"main/internal/logstack"
+// "main/internal/logstack"
 )
 
 // =======data structure========================
@@ -22,9 +22,9 @@ const (
 )
 
 var (
-// logger = logstack.LogCollector{
-// 	PackageName: pkgName,
-// }
+//	logger = logstack.LogCollector{
+//		PackageName: pkgName,
+//	}
 )
 
 //--------------------------------
