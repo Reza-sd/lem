@@ -10,9 +10,9 @@ type Mtg = uint16
 const (
 
 	//MaxHandleableAntsNumber = 200
-	pkgName = "graphpk"
-	logToFile =true
-	logToCli =true
+	pkgName   = "graphpk"
+	logToFile = true
+	logToCli  = true
 	//LogFilesDirectory =
 	//rootFromAntpk     = "../.."
 	//LogFilesDirectory = rootFromAntpk + "/logs/"
@@ -22,8 +22,8 @@ const (
 var (
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
-		LogToFile: logToFile,
-		LogToCli: logToCli,
+		LogToFile:   logToFile,
+		LogToCli:    logToCli,
 	}
 )
 

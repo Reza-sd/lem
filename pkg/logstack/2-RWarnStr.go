@@ -9,7 +9,7 @@ func (l *LogCollector) RWarnStr(FuncName string, OperationName string, errStr st
 
 	err := errors.New(errStr)
 
-	return l.RWarnErr(FuncName, OperationName, err, operationDescription)
+	return l.WarnLogRErrMsg(FuncName, OperationName, err, operationDescription)
 }
 
 //---------------------------------------------
