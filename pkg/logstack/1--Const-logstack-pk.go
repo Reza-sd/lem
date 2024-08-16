@@ -16,6 +16,8 @@ const (
 
 // -----------var----------------------
 var (
+	//----------------------------------
+
 	//loggerToFile *slog.Logger
 	//loggerToCli  *slog.Logger
 
