@@ -1,18 +1,18 @@
 package logstack
 
 import (
-	//"fmt"
+	"fmt"
 	"log/slog"
 )
 
 //import "go/types"
 
 // ----------------------------------------
-func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, slog.Attr) {
+func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, []slog.Attr) {
 
 	//errString := fmt.Sprintf("%v", RetunedError)
 
-	return description, slog.Attr{
+	return description, []slog.Attr{
 		slog.String("package", packageName),
 		slog.String("func", FuncName),
 		slog.String("op", OperationName),

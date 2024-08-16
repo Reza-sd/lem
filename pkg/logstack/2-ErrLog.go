@@ -5,7 +5,7 @@ func (l *LogCollector) ErrLog(FuncName string, OperationName string, err interfa
 	msg, agrs := LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err)
 
 	if l.LogToCli {
-		loggerToCli.Error(msg, agrs)
+		loggerToCli.Error(msg, agrs...)
 	}
 
 	if l.LogToFile {
