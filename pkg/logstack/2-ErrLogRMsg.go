@@ -5,7 +5,7 @@ func (l *LogCollector) ErrLogRMsg(FuncName string, OperationName string, err int
 
 	l.ErrLog(FuncName, OperationName, err, operationDescription)
 
-	return errMsg(FuncName, OperationName, err) //optional return
+	return errGenerator(FuncName, OperationName, err) //optional return
 }
 
 // ---------------------------------

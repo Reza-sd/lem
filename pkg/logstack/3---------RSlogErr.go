@@ -6,8 +6,10 @@ import (
 
 // -------------------RSlogErr-------------------------
 func RSlogErr(packageName, funcName, opName, opDes string, err error) error {
-	slog.Error(LogMsg(packageName, funcName, opName, opDes, err))
-	return errMsg(funcName, opName, err)
+	s := LogMsg(packageName, funcName, opName, opDes, err)
+
+	slog.Error(s[0], s[1:])
+	return errGenerator(funcName, opName, err)
 }
 
 //----------------------------------------------------

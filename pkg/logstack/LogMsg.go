@@ -5,11 +5,11 @@ import "fmt"
 //import "go/types"
 
 // ----------------------------------------
-func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, string, string, string, string, string, string, string, string) {
+func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) []string {
 
-	errString := fmt.Sprintf("%v", RetunedError)
+	//errString := fmt.Sprintf("%v", RetunedError)
 
-	return description, "package", packageName, "func", FuncName, "op", OperationName, "error", errString
+	return []string{description, "package", packageName, "func", FuncName, "op", OperationName, "error", fmt.Sprintf("%v", RetunedError)}
 
 }
 
