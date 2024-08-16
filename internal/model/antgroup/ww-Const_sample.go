@@ -1,13 +1,14 @@
 package antgroup
 
 import (
-	"main/internal/model/antgroup/ant"
+	antpk "main/internal/model/antgroup/ant"
 )
 
 type SampleAntGroup struct{}
 
 var (
 	MySampleAntGroup = SampleAntGroup{}
+	MySampleAnt      = antpk.SampleAnt{}
 )
 
 // ==================Samples=============================
@@ -15,7 +16,7 @@ func (s *SampleAntGroup) Ant_1_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 1,
 		AntsDb: map[Mtag]Ant{
-			1: ant.Sample_ant1(),
+			1: MySampleAnt.Ant1(),
 		},
 		CurrentSequenceNumber: 0,
 		UsedTunnel:            make(map[Mtag][]Mtag),
@@ -28,8 +29,8 @@ func (s *SampleAntGroup) Ant_2_initmode_room_0() AntGroup {
 	return AntGroup{
 		NumberOfAnts: 2,
 		AntsDb: map[Mtag]Ant{
-			1: ant.Sample_ant1(),
-			2: ant.Sample_ant2(),
+			1: MySampleAnt.Ant1(),
+			2: MySampleAnt.Ant2(),
 		},
 		CurrentSequenceNumber: 0,
 		UsedTunnel:            make(map[Mtag][]Mtag),

@@ -1,7 +1,9 @@
 package ant
 
+type SampleAnt struct{}
+
 // -------Ant type example-----------
-func Sample_ant1() Ant {
+func (s *SampleAnt) Ant1() Ant {
 
 	return Ant{
 		Name:            1,
@@ -13,7 +15,7 @@ func Sample_ant1() Ant {
 }
 
 // ----------------
-func Sample_ant2() Ant {
+func (s *SampleAnt) Ant2() Ant {
 	return Ant{
 		Name:            2,
 		CurrentRoomName: 0,
