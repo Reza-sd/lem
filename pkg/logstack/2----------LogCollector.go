@@ -1,10 +1,10 @@
 package logstack
 
 // ===================struct=========================
-type Attr struct {
-	Key   string
-	Value interface{}
-}
+// type Attr struct {
+// 	Key   string
+// 	Value interface{}
+// }
 
 type LogCollector struct {
 	PackageName string
