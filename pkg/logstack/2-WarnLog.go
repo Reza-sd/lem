@@ -3,7 +3,6 @@ package logstack
 // ----------------WarnLog-----------------
 func (l *LogCollector) WarnLog(FuncName string, OperationName string, err interface{}, operationDescription string) {
 
-	operationDescription = " !!!: " + operationDescription
 	if l.LogToCli {
 		loggerToCli.Warn(LogMsg(l.PackageName, FuncName, OperationName, operationDescription, err))
 	}
