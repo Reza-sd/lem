@@ -1,7 +1,7 @@
 package antgroup
 
 import (
-	antpk "main/internal/model/antgroup/ant"
+	antpk "main/internal/model/ant"
 )
 
 type SampleAntGroup struct{}

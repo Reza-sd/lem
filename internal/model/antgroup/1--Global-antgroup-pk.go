@@ -2,7 +2,7 @@ package antgroup
 
 import (
 	"main/internal/logstack"
-	antpk "main/internal/model/antgroup/ant"
+	antpk "main/internal/model/ant"
 )
 
 // ===========data type=================
