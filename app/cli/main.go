@@ -3,7 +3,7 @@ package main
 import (
 	_ "fmt"
 
-	"main/internal/logstack"
+		logstack "main/pkg/logstack"
 	//"time"
 )
 
