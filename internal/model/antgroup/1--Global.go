@@ -19,6 +19,7 @@ const (
 	LogFilesDirectory       = rootFromAntpk + "/logs/"
 	MaxHandleableAntsNumber = Mtag(1100)
 )
+
 //======================================================
 
 var (
