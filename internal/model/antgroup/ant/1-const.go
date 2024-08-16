@@ -1,5 +1,9 @@
 package ant
 
+import (
+	"main/internal/logstack"
+)
+//=======data structure========================
 type Mta = uint16 //my type ant pk
 
 type Ant struct {
@@ -8,3 +12,16 @@ type Ant struct {
 	StepNumber      Mta
 	VisitedRoomsArr []Mta
 }
+//--------------------------------
+const (
+	
+	pkgName = "ant"
+
+)
+
+var (
+	logger = logstack.LogCollector{
+		PackageName: pkgName,
+	}
+)
+//--------------------------------

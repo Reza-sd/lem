@@ -22,7 +22,7 @@ type AntGroup struct {
 
 const (
 	//MaxHandleableAntsNumber = 1100
-	pkgName = "antpk"
+	pkgName = "antgroup"
 	//LogFilesDirectory =
 	rootFromAntpk           = "../.."
 	LogFilesDirectory       = rootFromAntpk + "/logs/"
