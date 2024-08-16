@@ -5,7 +5,7 @@ import (
 	antpk "main/internal/model/antgroup/ant"
 )
 
-// ====================struct====data structure==================
+// ===========ata structure==================
 type Mtag = uint16 //my type ant group pk
 type Ant = antpk.Ant
 
