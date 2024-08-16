@@ -9,4 +9,5 @@ import (
 type Mtm = uint16 //my type Model
 type GraphType = graphpk.Graph
 type AntGroupType = antgrouppk.AntGroup
+
 // -------------------------------------------------

@@ -1,7 +1,7 @@
 package graphpk
 
 import (
-	"main/internal/logstack"
+	logstack "main/pkg/logstack"
 )
 
 // =========================================================

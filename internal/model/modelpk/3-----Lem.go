@@ -1,6 +1,5 @@
 package modelpk
 
-
 //-------------------------------------------------
 
 type Lem struct {
@@ -8,4 +7,5 @@ type Lem struct {
 	EndRoom      Mtm
 	TunnelMap    map[Mtm][]Mtm
 }
+
 //-------------------------------------------------
