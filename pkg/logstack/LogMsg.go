@@ -7,20 +7,19 @@ import "fmt"
 // ----------------------------------------
 func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, string, string, string, string, string, string, string, string) {
 
-	
 	//errString := "nil"
-	errString:=fmt.Sprintf("%v",RetunedError)
+	errString := fmt.Sprintf("%v", RetunedError)
 
 	// switch v := RetunedError.(type) {
 	// case string:
 	// 	if v!=""{
 	// 		errString = v
 	// 	}
-		
+
 	// case error:
 	// 	if v != nil {
 	// 		errString = v.Error()
-	// 	} 
+	// 	}
 
 	// }
 

@@ -1,17 +1,16 @@
 package logstack
 
-import "errors"
+import "fmt"
 
 // ----------------------------------------
-func errMsg(FuncName string, Operation string, RetunedError error) error {
-	var RetunedErrorStr string
-	if RetunedError != nil {
-		RetunedErrorStr = RetunedError.Error()
-	}
+func errMsg(FuncName string, Operation string, RetunedError interface{}) error {
 
-	errStr := "<==={" + pkgName + "}--" + FuncName + "<---" + Operation + "[" + RetunedErrorStr + "]***"
+	//RetunedErrorStr:=fmt.Sprintf("%v",RetunedError)
 
-	return errors.New(errStr)
+	//errStr := "<==={" + pkgName + "}--" + FuncName + "<---" + Operation + "[" + RetunedErrorStr + "]***"
+	//"<==={%v}--%v<---%v[%v]***"
+
+	return fmt.Errorf("<==={%v}--%v<---%v[%v]***", pkgName, FuncName, Operation, RetunedError)
 }
 
 // ----------------------------------------

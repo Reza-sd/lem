@@ -1,7 +1,7 @@
 package logstack
 
 // ----------------WarnLog-----------------
-func (l *LogCollector) WarnLog(FuncName string, OperationName string, err error, operationDescription string) {
+func (l *LogCollector) WarnLog(FuncName string, OperationName string, err interface{}, operationDescription string) {
 
 	operationDescription = " !!!: " + operationDescription
 	if l.LogToCli {

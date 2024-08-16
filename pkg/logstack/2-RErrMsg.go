@@ -1,7 +1,7 @@
 package logstack
 
 // ---------------------------------
-func (l *LogCollector) RErrMsg(FuncName string, OperationName string, RetunedError error) error {
+func (l *LogCollector) RErrMsg(FuncName string, OperationName string, RetunedError interface{}) error {
 	return errMsg(FuncName, OperationName, RetunedError)
 }
 
