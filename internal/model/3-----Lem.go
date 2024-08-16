@@ -1,12 +1,11 @@
 package modelpk
 
 
-
 //-------------------------------------------------
 
-type Model struct {
-	Graph    GraphType
-	AntGroup AntGroupType
+type Lem struct {
+	NumberOfAnts Mtm
+	EndRoom      Mtm
+	TunnelMap    map[Mtm][]Mtm
 }
-
 //-------------------------------------------------
