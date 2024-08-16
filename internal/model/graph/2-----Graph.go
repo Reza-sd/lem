@@ -1,8 +1,8 @@
 package graphpk
 
-import (
-	"main/internal/logstack"
-)
+// import (
+// 	"main/internal/logstack"
+// )
 
 /*
 "0-4","0-6","1-3","4-3","5-2","3-5","4-2","2-1","7-6","7-2","7-4","6-5"
@@ -14,7 +14,7 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-type Mtg = uint16
+
 type TunnelMap = map[Mtg][]Mtg
 
 type Graph struct {
@@ -23,20 +23,5 @@ type Graph struct {
 	RoomAvailableDb map[Mtg]bool //or on off room of no empty seat
 	TunnelsDb       *TunnelMap   //alway fix
 }
-
-// =========================================================
-const (
-	//MaxHandleableAntsNumber = 200
-	pkgName = "graphpk"
-	//LogFilesDirectory =
-	//rootFromAntpk     = "../.."
-	//LogFilesDirectory = rootFromAntpk + "/logs/"
-)
-
-var (
-	logger = logstack.LogCollector{
-		PackageName: pkgName,
-	}
-)
 
 //=========================================================
