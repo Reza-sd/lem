@@ -19,18 +19,13 @@ const (
 var (
 	//----------------------------------
 
-	//loggerToFile *slog.Logger
-	//loggerToCli  *slog.Logger
-
-	//logger LogCollector
-	//----------------------------
 	logHandlerOptsCli = &slog.HandlerOptions{
-		Level: slog.LevelDebug,
-		//AddSource: true,
+		Level:     slog.LevelDebug,
+		AddSource: true,
 	}
-	logHandler        = slog.NewTextHandler(os.Stderr, logHandlerOptsCli)
-	loggerToCli       = slog.New(logHandler)
-	
+	logHandler  = slog.NewTextHandler(os.Stderr, logHandlerOptsCli)
+	loggerToCli = slog.New(logHandler)
+
 	//--------------------------
 	todayDate      = time.Now().Format("2006-01-02")
 	logFileAddress = LogFilesDirectory + logFileNamePrefix + todayDate + ".json"

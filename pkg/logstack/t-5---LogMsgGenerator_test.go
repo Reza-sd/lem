@@ -4,10 +4,9 @@ import (
 	"testing"
 )
 
-func Test_Init(t *testing.T) {
+func Test_LogMsgGenerator(t *testing.T) {
 
 	t.Run(`1-Print`, func(t *testing.T) {
-	SampleLogger.ErrLog("FuncName","OperationName","err","operationDescription")
+		SampleLogger.ErrLog("LogMsgGenerator", "OperationName", "errMsg", "operationDescription")
 	})
 }
-
