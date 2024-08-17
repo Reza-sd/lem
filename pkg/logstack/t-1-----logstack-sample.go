@@ -3,8 +3,8 @@ package logstack
 var (
 
 	SampleLogger  = LogCollector{
-		PackageName: pkgName,
-		LogToFile: true,
+		PackageName: "pkgName",
+		LogToFile: false,
 		LogToCli: true,
 		
 	}
