@@ -8,7 +8,7 @@ import (
 //import "go/types"
 
 // ----------------------------------------
-func LogMsg(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, []slog.Attr) {
+func LogMsgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, []slog.Attr) {
 
 	//errString := fmt.Sprintf("%v", RetunedError)
 

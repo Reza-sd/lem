@@ -2,7 +2,7 @@ package logstack
 
 // ---------------------------------
 func (l *LogCollector) InfoLog(FuncName string, OperationName string, operationDescription string) {
-	msg, agrs := LogMsg(l.PackageName, FuncName, OperationName, operationDescription, nil)
+	msg, agrs := LogMsgGenerator(l.PackageName, FuncName, OperationName, operationDescription, nil)
 	if l.LogToCli {
 		loggerToCli.Info(msg, agrs)
 	}
