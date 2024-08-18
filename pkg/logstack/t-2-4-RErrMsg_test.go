@@ -6,14 +6,14 @@ import (
 )
 
 //-----------------------------------------------------
-func Test_ErrLogRErrMsg(t *testing.T) {
-t.Skip()
-	t.Run(`1-ErrLogRErrMsg`, func(t *testing.T) {
-		fnName:="ErrLogRErrMsg"
+func Test_RErrMsg(t *testing.T) {
+//t.Skip()
+	t.Run(`1-RErrMsg`, func(t *testing.T) {
+		fnName:="RErrMsg"
 		opName:="opName"
-		opDes:="opDes"
+		
 		err:="error"
-		errMsg:= SampleLogger.ErrLogRErrMsg(fnName,opName,opDes,err)
+		errMsg:= SampleLogger.RErrMsg(fnName,opName,err)
 		fmt.Printf("errMsg=%v",errMsg)
 
 	})
