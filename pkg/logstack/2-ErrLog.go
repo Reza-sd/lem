@@ -1,12 +1,8 @@
 package logstack
 
-import (
-//"fmt"
-//"log/slog"
-)
-
 // ---------------------------------
-func (l *LogCollector) ErrLog(FuncName string, OperationName string, err interface{}, operationDescription string) {
+func (l *LogCollector) ErrLog(FuncName string, OperationName string,operationDescription string, err interface{} ) {
+
 	msg, agrs := LogMsgGenerator(l.PackageName, FuncName, OperationName, operationDescription, err)
 	//msg=fmt.Sprintf("%v-%v", "ErrLog",msg)
 
