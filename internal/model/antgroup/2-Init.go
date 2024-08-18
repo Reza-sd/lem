@@ -7,7 +7,7 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 	//var err error
 	//-----input validation-----
 	if numberOfAnts < 1 || numberOfAnts > MaxHandleableAntsNumber {
-		return logger.WarnLogRMsg(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
+		return logger.WarnLogRErrMsg(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
 	}
 	//--------------------------
 	myAntGroup.AntsDb = make(map[Mtag]Ant) //initiate map

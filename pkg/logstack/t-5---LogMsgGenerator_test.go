@@ -3,7 +3,8 @@ package logstack
 import (
 	"testing"
 )
-//-----------------------------------------------------
+
+// -----------------------------------------------------
 func Test_LogMsgGenerator(t *testing.T) {
 	t.Skip()
 
@@ -11,4 +12,5 @@ func Test_LogMsgGenerator(t *testing.T) {
 		SampleLogger.ErrLog("LogMsgGenerator", "OperationName", "errMsg", "operationDescription")
 	})
 }
+
 //-----------------------------------------------------
