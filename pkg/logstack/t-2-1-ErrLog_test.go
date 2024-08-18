@@ -1,16 +1,20 @@
 package logstack
 
 import (
-	"fmt"
+	//"fmt"
 	"testing"
 )
 
 //-----------------------------------------------------
-func Test_RSlogErr(t *testing.T) {
+func Test_ErrLog(t *testing.T) {
 
 	t.Run(`1-RSlogErr`, func(t *testing.T) {
-		errMsg:= RSlogErr("logstackpk","RSlogErr-fn","RSlogErr","return slog when logger stack fail","error")
-		fmt.Printf("%v\n",errMsg)
+		fnName:="ErrLog"
+		opName:="opName"
+		opDes:="opDes"
+		err:="error"
+		 SampleLogger.ErrLog(fnName,opName,opDes,err)
+		//fmt.Printf("%v\n",errMsg)
 		//SampleLogger.ErrLog("LogMsgGenerator", "OperationName", "errMsg", "operationDescription")
 	})
 }
