@@ -1,10 +1,9 @@
 package room
 
-type room struct{
-	Name string
-	AllSeats Mtr
-	FreeSeats Mtr
+type Room struct {
+	Name      Mtr
+	AllSeats  Mtr
+	UsedSeats Mtr
 	TunnelsDb []Mtr
-	IsOn bool
+	//IsAvailable bool
 }
-
