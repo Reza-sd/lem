@@ -4,6 +4,6 @@ type Room struct {
 	Name      Mtr
 	AllSeats  Mtr
 	UsedSeats Mtr
-	TunnelsDb []Mtr
+	ConnectionSlice []Mtr
 	//IsAvailable bool
 }
