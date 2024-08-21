@@ -2,14 +2,14 @@ package graphpk
 
 type SampleGragh struct{}
 
-func (mySampleGraph *SampleGragh) Sample_graph_1() Graph {
+func (mySampleGraph *SampleGragh) Sample_graph_1() *Graph {
 	// ------------------------
 	myTunnelMap := TunnelMap{
 		0: {1},
 		1: {0},
 	}
 	//------------------------
-	return Graph{
+	return &Graph{
 
 		EndRoomName: 1,
 

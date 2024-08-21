@@ -3,8 +3,8 @@ package modelpk
 //-------------------------------------------------
 
 type Model struct {
-	Graph    GraphType
-	AntGroup AntGroupType
+	Graph    *GraphType
+	AntGroup *AntGroupType
 }
 
 //-------------------------------------------------

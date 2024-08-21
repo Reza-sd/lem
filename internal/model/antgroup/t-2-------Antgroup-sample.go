@@ -12,8 +12,8 @@ var (
 )
 
 // ==================Samples=============================
-func (s *SampleAntGroup) Ant_1_initmode_room_0() AntGroup {
-	return AntGroup{
+func (s *SampleAntGroup) Ant_1_initmode_room_0() *AntGroup {
+	return &AntGroup{
 		NumberOfAnts: 1,
 		AntsDb: map[Mtag]*Ant{
 			1: MySampleAnt.Ant1(),
@@ -25,8 +25,8 @@ func (s *SampleAntGroup) Ant_1_initmode_room_0() AntGroup {
 }
 
 // ----------------------
-func (s *SampleAntGroup) Ant_2_initmode_room_0() AntGroup {
-	return AntGroup{
+func (s *SampleAntGroup) Ant_2_initmode_room_0() *AntGroup {
+	return &AntGroup{
 		NumberOfAnts: 2,
 		AntsDb: map[Mtag]*Ant{
 			1: MySampleAnt.Ant1(),

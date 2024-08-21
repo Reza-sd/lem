@@ -12,7 +12,7 @@ func Test_ResetFartory(t *testing.T) {
 	t.Run(`1-return an error when numberOfAnts=0`, func(t *testing.T) {
 		//---Arrange---
 
-		myAntGroup := MySampleAntGroup.Ant_2_initmode_room_0()
+		myAntGroup := *MySampleAntGroup.Ant_2_initmode_room_0()
 		myAntGroup.CurrentSequenceNumber = 10
 		//myAntGroup.Print()
 		//---Act---
