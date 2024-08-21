@@ -18,6 +18,8 @@ const (
 	rootFromAntpk           = "../.."
 	LogFilesDirectory       = rootFromAntpk + "/logs/"
 	MaxHandleableAntsNumber = Mtag(1100)
+	logToFile = false
+	logToCli = false
 )
 
 //======================================================
@@ -25,8 +27,8 @@ const (
 var (
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
-		LogToFile:   true,
-		LogToCli:    true,
+		LogToFile:   logToFile,
+		LogToCli:    logToCli,
 	}
 )
 

@@ -7,9 +7,9 @@ import (
 )
 
 func Test_ResetFartory(t *testing.T) {
-	t.Skip()
+	//t.Skip()
 	//------------
-	t.Run(`1-return an error when numberOfAnts=0`, func(t *testing.T) {
+	t.Run(`1-ResetFartory`, func(t *testing.T) {
 		//---Arrange---
 
 		myAntGroup := *MySampleAntGroup.Ant_2_initmode_room_0()
@@ -18,7 +18,7 @@ func Test_ResetFartory(t *testing.T) {
 		//---Act---
 		myAntGroup.Reset()
 		//---Assert----
-		assert_If_Two_AntGroup_Same(t, myAntGroup, MySampleAntGroup.Ant_2_initmode_room_0())
+		assert_If_Two_AntGroup_Same(t, myAntGroup, *MySampleAntGroup.Ant_2_initmode_room_0())
 		//myAntGroup.Print()
 
 	})

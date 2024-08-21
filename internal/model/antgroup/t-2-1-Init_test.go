@@ -59,7 +59,7 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		myAntGroup.Init(numberOfAnts)
 		//---Assert----
-		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
+		assert_If_Two_AntGroup_Same(t, myAntGroup, *expectedAntGroup)
 
 	})
 	// 	//------------
@@ -72,14 +72,14 @@ func Test_AntsInit(t *testing.T) {
 		//---Act---
 		myAntGroup.Init(numberOfAnts)
 		//---Assert----
-		assert_If_Two_AntGroup_Same(t, myAntGroup, expectedAntGroup)
+		assert_If_Two_AntGroup_Same(t, myAntGroup, *expectedAntGroup)
 		//myAntGroup.Print()
 
 	})
 }
 
 // ================================================
-func assert_If_Two_AntGroup_Same(t testing.TB, antGroup1 AntGroup, expectedAntGroup *AntGroup) {
+func assert_If_Two_AntGroup_Same(t testing.TB, antGroup1 AntGroup, expectedAntGroup AntGroup) {
 	t.Helper()
 
 	if !reflect.DeepEqual(antGroup1, expectedAntGroup) {
