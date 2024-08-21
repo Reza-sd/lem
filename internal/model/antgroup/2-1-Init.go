@@ -26,7 +26,8 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 		// 	StepNumber:      0,
 		// }
 		//var myAnt Ant
-		myAnt := new(Ant) //return a pointer to new instance
+		//myAnt := new(Ant) //return a pointer to new instance
+		myAnt := &Ant{}
 		myAnt.Init(i)
 		myAntGroup.AntsDb[i] = myAnt
 
