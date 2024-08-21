@@ -10,7 +10,7 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 		return logger.WarnLogRErrMsg(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
 	}
 	//--------------------------
-	myAntGroup.AntsDb = make(map[Mtag]Ant) //initiate map
+	myAntGroup.AntsDb = make(map[Mtag]*Ant) //initiate map
 	myAntGroup.NumberOfAnts = numberOfAnts
 	myAntGroup.CurrentSequenceNumber = 0
 	myAntGroup.UsedTunnel = make(map[Mtag][]Mtag)
@@ -25,7 +25,8 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 		// 	VisitedRoomsArr: []Mtag{0},
 		// 	StepNumber:      0,
 		// }
-		var myAnt Ant
+		//var myAnt Ant
+		myAnt := new(Ant) //return a pointer to new instance
 		myAnt.Init(i)
 		myAntGroup.AntsDb[i] = myAnt
 
