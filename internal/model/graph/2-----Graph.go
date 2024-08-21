@@ -14,7 +14,6 @@ L2-0 L3-0
 $
 */
 //==============data structure=======================
-
 type TunnelMap = map[Mtg][]Mtg
 
 type Graph struct {

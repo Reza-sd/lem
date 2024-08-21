@@ -4,6 +4,7 @@ type SampleGragh struct{}
 
 func (mySampleGraph *SampleGragh) Sample_graph_1() *Graph {
 	// ------------------------
+	//var a int = 777777
 	myTunnelMap := TunnelMap{
 		0: {1},
 		1: {0},
