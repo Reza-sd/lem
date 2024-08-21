@@ -8,7 +8,7 @@ import (
 //import "go/types"
 
 // ----------------------------------------
-func LogMsgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError interface{}) (string, slog.Attr) {
+func LogMsgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError any) (string, slog.Attr) {
 
 	return description, slog.Group("",
 		slog.String("pk", packageName),
