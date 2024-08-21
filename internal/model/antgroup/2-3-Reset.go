@@ -15,7 +15,7 @@ func (myAntGroup *AntGroup) Reset() {
 		// ant.VisitedRoomsArr = []Mtag{0}
 
 		ant.Reset()
-		myAntGroup.AntsDb[antName] = ant
+		//myAntGroup.AntsDb[antName] = ant //<----?
 	}
 
 }

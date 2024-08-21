@@ -25,6 +25,8 @@ const (
 var (
 	logger = logstack.LogCollector{
 		PackageName: pkgName,
+		LogToFile: true,
+		LogToCli: true,
 	}
 )
 

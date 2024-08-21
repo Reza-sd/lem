@@ -15,7 +15,7 @@ $
 */
 //==============data structure=======================
 
-type TunnelMap = map[Mtg][]Mtg
+type TunnelMap = map[Mtg][]Mtg 
 
 type Graph struct {
 	EndRoomName Mtg
