@@ -16,9 +16,9 @@ func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
 	myAntGroup.UsedTunnel = make(map[Mtag][]Mtag)
 	myAntGroup.NotArrivedAntsName = make(map[Mtag]struct{})
 	//--------------------------
-	
+
 	for i := Mtag(1); i <= numberOfAnts; i++ {
-	
+
 		//var myAnt Ant
 		//myAnt := new(Ant) //return a pointer to new instance
 		myAnt := &Ant{}

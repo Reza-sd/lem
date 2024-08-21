@@ -18,8 +18,8 @@ const (
 	rootFromAntpk           = "../.."
 	LogFilesDirectory       = rootFromAntpk + "/logs/"
 	MaxHandleableAntsNumber = Mtag(1100)
-	logToFile = false
-	logToCli = false
+	logToFile               = false
+	logToCli                = false
 )
 
 //======================================================
