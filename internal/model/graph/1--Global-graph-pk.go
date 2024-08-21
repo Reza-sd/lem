@@ -12,8 +12,8 @@ const (
 
 	//MaxHandleableAntsNumber = 200
 	pkgName   = "graphpk"
-	logToFile = true
-	logToCli  = true
+	logToFile = false
+	logToCli  = false
 	//LogFilesDirectory =
 	//rootFromAntpk     = "../.."
 	//LogFilesDirectory = rootFromAntpk + "/logs/"

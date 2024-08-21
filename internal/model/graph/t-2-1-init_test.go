@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestInitGraph(t *testing.T) {
+func Test_InitGraph(t *testing.T) {
 	// Define test cases
 	testCases := []struct {
 		name          string
@@ -56,7 +56,7 @@ func TestInitGraph(t *testing.T) {
 			myGraph := &Graph{}
 			err := myGraph.Init(tc.tunnelMap, tc.endRoomName)
 
-			myGraph.Print()
+			//myGraph.Print()
 			// Check for errors
 			if err != nil {
 				t.Fatalf("InitGraph returned an error: %v", err)
