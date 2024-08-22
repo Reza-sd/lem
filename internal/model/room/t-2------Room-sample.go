@@ -8,6 +8,7 @@ import (
 
 type TestCasesFunc = teststack.TestCasesFunc
 type TestCase = teststack.TestCase
+type AllTestCasesPkSt = teststack.AllTestCasesPkSt
 
 // ====================================
 // --------------------------------------

@@ -7,7 +7,11 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc) {
+func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) {
+
+	if skip {
+		t.Skip()
+	}
 	testcaseFuncSlice := testCaseFunc.TestCases
 	funcName := testCaseFunc.FuncName
 	//for i := 0; i < len(allTestCasesPkSlice); i++ {

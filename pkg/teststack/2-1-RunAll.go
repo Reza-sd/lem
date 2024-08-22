@@ -8,25 +8,28 @@ import (
 
 // ===========================
 func (myTester *Tester) RunAll(t *testing.T) {
-	allTestCasesPkSlice := myTester.AllTestCasesPkSlice
+	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
-		//fmt.Println(mySlice[i])
-		for j := 0; j < len(allTestCasesPkSlice[i].TestCases); j++ {
 
-			if allTestCasesPkSlice[i].Skip {
+		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesFunc
+
+		for j := 0; j < len(ThisTestCasesFunc.TestCases); j++ {
+			ThisTestCase := ThisTestCasesFunc.TestCases[j]
+
+			if ThisTestCasesFunc.Skip {
 				t.Skip()
 			}
 
-			NumfuncDes := fmt.Sprintf("%v/%v-%v", allTestCasesPkSlice[i].FuncName, j+1, allTestCasesPkSlice[i].TestCases[j].Des)
+			NumfuncDes := fmt.Sprintf("%v/%v-%v", ThisTestCasesFunc.FuncName, j+1, ThisTestCase.Des)
 
 			t.Run(NumfuncDes, func(t *testing.T) {
-				if allTestCasesPkSlice[i].TestCases[j].Skip {
+				if ThisTestCase.Skip {
 					t.Skip()
 				}
-				got := allTestCasesPkSlice[i].TestCases[j].Got
+				got := ThisTestCase.Got
 
-				exp := allTestCasesPkSlice[i].TestCases[j].Exp
+				exp := ThisTestCase.Exp
 				myTester.Assert(t, got, exp)
 			})
 		}
