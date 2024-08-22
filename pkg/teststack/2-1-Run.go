@@ -18,7 +18,7 @@ func (myTester *Tester) Run(t *testing.T) {
 				t.Skip()
 			}
 
-			NumfuncDes := fmt.Sprintf("%v-%v-%v", j+1, allTestCasesPkSlice[i].FuncName, allTestCasesPkSlice[i].TestCases[j].Des)
+			NumfuncDes := fmt.Sprintf("%v/%v-%v", allTestCasesPkSlice[i].FuncName,j+1, allTestCasesPkSlice[i].TestCases[j].Des)
 
 			t.Run(NumfuncDes, func(t *testing.T) {
 				if allTestCasesPkSlice[i].TestCases[j].Skip {

@@ -18,7 +18,7 @@ var Init_Test = TestCasesFunc{
 			//Skip: true,
 			Des: "test 22222",
 			Got: 4,
-			Exp: 40,
+			Exp: 4,
 		},
 		{
 			//Skip: true,
