@@ -1,7 +1,7 @@
 package room
 
 import (
-	"reflect"
+	//"reflect"
 	"testing"
 )
 
@@ -18,7 +18,7 @@ func Test_Init(t *testing.T) {
 			UsedSeats:       1000,
 			ConnectionSlice: []Mtr{1, 2, 3},
 		}
-		assert_Init(t, myRoom, expRoom)
+		Assert(t, myRoom, expRoom)
 		//myRoom.Print()
 	})
 	//---------------------------------------------
@@ -33,7 +33,7 @@ func Test_Init(t *testing.T) {
 			UsedSeats:       0,
 			ConnectionSlice: []Mtr{1, 2, 3},
 		}
-		assert_Init(t, myRoom, expRoom)
+		Assert(t, myRoom, expRoom)
 		//myRoom.Print()
 	})
 	//---------------------------------------------
@@ -48,17 +48,17 @@ func Test_Init(t *testing.T) {
 			UsedSeats:       1000,
 			ConnectionSlice: []Mtr{1, 2, 3},
 		}
-		assert_Init(t, myRoom, expRoom)
+		Assert(t, myRoom, expRoom)
 		//myRoom.Print()
 	})
 }
 
 // ==================================
-func assert_Init(t testing.TB, myRoom, expRoom Room) {
-	t.Helper()
-	if !reflect.DeepEqual(myRoom, expRoom) {
-		t.Errorf("\n>>>not same: \n myRoom=%v<<\n expRoom=%v<<", myRoom, expRoom)
-	}
-}
+// func assert_Init(t testing.TB, myRoom, expRoom Room) {
+// 	t.Helper()
+// 	if !reflect.DeepEqual(myRoom, expRoom) {
+// 		t.Errorf("\n>>>not same: \n myRoom=%v<<\n expRoom=%v<<", myRoom, expRoom)
+// 	}
+// }
 
 //======================================
