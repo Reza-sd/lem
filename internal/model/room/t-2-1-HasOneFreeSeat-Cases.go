@@ -4,65 +4,21 @@ var HasOneFreeSeat_Cases = TestCasesFunc{
 	FuncName: "Room.HasOneFreeSeat",
 	//Skip: true,
 	TestCases: []TestCase{
+		//---------------------------------------
 		{
-			Des: "test1111",
+			Des: "return true",
+			Got: Sample_Room_Middle.HasOneFreeSeat(),
+			Exp: true,
+		},
+		//---------------------------------------
+		{
+			Des: "return false",
 			Got: func() any {
-				// a := 1
-				// b := 3
-				// c := b - a
-				return 3
+				Sample_Room_Middle.UsedSeats = Sample_Room_Middle.AllSeats
+				return Sample_Room_Middle.HasOneFreeSeat()
 			},
-			Exp: 3,
+			Exp: false,
 		},
-		{
-			//Skip: true,
-			Des: "test 22222",
-			Got: 4,
-			Exp: 4,
-		},
-		{
-			//Skip: true,
-			Des: "test 3333",
-			Got: "mio",
-			Exp: "mio",
-		},
-		{
-			//Skip: true,
-			Des: "test 444",
-			Got: 5,
-			Exp: func() any {
-				a := 1
-				b := 6
-				c := b - a
-				return c
-			},
-		},
-		//--------------------------
-		{
-			//Skip: true,
-			Des: "test 5555",
-			Got: true,
-			Exp: func() any {
-				a := 1
-				b := 6
-				c := b - a
-				return c == 5
-			},
-		},
-		//--------------------------
-		{
-			//Skip: true,
-			Des: "test 6666",
-			Got: struct{ mio bool }{mio: true},
-			Exp: struct{ mio bool }{mio: true},
-		},
+		//---------------------------------------
 
-		//--------------------------
-		{
-			//Skip: true,
-			Des: "test 77777",
-			Got: &struct{ mio bool }{mio: true},
-			Exp: &struct{ mio bool }{mio: true},
-		},
-		//--------------------------
 	}}

@@ -1,6 +1,6 @@
 package room
 
-var Init_Test = TestCasesFunc{
+var Init_Cases = TestCasesFunc{
 	FuncName: "Room.Init",
 	//Skip: true,
 	TestCases: []TestCase{
