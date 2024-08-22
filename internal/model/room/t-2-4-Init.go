@@ -6,31 +6,31 @@ var Init_Test = TestCasesFunc{
 	TestCases: []TestCase{
 		{
 			Des: "test1111",
-			got: func() any {
+			Got: func() any {
 				// a := 1
 				// b := 3
 				// c := b - a
 				return 3
 			},
-			exp: 3,
+			Exp: 3,
 		},
 		{
 			//Skip: true,
 			Des: "test 22222",
-			got: 4,
-			exp: 40,
+			Got: 4,
+			Exp: 40,
 		},
 		{
 			//Skip: true,
 			Des: "test 3333",
-			got: "mio",
-			exp: "mio",
+			Got: "mio",
+			Exp: "mio",
 		},
 		{
 			//Skip: true,
 			Des: "test 3333",
-			got: 5,
-			exp: func() any {
+			Got: 5,
+			Exp: func() any {
 				a := 1
 				b := 6
 				c := b - a
@@ -40,8 +40,8 @@ var Init_Test = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "test 3333",
-			got: true,
-			exp: func() any {
+			Got: true,
+			Exp: func() any {
 				a := 1
 				b := 6
 				c := b - a

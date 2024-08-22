@@ -7,8 +7,6 @@ import (
 	"testing"
 )
 
-
-
 var (
 	MyTester = teststack.Tester{
 		PackageName:         "mio",

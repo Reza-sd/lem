@@ -4,8 +4,8 @@ package teststack
 type TestCase struct {
 	Skip bool
 	Des  string
-	got  any
-	exp  any
+	Got  any
+	Exp  any
 }
 type TestCasesFunc struct {
 	Skip      bool

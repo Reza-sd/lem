@@ -24,9 +24,9 @@ func (myTester *Tester) Run(t *testing.T) {
 				if allTestCasesPkSlice[i].TestCases[j].Skip {
 					t.Skip()
 				}
-				got := allTestCasesPkSlice[i].TestCases[j].got
+				got := allTestCasesPkSlice[i].TestCases[j].Got
 
-				exp := allTestCasesPkSlice[i].TestCases[j].exp
+				exp := allTestCasesPkSlice[i].TestCases[j].Exp
 				myTester.Assert(t, got, exp)
 			})
 		}
