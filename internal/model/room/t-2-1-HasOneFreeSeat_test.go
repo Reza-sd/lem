@@ -16,7 +16,7 @@ func Test_HasOneFreeSeat(t *testing.T) {
 	//---------------------------------------------
 	t.Run("1-return false", func(t *testing.T) {
 
-		Sample_Room_Middle.UsedSeats = 1
+		Sample_Room_Middle.UsedSeats = Sample_Room_Middle.AllSeats
 		got := Sample_Room_Middle.HasOneFreeSeat()
 		assert_HasOneFreeSeat(t, got, false)
 

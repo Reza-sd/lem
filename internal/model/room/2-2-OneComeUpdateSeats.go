@@ -2,7 +2,7 @@ package room
 
 import "fmt"
 
-func (myRoom *Room) OneComeUpdate() error {
+func (myRoom *Room) OneComeUpdateSeats() error {
 
 	if myRoom.UsedSeats == myRoom.AllSeats {
 		return fmt.Errorf("full")
