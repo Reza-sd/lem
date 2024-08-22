@@ -1,7 +1,7 @@
 package room
 
-var Mio_Test = TestCasesFunc{
-	FuncName: "Room.Mio",
+var HasOneFreeSeat_Cases = TestCasesFunc{
+	FuncName: "Room.HasOneFreeSeat",
 	//Skip: true,
 	TestCases: []TestCase{
 		{
