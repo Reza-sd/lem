@@ -6,20 +6,35 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 	TestCases: []TestCase{
 		//---------------------------------------
 		{
-			Des: "return true",
+			Des: "increase 1 UsedSeats when Room in middle type",
 			Got: func() any {
-				Sample_Room_Middle.OneComeUpdateSeats()
-				expRoom := *Sample_Room_Middle
-				expRoom.UsedSeats = 10
-				expRoom.Print()
-				Sample_Room_Middle.Print()
-				print("######")
-				return &expRoom
+				myRoom :=SampleRoom.Middle()
+				myRoom.OneComeUpdateSeats()
+				return myRoom
 			},
-			Exp: &Sample_Room_Middle,
+			Exp: Room{
+				Name:            3,
+				AllSeats:        1,
+				UsedSeats:       1,
+				ConnectionSlice: []Mtr{2, 4},
+			},
 		},
 		//---------------------------------------
-
+		{
+			Des: "increase 1 UsedSeats when Room in End type",
+			Got: func() any {
+				myRoom :=SampleRoom.End()
+				myRoom.OneComeUpdateSeats()
+				return myRoom
+			},
+			Exp: Room{
+				Name:            1,
+				AllSeats:        5000,
+				UsedSeats:       1001,
+				ConnectionSlice: []Mtr{2,3,4},
+			},
+		},
+		//---------------------------------------
 		//---------------------------------------
 
 	}}

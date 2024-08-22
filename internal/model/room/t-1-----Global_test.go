@@ -13,6 +13,7 @@ var (
 			//{TestCasesFunc: Init_Test, Skip: true},
 			{TestCasesFunc: Init_Cases, Skip: false},
 			{TestCasesFunc: HasOneFreeSeat_Cases},
+			{TestCasesFunc: OneComeUpdateSeats_Cases},
 		},
 	}
 )
