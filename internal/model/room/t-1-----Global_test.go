@@ -7,8 +7,7 @@ import (
 	"testing"
 )
 
-type TestCasesFunc = teststack.TestCasesFunc
-type TestCase = teststack.TestCase
+
 
 var (
 	MyTester = teststack.Tester{

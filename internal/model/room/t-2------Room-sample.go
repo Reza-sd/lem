@@ -1,5 +1,9 @@
 package room
 
+
+import (
+teststack "main/pkg/teststack"
+)
 // ====================================
 // type TestCase struct {
 // 	Skip bool
@@ -14,7 +18,8 @@ package room
 // }
 
 // var AllTestCasesPkSlice = []TestCasesFunc{Init_Test}
-
+type TestCasesFunc = teststack.TestCasesFunc
+type TestCase = teststack.TestCase
 // ====================================
 // --------------------------------------
 var Sample_Room_End = &Room{
