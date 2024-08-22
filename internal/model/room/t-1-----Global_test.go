@@ -11,9 +11,10 @@ var (
 
 		AllTestCasesPkStSlice: []AllTestCasesPkSt{
 			//{TestCasesFunc: Init_Test, Skip: true},
-			{TestCasesFunc: Init_Cases, Skip: false},
+			{TestCasesFunc: Init_Cases},
 			{TestCasesFunc: HasOneFreeSeat_Cases},
 			{TestCasesFunc: OneComeUpdateSeats_Cases},
+			{TestCasesFunc: Print_Cases, Skip: true},
 		},
 	}
 )
