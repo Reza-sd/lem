@@ -18,7 +18,7 @@ var (
 )
 
 // ========================================
-func Test_roompk(t *testing.T) {
+func Test_room_pk(t *testing.T) {
 	MyTester.RunAll(t)
 	//MyTester.RunOne(t, Init_Test, true)
 	//MyTester.RunOne(t, Init_Test, false)
