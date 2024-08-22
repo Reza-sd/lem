@@ -1,5 +1,21 @@
 package room
 
+// ====================================
+type TestCase struct {
+	Skip bool
+	Des  string
+	got  any
+	exp  any
+}
+type TestCasesFunc struct {
+	Skip      bool
+	FuncName  string
+	TestCases []TestCase
+}
+
+var AllTestCasesPkSlice = []TestCasesFunc{Init_Test}
+
+// ====================================
 // --------------------------------------
 var Sample_Room_End = &Room{
 	Name:            1,
