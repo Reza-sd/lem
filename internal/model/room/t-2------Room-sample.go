@@ -1,19 +1,19 @@
 package room
 
 // ====================================
-type TestCase struct {
-	Skip bool
-	Des  string
-	got  any
-	exp  any
-}
-type TestCasesFunc struct {
-	Skip      bool
-	FuncName  string
-	TestCases []TestCase
-}
+// type TestCase struct {
+// 	Skip bool
+// 	Des  string
+// 	got  any
+// 	exp  any
+// }
+// type TestCasesFunc struct {
+// 	Skip      bool
+// 	FuncName  string
+// 	TestCases []TestCase
+// }
 
-var AllTestCasesPkSlice = []TestCasesFunc{Init_Test}
+// var AllTestCasesPkSlice = []TestCasesFunc{Init_Test}
 
 // ====================================
 // --------------------------------------

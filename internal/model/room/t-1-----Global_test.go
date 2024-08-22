@@ -1,63 +1,74 @@
 package room
 
 import (
-	"fmt"
-	"reflect"
+	//"fmt"
+	//"reflect"
+	teststack "main/pkg/teststack"
 	"testing"
 )
 
-// ========================================
-func Test_RoomPk(t *testing.T) {
-	for i := 0; i < len(AllTestCasesPkSlice); i++ {
-		//fmt.Println(mySlice[i])
-		for j := 0; j < len(AllTestCasesPkSlice[i].TestCases); j++ {
+type TestCasesFunc = teststack.TestCasesFunc
+type TestCase = teststack.TestCase
 
-			if AllTestCasesPkSlice[i].Skip {
-				t.Skip()
-			}
-
-
-			NumfuncDes := fmt.Sprintf("%v-%v-%v", j+1, AllTestCasesPkSlice[i].FuncName, AllTestCasesPkSlice[i].TestCases[j].Des)
-
-			t.Run(NumfuncDes, func(t *testing.T) {
-				if AllTestCasesPkSlice[i].TestCases[j].Skip {
-					t.Skip()
-				}
-				got := AllTestCasesPkSlice[i].TestCases[j].got
-	
-				exp := AllTestCasesPkSlice[i].TestCases[j].exp
-				Assert(t, got, exp)
-			})
-		}
-
+var (
+	MyTester = teststack.Tester{
+		PackageName:         "mio",
+		AllTestCasesPkSlice: []TestCasesFunc{Init_Test},
 	}
+)
+
+// ========================================
+func Test(t *testing.T) {
+	//t.Helper()
+	// for i := 0; i < len(AllTestCasesPkSlice); i++ {
+	// 	//fmt.Println(mySlice[i])
+	// 	for j := 0; j < len(AllTestCasesPkSlice[i].TestCases); j++ {
+
+	// 		if AllTestCasesPkSlice[i].Skip {
+	// 			t.Skip()
+	// 		}
+
+	// 		NumfuncDes := fmt.Sprintf("%v-%v-%v", j+1, AllTestCasesPkSlice[i].FuncName, AllTestCasesPkSlice[i].TestCases[j].Des)
+
+	// 		t.Run(NumfuncDes, func(t *testing.T) {
+	// 			if AllTestCasesPkSlice[i].TestCases[j].Skip {
+	// 				t.Skip()
+	// 			}
+	// 			got := AllTestCasesPkSlice[i].TestCases[j].got
+
+	// 			exp := AllTestCasesPkSlice[i].TestCases[j].exp
+	// 			Assert(t, got, exp)
+	// 		})
+	// 	}
+
+	// }
 }
 
 // ==================================
-func Assert(t testing.TB, got, exp any) {
-	t.Helper()
+// func Assert(t testing.TB, got, exp any) {
+// 	t.Helper()
 
-	var gotValue any
-	var expValue any
+// 	var gotValue any
+// 	var expValue any
 
-	switch got.(type) {
-	case func() any:
-		gotValue = got.(func() any)()
-	default:
-		gotValue = got
-	}
+// 	switch got.(type) {
+// 	case func() any:
+// 		gotValue = got.(func() any)()
+// 	default:
+// 		gotValue = got
+// 	}
 
-	switch exp.(type) {
-	case func() any:
-		expValue = exp.(func() any)()
-	default:
-		expValue = exp
-	}
+// 	switch exp.(type) {
+// 	case func() any:
+// 		expValue = exp.(func() any)()
+// 	default:
+// 		expValue = exp
+// 	}
 
-	if !reflect.DeepEqual(gotValue, expValue) {
-		//t.Fatalf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
-		t.Errorf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
-	}
-}
+// 	if !reflect.DeepEqual(gotValue, expValue) {
+// 		//t.Fatalf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
+// 		t.Errorf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
+// 	}
+// }
 
 //======================================

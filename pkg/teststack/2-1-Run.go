@@ -1,0 +1,37 @@
+package teststack
+
+import (
+	"fmt"
+	//"reflect"
+	"testing"
+)
+
+// ===========================
+func (myTester *Tester) Run(t *testing.T) {
+	allTestCasesPkSlice := myTester.AllTestCasesPkSlice
+
+	for i := 0; i < len(allTestCasesPkSlice); i++ {
+		//fmt.Println(mySlice[i])
+		for j := 0; j < len(allTestCasesPkSlice[i].TestCases); j++ {
+
+			if allTestCasesPkSlice[i].Skip {
+				t.Skip()
+			}
+
+			NumfuncDes := fmt.Sprintf("%v-%v-%v", j+1, allTestCasesPkSlice[i].FuncName, allTestCasesPkSlice[i].TestCases[j].Des)
+
+			t.Run(NumfuncDes, func(t *testing.T) {
+				if allTestCasesPkSlice[i].TestCases[j].Skip {
+					t.Skip()
+				}
+				got := allTestCasesPkSlice[i].TestCases[j].got
+
+				exp := allTestCasesPkSlice[i].TestCases[j].exp
+				myTester.Assert(t, got, exp)
+			})
+		}
+
+	}
+}
+
+//==============================
