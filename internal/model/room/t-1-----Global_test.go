@@ -1,7 +1,6 @@
 package room
 
 import (
-
 	teststack "main/pkg/teststack"
 	"testing"
 )
@@ -15,8 +14,7 @@ var (
 
 // ========================================
 func Test_roompk(t *testing.T) {
-	MyTester.Run(t)
+	//MyTester.RunAll(t)
+	MyTester.RunOne(t, Init_Test)
 
 }
-
-

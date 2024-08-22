@@ -7,7 +7,7 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) Run(t *testing.T) {
+func (myTester *Tester) RunAll(t *testing.T) {
 	allTestCasesPkSlice := myTester.AllTestCasesPkSlice
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
@@ -18,7 +18,7 @@ func (myTester *Tester) Run(t *testing.T) {
 				t.Skip()
 			}
 
-			NumfuncDes := fmt.Sprintf("%v/%v-%v", allTestCasesPkSlice[i].FuncName,j+1, allTestCasesPkSlice[i].TestCases[j].Des)
+			NumfuncDes := fmt.Sprintf("%v/%v-%v", allTestCasesPkSlice[i].FuncName, j+1, allTestCasesPkSlice[i].TestCases[j].Des)
 
 			t.Run(NumfuncDes, func(t *testing.T) {
 				if allTestCasesPkSlice[i].TestCases[j].Skip {
