@@ -2,6 +2,7 @@ package room
 
 var Init_Test = TestCasesFunc{
 	FuncName: "Init",
+	//Skip: true,
 	TestCases: []TestCase{
 		{
 			Des: "test1111",
@@ -17,7 +18,7 @@ var Init_Test = TestCasesFunc{
 			//Skip: true,
 			Des: "test 22222",
 			got: 4,
-			exp: 4,
+			exp: 40,
 		},
 		{
 			//Skip: true,

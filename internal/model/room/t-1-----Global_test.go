@@ -12,6 +12,11 @@ func Test_RoomPk(t *testing.T) {
 		//fmt.Println(mySlice[i])
 		for j := 0; j < len(AllTestCasesPkSlice[i].TestCases); j++ {
 
+			if AllTestCasesPkSlice[i].Skip {
+				t.Skip()
+			}
+
+
 			NumfuncDes := fmt.Sprintf("%v-%v-%v", j+1, AllTestCasesPkSlice[i].FuncName, AllTestCasesPkSlice[i].TestCases[j].Des)
 
 			t.Run(NumfuncDes, func(t *testing.T) {
@@ -19,13 +24,7 @@ func Test_RoomPk(t *testing.T) {
 					t.Skip()
 				}
 				got := AllTestCasesPkSlice[i].TestCases[j].got
-				//print(got)
-				//a :=*got
-				//fmt.Println("***>",got)
-				// switch got.(type){
-				// case func()any:
-				// 	fmt.Println("BBBBBBBB")
-				// }
+	
 				exp := AllTestCasesPkSlice[i].TestCases[j].exp
 				Assert(t, got, exp)
 			})
