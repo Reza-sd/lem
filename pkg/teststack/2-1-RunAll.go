@@ -14,6 +14,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 
 		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesFunc
 		ThisTestCasesFuncSkip := allTestCasesPkSlice[i].Skip
+		print("\n")
 
 		for j := 0; j < len(ThisTestCasesFunc.TestCases); j++ {
 			ThisTestCase := ThisTestCasesFunc.TestCases[j]
@@ -40,6 +41,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 		}
 
 	}
+	print("\n")
 }
 
 //==============================

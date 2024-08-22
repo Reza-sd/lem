@@ -1,7 +1,7 @@
 package room
 
-var Init_Test = TestCasesFunc{
-	FuncName: "Room.Init",
+var Mio_Test = TestCasesFunc{
+	FuncName: "Room.Mio",
 	//Skip: true,
 	TestCases: []TestCase{
 		{
