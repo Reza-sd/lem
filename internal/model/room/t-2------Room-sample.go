@@ -11,37 +11,41 @@ type TestCase = teststack.TestCase
 type AllTestCasesPkSt = teststack.AllTestCasesPkSt
 
 type SampleRoomSt struct{}
+
 var SampleRoom = SampleRoomSt{}
+
 // ====================================
 // --------------------------------------
-func(s *SampleRoomSt) End()Room{
+func (s *SampleRoomSt) End_Name_1() Room {
 
 	return Room{
 		Name:            1,
 		AllSeats:        5000,
 		UsedSeats:       1000,
-		ConnectionSlice: []Mtr{2, 3, 4},
+		ConnectionSlice: []Mtr{},
 	}
-} 
+}
+
 // --------------------------------------
-func(s *SampleRoomSt) Start()Room{
+func (s *SampleRoomSt) Start_Name_0() Room {
 
 	return Room{
 		Name:            0,
 		AllSeats:        5000,
 		UsedSeats:       1000,
-		ConnectionSlice: []Mtr{1, 2, 3},
+		ConnectionSlice: []Mtr{},
 	}
-} 
+}
+
 // --------------------------------------
-func(s *SampleRoomSt) Middle()Room{
+func (s *SampleRoomSt) Middle_Name_3() Room {
 
 	return Room{
 		Name:            3,
 		AllSeats:        1,
 		UsedSeats:       0,
-		ConnectionSlice: []Mtr{2, 4},
+		ConnectionSlice: []Mtr{},
 	}
-} 
+}
 
 // --------------------------------------
