@@ -14,18 +14,18 @@ func (myTester *Tester) Assert(t testing.TB, got, exp any) {
 	var gotValue any
 	var expValue any
 
-	switch got.(type) {
+	switch g := got.(type) {
 	case func() any:
 		gotValue = got.(func() any)() //call function
 	default:
-		gotValue = got
+		gotValue = g
 	}
 
-	switch exp.(type) {
+	switch e := exp.(type) {
 	case func() any:
 		expValue = exp.(func() any)() //call function
 	default:
-		expValue = exp
+		expValue = e
 	}
 
 	if !reflect.DeepEqual(gotValue, expValue) {

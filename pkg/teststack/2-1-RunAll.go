@@ -10,7 +10,14 @@ import (
 func (myTester *Tester) RunAll(t *testing.T) {
 
 	//--------------------------------------------------
+	defer func() {
+		if r := recover(); r != nil {
+			t.Errorf("\n\n>>>>>>###### panic RunAll ########<<<<\n%v\n\n", r)
+			//err = fmt.Errorf("panic: %v", r)
 
+		}
+	}()
+	//--------------------------------------------------
 	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
