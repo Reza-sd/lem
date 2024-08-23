@@ -64,5 +64,37 @@ var myTester_Cases_1 = TestCasesFunc{
 			Got: &struct{ mio bool }{mio: true},
 			Exp: &struct{ mio bool }{mio: true},
 		},
+
+		//--------------------------
+		{
+			//Skip: true,
+			Des: "test 8888",
+			Got: func() any {
+				a := 1
+				b := 6
+				c := b - a
+				return c
+			},
+			Exp: func() any {
+				a := 2
+				b := 7
+				c := b - a
+				return c == 4
+			},
+		},
+		//--------------------------
+
+		{
+			//Skip: true,
+			Des: "test 9999",
+			Got: func() any {
+
+				return struct{ mio bool }{mio: false}
+			},
+			Exp: func() any {
+
+				return struct{ mio bool }{mio: true}
+			},
+		},
 		//--------------------------
 	}}
