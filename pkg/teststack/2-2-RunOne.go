@@ -7,11 +7,13 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) (err error) {
+func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) {
 	//--------------------------------------------------
 	defer func() {
 		if r := recover(); r != nil {
-			err = fmt.Errorf("panic: %v", r)
+			t.Errorf("\n\n>>>>>>###### panic RunOne ########<<<<\n%v\n\n", r)
+
+			//err = fmt.Errorf("panic: %v", r)
 
 		}
 	}()
@@ -43,7 +45,7 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bo
 	}
 
 	//}
-	return nil
+	//return nil
 }
 
 //==============================
