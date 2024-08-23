@@ -2,6 +2,7 @@ package room
 
 import "fmt"
 
+// =====================================================
 func (myRoom *Room) OneComeUpdateSeats() error {
 
 	if myRoom.UsedSeats == myRoom.AllSeats {
@@ -15,3 +16,5 @@ func (myRoom *Room) OneComeUpdateSeats() error {
 	myRoom.UsedSeats++
 	return nil
 }
+
+//=====================================================
