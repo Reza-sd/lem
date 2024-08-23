@@ -1,6 +1,7 @@
 package room
 
 import "fmt"
+
 // =====================================================
 
 func (myRoom *Room) OneLeaveUpdateSeats() error {
@@ -11,4 +12,5 @@ func (myRoom *Room) OneLeaveUpdateSeats() error {
 	myRoom.UsedSeats--
 	return nil
 }
+
 // =====================================================
