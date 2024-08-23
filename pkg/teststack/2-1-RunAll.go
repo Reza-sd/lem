@@ -2,12 +2,21 @@ package teststack
 
 import (
 	"fmt"
-	//"reflect"
+
 	"testing"
 )
 
 // ===========================
-func (myTester *Tester) RunAll(t *testing.T) {
+func (myTester *Tester) RunAll(t *testing.T) (err error) {
+	//var err error
+	//--------------------------------------------------
+	defer func() {
+		if r := recover(); r != nil {
+			err = fmt.Errorf("panic: %v", r)
+		}
+	}()
+	//--------------------------------------------------
+
 	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
@@ -42,6 +51,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 
 	}
 	print("\n")
+	return nil
 }
 
 //==============================

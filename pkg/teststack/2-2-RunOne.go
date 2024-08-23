@@ -25,9 +25,9 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bo
 		NumfuncDes := fmt.Sprintf("%v/%v-%v", funcName, j+1, testcaseFuncSlice[j].Des)
 
 		t.Run(NumfuncDes, func(t *testing.T) {
-			if testcaseFuncSlice[j].Skip {
-				t.Skip()
-			}
+			// if testcaseFuncSlice[j].Skip {
+			// 	t.Skip()
+			// }
 			got := testcaseFuncSlice[j].Got
 
 			exp := testcaseFuncSlice[j].Exp
