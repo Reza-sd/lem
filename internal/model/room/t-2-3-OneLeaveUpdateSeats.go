@@ -5,20 +5,20 @@ var OneLeaveUpdateSeats_Cases = TestCasesFunc{
 	//Skip: true,
 	TestCases: []TestCase{
 		//---------------------------------------
-		// {
-		// 	Des: "decrease one UsedSeats when Room in middle type",
-		// 	Got: func() any {
-		// 		myRoom := SampleRoom.Middle_Name_3()
-		// 		myRoom.OneLeaveUpdateSeats()
-		// 		return myRoom
-		// 	},
-		// 	Exp: Room{
-		// 		Name:            3,
-		// 		AllSeats:        1,
-		// 		UsedSeats:       1,
-		// 		ConnectionSlice: []Mtr{},
-		// 	},
-		// },
+		{
+			Des: "Do nothing if usedSeats=0",
+			Got: func() any {
+				myRoom := SampleRoom.Middle_Name_3()
+				myRoom.OneLeaveUpdateSeats()
+				return myRoom
+			},
+			Exp: Room{
+				Name:            3,
+				AllSeats:        1,
+				UsedSeats:       0,
+				ConnectionSlice: []Mtr{},
+			},
+		},
 		//---------------------------------------
 		{
 			Des: "decrease one UsedSeats when Room in Start type",
@@ -30,7 +30,7 @@ var OneLeaveUpdateSeats_Cases = TestCasesFunc{
 			Exp: Room{
 				Name:            0,
 				AllSeats:        MaxSeatsStartEnd,
-				UsedSeats:       UsedSeatsStartEnd - 2,
+				UsedSeats:       UsedSeatsStartEnd - 1,
 				ConnectionSlice: []Mtr{},
 			},
 		},
