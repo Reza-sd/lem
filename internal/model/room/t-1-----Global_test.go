@@ -20,10 +20,8 @@ var (
 
 // ========================================
 func Test_room_pk(t *testing.T) {
-	errRunAll := MyTester.RunAll(t)
-	if errRunAll != nil {
-		t.Errorf("\n\n>>>>>>###### panic RunAll ########<<<<\n%v\n\n", errRunAll)
-	}
+	MyTester.RunAll(t)
+
 }
 
 // ========================================

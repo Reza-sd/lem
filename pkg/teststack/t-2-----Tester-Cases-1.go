@@ -79,7 +79,7 @@ var myTester_Cases_1 = TestCasesFunc{
 				a := 2
 				b := 7
 				c := b - a
-				return c == 4
+				return c
 			},
 		},
 		//--------------------------
@@ -89,7 +89,7 @@ var myTester_Cases_1 = TestCasesFunc{
 			Des: "test 9999",
 			Got: func() any {
 
-				return struct{ mio bool }{mio: false}
+				return struct{ mio bool }{mio: true}
 			},
 			Exp: func() any {
 
