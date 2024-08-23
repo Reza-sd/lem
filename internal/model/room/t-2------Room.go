@@ -20,8 +20,8 @@ func (s *SampleRoomSt) End_Name_1() Room {
 
 	return Room{
 		Name:            1,
-		AllSeats:        5000,
-		UsedSeats:       1000,
+		AllSeats:        MaxSeatsStartEnd,
+		UsedSeats:       UsedSeatsStartEnd,
 		ConnectionSlice: []Mtr{},
 	}
 }
@@ -31,8 +31,8 @@ func (s *SampleRoomSt) Start_Name_0() Room {
 
 	return Room{
 		Name:            0,
-		AllSeats:        5000,
-		UsedSeats:       1000,
+		AllSeats:        MaxSeatsStartEnd,
+		UsedSeats:       UsedSeatsStartEnd,
 		ConnectionSlice: []Mtr{},
 	}
 }

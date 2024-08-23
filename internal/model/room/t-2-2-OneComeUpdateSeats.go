@@ -29,12 +29,10 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 			},
 			Exp: Room{
 				Name:            1,
-				AllSeats:        5000,
-				UsedSeats:       1001,
+				AllSeats:        MaxSeatsStartEnd,
+				UsedSeats:       UsedSeatsStartEnd+1,
 				ConnectionSlice: []Mtr{},
 			},
 		},
 		//---------------------------------------
-		//---------------------------------------
-
 	}}

@@ -14,8 +14,8 @@ var Init_Cases = TestCasesFunc{
 			},
 			Exp: &Room{
 				Name:            0,
-				AllSeats:        5000,
-				UsedSeats:       1000,
+				AllSeats:        MaxSeatsStartEnd,
+				UsedSeats:       UsedSeatsStartEnd,
 				ConnectionSlice: []Mtr{1, 2, 3},
 			},
 		},
@@ -46,8 +46,8 @@ var Init_Cases = TestCasesFunc{
 			},
 			Exp: &Room{
 				Name:            5,
-				AllSeats:        5000,
-				UsedSeats:       1000,
+				AllSeats:        MaxSeatsStartEnd,
+				UsedSeats:       UsedSeatsStartEnd,
 				ConnectionSlice: []Mtr{1, 2, 3},
 			},
 		},
