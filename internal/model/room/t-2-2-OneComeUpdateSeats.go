@@ -6,7 +6,7 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 	TestCases: []TestCase{
 		//---------------------------------------
 		{
-			Des: "increase 1 UsedSeats when Room in middle type",
+			Des: "increase one UsedSeats when Room in middle type",
 			Got: func() any {
 				myRoom := SampleRoom.Middle_Name_3()
 				myRoom.OneComeUpdateSeats()
@@ -21,7 +21,7 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 		},
 		//---------------------------------------
 		{
-			Des: "increase 1 UsedSeats when Room in End type",
+			Des: "increase one UsedSeats when Room in End type",
 			Got: func() any {
 				myRoom := SampleRoom.End_Name_1()
 				myRoom.OneComeUpdateSeats()
