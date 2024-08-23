@@ -13,6 +13,6 @@ type TestCasesFunc struct {
 	TestCases []TestCase
 }
 
-var AllTestCasesPkSlice = []TestCasesFunc{}
+//var AllTestCasesPkSlice = []TestCasesFunc{}
 
 // ====================================
