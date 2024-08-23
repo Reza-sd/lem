@@ -13,6 +13,7 @@ func (myTester *Tester) RunAll(t *testing.T) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
 			err = fmt.Errorf("panic: %v", r)
+
 		}
 	}()
 	//--------------------------------------------------

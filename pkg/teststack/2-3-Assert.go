@@ -2,15 +2,22 @@ package teststack
 
 import (
 	//"fmt"
-	//"fmt"
+	"fmt"
 	"reflect"
 	"testing"
 )
 
 // =======================================================
-func (myTester *Tester) Assert(t testing.TB, got, exp any) {
+func (myTester *Tester) Assert(t testing.TB, got, exp any) (err error) {
 	t.Helper()
+	//--------------------------------------------------
+	defer func() {
+		if r := recover(); r != nil {
+			err = fmt.Errorf("panic: %v", r)
 
+		}
+	}()
+	//--------------------------------------------------
 	var gotValue any
 	var expValue any
 
@@ -32,6 +39,9 @@ func (myTester *Tester) Assert(t testing.TB, got, exp any) {
 		//t.Fatalf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
 		t.Errorf("\n\n|----> got=%v<\n|----> exp=%v<", gotValue, expValue)
 	}
+	//------------------------------------------------------
+	return nil
+	//----------------------------------------------------
 }
 
 //=======================================================

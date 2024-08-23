@@ -7,8 +7,15 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) {
+func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) (err error) {
+	//--------------------------------------------------
+	defer func() {
+		if r := recover(); r != nil {
+			err = fmt.Errorf("panic: %v", r)
 
+		}
+	}()
+	//--------------------------------------------------
 	if skip {
 		t.Skip()
 	}
@@ -36,6 +43,7 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bo
 	}
 
 	//}
+	return nil
 }
 
 //==============================
