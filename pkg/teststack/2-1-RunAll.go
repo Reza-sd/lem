@@ -21,7 +21,7 @@ func (myTester *Tester) RunAll(t *testing.T) (err error) {
 
 	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
-	for i := -1; i < len(allTestCasesPkSlice)+9; i++ {
+	for i := 0; i < len(allTestCasesPkSlice); i++ {
 
 		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesFunc
 		ThisTestCasesFuncSkip := allTestCasesPkSlice[i].Skip
