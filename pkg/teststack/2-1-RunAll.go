@@ -12,6 +12,7 @@ func (myTester *Tester) RunAll(t *testing.T) (err error) {
 	//--------------------------------------------------
 	defer func() {
 		if r := recover(); r != nil {
+			t.Errorf("\n\n>>>>>>###### panic RunAll ########<<<<\n%v\n\n", r)
 			err = fmt.Errorf("panic: %v", r)
 
 		}
@@ -20,7 +21,7 @@ func (myTester *Tester) RunAll(t *testing.T) (err error) {
 
 	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
-	for i := 0; i < len(allTestCasesPkSlice); i++ {
+	for i := -1; i < len(allTestCasesPkSlice)+9; i++ {
 
 		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesFunc
 		ThisTestCasesFuncSkip := allTestCasesPkSlice[i].Skip
@@ -46,7 +47,12 @@ func (myTester *Tester) RunAll(t *testing.T) (err error) {
 				got := ThisTestCase.Got
 
 				exp := ThisTestCase.Exp
-				myTester.Assert(t, got, exp)
+				errAssert := myTester.Assert(t, got, exp)
+
+				if errAssert != nil {
+					t.Errorf("\n\n>>>>>>**** Assert panic ****<<<<<\n%v\n\n", errAssert)
+					//return nil
+				}
 			})
 		}
 

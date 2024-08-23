@@ -1,6 +1,7 @@
 package room
 
 import (
+	//"fmt"
 	teststack "main/pkg/teststack"
 	"testing"
 )
@@ -19,7 +20,10 @@ var (
 
 // ========================================
 func Test_room_pk(t *testing.T) {
-	MyTester.RunAll(t)
+	errRunAll := MyTester.RunAll(t)
+	if errRunAll != nil {
+		t.Errorf("\n\n>>>>>>###### panic RunAll ########<<<<\n%v\n\n", errRunAll)
+	}
 }
 
 // ========================================

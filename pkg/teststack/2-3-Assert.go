@@ -13,6 +13,7 @@ func (myTester *Tester) Assert(t testing.TB, got, exp any) (err error) {
 	//--------------------------------------------------
 	defer func() {
 		if r := recover(); r != nil {
+			t.Errorf("\n\n>>>>>>**** Assert panic ****<<<<<\n%v\n\n", r)
 			err = fmt.Errorf("panic: %v", r)
 
 		}
