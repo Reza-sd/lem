@@ -7,7 +7,7 @@ func (myRoom *Room) Init(name, lastRoomName Mtr, connectionSlice []Mtr) {
 		myRoom.AllSeats = MaxSeatsStartEnd
 		myRoom.UsedSeats = UsedSeatsStartEnd
 	} else {
-		myRoom.AllSeats = 1
+		myRoom.AllSeats = AllSeatsNormalRoom
 		myRoom.UsedSeats = 0
 	}
 
