@@ -3,13 +3,15 @@ package room
 import (
 	"fmt"
 	"math/rand"
+	//"crypto/rand"
+
 )
 
 func (myRoom *Room) OneRandomNextRoom() (Mtr, error) {
 	//--------------------------------------
 	lenConnectionSlice := len(myRoom.ConnectionSlice)
 	if lenConnectionSlice == 0 {
-		return 0, fmt.Errorf("empty")
+		return Mtr(0), fmt.Errorf("empty")
 	}
 	//----------------------------------------
 	var nextRandomRoomName Mtr
