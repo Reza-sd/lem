@@ -30,7 +30,7 @@ func (myTester *Tester) Assert(t testing.TB, got, exp any) {
 
 	if !reflect.DeepEqual(gotValue, expValue) {
 		//t.Fatalf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
-		t.Errorf("\n\n|----> got=%v<\n|----> exp=%v<", gotValue, expValue)
+		t.Errorf("\n\n|----> Got=%v<Type=%T\n|----> Exp=%v<Type=%T", gotValue, gotValue, expValue, expValue)
 	}
 
 }

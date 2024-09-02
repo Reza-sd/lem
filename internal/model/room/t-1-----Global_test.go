@@ -14,6 +14,7 @@ var (
 			{TestCasesFunc: OneComeUpdateSeats_Cases},
 			{TestCasesFunc: Print_Cases, Skip: true},
 			{TestCasesFunc: OneLeaveUpdateSeats_Cases},
+			{TestCasesFunc: OneRandomNextRoom_Cases},
 		},
 	}
 )

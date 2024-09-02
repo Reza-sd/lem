@@ -1,7 +1,21 @@
 package room
 
-func (myRoom *Room) OneRandomNextRoom() (Mtr, error) {
-	var nextRoom Mtr
+import (
+	"fmt"
+	"math/rand"
+)
 
-	return nextRoom, nil
+func (myRoom *Room) OneRandomNextRoom() (Mtr, error) {
+	//--------------------------------------
+	lenConnectionSlice := len(myRoom.ConnectionSlice)
+	if lenConnectionSlice == 0 {
+		return 0, fmt.Errorf("empty")
+	}
+	//----------------------------------------
+	var nextRandomRoomName Mtr
+	//-------------------------------------
+	randomNextRoomIndex := rand.Intn(lenConnectionSlice)
+	nextRandomRoomName = myRoom.ConnectionSlice[randomNextRoomIndex]
+	//-----------------------
+	return nextRandomRoomName, nil
 }
