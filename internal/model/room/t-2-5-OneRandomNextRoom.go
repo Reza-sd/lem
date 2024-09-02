@@ -13,7 +13,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 				next, _ := myRoom.OneRandomNextRoom()
 				return Mtr(next)
 			},
-			Exp: Mtr(0),
+			Exp:0,// Mtr(0),
 		},
 		//---------------------------------------
 	},
