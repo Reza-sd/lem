@@ -38,5 +38,17 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Exp: true,
 		},
 		//---------------------------------------
+		{
+			Des: "return random if connection slice is not empty",
+			Got: func() any {
+				myRoom := Room{
+					ConnectionSlice: []Mtr{5},
+				}
+				next, _ := myRoom.OneRandomNextRoom()
+				return next
+			},
+			Exp: Mtr(5),
+		},
+		//---------------------------------------
 	},
 }
