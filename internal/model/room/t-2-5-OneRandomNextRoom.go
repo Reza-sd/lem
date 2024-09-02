@@ -6,14 +6,36 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 	TestCases: []TestCase{
 		//---------------------------------------
 		{
-			Des: "return error if connection slice is empty",
+			Des: "return 0 if connection slice is empty",
 			Got: func() any {
 				myRoom := Room{}
 				//myRoom.Init(0, 5, []Mtr{1, 2, 3})
 				next, _ := myRoom.OneRandomNextRoom()
 				return Mtr(next)
 			},
-			Exp:0,// Mtr(0),
+			Exp: Mtr(0),
+		},
+		//---------------------------------------
+		{
+			Des: "return err if connection slice is empty",
+			Got: func() any {
+				myRoom := Room{}
+				_, err := myRoom.OneRandomNextRoom()
+				return err != nil
+			},
+			Exp: true,
+		},
+		//---------------------------------------
+		{
+			Des: "return nil if connection slice is not empty",
+			Got: func() any {
+				myRoom := Room{
+					ConnectionSlice: []Mtr{1, 2, 3},
+				}
+				_, err := myRoom.OneRandomNextRoom()
+				return err == nil
+			},
+			Exp: true,
 		},
 		//---------------------------------------
 	},
