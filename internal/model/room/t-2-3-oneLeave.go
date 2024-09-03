@@ -7,10 +7,7 @@ var oneLeave_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "Do nothing if usedSeats=0",
-			Got: func() any {
-				r, _ := SampleRoom.Middle_Name_3().update.oneLeave()
-				return r
-			},
+			Got: SampleRoom.Middle_Name_3().update.oneLeave().ans,
 
 			Exp: newRoom().set.
 				name(3).
@@ -22,10 +19,7 @@ var oneLeave_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "decrease one UsedSeats when Room in Start type",
-			Got: func() any {
-				r, _ := SampleRoom.Start_Name_0().update.oneLeave()
-				return r
-			},
+			Got: SampleRoom.Start_Name_0().update.oneLeave().ans,
 
 			Exp: newRoom().set.
 				name(0).

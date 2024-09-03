@@ -3,14 +3,14 @@ package room
 import "fmt"
 
 // =====================================================
-func (u *updater) oneCome() (*room, error) {
+func (u *updater) oneCome() answer[*room] {
 
 	if u.room.get.usedSeats() == u.room.get.allSeats() || u.room.get.usedSeats()+1 > u.room.get.allSeats() {
-		return u.room, fmt.Errorf("full")
+		return answer[*room]{u.room, fmt.Errorf("full")}
 	}
 
 	u.room.set.usedSeats(u.room.get.usedSeats() + 1)
-	return u.room, nil
+	return answer[*room]{u.room, nil}
 }
 
 //=====================================================
