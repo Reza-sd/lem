@@ -18,10 +18,11 @@ var SampleRoom = SampleRoomSt{}
 // --------------------------------------
 func (s *SampleRoomSt) End_Name_1() *room {
 	r := newRoom()
-	r.name = 1
-	r.allSeats = MaxSeatsStartEnd
-	r.usedSeats = UsedSeatsStartEnd
-	r.connectionSlice = []Mtr{}
+	r.set.
+		name(1).
+		allSeats(MaxSeatsStartEnd).
+		usedSeats(UsedSeatsStartEnd).
+		connectionSlice([]Mtr{})
 
 	return r
 }
