@@ -9,54 +9,36 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 			Des: "increase one UsedSeats when Room in middle type",
 			Got: func() any {
 				myRoom := SampleRoom.Middle_Name_3()
-				myRoom.OneComeUpdateSeats()
+				myRoom.update.oneCome()
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            3,
-					allSeats:        1,
-					usedSeats:       1,
-					connectionSlice: []Mtr{},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 3
+				r.allSeats = 1
+				r.usedSeats = 1
+				r.connectionSlice = []Mtr{}
 				return r
-
 			},
-			//  Room{
-			// 	name:            3,
-			// 	allSeats:        1,
-			// 	usedSeats:       1,
-			// 	connectionSlice: []Mtr{},
-			// },
 		},
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in End type",
 			Got: func() any {
 				myRoom := SampleRoom.End_Name_1()
-				myRoom.OneComeUpdateSeats()
+				myRoom.update.oneCome()
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            1,
-					allSeats:        MaxSeatsStartEnd,
-					usedSeats:       UsedSeatsStartEnd + 1,
-					connectionSlice: []Mtr{},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 1
+				r.allSeats = MaxSeatsStartEnd
+				r.usedSeats = UsedSeatsStartEnd + 1
+				r.connectionSlice = []Mtr{}
+
 				return r
 
 			},
-			// Room{
-			// 	name:            1,
-			// 	allSeats:        MaxSeatsStartEnd,
-			// 	usedSeats:       UsedSeatsStartEnd + 1,
-			// 	connectionSlice: []Mtr{},
-			// },
 		},
 		//---------------------------------------
 	}}

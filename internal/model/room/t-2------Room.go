@@ -17,43 +17,34 @@ var SampleRoom = SampleRoomSt{}
 // ====================================
 // --------------------------------------
 func (s *SampleRoomSt) End_Name_1() *room {
+	r := newRoom()
+	r.name = 1
+	r.allSeats = MaxSeatsStartEnd
+	r.usedSeats = UsedSeatsStartEnd
+	r.connectionSlice = []Mtr{}
 
-	r := &room{
-		name:            1,
-		allSeats:        MaxSeatsStartEnd,
-		usedSeats:       UsedSeatsStartEnd,
-		connectionSlice: []Mtr{},
-	}
-	r.get = getter{room: r}
-	r.set = setter{room: r}
 	return r
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Start_Name_0() *room {
+	r := newRoom()
+	r.name = 0
+	r.allSeats = MaxSeatsStartEnd
+	r.usedSeats = UsedSeatsStartEnd
+	r.connectionSlice = []Mtr{}
 
-	r := &room{
-		name:            0,
-		allSeats:        MaxSeatsStartEnd,
-		usedSeats:       UsedSeatsStartEnd,
-		connectionSlice: []Mtr{},
-	}
-	r.get = getter{room: r}
-	r.set = setter{room: r}
 	return r
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Middle_Name_3() *room {
+	r := newRoom()
+	r.name = 3
+	r.allSeats = 1
+	r.usedSeats = 0
+	r.connectionSlice = []Mtr{}
 
-	r := &room{
-		name:            3,
-		allSeats:        1,
-		usedSeats:       0,
-		connectionSlice: []Mtr{},
-	}
-	r.get = getter{room: r}
-	r.set = setter{room: r}
 	return r
 }
 

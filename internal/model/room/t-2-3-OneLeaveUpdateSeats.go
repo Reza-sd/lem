@@ -13,23 +13,15 @@ var OneLeaveUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            3,
-					allSeats:        1,
-					usedSeats:       0,
-					connectionSlice: []Mtr{},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 3
+				r.allSeats = 1
+				r.usedSeats = 0
+				r.connectionSlice = []Mtr{}
+
 				return r
 
 			},
-			// Room{
-			// 	name:            3,
-			// 	allSeats:        1,
-			// 	usedSeats:       0,
-			// 	connectionSlice: []Mtr{},
-			// },
 		},
 		//---------------------------------------
 		{
@@ -40,14 +32,19 @@ var OneLeaveUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            0,
-					allSeats:        MaxSeatsStartEnd,
-					usedSeats:       UsedSeatsStartEnd - 1,
-					connectionSlice: []Mtr{},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 0
+				r.allSeats = MaxSeatsStartEnd
+				r.usedSeats = UsedSeatsStartEnd - 1
+				r.connectionSlice = []Mtr{}
+				// r := &room{
+				// 	name:            0,
+				// 	allSeats:        MaxSeatsStartEnd,
+				// 	usedSeats:       UsedSeatsStartEnd - 1,
+				// 	connectionSlice: []Mtr{},
+				// }
+				// r.get = getter{room: r}
+				// r.set = setter{room: r}
 				return r
 
 			},

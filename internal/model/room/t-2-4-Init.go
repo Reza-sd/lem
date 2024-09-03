@@ -13,14 +13,12 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            0,
-					allSeats:        MaxSeatsStartEnd,
-					usedSeats:       UsedSeatsStartEnd,
-					connectionSlice: []Mtr{1, 2, 3},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 0
+				r.allSeats = MaxSeatsStartEnd
+				r.usedSeats = UsedSeatsStartEnd
+				r.connectionSlice = []Mtr{1, 2, 3}
+
 				return r
 
 			},
@@ -35,14 +33,12 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            1,
-					allSeats:        1,
-					usedSeats:       0,
-					connectionSlice: []Mtr{1, 2, 3},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 1
+				r.allSeats = 1
+				r.usedSeats = 0
+				r.connectionSlice = []Mtr{1, 2, 3}
+
 				return r
 
 			},
@@ -57,14 +53,12 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &room{
-					name:            5,
-					allSeats:        MaxSeatsStartEnd,
-					usedSeats:       UsedSeatsStartEnd,
-					connectionSlice: []Mtr{1, 2, 3},
-				}
-				r.get = getter{room: r}
-				r.set = setter{room: r}
+				r := newRoom()
+				r.name = 5
+				r.allSeats = MaxSeatsStartEnd
+				r.usedSeats = UsedSeatsStartEnd
+				r.connectionSlice = []Mtr{1, 2, 3}
+
 				return r
 			},
 		},
