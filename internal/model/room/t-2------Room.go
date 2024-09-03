@@ -16,9 +16,9 @@ var SampleRoom = SampleRoomSt{}
 
 // ====================================
 // --------------------------------------
-func (s *SampleRoomSt) End_Name_1() *Room {
+func (s *SampleRoomSt) End_Name_1() *room {
 
-	r := &Room{
+	r := &room{
 		name:            1,
 		allSeats:        MaxSeatsStartEnd,
 		usedSeats:       UsedSeatsStartEnd,
@@ -30,9 +30,9 @@ func (s *SampleRoomSt) End_Name_1() *Room {
 }
 
 // --------------------------------------
-func (s *SampleRoomSt) Start_Name_0() *Room {
+func (s *SampleRoomSt) Start_Name_0() *room {
 
-	r := &Room{
+	r := &room{
 		name:            0,
 		allSeats:        MaxSeatsStartEnd,
 		usedSeats:       UsedSeatsStartEnd,
@@ -44,9 +44,9 @@ func (s *SampleRoomSt) Start_Name_0() *Room {
 }
 
 // --------------------------------------
-func (s *SampleRoomSt) Middle_Name_3() *Room {
+func (s *SampleRoomSt) Middle_Name_3() *room {
 
-	r := &Room{
+	r := &room{
 		name:            3,
 		allSeats:        1,
 		usedSeats:       0,

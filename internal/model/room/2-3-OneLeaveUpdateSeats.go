@@ -3,7 +3,7 @@ package room
 import "fmt"
 
 // =====================================================
-func (r *Room) OneLeaveUpdateSeats() error {
+func (r *room) OneLeaveUpdateSeats() error {
 	if r.get.usedSeats() == 0 {
 		return fmt.Errorf("full")
 	}

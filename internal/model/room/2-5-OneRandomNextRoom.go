@@ -7,7 +7,7 @@ import (
 )
 
 // ===============================================================
-func (r *Room) OneRandomNextRoom() (Mtr, error) {
+func (r *room) OneRandomNextRoom() (Mtr, error) {
 	//--------------------------------------
 	lenConnectionSlice := len(r.get.connectionSlice())
 	if lenConnectionSlice == 0 {

@@ -1,7 +1,7 @@
 package room
 
 // ================================
-type Room struct {
+type room struct {
 	name            Mtr
 	allSeats        Mtr
 	usedSeats       Mtr
@@ -12,8 +12,8 @@ type Room struct {
 }
 
 // -----------------------
-func newRoom() *Room {
-	r := &Room{}
+func newRoom() *room {
+	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
 	return r
@@ -21,10 +21,10 @@ func newRoom() *Room {
 
 // ---------------------------------------
 type getter struct {
-	room *Room
+	room *room
 }
 type setter struct {
-	room *Room
+	room *room
 }
 
 // -------Getter---------------

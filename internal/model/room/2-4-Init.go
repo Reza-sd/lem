@@ -1,7 +1,7 @@
 package room
 
 // ===============================================================
-func (r *Room) initiator(name, lastRoomName Mtr, connectionSlice []Mtr) {
+func (r *room) initiator(name, lastRoomName Mtr, connectionSlice []Mtr) {
 	r.set.name(name)
 	r.set.connectionSlice(connectionSlice)
 	if name == 0 || name == lastRoomName {
@@ -13,6 +13,7 @@ func (r *Room) initiator(name, lastRoomName Mtr, connectionSlice []Mtr) {
 
 	}
 	//r.set.name(3)
+
 	// if its first then? if end then
 }
 

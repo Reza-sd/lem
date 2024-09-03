@@ -13,7 +13,7 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &Room{
+				r := &room{
 					name:            3,
 					allSeats:        1,
 					usedSeats:       1,
@@ -40,7 +40,7 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &Room{
+				r := &room{
 					name:            1,
 					allSeats:        MaxSeatsStartEnd,
 					usedSeats:       UsedSeatsStartEnd + 1,

@@ -13,7 +13,7 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &Room{
+				r := &room{
 					name:            0,
 					allSeats:        MaxSeatsStartEnd,
 					usedSeats:       UsedSeatsStartEnd,
@@ -35,7 +35,7 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &Room{
+				r := &room{
 					name:            1,
 					allSeats:        1,
 					usedSeats:       0,
@@ -57,7 +57,7 @@ var Init_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: func() any {
-				r := &Room{
+				r := &room{
 					name:            5,
 					allSeats:        MaxSeatsStartEnd,
 					usedSeats:       UsedSeatsStartEnd,
