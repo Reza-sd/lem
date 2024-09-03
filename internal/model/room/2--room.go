@@ -36,8 +36,6 @@ type updater struct {
 	room *room
 }
 
-
-
 // -----------Setter------------------
 func (set *setter) name(name Mtr) *setter {
 	set.room.name = name

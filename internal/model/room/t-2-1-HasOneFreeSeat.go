@@ -7,7 +7,7 @@ var HasOneFreeSeat_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "return true",
-			Got: SampleRoom.Middle_Name_3().HasOneFreeSeat(),
+			Got: SampleRoom.Middle_Name_3().get.hasOneFreeSeat(),
 			Exp: true,
 		},
 		//---------------------------------------
@@ -16,7 +16,7 @@ var HasOneFreeSeat_Cases = TestCasesFunc{
 			Got: func() any {
 				myRoom := SampleRoom.Middle_Name_3()
 				myRoom.set.usedSeats(myRoom.get.allSeats())
-				return myRoom.HasOneFreeSeat()
+				return myRoom.get.hasOneFreeSeat()
 			},
 			Exp: false,
 		},
