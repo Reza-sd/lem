@@ -7,7 +7,7 @@ var Init_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "if name=0 means start home",
-			Got: newRoom().initiator(0, 5, []Mtr{1, 2, 3}),
+			Got: newRoom().set.builder(0, 5, []Mtr{1, 2, 3}),
 			Exp: newRoom().set.
 				name(0).
 				allSeats(MaxSeatsStartEnd).
@@ -19,7 +19,7 @@ var Init_Cases = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "non start or end room",
-			Got: newRoom().initiator(1, 5, []Mtr{1, 2, 3}),
+			Got: newRoom().set.builder(1, 5, []Mtr{1, 2, 3}),
 
 			Exp: newRoom().set.
 				name(1).
@@ -32,7 +32,7 @@ var Init_Cases = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "end room",
-			Got: newRoom().initiator(5, 5, []Mtr{1, 2, 3}),
+			Got: newRoom().set.builder(5, 5, []Mtr{1, 2, 3}),
 
 			Exp: newRoom().set.
 				name(5).
