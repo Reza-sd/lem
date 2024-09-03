@@ -12,6 +12,12 @@ type room struct {
 	update updater
 }
 
+// --------------------
+type answer struct {
+	ans any
+	err error
+}
+
 // -----------------------
 func newRoom() *room { //Constructor=factory function
 	r := &room{}
