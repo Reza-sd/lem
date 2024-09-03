@@ -27,7 +27,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "return random if connection slice is not empty",
-			Got: newRoom().set.connectionSlice([]Mtr{5}).room.get.OneRandomNextRoom().ans.(Mtr),
+			Got: newRoom().set.connectionSlice([]Mtr{5}).room.get.OneRandomNextRoom().ans,
 			Exp: Mtr(5),
 		},
 		//---------------------------------------

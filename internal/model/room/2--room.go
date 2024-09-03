@@ -13,8 +13,8 @@ type room struct {
 }
 
 // --------------------
-type answer struct {
-	ans any
+type answer[T any] struct {
+	ans T
 	err error
 }
 
