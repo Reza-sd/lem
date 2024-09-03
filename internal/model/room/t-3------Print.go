@@ -1,5 +1,6 @@
 package room
 
+// ======================================================
 var Print_Cases = TestCasesFunc{
 	FuncName: "Room.Print",
 	//Skip: true,
@@ -15,4 +16,7 @@ var Print_Cases = TestCasesFunc{
 			},
 			Exp: true,
 		},
+		//---------------------------------------
 	}}
+
+//======================================================
