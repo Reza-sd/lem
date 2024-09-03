@@ -32,14 +32,14 @@ func (get *getter) hasOneFreeSeat() bool {
 
 func (get *getter) OneRandomNextRoom() answer[Mtr] {
 
-	lenConnectionSlice := len(get.room.get.connectionSlice())
+	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
 		return answer[Mtr]{Mtr(0), fmt.Errorf("empty")}
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice)
 
-	nextRandomRoomName := get.room.get.connectionSlice()[randomNextRoomIndex]
+	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
 
 	return answer[Mtr]{nextRandomRoomName, nil}
 }
