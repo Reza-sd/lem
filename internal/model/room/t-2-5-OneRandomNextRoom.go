@@ -9,7 +9,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Des: "return 0 if connection slice is empty",
 			Got: func() any {
 				myRoom := newRoom()
-				next, _ := myRoom.OneRandomNextRoom()
+				next, _ := myRoom.get.OneRandomNextRoom()
 				return Mtr(next)
 			},
 			Exp: Mtr(0),
@@ -19,7 +19,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Des: "return err if connection slice is empty",
 			Got: func() any {
 				myRoom := newRoom()
-				_, err := myRoom.OneRandomNextRoom()
+				_, err := myRoom.get.OneRandomNextRoom()
 				return err != nil
 			},
 			Exp: true,
@@ -30,7 +30,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Got: func() any {
 				myRoom := newRoom().set.connectionSlice([]Mtr{1, 2, 3}).room
 				//myRoom.set.connectionSlice([]Mtr{1, 2, 3})
-				_, err := myRoom.OneRandomNextRoom()
+				_, err := myRoom.get.OneRandomNextRoom()
 				return err == nil
 			},
 			Exp: true,
@@ -42,7 +42,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Got: func() any {
 				myRoom := newRoom().set.connectionSlice([]Mtr{5}).room
 				//myRoom.set.connectionSlice([]Mtr{5})
-				next, _ := myRoom.OneRandomNextRoom()
+				next, _ := myRoom.get.OneRandomNextRoom()
 				return next
 			},
 			Exp: Mtr(5),

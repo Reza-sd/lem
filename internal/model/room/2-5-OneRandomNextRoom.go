@@ -7,16 +7,16 @@ import (
 )
 
 // ===============================================================
-func (r *room) OneRandomNextRoom() (Mtr, error) {
+func (get *getter) OneRandomNextRoom() (Mtr, error) {
 	//--------------------------------------
-	lenConnectionSlice := len(r.get.connectionSlice())
+	lenConnectionSlice := len(get.room.get.connectionSlice())
 	if lenConnectionSlice == 0 {
 		return Mtr(0), fmt.Errorf("empty")
 	}
 	//-------------------------------------
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice)
 
-	nextRandomRoomName := r.get.connectionSlice()[randomNextRoomIndex]
+	nextRandomRoomName := get.room.get.connectionSlice()[randomNextRoomIndex]
 	//-----------------------
 	return nextRandomRoomName, nil
 }
