@@ -9,7 +9,7 @@ var Init_Cases = TestCasesFunc{
 			Des: "if name=0 means start home",
 			Got: func() any {
 				myRoom := Room{}
-				myRoom.Init(0, 5, []Mtr{1, 2, 3})
+				myRoom.initiator(0, 5, []Mtr{1, 2, 3})
 				return &myRoom
 			},
 			Exp: &Room{
@@ -25,7 +25,7 @@ var Init_Cases = TestCasesFunc{
 			Des: "non start or end room",
 			Got: func() any {
 				myRoom := Room{}
-				myRoom.Init(1, 5, []Mtr{1, 2, 3})
+				myRoom.initiator(1, 5, []Mtr{1, 2, 3})
 				return &myRoom
 			},
 			Exp: &Room{
@@ -41,7 +41,7 @@ var Init_Cases = TestCasesFunc{
 			Des: "end room",
 			Got: func() any {
 				myRoom := Room{}
-				myRoom.Init(5, 5, []Mtr{1, 2, 3})
+				myRoom.initiator(5, 5, []Mtr{1, 2, 3})
 				return &myRoom
 			},
 			Exp: &Room{

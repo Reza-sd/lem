@@ -6,6 +6,7 @@ import (
 	//"crypto/rand"
 )
 
+// ===============================================================
 func (r *Room) OneRandomNextRoom() (Mtr, error) {
 	//--------------------------------------
 	lenConnectionSlice := len(r.getConnectionSlice())
@@ -19,3 +20,5 @@ func (r *Room) OneRandomNextRoom() (Mtr, error) {
 	//-----------------------
 	return nextRandomRoomName, nil
 }
+
+// ===============================================================
