@@ -15,38 +15,34 @@ type SampleRoomSt struct{}
 var SampleRoom = SampleRoomSt{}
 
 // ====================================
-// --------------------------------------
 func (s *SampleRoomSt) End_Name_1() *room {
-	r := newRoom()
-	r.set.
+	return newRoom().set.
 		name(1).
 		allSeats(MaxSeatsStartEnd).
 		usedSeats(UsedSeatsStartEnd).
-		connectionSlice([]Mtr{})
+		connectionSlice([]Mtr{}).
+		room
 
-	return r
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Start_Name_0() *room {
-	r := newRoom()
-	r.name = 0
-	r.allSeats = MaxSeatsStartEnd
-	r.usedSeats = UsedSeatsStartEnd
-	r.connectionSlice = []Mtr{}
-
-	return r
+	return newRoom().set.
+		name(0).
+		allSeats(MaxSeatsStartEnd).
+		usedSeats(UsedSeatsStartEnd).
+		connectionSlice([]Mtr{}).
+		room
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Middle_Name_3() *room {
-	r := newRoom()
-	r.name = 3
-	r.allSeats = 1
-	r.usedSeats = 0
-	r.connectionSlice = []Mtr{}
-
-	return r
+	return newRoom().set.
+		name(3).
+		allSeats(1).
+		usedSeats(0).
+		connectionSlice([]Mtr{}).
+		room
 }
 
 // --------------------------------------
