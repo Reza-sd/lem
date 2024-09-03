@@ -9,12 +9,12 @@ import (
 var (
 	MyTester = teststack.Tester{
 		AllTestCasesPkStSlice: []AllTestCasesPkSt{
-			//{TestCasesFunc: Init_Cases},
-			//{TestCasesFunc: HasOneFreeSeat_Cases},
-			//{TestCasesFunc: OneComeUpdateSeats_Cases},
+			{TestCasesFunc: Init_Cases},
+			{TestCasesFunc: HasOneFreeSeat_Cases},
+			{TestCasesFunc: OneComeUpdateSeats_Cases},
 			{TestCasesFunc: Print_Cases},
-			//{TestCasesFunc: OneLeaveUpdateSeats_Cases},
-			//{TestCasesFunc: OneRandomNextRoom_Cases},
+			{TestCasesFunc: OneLeaveUpdateSeats_Cases},
+			{TestCasesFunc: OneRandomNextRoom_Cases},
 		},
 	}
 )

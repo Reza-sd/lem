@@ -16,10 +16,4 @@ func (r *Room) initiator(name, lastRoomName Mtr, connectionSlice []Mtr) {
 	// if its first then? if end then
 }
 
-// ===============================================================
-/*
-type cat struct {
-name string
-}
-myCat.set.name("Allen")
-*/
+//===============================================================

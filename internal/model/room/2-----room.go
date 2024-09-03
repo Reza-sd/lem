@@ -11,6 +11,14 @@ type Room struct {
 	set setter
 }
 
+// -----------------------
+func newRoom() *Room {
+	r := &Room{}
+	r.get = getter{room: r}
+	r.set = setter{room: r}
+	return r
+}
+
 // ---------------------------------------
 type getter struct {
 	room *Room

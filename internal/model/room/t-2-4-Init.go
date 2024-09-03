@@ -8,15 +8,21 @@ var Init_Cases = TestCasesFunc{
 		{
 			Des: "if name=0 means start home",
 			Got: func() any {
-				myRoom := Room{}
+				myRoom := newRoom()
 				myRoom.initiator(0, 5, []Mtr{1, 2, 3})
-				return &myRoom
+				return myRoom
 			},
-			Exp: &Room{
-				name:            0,
-				allSeats:        MaxSeatsStartEnd,
-				usedSeats:       UsedSeatsStartEnd,
-				connectionSlice: []Mtr{1, 2, 3},
+			Exp: func() any {
+				r := &Room{
+					name:            0,
+					allSeats:        MaxSeatsStartEnd,
+					usedSeats:       UsedSeatsStartEnd,
+					connectionSlice: []Mtr{1, 2, 3},
+				}
+				r.get = getter{room: r}
+				r.set = setter{room: r}
+				return r
+
 			},
 		},
 		//---------------------------------------
@@ -24,15 +30,21 @@ var Init_Cases = TestCasesFunc{
 			//Skip: true,
 			Des: "non start or end room",
 			Got: func() any {
-				myRoom := Room{}
+				myRoom := newRoom()
 				myRoom.initiator(1, 5, []Mtr{1, 2, 3})
-				return &myRoom
+				return myRoom
 			},
-			Exp: &Room{
-				name:            1,
-				allSeats:        1,
-				usedSeats:       0,
-				connectionSlice: []Mtr{1, 2, 3},
+			Exp: func() any {
+				r := &Room{
+					name:            1,
+					allSeats:        1,
+					usedSeats:       0,
+					connectionSlice: []Mtr{1, 2, 3},
+				}
+				r.get = getter{room: r}
+				r.set = setter{room: r}
+				return r
+
 			},
 		},
 		//---------------------------------------
@@ -40,15 +52,20 @@ var Init_Cases = TestCasesFunc{
 			//Skip: true,
 			Des: "end room",
 			Got: func() any {
-				myRoom := Room{}
+				myRoom := newRoom()
 				myRoom.initiator(5, 5, []Mtr{1, 2, 3})
-				return &myRoom
+				return myRoom
 			},
-			Exp: &Room{
-				name:            5,
-				allSeats:        MaxSeatsStartEnd,
-				usedSeats:       UsedSeatsStartEnd,
-				connectionSlice: []Mtr{1, 2, 3},
+			Exp: func() any {
+				r := &Room{
+					name:            5,
+					allSeats:        MaxSeatsStartEnd,
+					usedSeats:       UsedSeatsStartEnd,
+					connectionSlice: []Mtr{1, 2, 3},
+				}
+				r.get = getter{room: r}
+				r.set = setter{room: r}
+				return r
 			},
 		},
 		//---------------------------------------

@@ -12,12 +12,24 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				myRoom.OneComeUpdateSeats()
 				return myRoom
 			},
-			Exp: Room{
-				name:            3,
-				allSeats:        1,
-				usedSeats:       1,
-				connectionSlice: []Mtr{},
+			Exp: func() any {
+				r := &Room{
+					name:            3,
+					allSeats:        1,
+					usedSeats:       1,
+					connectionSlice: []Mtr{},
+				}
+				r.get = getter{room: r}
+				r.set = setter{room: r}
+				return r
+
 			},
+			//  Room{
+			// 	name:            3,
+			// 	allSeats:        1,
+			// 	usedSeats:       1,
+			// 	connectionSlice: []Mtr{},
+			// },
 		},
 		//---------------------------------------
 		{
@@ -27,12 +39,24 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				myRoom.OneComeUpdateSeats()
 				return myRoom
 			},
-			Exp: Room{
-				name:            1,
-				allSeats:        MaxSeatsStartEnd,
-				usedSeats:       UsedSeatsStartEnd + 1,
-				connectionSlice: []Mtr{},
+			Exp: func() any {
+				r := &Room{
+					name:            1,
+					allSeats:        MaxSeatsStartEnd,
+					usedSeats:       UsedSeatsStartEnd + 1,
+					connectionSlice: []Mtr{},
+				}
+				r.get = getter{room: r}
+				r.set = setter{room: r}
+				return r
+
 			},
+			// Room{
+			// 	name:            1,
+			// 	allSeats:        MaxSeatsStartEnd,
+			// 	usedSeats:       UsedSeatsStartEnd + 1,
+			// 	connectionSlice: []Mtr{},
+			// },
 		},
 		//---------------------------------------
 	}}
