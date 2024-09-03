@@ -12,7 +12,7 @@ type room struct {
 }
 
 // -----------------------
-func newRoom() *room {
+func newRoom() *room { //Constructor=factory function
 	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
