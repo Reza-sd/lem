@@ -4,12 +4,13 @@ import "fmt"
 
 // =====================================================
 
-func (myRoom *Room) OneLeaveUpdateSeats() error {
+func (r *Room) OneLeaveUpdateSeats() error {
 
-	if myRoom.usedSeats == 0 {
+	if r.getUsedSeats() == 0 {
 		return fmt.Errorf("full")
 	}
-	myRoom.usedSeats--
+	//r.usedSeats--
+	r.setUsedSeats(r.getUsedSeats() - 1)
 	return nil
 }
 
