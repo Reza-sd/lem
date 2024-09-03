@@ -19,10 +19,10 @@ var SampleRoom = SampleRoomSt{}
 func (s *SampleRoomSt) End_Name_1() Room {
 
 	return Room{
-		Name:            1,
-		AllSeats:        MaxSeatsStartEnd,
-		UsedSeats:       UsedSeatsStartEnd,
-		ConnectionSlice: []Mtr{},
+		name:            1,
+		allSeats:        MaxSeatsStartEnd,
+		usedSeats:       UsedSeatsStartEnd,
+		connectionSlice: []Mtr{},
 	}
 }
 
@@ -30,10 +30,10 @@ func (s *SampleRoomSt) End_Name_1() Room {
 func (s *SampleRoomSt) Start_Name_0() Room {
 
 	return Room{
-		Name:            0,
-		AllSeats:        MaxSeatsStartEnd,
-		UsedSeats:       UsedSeatsStartEnd,
-		ConnectionSlice: []Mtr{},
+		name:            0,
+		allSeats:        MaxSeatsStartEnd,
+		usedSeats:       UsedSeatsStartEnd,
+		connectionSlice: []Mtr{},
 	}
 }
 
@@ -41,10 +41,10 @@ func (s *SampleRoomSt) Start_Name_0() Room {
 func (s *SampleRoomSt) Middle_Name_3() Room {
 
 	return Room{
-		Name:            3,
-		AllSeats:        1,
-		UsedSeats:       0,
-		ConnectionSlice: []Mtr{},
+		name:            3,
+		allSeats:        1,
+		usedSeats:       0,
+		connectionSlice: []Mtr{},
 	}
 }
 

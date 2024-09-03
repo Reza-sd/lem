@@ -1,9 +1,9 @@
 package room
 
 type Room struct {
-	Name            Mtr
-	AllSeats        Mtr
-	UsedSeats       Mtr
-	ConnectionSlice []Mtr
+	name            Mtr
+	allSeats        Mtr
+	usedSeats       Mtr
+	connectionSlice []Mtr
 	//IsAvailable bool
 }

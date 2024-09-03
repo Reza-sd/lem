@@ -13,10 +13,10 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: Room{
-				Name:            3,
-				AllSeats:        1,
-				UsedSeats:       1,
-				ConnectionSlice: []Mtr{},
+				name:            3,
+				allSeats:        1,
+				usedSeats:       1,
+				connectionSlice: []Mtr{},
 			},
 		},
 		//---------------------------------------
@@ -28,10 +28,10 @@ var OneComeUpdateSeats_Cases = TestCasesFunc{
 				return myRoom
 			},
 			Exp: Room{
-				Name:            1,
-				AllSeats:        MaxSeatsStartEnd,
-				UsedSeats:       UsedSeatsStartEnd + 1,
-				ConnectionSlice: []Mtr{},
+				name:            1,
+				allSeats:        MaxSeatsStartEnd,
+				usedSeats:       UsedSeatsStartEnd + 1,
+				connectionSlice: []Mtr{},
 			},
 		},
 		//---------------------------------------

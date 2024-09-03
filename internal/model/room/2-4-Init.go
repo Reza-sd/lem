@@ -1,14 +1,14 @@
 package room
 
 func (myRoom *Room) Init(name, lastRoomName Mtr, connectionSlice []Mtr) {
-	myRoom.Name = name
-	myRoom.ConnectionSlice = connectionSlice
+	myRoom.name = name
+	myRoom.connectionSlice = connectionSlice
 	if name == 0 || name == lastRoomName {
-		myRoom.AllSeats = MaxSeatsStartEnd
-		myRoom.UsedSeats = UsedSeatsStartEnd
+		myRoom.allSeats = MaxSeatsStartEnd
+		myRoom.usedSeats = UsedSeatsStartEnd
 	} else {
-		myRoom.AllSeats = AllSeatsNormalRoom
-		myRoom.UsedSeats = 0
+		myRoom.allSeats = AllSeatsNormalRoom
+		myRoom.usedSeats = 0
 	}
 
 	// if its first then? if end then

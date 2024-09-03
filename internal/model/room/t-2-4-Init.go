@@ -13,10 +13,10 @@ var Init_Cases = TestCasesFunc{
 				return &myRoom
 			},
 			Exp: &Room{
-				Name:            0,
-				AllSeats:        MaxSeatsStartEnd,
-				UsedSeats:       UsedSeatsStartEnd,
-				ConnectionSlice: []Mtr{1, 2, 3},
+				name:            0,
+				allSeats:        MaxSeatsStartEnd,
+				usedSeats:       UsedSeatsStartEnd,
+				connectionSlice: []Mtr{1, 2, 3},
 			},
 		},
 		//---------------------------------------
@@ -29,10 +29,10 @@ var Init_Cases = TestCasesFunc{
 				return &myRoom
 			},
 			Exp: &Room{
-				Name:            1,
-				AllSeats:        1,
-				UsedSeats:       0,
-				ConnectionSlice: []Mtr{1, 2, 3},
+				name:            1,
+				allSeats:        1,
+				usedSeats:       0,
+				connectionSlice: []Mtr{1, 2, 3},
 			},
 		},
 		//---------------------------------------
@@ -45,10 +45,10 @@ var Init_Cases = TestCasesFunc{
 				return &myRoom
 			},
 			Exp: &Room{
-				Name:            5,
-				AllSeats:        MaxSeatsStartEnd,
-				UsedSeats:       UsedSeatsStartEnd,
-				ConnectionSlice: []Mtr{1, 2, 3},
+				name:            5,
+				allSeats:        MaxSeatsStartEnd,
+				usedSeats:       UsedSeatsStartEnd,
+				connectionSlice: []Mtr{1, 2, 3},
 			},
 		},
 		//---------------------------------------

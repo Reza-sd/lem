@@ -19,7 +19,7 @@ var HasOneFreeSeat_Cases = TestCasesFunc{
 			Des: "return false",
 			Got: func() any {
 				myRoom := SampleRoom.Middle_Name_3()
-				myRoom.UsedSeats = myRoom.AllSeats
+				myRoom.usedSeats = myRoom.allSeats
 
 				return myRoom.HasOneFreeSeat()
 			},

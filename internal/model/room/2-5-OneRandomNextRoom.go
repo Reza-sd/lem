@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"math/rand"
 	//"crypto/rand"
-
 )
 
 func (myRoom *Room) OneRandomNextRoom() (Mtr, error) {
 	//--------------------------------------
-	lenConnectionSlice := len(myRoom.ConnectionSlice)
+	lenConnectionSlice := len(myRoom.connectionSlice)
 	if lenConnectionSlice == 0 {
 		return Mtr(0), fmt.Errorf("empty")
 	}
@@ -17,7 +16,7 @@ func (myRoom *Room) OneRandomNextRoom() (Mtr, error) {
 	var nextRandomRoomName Mtr
 	//-------------------------------------
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice)
-	nextRandomRoomName = myRoom.ConnectionSlice[randomNextRoomIndex]
+	nextRandomRoomName = myRoom.connectionSlice[randomNextRoomIndex]
 	//-----------------------
 	return nextRandomRoomName, nil
 }

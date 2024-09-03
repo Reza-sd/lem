@@ -30,7 +30,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Des: "return nil if connection slice is not empty",
 			Got: func() any {
 				myRoom := Room{
-					ConnectionSlice: []Mtr{1, 2, 3},
+					connectionSlice: []Mtr{1, 2, 3},
 				}
 				_, err := myRoom.OneRandomNextRoom()
 				return err == nil
@@ -42,7 +42,7 @@ var OneRandomNextRoom_Cases = TestCasesFunc{
 			Des: "return random if connection slice is not empty",
 			Got: func() any {
 				myRoom := Room{
-					ConnectionSlice: []Mtr{5},
+					connectionSlice: []Mtr{5},
 				}
 				next, _ := myRoom.OneRandomNextRoom()
 				return next

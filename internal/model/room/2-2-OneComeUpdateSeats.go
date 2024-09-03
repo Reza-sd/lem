@@ -5,15 +5,15 @@ import "fmt"
 // =====================================================
 func (myRoom *Room) OneComeUpdateSeats() error {
 
-	if myRoom.UsedSeats == myRoom.AllSeats {
+	if myRoom.usedSeats == myRoom.allSeats {
 		return fmt.Errorf("full")
 	}
 
-	if myRoom.UsedSeats+1 > myRoom.AllSeats {
+	if myRoom.usedSeats+1 > myRoom.allSeats {
 		return fmt.Errorf("full")
 	}
 
-	myRoom.UsedSeats++
+	myRoom.usedSeats++
 	return nil
 }
 
