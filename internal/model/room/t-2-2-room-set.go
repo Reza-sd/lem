@@ -1,7 +1,8 @@
 package room
 
-var Init_Cases = TestCasesFunc{
-	FuncName: "Room.Init",
+// ====================================================================
+var builder_Cases = TestCasesFunc{
+	FuncName: "Room.set.builder",
 	//Skip: true,
 	TestCases: []TestCase{
 		//---------------------------------------
@@ -43,3 +44,5 @@ var Init_Cases = TestCasesFunc{
 		},
 		//---------------------------------------
 	}}
+
+//====================================================================
