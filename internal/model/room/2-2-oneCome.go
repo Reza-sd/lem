@@ -1,17 +1,16 @@
 package room
 
-//import "fmt"
+import "fmt"
 
 // =====================================================
-func (u *updater) oneCome() *updater {
-	//u.room
+func (u *updater) oneCome() (*room, error) {
+
 	if u.room.get.usedSeats() == u.room.get.allSeats() || u.room.get.usedSeats()+1 > u.room.get.allSeats() {
-		//return fmt.Errorf("full")
-		return u
+		return u.room, fmt.Errorf("full")
 	}
 
 	u.room.set.usedSeats(u.room.get.usedSeats() + 1)
-	return u
+	return u.room, nil
 }
 
 //=====================================================

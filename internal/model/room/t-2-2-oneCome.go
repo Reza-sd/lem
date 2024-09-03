@@ -7,7 +7,11 @@ var oneCome_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in middle type",
-			Got: SampleRoom.Middle_Name_3().update.oneCome().room,
+			Got: func() any {
+				r, _ := SampleRoom.Middle_Name_3().update.oneCome()
+				return r
+
+			},
 
 			Exp: newRoom().set.
 				name(3).
@@ -19,7 +23,10 @@ var oneCome_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in End type",
-			Got: SampleRoom.End_Name_1().update.oneCome().room,
+			Got: func() any {
+				r, _ := SampleRoom.End_Name_1().update.oneCome()
+				return r
+			},
 
 			Exp: newRoom().set.
 				name(1).
