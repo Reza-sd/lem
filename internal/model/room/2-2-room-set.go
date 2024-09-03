@@ -1,7 +1,6 @@
 package room
 
 // ================================
-// -----------Setter------------------
 func (set *setter) name(name Mtr) *setter {
 	set.room.name = name
 	return set
