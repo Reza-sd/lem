@@ -4,7 +4,7 @@ package room
 
 func (r *Room) HasOneFreeSeat() bool {
 
-	return r.getUsedSeats() < r.getAllSeats()
+	return r.get.usedSeats() < r.get.allSeats()
 }
 
 // ===============================================================

@@ -5,16 +5,16 @@ import "fmt"
 // =====================================================
 func (r *Room) OneComeUpdateSeats() error {
 
-	if r.getUsedSeats() == r.getAllSeats() {
+	if r.get.usedSeats() == r.get.allSeats() {
 		return fmt.Errorf("full")
 	}
 
-	if r.getUsedSeats()+1 > r.getAllSeats() {
+	if r.get.usedSeats()+1 > r.get.allSeats() {
 		return fmt.Errorf("full")
 	}
 
 	//r.usedSeats++
-	r.setUsedSeats(r.getUsedSeats() + 1)
+	r.set.usedSeats(r.get.usedSeats() + 1)
 	return nil
 }
 

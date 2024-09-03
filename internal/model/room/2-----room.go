@@ -7,34 +7,45 @@ type Room struct {
 	usedSeats       Mtr
 	connectionSlice []Mtr
 	//IsAvailable bool
+	get getter
+	set setter
+}
+
+// ---------------------------------------
+type getter struct {
+	room *Room
+}
+type setter struct {
+	room *Room
 }
 
 // -------Getter---------------
-func (r *Room) getName() Mtr {
-	return r.name
+func (get *getter) name() Mtr {
+	return get.room.name
 }
-func (r *Room) getAllSeats() Mtr {
-	return r.allSeats
+
+func (get *getter) allSeats() Mtr {
+	return get.room.allSeats
 }
-func (r *Room) getUsedSeats() Mtr {
-	return r.usedSeats
+func (get *getter) usedSeats() Mtr {
+	return get.room.usedSeats
 }
-func (r *Room) getConnectionSlice() []Mtr {
-	return r.connectionSlice
+func (get *getter) connectionSlice() []Mtr {
+	return get.room.connectionSlice
 }
 
 // -----------Setter------------------
-func (r *Room) setName(name Mtr) {
-	r.name = name
+func (set *setter) name(name Mtr) {
+	set.room.name = name
 }
-func (r *Room) setAllSeats(allSeats Mtr) {
-	r.allSeats = allSeats
+func (set *setter) allSeats(allSeats Mtr) {
+	set.room.allSeats = allSeats
 }
-func (r *Room) setUsedSeats(usedSeats Mtr) {
-	r.usedSeats = usedSeats
+func (set *setter) usedSeats(usedSeats Mtr) {
+	set.room.usedSeats = usedSeats
 }
-func (r *Room) setConnectionSlice(connectionSlice []Mtr) {
-	r.connectionSlice = connectionSlice
+func (set *setter) connectionSlice(connectionSlice []Mtr) {
+	set.room.connectionSlice = connectionSlice
 }
 
 //----------------------------------------
