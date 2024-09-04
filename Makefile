@@ -7,5 +7,5 @@ pretty:
 update:
 	sudo apt upgrade -y && sudo apt update -y
 lint:
-	golint ./... && echo "========vet============" && go vet ./...
+	golint ./... && echo "========vet============" && go vet ./... && echo "======================="
 
