@@ -34,7 +34,8 @@ func (get *getter) OneRandomNextRoom() answer[mtr] {
 
 	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
-		return answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
+		return answer[mtr]{Stat.Code:1,}
+		//return answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
