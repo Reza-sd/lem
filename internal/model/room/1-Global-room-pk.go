@@ -13,6 +13,8 @@ type Mtr = uint16
 
 type answer[T any] struct {
 	ans T
+	ok bool //do the job completely and perfectly
+	errCode uint8 //I have a problem, here is the problem's code
 	err error
 }
 
