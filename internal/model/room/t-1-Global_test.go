@@ -14,7 +14,7 @@ var (
 			{TestCasesFunc: oneCome_Cases},
 			{TestCasesFunc: Print_Cases},
 			{TestCasesFunc: oneLeave_Cases},
-			{TestCasesFunc: OneRandomNextRoom_Cases},
+			{TestCasesFunc: test_oneRandomNextRoom_Cases},
 		},
 	}
 )

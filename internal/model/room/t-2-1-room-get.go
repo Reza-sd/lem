@@ -26,14 +26,13 @@ var hasOneFreeSeat_Cases = TestCasesFunc{
 	}}
 
 // ========================OneRandomNextRoom====================
-var OneRandomNextRoom_Cases = TestCasesFunc{
+var test_oneRandomNextRoom_Cases = TestCasesFunc{
 	FuncName: "Room.OneRandomNextRoom",
 	//Skip: true,
 	TestCases: []TestCase{
 		//---------------------------------------
 		{
 			Des: "return 0 if connection slice is empty",
-			//Got: newRoom().get.OneRandomNextRoom().ans.(Mtr),
 			Got: newPlainRoom().get.OneRandomNextRoom().ans,
 			Exp: Mtr(0),
 		},
