@@ -7,6 +7,8 @@ const (
 	AllSeatsNormalRoom mtr    = 1
 	startRoomName      mtr    = 1 //always 1 (use 0 as null)
 
+	maxLenConnectionSlice = 5
+
 )
 
 const ( //error or status codes
