@@ -16,7 +16,7 @@ var SampleRoom = SampleRoomSt{}
 
 // ====================================
 func (s *SampleRoomSt) End_Name_1() *room {
-	return newRoom().set.
+	return newPlainRoom().set.
 		name(1).
 		allSeats(MaxSeatsStartEnd).
 		usedSeats(UsedSeatsStartEnd).
@@ -27,7 +27,7 @@ func (s *SampleRoomSt) End_Name_1() *room {
 
 // --------------------------------------
 func (s *SampleRoomSt) Start_Name_0() *room {
-	return newRoom().set.
+	return newPlainRoom().set.
 		name(0).
 		allSeats(MaxSeatsStartEnd).
 		usedSeats(UsedSeatsStartEnd).
@@ -37,7 +37,7 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 
 // --------------------------------------
 func (s *SampleRoomSt) Middle_Name_3() *room {
-	return newRoom().set.
+	return newPlainRoom().set.
 		name(3).
 		allSeats(1).
 		usedSeats(0).
@@ -54,8 +54,9 @@ var builder_Cases = TestCasesFunc{
 		//---------------------------------------
 		{
 			Des: "if name=0 means start home",
-			Got: roomBuilder(0, 5, []Mtr{1, 2, 3}),
-			Exp: newRoom().set.
+			//Got: roomBuilder(0, 5, []Mtr{1, 2, 3}),
+			Got: roomBuilder(rmBuildArg{name: 0, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Exp: newPlainRoom().set.
 				name(0).
 				allSeats(MaxSeatsStartEnd).
 				usedSeats(UsedSeatsStartEnd).
@@ -66,9 +67,9 @@ var builder_Cases = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "non start or end room",
-			Got: roomBuilder(1, 5, []Mtr{1, 2, 3}),
-
-			Exp: newRoom().set.
+			//Got: roomBuilder(1, 5, []Mtr{1, 2, 3}),
+			Got: roomBuilder(rmBuildArg{name: 1, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Exp: newPlainRoom().set.
 				name(1).
 				allSeats(1).
 				usedSeats(0).
@@ -79,9 +80,9 @@ var builder_Cases = TestCasesFunc{
 		{
 			//Skip: true,
 			Des: "end room",
-			Got: roomBuilder(5, 5, []Mtr{1, 2, 3}),
-
-			Exp: newRoom().set.
+			//Got: roomBuilder(5, 5, []Mtr{1, 2, 3}),
+			Got: roomBuilder(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Exp: newPlainRoom().set.
 				name(5).
 				allSeats(MaxSeatsStartEnd).
 				usedSeats(UsedSeatsStartEnd).
