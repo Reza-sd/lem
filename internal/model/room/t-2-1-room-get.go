@@ -39,13 +39,13 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "return err if connection slice is empty",
-			Got: newPlainRoom().get.OneRandomNextRoom().err != nil,
+			Got: newPlainRoom().get.OneRandomNextRoom().sCode != null,
 			Exp: true,
 		},
 		//---------------------------------------
 		{
 			Des: "return nil if connection slice is not empty",
-			Got: newPlainRoom().set.connectionSlice([]Mtr{1, 2, 3}).room.get.OneRandomNextRoom().err == nil,
+			Got: newPlainRoom().set.connectionSlice([]Mtr{1, 2, 3}).room.get.OneRandomNextRoom().sCode == null,
 			Exp: true,
 		},
 		//---------------------------------------
