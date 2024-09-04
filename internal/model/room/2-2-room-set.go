@@ -21,16 +21,5 @@ func (set *setter) connectionSlice(connectionSlice []Mtr) *setter {
 }
 
 // ===============================================================
-func (set *setter) builder(name, lastRoomName Mtr, connectionSlice []Mtr) *room {
-	set.name(name).connectionSlice(connectionSlice)
-	if name == 0 || name == lastRoomName {
-		set.allSeats(MaxSeatsStartEnd).usedSeats(UsedSeatsStartEnd)
-	} else {
-		set.allSeats(AllSeatsNormalRoom).usedSeats(0)
-
-	}
-	return set.room
-	// if its first then? if end then
-}
 
 //===============================================================

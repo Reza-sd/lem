@@ -31,4 +31,18 @@ func newRoom() *room { //Constructor=factory function
 	return r
 }
 
+//------------------------------------------
+func roomBuilder(name, lastRoomName Mtr, connectionSlice []Mtr) *room {
+	r := newRoom()
+	r.set.name(name).connectionSlice(connectionSlice)
+	if name == 0 || name == lastRoomName {
+		r.set.allSeats(MaxSeatsStartEnd).usedSeats(UsedSeatsStartEnd)
+	} else {
+		r.set.allSeats(AllSeatsNormalRoom).usedSeats(0)
+
+	}
+	return r
+	// if its first then? if end then
+}
+
 // ---------------------------------------

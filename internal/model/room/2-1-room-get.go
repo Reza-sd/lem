@@ -37,7 +37,7 @@ func (get *getter) OneRandomNextRoom() answer[Mtr] {
 		return answer[Mtr]{ans: Mtr(0), err: fmt.Errorf("empty")}
 	}
 
-	randomNextRoomIndex := rand.Intn(lenConnectionSlice)// len 4 => random :0,1,2,3
+	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
 		return answer[Mtr]{ans: Mtr(0), err: fmt.Errorf("index does not exist")}
