@@ -2,10 +2,10 @@ package room
 
 // ================================
 type room struct {
-	name            Mtr
-	allSeats        Mtr
-	usedSeats       Mtr
-	connectionSlice []Mtr
+	name            mtr
+	allSeats        mtr
+	usedSeats       mtr
+	connectionSlice []mtr
 	//IsAvailable bool
 	get    getter
 	set    setter
@@ -22,9 +22,9 @@ type updater struct {
 	room *room
 }
 type rmBuildArg struct {
-	name            Mtr
-	endRoomName     Mtr
-	connectionSlice []Mtr
+	name            mtr
+	endRoomName     mtr
+	connectionSlice []mtr
 }
 
 // -----------------------

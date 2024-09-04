@@ -9,7 +9,7 @@ var Print_Cases = TestCasesForFunc{
 		{
 			Des: "Print",
 			Got: func() any {
-				SampleRoom.Middle_Name_3().set.connectionSlice([]Mtr{1, 2, 3000}).room.Print()
+				SampleRoom.Middle_Name_3().set.connectionSlice([]mtr{1, 2, 3000}).room.Print()
 
 				return true
 			},

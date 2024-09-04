@@ -7,17 +7,17 @@ import (
 )
 
 // ==================================================
-func (get *getter) name() Mtr {
+func (get *getter) name() mtr {
 	return get.room.name
 }
 
-func (get *getter) allSeats() Mtr {
+func (get *getter) allSeats() mtr {
 	return get.room.allSeats
 }
-func (get *getter) usedSeats() Mtr {
+func (get *getter) usedSeats() mtr {
 	return get.room.usedSeats
 }
-func (get *getter) connectionSlice() []Mtr {
+func (get *getter) connectionSlice() []mtr {
 	return get.room.connectionSlice
 }
 
@@ -30,22 +30,22 @@ func (get *getter) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (get *getter) OneRandomNextRoom() *answer[Mtr] {
+func (get *getter) OneRandomNextRoom() *answer[mtr] {
 
 	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
-		return &answer[Mtr]{sCode: EmptySlice, sMsg: "empty slice"}
+		return &answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return &answer[Mtr]{sCode: SliceOverFlow, sMsg: "index does not exist"}
+		return &answer[mtr]{sCode: sliceOverFlow, sMsg: "index does not exist"}
 	}
 
 	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
 
-	return &answer[Mtr]{ans: nextRandomRoomName}
+	return &answer[mtr]{ans: nextRandomRoomName}
 }
 
 //==========================================================

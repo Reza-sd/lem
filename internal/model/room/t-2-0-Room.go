@@ -21,7 +21,7 @@ func (s *SampleRoomSt) End_Name_1() *room {
 		name(1).
 		allSeats(MaxSeatsStartEnd).
 		usedSeats(UsedSeatsStartEnd).
-		connectionSlice([]Mtr{}).
+		connectionSlice([]mtr{}).
 		room
 
 }
@@ -32,7 +32,7 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 		name(0).
 		allSeats(MaxSeatsStartEnd).
 		usedSeats(UsedSeatsStartEnd).
-		connectionSlice([]Mtr{}).
+		connectionSlice([]mtr{}).
 		room
 }
 
@@ -42,7 +42,7 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 		name(3).
 		allSeats(1).
 		usedSeats(0).
-		connectionSlice([]Mtr{}).
+		connectionSlice([]mtr{}).
 		room
 }
 
@@ -55,36 +55,36 @@ var test_roomBuilder_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "if name=startRoomName means start home",
-			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(startRoomName).
 				allSeats(MaxSeatsStartEnd).
 				usedSeats(UsedSeatsStartEnd).
-				connectionSlice([]Mtr{1, 2, 3}).
+				connectionSlice([]mtr{1, 2, 3}).
 				room,
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "non start or end room",
-			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(3).
 				allSeats(1).
 				usedSeats(0).
-				connectionSlice([]Mtr{1, 2, 3}).
+				connectionSlice([]mtr{1, 2, 3}).
 				room,
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "end room",
-			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(5).
 				allSeats(MaxSeatsStartEnd).
 				usedSeats(UsedSeatsStartEnd).
-				connectionSlice([]Mtr{1, 2, 3}).
+				connectionSlice([]mtr{1, 2, 3}).
 				room,
 		},
 		//---------------------------------------

@@ -1,22 +1,22 @@
 package room
 
 const (
-	PackageName        = "room"
-	MaxSeatsStartEnd   = 5000
-	UsedSeatsStartEnd  = 1000
-	AllSeatsNormalRoom = 1
-	startRoomName      = 1 //always 1 (use 0 as null)
+	PackageName        string = "room"
+	MaxSeatsStartEnd   mtr    = 5000
+	UsedSeatsStartEnd  mtr    = 1000
+	AllSeatsNormalRoom mtr    = 1
+	startRoomName      mtr    = 1 //always 1 (use 0 as null)
 
 )
 
 const (
-	null                     = 0
-	SliceOverFlow statusCode = iota + 1
-	EmptySlice
+	null          statusCode = 0
+	sliceOverFlow statusCode = iota + 1
+	emptySlice
 )
 
 // --------------------
-type Mtr = uint16
+type mtr = uint16
 type statusCode uint8
 
 type answer[T any] struct {
