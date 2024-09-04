@@ -30,22 +30,22 @@ func (get *getter) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (get *getter) OneRandomNextRoom() *answer[mtr] {
+func (get *getter) OneRandomNextRoom() answer[mtr] {
 
 	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
-		return &answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
+		return answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return &answer[mtr]{sCode: sliceOverFlow, sMsg: "index does not exist"}
+		return answer[mtr]{sCode: sliceOverFlow, sMsg: "index does not exist"}
 	}
 
 	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
 
-	return &answer[mtr]{ans: nextRandomRoomName}
+	return answer[mtr]{ans: nextRandomRoomName}
 }
 
 //==========================================================
