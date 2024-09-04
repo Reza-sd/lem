@@ -9,10 +9,11 @@ const (
 
 )
 
-const (
+const ( //error or status codes
 	null          statusCode = 0
 	sliceOverFlow statusCode = iota + 1
 	emptySlice
+	exceedCapacity
 )
 
 // --------------------
@@ -23,6 +24,8 @@ type answer[T any] struct {
 	ans   T
 	sCode statusCode //I have a problem, here is the problem's code = return specific status code=>0 = nil
 	sMsg  string     //"" status massage
+	//wCode []statusCode //War sCode
+	//wMsg []string //Wrap sMsg
 }
 
 //--------------------
