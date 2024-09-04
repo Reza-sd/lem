@@ -9,7 +9,7 @@ import (
 var (
 	MyTester = teststack.Tester{
 		AllTestCasesPkStSlice: []AllTestCasesPkSt{
-			{TestCasesFunc: builder_Cases},
+			{TestCasesFunc: test_roomBuilder_Cases},
 			{TestCasesFunc: hasOneFreeSeat_Cases},
 			{TestCasesFunc: oneCome_Cases},
 			{TestCasesFunc: Print_Cases},

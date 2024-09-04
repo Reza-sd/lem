@@ -47,17 +47,17 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 
 // --------------------------------------
 // ====================================================================
-var builder_Cases = TestCasesFunc{
-	FuncName: "Room.set.builder",
+var test_roomBuilder_Cases = TestCasesFunc{
+	FuncName: "Room.roomBuilder",
 	//Skip: true,
 	TestCases: []TestCase{
 		//---------------------------------------
 		{
-			Des: "if name=0 means start home",
+			Des: "if name=startRoomName means start home",
 			//Got: roomBuilder(0, 5, []Mtr{1, 2, 3}),
-			Got: roomBuilder(rmBuildArg{name: 0, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: roomBuilder(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
-				name(0).
+				name(startRoomName).
 				allSeats(MaxSeatsStartEnd).
 				usedSeats(UsedSeatsStartEnd).
 				connectionSlice([]Mtr{1, 2, 3}).
@@ -68,9 +68,9 @@ var builder_Cases = TestCasesFunc{
 			//Skip: true,
 			Des: "non start or end room",
 			//Got: roomBuilder(1, 5, []Mtr{1, 2, 3}),
-			Got: roomBuilder(rmBuildArg{name: 1, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: roomBuilder(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
-				name(1).
+				name(3).
 				allSeats(1).
 				usedSeats(0).
 				connectionSlice([]Mtr{1, 2, 3}).
