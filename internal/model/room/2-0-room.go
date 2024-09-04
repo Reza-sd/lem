@@ -32,10 +32,10 @@ func newRoom() *room { //Constructor=factory function
 }
 
 //------------------------------------------
-func roomBuilder(name, lastRoomName Mtr, connectionSlice []Mtr) *room {
+func roomBuilder(name, endRoomName Mtr, connectionSlice []Mtr) *room {
 	r := newRoom()
 	r.set.name(name).connectionSlice(connectionSlice)
-	if name == 0 || name == lastRoomName {
+	if name == startRoomName || name == endRoomName {
 		r.set.allSeats(MaxSeatsStartEnd).usedSeats(UsedSeatsStartEnd)
 	} else {
 		r.set.allSeats(AllSeatsNormalRoom).usedSeats(0)
