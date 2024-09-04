@@ -55,7 +55,7 @@ var test_roomBuilder_Cases = TestCasesFunc{
 		{
 			Des: "if name=startRoomName means start home",
 			//Got: roomBuilder(0, 5, []Mtr{1, 2, 3}),
-			Got: roomBuilder(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(startRoomName).
 				allSeats(MaxSeatsStartEnd).
@@ -68,7 +68,7 @@ var test_roomBuilder_Cases = TestCasesFunc{
 			//Skip: true,
 			Des: "non start or end room",
 			//Got: roomBuilder(1, 5, []Mtr{1, 2, 3}),
-			Got: roomBuilder(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(3).
 				allSeats(1).
@@ -81,7 +81,7 @@ var test_roomBuilder_Cases = TestCasesFunc{
 			//Skip: true,
 			Des: "end room",
 			//Got: roomBuilder(5, 5, []Mtr{1, 2, 3}),
-			Got: roomBuilder(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []Mtr{1, 2, 3}}),
 			Exp: newPlainRoom().set.
 				name(5).
 				allSeats(MaxSeatsStartEnd).

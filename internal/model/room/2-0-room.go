@@ -37,7 +37,7 @@ func newPlainRoom() *room { //Constructor=factory function
 }
 
 // ---------------------------------------
-func roomBuilder(rm rmBuildArg) *room {
+func newRuledRoom(rm rmBuildArg) *room {
 
 	r := newPlainRoom()
 	r.set.name(rm.name).connectionSlice(rm.connectionSlice)
