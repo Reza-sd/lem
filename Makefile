@@ -6,3 +6,6 @@ pretty:
 	gofmt -l -w . && goimports -d -w .
 update:
 	sudo apt upgrade -y && sudo apt update -y
+lint:
+	golint ./...
+
