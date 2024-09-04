@@ -33,6 +33,7 @@ func newRoom() *room { //Constructor=factory function
 
 //------------------------------------------
 func roomBuilder(name, endRoomName Mtr, connectionSlice []Mtr) *room {
+
 	r := newRoom()
 	r.set.name(name).connectionSlice(connectionSlice)
 	if name == startRoomName || name == endRoomName {

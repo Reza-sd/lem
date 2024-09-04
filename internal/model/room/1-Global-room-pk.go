@@ -5,7 +5,7 @@ const (
 	MaxSeatsStartEnd   = 5000
 	UsedSeatsStartEnd  = 1000
 	AllSeatsNormalRoom = 1
-	startRoomName = 0
+	startRoomName      = 0
 )
 
 // --------------------
