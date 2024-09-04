@@ -12,8 +12,8 @@ const (
 )
 
 const ( //error or status codes
-	null          statusCode = 0
-	sliceOverFlow statusCode = iota + 1
+	null          statusCode = 0 //[0-10] reserved
+	sliceOverFlow statusCode = iota + 10
 	emptySlice
 	exceedCapacity
 )
