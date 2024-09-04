@@ -12,10 +12,10 @@ const (
 type Mtr = uint16
 
 type answer[T any] struct {
-	ans T
-	ok bool //do the job completely and perfectly
+	ans      T
+	ok       bool  //do the job completely and perfectly
 	statCode uint8 //I have a problem, here is the problem's code = return specific status code
-	err error
+	err      error
 }
 
 //--------------------
