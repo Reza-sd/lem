@@ -7,7 +7,7 @@ type TestCase struct {
 	Got  any
 	Exp  any
 }
-type TestCasesFunc struct {
+type TestCasesforFunc struct {
 	Skip      bool
 	FuncName  string
 	TestCases []TestCase

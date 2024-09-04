@@ -22,7 +22,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
 
-		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesFunc
+		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesforFunc
 		ThisTestCasesFuncSkip := allTestCasesPkSlice[i].Skip
 		print("\n")
 

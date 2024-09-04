@@ -1,14 +1,15 @@
 package room
 
 import (
-	teststack "main/pkg/teststack"
+	ts "main/pkg/teststack"
 )
 
 // ====================================
 
-type TestCasesFunc = teststack.TestCasesFunc
-type TestCase = teststack.TestCase
-type AllTestCasesPkSt = teststack.AllTestCasesPkSt
+type TestCasesForFunc = ts.TestCasesforFunc
+type TestCase = ts.TestCase
+
+//type AllTestCasesPkSt = teststack.AllTestCasesPkSt
 
 type SampleRoomSt struct{}
 
@@ -47,7 +48,7 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 
 // --------------------------------------
 // ====================================================================
-var test_roomBuilder_Cases = TestCasesFunc{
+var test_roomBuilder_Cases = TestCasesForFunc{
 	FuncName: "Room.roomBuilder",
 	//Skip: true,
 	TestCases: []TestCase{

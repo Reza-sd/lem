@@ -1,20 +1,19 @@
 package room
 
 import (
-	//"fmt"
-	teststack "main/pkg/teststack"
+	ts "main/pkg/teststack"
 	"testing"
 )
 
 var (
-	MyTester = teststack.Tester{
-		AllTestCasesPkStSlice: []AllTestCasesPkSt{
-			{TestCasesFunc: test_roomBuilder_Cases},
-			{TestCasesFunc: hasOneFreeSeat_Cases},
-			{TestCasesFunc: oneCome_Cases},
-			{TestCasesFunc: Print_Cases},
-			{TestCasesFunc: oneLeave_Cases},
-			{TestCasesFunc: test_oneRandomNextRoom_Cases},
+	MyTester = ts.Tester{
+		AllTestCasesPkStSlice: []ts.AllTestCasesPkSt{
+			{TestCasesforFunc: test_roomBuilder_Cases},
+			{TestCasesforFunc: hasOneFreeSeat_Cases},
+			{TestCasesforFunc: oneCome_Cases},
+			{TestCasesforFunc: Print_Cases},
+			{TestCasesforFunc: oneLeave_Cases},
+			{TestCasesforFunc: test_oneRandomNextRoom_Cases},
 		},
 	}
 )

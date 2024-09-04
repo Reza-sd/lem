@@ -8,8 +8,8 @@ type Tester struct {
 }
 
 type AllTestCasesPkSt struct {
-	TestCasesFunc TestCasesFunc
-	Skip          bool
+	TestCasesforFunc TestCasesforFunc
+	Skip             bool
 }
 
 // ====================================

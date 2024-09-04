@@ -1,7 +1,7 @@
 package room
 
 // ======================================================
-var Print_Cases = TestCasesFunc{
+var Print_Cases = TestCasesForFunc{
 	FuncName: "Room.Print",
 	//Skip: true,
 	TestCases: []TestCase{

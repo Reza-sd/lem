@@ -1,7 +1,7 @@
 package room
 
 // ===================================================
-var oneCome_Cases = TestCasesFunc{
+var oneCome_Cases = TestCasesForFunc{
 	FuncName: "Room.update.oneCome",
 	//Skip: true,
 	TestCases: []TestCase{
@@ -33,7 +33,7 @@ var oneCome_Cases = TestCasesFunc{
 	}}
 
 // ==============================================================
-var oneLeave_Cases = TestCasesFunc{
+var oneLeave_Cases = TestCasesForFunc{
 	FuncName: "Room.update.oneLeave",
 	//Skip: true,
 	TestCases: []TestCase{

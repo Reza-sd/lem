@@ -7,7 +7,7 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesFunc, skip bool) {
+func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesforFunc, skip bool) {
 	//--------------------------------------------------
 	defer func() {
 		if r := recover(); r != nil {

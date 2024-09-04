@@ -2,7 +2,7 @@ package teststack
 
 import "fmt"
 
-var myTester_Cases_2 = TestCasesFunc{
+var myTester_Cases_2 = TestCasesforFunc{
 	FuncName: "MyTester.Method2",
 	//Skip: true,
 	TestCases: []TestCase{

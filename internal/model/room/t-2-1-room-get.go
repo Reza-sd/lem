@@ -1,7 +1,7 @@
 package room
 
 // ========================hasOneFreeSeat======================================
-var hasOneFreeSeat_Cases = TestCasesFunc{
+var hasOneFreeSeat_Cases = TestCasesForFunc{
 	FuncName: "Room.HasOneFreeSeat",
 	//Skip: true,
 	TestCases: []TestCase{
@@ -26,7 +26,7 @@ var hasOneFreeSeat_Cases = TestCasesFunc{
 	}}
 
 // ========================OneRandomNextRoom====================
-var test_oneRandomNextRoom_Cases = TestCasesFunc{
+var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 	FuncName: "Room.OneRandomNextRoom",
 	//Skip: true,
 	TestCases: []TestCase{
