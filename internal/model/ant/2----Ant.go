@@ -1,8 +1,6 @@
 package ant
 
-import (
 // "main/internal/logstack"
-)
 
 // =======data structure========================
 
