@@ -14,7 +14,9 @@ func (set *setter) usedSeats(usedSeats Mtr) *setter {
 	return set
 }
 func (set *setter) connectionSlice(connectionSlice []Mtr) *setter {
-	set.room.connectionSlice = connectionSlice
+	set.room.connectionSlice = make([]Mtr, len(connectionSlice))
+	copy(set.room.connectionSlice, connectionSlice)
+
 	return set
 }
 
