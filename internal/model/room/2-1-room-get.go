@@ -35,8 +35,6 @@ func (get *getter) OneRandomNextRoom() mtr {
 	if lenConnectionSlice == 0 {
 
 		return Answer[mtr](0, OneRandomNextRoom, OneRandomNextRoom_code_10)
-		//0, OneRandomNextRoom_code_10
-
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
@@ -47,7 +45,6 @@ func (get *getter) OneRandomNextRoom() mtr {
 
 	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
 	return Answer[mtr](nextRandomRoomName, OneRandomNextRoom, null)
-	//nextRandomRoomName, null
 }
 
 // ==========================================================

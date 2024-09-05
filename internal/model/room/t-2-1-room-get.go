@@ -65,7 +65,6 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 	},
 }
 
-// ==============================================================
 // ======================================================
 var Print_Cases = TestCasesForFunc{
 	FuncName: "Room.Print",

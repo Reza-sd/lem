@@ -21,7 +21,6 @@ func (s *SampleRoomSt) End_Name_1() *room {
 		usedSeats(UsedSeatsStartEnd).
 		connectionSlice([]mtr{}).
 		room
-
 }
 
 // --------------------------------------
@@ -44,7 +43,6 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 		room
 }
 
-// --------------------------------------
 // ====================================================================
 var test_roomBuilder_Cases = TestCasesForFunc{
 	FuncName: "Room.roomBuilder",

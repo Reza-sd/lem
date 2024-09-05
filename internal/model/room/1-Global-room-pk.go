@@ -10,16 +10,6 @@ const (
 	maxLenConnectionSlice = 5
 )
 
-// const ( //error or status codes
-// 	null          uint8 = 0 //[0-10] reserved
-// 	sliceOverFlow uint8 = iota + 10
-// 	emptySlice
-// 	exceedCapacity
-// )
-
-// error is for code
-// log is for coder
-// error holder stack = map[uint8]uint8
 var ErrorsHolder = make(map[uint8]uint8)
 
 const ( //func or method status code
@@ -43,23 +33,4 @@ const ( //func or method status code
 // --------------------
 type mtr = uint16
 
-//type statusCode uint8
-
-// type answer[T any] struct {
-// 	Ans T
-// 	//Stat Status
-// 	// Err  error
-// 	Code uint8 //statusCode
-// 	//Msg  string //"" status massage
-
-// 	//wCode []statusCode //War sCode
-// 	//wMsg []string //Wrap sMsg
-// 	//l logger
-// 	//errGen func()
-
-// }
-
-// func err() answer[any]{
-
-// }
 // -------------------

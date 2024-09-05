@@ -34,7 +34,6 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
-	//r.update = updater{room: r}
 	return r
 }
 
