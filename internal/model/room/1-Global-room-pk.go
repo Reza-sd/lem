@@ -10,27 +10,35 @@ const (
 	maxLenConnectionSlice = 5
 )
 
-var ErrorsHolder = make(map[uint8]uint8)
-
 const ( //func or method status code
 	//-----getter--------------------
 	null uint8 = iota
-	OneRandomNextRoom
-	OneRandomNextRoom_code_10
-	OneRandomNextRoom_Code_20
+	Room_get_OneRandomNextRoom
+	Room_get_OneRandomNextRoom_code_10
+	Room_get_OneRandomNextRoom_Code_20
 
-	oneCome
-	oneCome_code_10
+	Room_set_oneCome
+	Room_set_oneCome_code_10
 
-	oneLeave
-	oneLeave_code_10
+	Room_set_oneLeave
+	Room_set_oneLeave_code_10
 
 	//-----setter--------------------
 
 	//--------------------------------
 )
 
-// --------------------
 type mtr = uint16
 
-// -------------------
+// -----------------------------------------
+var (
+	Errdb = make(map[uint8]uint8)
+)
+
+// =========================================
+func Answer[T any](x T, funcNameCode, statusCode uint8) T {
+	Errdb[funcNameCode] = statusCode
+	return x
+}
+
+//============================================

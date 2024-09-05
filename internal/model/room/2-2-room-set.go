@@ -24,20 +24,20 @@ func (s *setter) connectionSlice(connectionSlice []mtr) *setter {
 func (s *setter) oneCome() *room {
 
 	if s.room.get.usedSeats() == s.room.get.allSeats() || s.room.get.usedSeats()+1 > s.room.get.allSeats() {
-		return Answer[*room](s.room, oneCome, oneCome_code_10)
+		return Answer[*room](s.room, Room_set_oneCome, Room_set_oneCome_code_10)
 	}
 
 	s.room.set.usedSeats(s.room.get.usedSeats() + 1)
-	return Answer[*room](s.room, oneCome, null)
+	return Answer[*room](s.room, Room_set_oneCome, null)
 }
 
 // =====================================================
 func (s *setter) oneLeave() *room {
 	if s.room.get.usedSeats() == 0 {
-		return Answer[*room](s.room, oneLeave, oneLeave_code_10)
+		return Answer[*room](s.room, Room_set_oneLeave, Room_set_oneLeave_code_10)
 	}
 	s.room.set.usedSeats(s.room.get.usedSeats() - 1)
-	return Answer[*room](s.room, oneLeave, null)
+	return Answer[*room](s.room, Room_set_oneLeave, null)
 }
 
 // =====================================================

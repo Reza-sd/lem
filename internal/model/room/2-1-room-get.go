@@ -34,21 +34,17 @@ func (get *getter) OneRandomNextRoom() mtr {
 	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
 
-		return Answer[mtr](0, OneRandomNextRoom, OneRandomNextRoom_code_10)
+		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_code_10)
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return Answer[mtr](0, OneRandomNextRoom, OneRandomNextRoom_Code_20)
+		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_Code_20)
 	}
 
 	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
-	return Answer[mtr](nextRandomRoomName, OneRandomNextRoom, null)
+	return Answer[mtr](nextRandomRoomName, Room_get_OneRandomNextRoom, null)
 }
 
 // ==========================================================
-func Answer[T any](x T, funcCode, statusCode uint8) T {
-	ErrorsHolder[funcCode] = statusCode
-	return x
-}
