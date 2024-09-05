@@ -23,8 +23,15 @@ type mtr = uint16
 //type statusCode uint8
 
 type answer[T any] struct {
-	ans T
-	Stat Status
+	Ans T
+	//Stat Status
+	// Err  error
+	Code uint8
+	Msg  string
+	//sCode statusCode //I have a problem, here is the problem's code = return specific status code=>0 = nil
+	//sMsg  string     //"" status massage
+	//wCode []statusCode //War sCode
+	//wMsg []string //Wrap sMsg
 	//l logger
 	//errGen func()
 

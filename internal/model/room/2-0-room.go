@@ -7,9 +7,9 @@ type room struct {
 	usedSeats       mtr
 	connectionSlice []mtr
 	//IsAvailable bool
-	get    getter
-	set    setter
-	update updater
+	get getter
+	set setter
+	//update updater
 }
 type getter struct {
 	room *room
@@ -18,9 +18,10 @@ type getter struct {
 type setter struct {
 	room *room
 }
-type updater struct {
-	room *room
-}
+
+//	type updater struct {
+//		room *room
+//	}
 type rmBuildArg struct {
 	name            mtr
 	endRoomName     mtr
@@ -32,7 +33,7 @@ func newPlainRoom() *room { //Constructor=factory function
 	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
-	r.update = updater{room: r}
+	//r.update = updater{room: r}
 	return r
 }
 

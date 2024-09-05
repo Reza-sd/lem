@@ -8,7 +8,7 @@ var oneCome_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in middle type",
-			Got: SampleRoom.Middle_Name_3().update.oneCome().ans,
+			Got: SampleRoom.Middle_Name_3().set.oneCome().Ans,
 
 			Exp: newPlainRoom().set.
 				name(3).
@@ -20,7 +20,7 @@ var oneCome_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in End type",
-			Got: SampleRoom.End_Name_1().update.oneCome().ans,
+			Got: SampleRoom.End_Name_1().set.oneCome().Ans,
 
 			Exp: newPlainRoom().set.
 				name(1).
@@ -40,7 +40,7 @@ var oneLeave_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "Do nothing if usedSeats=0",
-			Got: SampleRoom.Middle_Name_3().update.oneLeave().ans,
+			Got: SampleRoom.Middle_Name_3().set.oneLeave().Ans,
 
 			Exp: newPlainRoom().set.
 				name(3).
@@ -52,7 +52,7 @@ var oneLeave_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "decrease one UsedSeats when Room in Start type",
-			Got: SampleRoom.Start_Name_0().update.oneLeave().ans,
+			Got: SampleRoom.Start_Name_0().set.oneLeave().Ans,
 
 			Exp: newPlainRoom().set.
 				name(0).
