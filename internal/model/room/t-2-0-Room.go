@@ -9,8 +9,6 @@ import (
 type TestCasesForFunc = ts.TestCasesforFunc
 type TestCase = ts.TestCase
 
-//type AllTestCasesPkSt = teststack.AllTestCasesPkSt
-
 type SampleRoomSt struct{}
 
 var SampleRoom = SampleRoomSt{}

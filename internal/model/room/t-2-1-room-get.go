@@ -59,4 +59,23 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 	},
 }
 
-//==============================================================
+// ==============================================================
+// ======================================================
+var Print_Cases = TestCasesForFunc{
+	FuncName: "Room.Print",
+	//Skip: true,
+	TestCases: []TestCase{
+		//---------------------------------------
+		{
+			Des: "Print",
+			Got: func() any {
+				SampleRoom.Middle_Name_3().set.connectionSlice([]mtr{1, 2, 3000}).room.Print()
+
+				return true
+			},
+			Exp: true,
+		},
+		//---------------------------------------
+	}}
+
+//======================================================

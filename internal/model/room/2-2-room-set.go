@@ -21,7 +21,6 @@ func (s *setter) connectionSlice(connectionSlice []mtr) *setter {
 }
 
 // ===============================================================
-// =====================================================
 func (s *setter) oneCome() answer[*room] {
 
 	if s.room.get.usedSeats() == s.room.get.allSeats() || s.room.get.usedSeats()+1 > s.room.get.allSeats() {

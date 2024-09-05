@@ -1,10 +1,17 @@
 package room
 
 import (
-	//"fmt"
+	"fmt"
 	"math/rand"
 	//"crypto/rand"
 )
+
+// ==============================
+func (r *room) Print() {
+
+	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.get.name(), r.get.allSeats(), r.get.usedSeats(), r.get.connectionSlice())
+
+}
 
 // ==================================================
 func (get *getter) name() mtr {
