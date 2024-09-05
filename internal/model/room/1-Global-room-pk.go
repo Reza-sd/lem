@@ -14,8 +14,8 @@ var ErrorsHolder = make(map[uint8]uint8)
 
 const ( //func or method status code
 	//-----getter--------------------
-	null              = 0
-	OneRandomNextRoom = iota + 10
+	null uint8 = iota
+	OneRandomNextRoom
 	OneRandomNextRoom_code_10
 	OneRandomNextRoom_Code_20
 

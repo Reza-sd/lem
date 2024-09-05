@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// ================================
+// =======================================================
 type room struct {
 	name            mtr
 	allSeats        mtr
@@ -29,7 +29,7 @@ type rmBuildArg struct {
 	connectionSlice []mtr
 }
 
-// -----------------------
+// -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
 	r.get = getter{room: r}
@@ -37,7 +37,7 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 	return r
 }
 
-// ---------------------------------------
+// -----------------------------------------------------------
 func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 
 	r := newPlainRoom()
@@ -52,10 +52,11 @@ func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 	// if its first then? if end then
 }
 
-// ------------------------------------------
-// ==============================
+// ---------------------------------------------------------------
 func (r *room) Print() {
 
 	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.get.name(), r.get.allSeats(), r.get.usedSeats(), r.get.connectionSlice())
 
 }
+
+//=============================================================
