@@ -10,11 +10,34 @@ const (
 	maxLenConnectionSlice = 5
 )
 
-const ( //error or status codes
-	null          uint8 = 0 //[0-10] reserved
-	sliceOverFlow uint8 = iota + 10
-	emptySlice
-	exceedCapacity
+// const ( //error or status codes
+// 	null          uint8 = 0 //[0-10] reserved
+// 	sliceOverFlow uint8 = iota + 10
+// 	emptySlice
+// 	exceedCapacity
+// )
+
+// error is for code
+// log is for coder
+// error holder stack = map[uint8]uint8
+var ErrorsHolder = make(map[uint8]uint8)
+
+const ( //func or method status code
+	//-----getter--------------------
+	null              = 0
+	OneRandomNextRoom = iota + 10
+	OneRandomNextRoom_code_10
+	OneRandomNextRoom_Code_20
+
+	oneCome
+	oneCome_code_10
+
+	oneLeave
+	oneLeave_code_10
+
+	//-----setter--------------------
+
+	//--------------------------------
 )
 
 // --------------------
@@ -22,19 +45,21 @@ type mtr = uint16
 
 //type statusCode uint8
 
-type answer[T any] struct {
-	Ans T
-	//Stat Status
-	// Err  error
-	Code uint8
-	Msg  string
-	//sCode statusCode //I have a problem, here is the problem's code = return specific status code=>0 = nil
-	//sMsg  string     //"" status massage
-	//wCode []statusCode //War sCode
-	//wMsg []string //Wrap sMsg
-	//l logger
-	//errGen func()
+// type answer[T any] struct {
+// 	Ans T
+// 	//Stat Status
+// 	// Err  error
+// 	Code uint8 //statusCode
+// 	//Msg  string //"" status massage
 
-}
+// 	//wCode []statusCode //War sCode
+// 	//wMsg []string //Wrap sMsg
+// 	//l logger
+// 	//errGen func()
 
+// }
+
+// func err() answer[any]{
+
+// }
 // -------------------

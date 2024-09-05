@@ -29,23 +29,29 @@ func (get *getter) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (get *getter) OneRandomNextRoom() answer[mtr] {
+func (get *getter) OneRandomNextRoom() mtr {
 
 	lenConnectionSlice := len(get.connectionSlice())
 	if lenConnectionSlice == 0 {
-		return answer[mtr]{Code: emptySlice, Msg: "empty slice"}
-		//return answer[mtr]{sCode: emptySlice, sMsg: "empty slice"}
+
+		return Answer[mtr](0, OneRandomNextRoom, OneRandomNextRoom_code_10)
+		//0, OneRandomNextRoom_code_10
+
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return answer[mtr]{Code: sliceOverFlow, Msg: "index does not exist"}
+		return Answer[mtr](0, OneRandomNextRoom, OneRandomNextRoom_Code_20)
 	}
 
 	nextRandomRoomName := get.connectionSlice()[randomNextRoomIndex]
-
-	return answer[mtr]{Ans: nextRandomRoomName}
+	return Answer[mtr](nextRandomRoomName, OneRandomNextRoom, null)
+	//nextRandomRoomName, null
 }
 
-//==========================================================
+// ==========================================================
+func Answer[T any](x T, funcCode, statusCode uint8) T {
+	ErrorsHolder[funcCode] = statusCode
+	return x
+}
