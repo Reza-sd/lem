@@ -1,5 +1,9 @@
 package room
 
+import (
+	"fmt"
+)
+
 // ================================
 type room struct {
 	name            mtr
@@ -19,9 +23,6 @@ type setter struct {
 	room *room
 }
 
-//	type updater struct {
-//		room *room
-//	}
 type rmBuildArg struct {
 	name            mtr
 	endRoomName     mtr
@@ -29,7 +30,7 @@ type rmBuildArg struct {
 }
 
 // -----------------------
-func newPlainRoom() *room { //Constructor=factory function
+func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
@@ -38,7 +39,7 @@ func newPlainRoom() *room { //Constructor=factory function
 }
 
 // ---------------------------------------
-func newRuledRoom(rm rmBuildArg) *room {
+func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 
 	r := newPlainRoom()
 	r.set.name(rm.name).connectionSlice(rm.connectionSlice)
@@ -52,4 +53,10 @@ func newRuledRoom(rm rmBuildArg) *room {
 	// if its first then? if end then
 }
 
-//------------------------------------------
+// ------------------------------------------
+// ==============================
+func (r *room) Print() {
+
+	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.get.name(), r.get.allSeats(), r.get.usedSeats(), r.get.connectionSlice())
+
+}
