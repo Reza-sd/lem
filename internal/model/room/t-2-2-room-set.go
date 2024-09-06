@@ -18,7 +18,6 @@ var oneCome_Cases = TestCasesForFunc{
 				allSeats:        1,
 				usedSeats:       1,
 				connectionSlice: []m{},
-				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
@@ -28,14 +27,11 @@ var oneCome_Cases = TestCasesForFunc{
 				r, _ := SampleRoom.End_Name_1().UpdateOneCome()
 				return r
 			},
-			//Got: SampleRoom.End_Name_1().UpdateOneCome(),
-
 			Exp: &room{
 				name:            1,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd + 1,
 				connectionSlice: []m{},
-				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
@@ -53,17 +49,11 @@ var oneLeave_Cases = TestCasesForFunc{
 				r, _ := SampleRoom.Middle_Name_3().UpdateOneLeave()
 				return r
 			},
-			//SampleRoom.Middle_Name_3().UpdateOneLeave(),
-
 			Exp: &room{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       0,
 				connectionSlice: []m{},
-				//Errdb: map[e]e{
-				// 	Null:           Null,
-				// 	UpdateOneLeave: UpdateOneLeave10,
-				// },
 			},
 		},
 		//---------------------------------------
@@ -73,14 +63,11 @@ var oneLeave_Cases = TestCasesForFunc{
 				r, _ := SampleRoom.Start_Name_0().UpdateOneLeave()
 				return r
 			},
-			//SampleRoom.Start_Name_0().UpdateOneLeave(),
-
 			Exp: &room{
 				name:            0,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd - 1,
 				connectionSlice: []m{},
-				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
