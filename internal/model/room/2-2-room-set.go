@@ -21,7 +21,7 @@ func (r *room) SetConnectionSlice(connectionSlice []RT) *room {
 }
 
 // ===============================================================
-func (r *room) UpdateOneCome() (*room, []Err) {
+func (r *room) UpdateOneCome() (*room, []ET) {
 
 	if r.GetUsedSeats() == r.GetAllSeats() || r.GetUsedSeats()+1 > r.GetAllSeats() {
 		return r, Wrapper(UpdateOneCome10, nil)
@@ -32,7 +32,7 @@ func (r *room) UpdateOneCome() (*room, []Err) {
 }
 
 // =====================================================
-func (r *room) UpdateOneLeave() (*room, []Err) {
+func (r *room) UpdateOneLeave() (*room, []ET) {
 	if r.GetUsedSeats() == 0 {
 		return r, Wrapper(UpdateOneLeave10, nil)
 	}

@@ -2,7 +2,7 @@ package room
 
 // =========================================
 type RT = uint16
-type Err = uint8 //error type
+type ET = uint8 //error type
 
 // -----------------------------------------
 const (
@@ -17,7 +17,7 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	Null Err = iota
+	Null ET = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20
@@ -29,12 +29,16 @@ const ( //func or method status code
 	UpdateOneLeave10
 )
 
-// var errorMap = map[int]string{ // for log purpose
+var StatusCodeDescription = map[ET]string{ //for log purpose
+	GetOneRandomNextRoom:   "GetOneRandomNextRoom",
+	GetOneRandomNextRoom10: "  ",
+	GetOneRandomNextRoom20: "  ",
 
-// 	ErrorCodeUnauthorized: "Unauthorized",
-// 	ErrorCodeNotFound: "Not Found",
-// 	ErrorCodeInternalServerError: "Internal Server Error",
-// 	// ... other error codes
+	UpdateOneCome:   "UpdateOneCome",
+	UpdateOneCome10: "",
 
-//   }
+	UpdateOneLeave:   "UpdateOneLeave",
+	UpdateOneLeave10: "",
+}
+
 //=========================================

@@ -11,7 +11,7 @@ type room struct {
 	usedSeats       RT
 	connectionSlice []RT
 
-	statusLine []Err
+	statusLine []ET
 }
 
 type rmBuildArg struct {
