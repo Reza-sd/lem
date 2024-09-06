@@ -30,15 +30,4 @@ const ( //func or method status code
 
 type mtr = uint16
 
-// -----------------------------------------
-var (
-	Errdb = make(map[uint8]uint8)
-)
-
 // =========================================
-func Answer[T any](x T, funcNameCode, statusCode uint8) T {
-	Errdb[funcNameCode] = statusCode
-	return x
-}
-
-//============================================

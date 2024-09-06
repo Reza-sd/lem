@@ -14,6 +14,7 @@ type room struct {
 	get getter
 	set setter
 	//update updater
+	Errdb map[uint8]uint8
 }
 type getter struct {
 	room *room
@@ -34,6 +35,7 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
 	r.get = getter{room: r}
 	r.set = setter{room: r}
+	r.Errdb = make(map[uint8]uint8)
 	return r
 }
 
@@ -50,6 +52,12 @@ func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 	}
 	return r
 	// if its first then? if end then
+}
+
+// -------------------------------
+func Answer[T any](returnedValue T, funcNameCode, statusCode uint8, r *room) T {
+	r.Errdb[funcNameCode] = statusCode
+	return returnedValue
 }
 
 // ---------------------------------------------------------------
