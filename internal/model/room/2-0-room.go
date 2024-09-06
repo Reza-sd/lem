@@ -1,9 +1,5 @@
 package room
 
-import (
-	"fmt"
-)
-
 // =======================================================
 type room struct {
 	name            RT
@@ -64,7 +60,24 @@ func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 // ---------------------------------------------------------------
 func (r *room) Print() {
 
-	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.GetName(), r.GetAllSeats(), r.GetUsedSeats(), r.GetConnectionSlice())
+	println()
+
+	print("Room: Name=")
+	print(r.GetName())
+
+	print(", AllSeats=")
+	print(r.GetAllSeats())
+
+	print(", UsedSeats=")
+	print(r.GetUsedSeats())
+
+	print(", ConnectionSlice[]index:(value)=")
+	for index, value := range r.GetConnectionSlice() {
+		print(index, ":(", value, "),")
+
+	}
+
+	println()
 
 }
 
