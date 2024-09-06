@@ -12,7 +12,7 @@ const (
 
 const ( //func or method status code
 	//-----getter--------------------
-	null uint8 = iota
+	null = iota
 	Room_get_OneRandomNextRoom
 	Room_get_OneRandomNextRoom_code_10
 	Room_get_OneRandomNextRoom_Code_20
