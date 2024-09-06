@@ -2,10 +2,10 @@ package room
 
 const (
 	PkgName            string = "room"
-	MaxSeatsStartEnd   mtr    = 5000
-	UsedSeatsStartEnd  mtr    = 1000
-	AllSeatsNormalRoom mtr    = 1
-	startRoomName      mtr    = 1 //always 1 (use 0 as null)
+	MaxSeatsStartEnd   m      = 5000
+	UsedSeatsStartEnd  m      = 1000
+	AllSeatsNormalRoom m      = 1
+	startRoomName      m      = 1 //always 1 (use 0 as null)
 
 	maxLenConnectionSlice = 5
 )
@@ -28,6 +28,7 @@ const ( //func or method status code
 	//--------------------------------
 )
 
-type mtr = uint16
+type m = uint16
+type e = uint8
 
 // =========================================

@@ -1,20 +1,20 @@
 package room
 
 // ================================
-func (r *room) SetName(name mtr) *room {
+func (r *room) SetName(name m) *room {
 	r.name = name
 	return r
 }
-func (r *room) SetAllSeats(allSeats mtr) *room {
+func (r *room) SetAllSeats(allSeats m) *room {
 	r.allSeats = allSeats
 	return r
 }
-func (r *room) SetUsedSeats(usedSeats mtr) *room {
+func (r *room) SetUsedSeats(usedSeats m) *room {
 	r.usedSeats = usedSeats
 	return r
 }
-func (r *room) SetConnectionSlice(connectionSlice []mtr) *room {
-	r.connectionSlice = make([]mtr, len(connectionSlice), maxLenConnectionSlice)
+func (r *room) SetConnectionSlice(connectionSlice []m) *room {
+	r.connectionSlice = make([]m, len(connectionSlice), maxLenConnectionSlice)
 	copy(r.connectionSlice, connectionSlice)
 
 	return r

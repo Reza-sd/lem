@@ -34,7 +34,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 		{
 			Des: "return 0 if connection slice is empty",
 			Got: newPlainRoom().GetOneRandomNextRoom(),
-			Exp: mtr(0),
+			Exp: m(0),
 		},
 		//---------------------------------------
 		{
@@ -51,7 +51,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 			Des: "return nil if connection slice is not empty",
 			Got: func() any {
 				r := newPlainRoom()
-				r.SetConnectionSlice([]mtr{1, 2, 3}).GetOneRandomNextRoom()
+				r.SetConnectionSlice([]m{1, 2, 3}).GetOneRandomNextRoom()
 				return r.Errdb[Room_get_OneRandomNextRoom] == null
 			},
 			Exp: true,
@@ -60,8 +60,8 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 		{
 			//Skip: true,
 			Des: "return random if connection slice is not empty",
-			Got: newPlainRoom().SetConnectionSlice([]mtr{5}).GetOneRandomNextRoom(),
-			Exp: mtr(5),
+			Got: newPlainRoom().SetConnectionSlice([]m{5}).GetOneRandomNextRoom(),
+			Exp: m(5),
 		},
 		//---------------------------------------
 	},
@@ -76,7 +76,7 @@ var Print_Cases = TestCasesForFunc{
 		{
 			Des: "Print",
 			Got: func() any {
-				SampleRoom.Middle_Name_3().SetConnectionSlice([]mtr{1, 2, 3000}).Print()
+				SampleRoom.Middle_Name_3().SetConnectionSlice([]m{1, 2, 3000}).Print()
 
 				return true
 			},

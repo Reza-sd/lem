@@ -6,37 +6,24 @@ import (
 
 // =======================================================
 type room struct {
-	name            mtr
-	allSeats        mtr
-	usedSeats       mtr
-	connectionSlice []mtr
-	//IsAvailable bool
-	// get getter
-	// set setter
-	//update updater
-	Errdb map[uint8]uint8
+	name            m
+	allSeats        m
+	usedSeats       m
+	connectionSlice []m
+
+	Errdb map[e]e
 }
 
-// type getter struct {
-// 	room *room
-// }
-
-// type setter struct {
-// 	room *room
-// }
-
 type rmBuildArg struct {
-	name            mtr
-	endRoomName     mtr
-	connectionSlice []mtr
+	name            m
+	endRoomName     m
+	connectionSlice []m
 }
 
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
-	// r.get = getter{room: r}
-	// r.set = setter{room: r}
-	r.Errdb = map[uint8]uint8{null: null}
+	r.Errdb = map[e]e{null: null}
 	return r
 }
 
@@ -56,7 +43,7 @@ func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 }
 
 // -------------------------------
-func Answer[T any](returnedValue T, funcNameCode, statusCode uint8, r *room) T {
+func Answer[T any](returnedValue T, funcNameCode, statusCode e, r *room) T {
 	r.Errdb[funcNameCode] = statusCode
 	return returnedValue
 }

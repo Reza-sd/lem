@@ -14,8 +14,8 @@ var oneCome_Cases = TestCasesForFunc{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       1,
-				connectionSlice: []mtr{},
-				Errdb:           map[uint8]uint8{null: null},
+				connectionSlice: []m{},
+				Errdb:           map[e]e{null: null},
 			},
 		},
 		//---------------------------------------
@@ -27,8 +27,8 @@ var oneCome_Cases = TestCasesForFunc{
 				name:            1,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd + 1,
-				connectionSlice: []mtr{},
-				Errdb:           map[uint8]uint8{null: null},
+				connectionSlice: []m{},
+				Errdb:           map[e]e{null: null},
 			},
 		},
 		//---------------------------------------
@@ -48,8 +48,8 @@ var oneLeave_Cases = TestCasesForFunc{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       0,
-				connectionSlice: []mtr{},
-				Errdb: map[uint8]uint8{
+				connectionSlice: []m{},
+				Errdb: map[e]e{
 					null:                null,
 					Room_UpdateOneLeave: Room_UpdateOneLeave_code_10,
 				},
@@ -64,8 +64,8 @@ var oneLeave_Cases = TestCasesForFunc{
 				name:            0,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd - 1,
-				connectionSlice: []mtr{},
-				Errdb:           map[uint8]uint8{null: null},
+				connectionSlice: []m{},
+				Errdb:           map[e]e{null: null},
 			},
 		},
 		//---------------------------------------
