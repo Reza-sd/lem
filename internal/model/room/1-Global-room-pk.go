@@ -1,23 +1,23 @@
 package room
 
 // =========================================
-type m = uint16
-type e = uint8 //error type
+type RT = uint16
+type Err = uint8 //error type
 
 // -----------------------------------------
 const (
 	PkgName            string = "room"
-	MaxSeatsStartEnd   m      = 5000
-	UsedSeatsStartEnd  m      = 1000
-	AllSeatsNormalRoom m      = 1
-	startRoomName      m      = 1 //always 1 (use 0 as null)
+	MaxSeatsStartEnd   RT     = 5000
+	UsedSeatsStartEnd  RT     = 1000
+	AllSeatsNormalRoom RT     = 1
+	startRoomName      RT     = 1 //always 1 (use 0 as null)
 
 	maxLenConnectionSlice = 5
 )
 
 // -----------------------------------------
 const ( //func or method status code
-	Null e = iota
+	Null Err = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20

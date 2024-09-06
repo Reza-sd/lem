@@ -1,27 +1,27 @@
 package room
 
 // ================================
-func (r *room) SetName(name m) *room {
+func (r *room) SetName(name RT) *room {
 	r.name = name
 	return r
 }
-func (r *room) SetAllSeats(allSeats m) *room {
+func (r *room) SetAllSeats(allSeats RT) *room {
 	r.allSeats = allSeats
 	return r
 }
-func (r *room) SetUsedSeats(usedSeats m) *room {
+func (r *room) SetUsedSeats(usedSeats RT) *room {
 	r.usedSeats = usedSeats
 	return r
 }
-func (r *room) SetConnectionSlice(connectionSlice []m) *room {
-	r.connectionSlice = make([]m, len(connectionSlice), maxLenConnectionSlice)
+func (r *room) SetConnectionSlice(connectionSlice []RT) *room {
+	r.connectionSlice = make([]RT, len(connectionSlice), maxLenConnectionSlice)
 	copy(r.connectionSlice, connectionSlice)
 
 	return r
 }
 
 // ===============================================================
-func (r *room) UpdateOneCome() (*room, []e) {
+func (r *room) UpdateOneCome() (*room, []Err) {
 
 	if r.GetUsedSeats() == r.GetAllSeats() || r.GetUsedSeats()+1 > r.GetAllSeats() {
 		return r, Wrapper(UpdateOneCome10, nil)
@@ -32,7 +32,7 @@ func (r *room) UpdateOneCome() (*room, []e) {
 }
 
 // =====================================================
-func (r *room) UpdateOneLeave() (*room, []e) {
+func (r *room) UpdateOneLeave() (*room, []Err) {
 	if r.GetUsedSeats() == 0 {
 		return r, Wrapper(UpdateOneLeave10, nil)
 	}

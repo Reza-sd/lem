@@ -17,7 +17,7 @@ var oneCome_Cases = TestCasesForFunc{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       1,
-				connectionSlice: []m{},
+				connectionSlice: []RT{},
 			},
 		},
 		//---------------------------------------
@@ -31,7 +31,7 @@ var oneCome_Cases = TestCasesForFunc{
 				name:            1,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd + 1,
-				connectionSlice: []m{},
+				connectionSlice: []RT{},
 			},
 		},
 		//---------------------------------------
@@ -53,7 +53,7 @@ var oneLeave_Cases = TestCasesForFunc{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       0,
-				connectionSlice: []m{},
+				connectionSlice: []RT{},
 			},
 		},
 		//---------------------------------------
@@ -67,7 +67,7 @@ var oneLeave_Cases = TestCasesForFunc{
 				name:            0,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd - 1,
-				connectionSlice: []m{},
+				connectionSlice: []RT{},
 			},
 		},
 		//---------------------------------------

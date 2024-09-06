@@ -19,7 +19,7 @@ func (s *SampleRoomSt) End_Name_1() *room {
 		SetName(1).
 		SetAllSeats(MaxSeatsStartEnd).
 		SetUsedSeats(UsedSeatsStartEnd).
-		SetConnectionSlice([]m{})
+		SetConnectionSlice([]RT{})
 }
 
 // --------------------------------------
@@ -28,7 +28,7 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 		SetName(0).
 		SetAllSeats(MaxSeatsStartEnd).
 		SetUsedSeats(UsedSeatsStartEnd).
-		SetConnectionSlice([]m{})
+		SetConnectionSlice([]RT{})
 }
 
 // --------------------------------------
@@ -37,7 +37,7 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 		SetName(3).
 		SetAllSeats(1).
 		SetUsedSeats(0).
-		SetConnectionSlice([]m{})
+		SetConnectionSlice([]RT{})
 }
 
 // ====================================================================
@@ -48,34 +48,34 @@ var test_roomBuilder_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "if name=startRoomName means start home",
-			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []m{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []RT{1, 2, 3}}),
 			Exp: newPlainRoom().
 				SetName(startRoomName).
 				SetAllSeats(MaxSeatsStartEnd).
 				SetUsedSeats(UsedSeatsStartEnd).
-				SetConnectionSlice([]m{1, 2, 3}),
+				SetConnectionSlice([]RT{1, 2, 3}),
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "non start or end room",
-			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []m{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []RT{1, 2, 3}}),
 			Exp: newPlainRoom().
 				SetName(3).
 				SetAllSeats(1).
 				SetUsedSeats(0).
-				SetConnectionSlice([]m{1, 2, 3}),
+				SetConnectionSlice([]RT{1, 2, 3}),
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "end room",
-			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []m{1, 2, 3}}),
+			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []RT{1, 2, 3}}),
 			Exp: newPlainRoom().
 				SetName(5).
 				SetAllSeats(MaxSeatsStartEnd).
 				SetUsedSeats(UsedSeatsStartEnd).
-				SetConnectionSlice([]m{1, 2, 3}),
+				SetConnectionSlice([]RT{1, 2, 3}),
 		},
 		//---------------------------------------
 	}}

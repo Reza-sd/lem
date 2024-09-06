@@ -6,17 +6,17 @@ import (
 )
 
 // ==================================================
-func (r *room) GetName() m {
+func (r *room) GetName() RT {
 	return r.name
 }
 
-func (r *room) GetAllSeats() m {
+func (r *room) GetAllSeats() RT {
 	return r.allSeats
 }
-func (r *room) GetUsedSeats() m {
+func (r *room) GetUsedSeats() RT {
 	return r.usedSeats
 }
-func (r *room) GetConnectionSlice() []m {
+func (r *room) GetConnectionSlice() []RT {
 	return r.connectionSlice
 }
 
@@ -29,7 +29,7 @@ func (r *room) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (r *room) GetOneRandomNextRoom() (m, []e) {
+func (r *room) GetOneRandomNextRoom() (RT, []Err) {
 
 	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {

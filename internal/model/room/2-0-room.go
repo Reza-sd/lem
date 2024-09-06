@@ -6,18 +6,18 @@ import (
 
 // =======================================================
 type room struct {
-	name            m
-	allSeats        m
-	usedSeats       m
-	connectionSlice []m
+	name            RT
+	allSeats        RT
+	usedSeats       RT
+	connectionSlice []RT
 
-	statusLine []e
+	statusLine []Err
 }
 
 type rmBuildArg struct {
-	name            m
-	endRoomName     m
-	connectionSlice []m
+	name            RT
+	endRoomName     RT
+	connectionSlice []RT
 }
 
 // ------------------------------------
@@ -42,7 +42,7 @@ func Wrapper(code uint8, preCodesSlice []uint8) []uint8 {
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
 	return &room{
-		connectionSlice: []m{},
+		connectionSlice: []RT{},
 		statusLine:      nil,
 	}
 }
