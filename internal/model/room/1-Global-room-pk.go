@@ -6,7 +6,7 @@ type ET = uint8 //error type
 
 // -----------------------------------------
 const (
-	PkgName            string = "room"
+	_PkgName            string = "room" //_prefix = unexported global
 	MaxSeatsStartEnd   RT     = 5000
 	UsedSeatsStartEnd  RT     = 1000
 	AllSeatsNormalRoom RT     = 1
