@@ -78,6 +78,15 @@ func (r *room) Print() {
 
 	}
 	println()
+	// var a []int
+	// println(a==nil)
+	// a=[]int{1}
+	// println(a[0])
+	// clear(a)
+	// println(a)
+	// println(a==nil)
+	// a=nil
+	// println(a==nil)
 }
 
 //=============================================================
