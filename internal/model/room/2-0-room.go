@@ -29,15 +29,14 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 
 // -----------------------------------------------------------
 func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
-
-	r := newPlainRoom()
-	r.SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
+	r := newPlainRoom().SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 		r.SetAllSeats(MaxSeatsStartEnd).SetUsedSeats(UsedSeatsStartEnd)
 	} else {
 		r.SetAllSeats(AllSeatsNormalRoom).SetUsedSeats(0)
 
 	}
+
 	return r
 	// if its first then? if end then
 }
