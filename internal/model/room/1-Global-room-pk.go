@@ -1,5 +1,10 @@
 package room
 
+// =========================================
+type m = uint16
+type e = uint8
+
+// -----------------------------------------
 const (
 	PkgName            string = "room"
 	MaxSeatsStartEnd   m      = 5000
@@ -10,8 +15,8 @@ const (
 	maxLenConnectionSlice = 5
 )
 
+// -----------------------------------------
 const ( //func or method status code
-	//-----getter--------------------
 	null = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
@@ -22,13 +27,6 @@ const ( //func or method status code
 
 	UpdateOneLeave
 	UpdateOneLeave10
-
-	//-----setter--------------------
-
-	//--------------------------------
 )
 
-type m = uint16
-type e = uint8
-
-// =========================================
+//=========================================
