@@ -29,24 +29,21 @@ func (r *room) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (r *room) GetOneRandomNextRoom() (m, []uint8) {
+func (r *room) GetOneRandomNextRoom() (m, []e) {
 
 	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {
-		return 0, statusWrapper(GetOneRandomNextRoom10, nil)
-		//return Answer[m](0, GetOneRandomNextRoom, GetOneRandomNextRoom10, r)
+		return 0, Wrapper(GetOneRandomNextRoom10, nil)
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return 0, statusWrapper(GetOneRandomNextRoom10, nil)
-		//return Answer[m](0, GetOneRandomNextRoom, GetOneRandomNextRoom20, r)
+		return 0, Wrapper(GetOneRandomNextRoom10, nil)
 	}
 
 	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
 	return nextRandomRoomName, nil
-	//return Answer[m](nextRandomRoomName, GetOneRandomNextRoom, Null, r)
 }
 
 // ==========================================================

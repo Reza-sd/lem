@@ -21,27 +21,23 @@ func (r *room) SetConnectionSlice(connectionSlice []m) *room {
 }
 
 // ===============================================================
-func (r *room) UpdateOneCome() (*room, []uint8) {
+func (r *room) UpdateOneCome() (*room, []e) {
 
 	if r.GetUsedSeats() == r.GetAllSeats() || r.GetUsedSeats()+1 > r.GetAllSeats() {
-		return r, statusWrapper(UpdateOneCome10, nil)
-		//return Answer[*room](r, UpdateOneCome, Room_set_oneCome_code_10, r)
+		return r, Wrapper(UpdateOneCome10, nil)
 	}
 
 	r.SetUsedSeats(r.GetUsedSeats() + 1)
-	return r, statusWrapper(Null, nil)
-	//return Answer[*room](r, Null, Null, r)
+	return r, nil
 }
 
 // =====================================================
-func (r *room) UpdateOneLeave() *room {
+func (r *room) UpdateOneLeave() (*room, []e) {
 	if r.GetUsedSeats() == 0 {
-		return r
-		//return Answer[*room](r, UpdateOneLeave, UpdateOneLeave10, r)
+		return r, Wrapper(UpdateOneLeave10, nil)
 	}
 	r.SetUsedSeats(r.GetUsedSeats() - 1)
-	//return Answer[*room](r, Null, Null, r)
-	return r
+	return r, nil
 }
 
 // =====================================================

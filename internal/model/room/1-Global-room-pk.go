@@ -17,14 +17,13 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	Null = iota
+	Null e = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20
 
 	UpdateOneCome
 	UpdateOneCome10
-
 
 	UpdateOneLeave
 	UpdateOneLeave10

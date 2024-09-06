@@ -11,8 +11,7 @@ type room struct {
 	usedSeats       m
 	connectionSlice []m
 
-	//Errdb      map[e]e
-	statusLine []uint8
+	statusLine []e
 }
 
 type rmBuildArg struct {
@@ -21,16 +20,16 @@ type rmBuildArg struct {
 	connectionSlice []m
 }
 
-// var codedb =[]uint8{0,1}
-func statusWrapper(statusCode uint8, previousStatusCodeSlice []uint8) []uint8 {
-	if statusCode == 0 && previousStatusCodeSlice == nil {
+// ------------------------------------
+func Wrapper(code uint8, preCodesSlice []uint8) []uint8 {
+	if code == 0 && preCodesSlice == nil {
 		return nil
 	}
 
-	if previousStatusCodeSlice == nil {
-		previousStatusCodeSlice = []uint8{}
+	if preCodesSlice == nil {
+		preCodesSlice = []uint8{}
 	}
-	return append(previousStatusCodeSlice, statusCode)
+	return append(preCodesSlice, code)
 }
 
 // -------------------------------
@@ -44,8 +43,7 @@ func statusWrapper(statusCode uint8, previousStatusCodeSlice []uint8) []uint8 {
 func newPlainRoom() *room { //Constructor=factory function=builder
 	return &room{
 		connectionSlice: []m{},
-		//Errdb:           map[e]e{Null: Null},
-		statusLine: nil,
+		statusLine:      nil,
 	}
 }
 
