@@ -34,17 +34,17 @@ func (r *room) GetOneRandomNextRoom() m {
 	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {
 
-		return Answer[m](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_code_10, r)
+		return Answer[m](0, GetOneRandomNextRoom, GetOneRandomNextRoom10, r)
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return Answer[m](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_Code_20, r)
+		return Answer[m](0, GetOneRandomNextRoom, GetOneRandomNextRoom20, r)
 	}
 
 	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
-	return Answer[m](nextRandomRoomName, Room_get_OneRandomNextRoom, null, r)
+	return Answer[m](nextRandomRoomName, GetOneRandomNextRoom, null, r)
 }
 
 // ==========================================================

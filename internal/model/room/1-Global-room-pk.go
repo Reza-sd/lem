@@ -13,15 +13,15 @@ const (
 const ( //func or method status code
 	//-----getter--------------------
 	null = iota
-	Room_get_OneRandomNextRoom
-	Room_get_OneRandomNextRoom_code_10
-	Room_get_OneRandomNextRoom_Code_20
+	GetOneRandomNextRoom
+	GetOneRandomNextRoom10
+	GetOneRandomNextRoom20
 
-	Room_set_oneCome
+	UpdateOneCome
 	Room_set_oneCome_code_10
 
-	Room_UpdateOneLeave
-	Room_UpdateOneLeave_code_10
+	UpdateOneLeave
+	UpdateOneLeave10
 
 	//-----setter--------------------
 

@@ -50,8 +50,8 @@ var oneLeave_Cases = TestCasesForFunc{
 				usedSeats:       0,
 				connectionSlice: []m{},
 				Errdb: map[e]e{
-					null:                null,
-					Room_UpdateOneLeave: Room_UpdateOneLeave_code_10,
+					null:           null,
+					UpdateOneLeave: UpdateOneLeave10,
 				},
 			},
 		},
