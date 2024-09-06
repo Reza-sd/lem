@@ -10,6 +10,7 @@ lint:
 	golint ./... && echo "========vet============" && go vet ./... && echo "======================="
 git:
 	git add . && git commit -m "." && git push
+# If you only want to undo changes in the working directory without affecting the staging area
 re:
 	git restore .
 
