@@ -17,15 +17,15 @@ type rmBuildArg struct {
 }
 
 // ------------------------------------
-func Wrapper(code uint8, preCodesSlice []uint8) []uint8 {
-	if code == 0 && preCodesSlice == nil {
+func wrapper(statCode uint8, preStatCodesSlice []uint8) []uint8 {
+	if statCode == 0 && preStatCodesSlice == nil {
 		return nil
 	}
 
-	if preCodesSlice == nil {
-		preCodesSlice = []uint8{}
+	if preStatCodesSlice == nil {
+		preStatCodesSlice = []uint8{}
 	}
-	return append(preCodesSlice, code)
+	return append(preStatCodesSlice, statCode)
 }
 
 // -------------------------------

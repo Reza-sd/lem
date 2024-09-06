@@ -33,13 +33,13 @@ func (r *room) GetOneRandomNextRoom() (RT, []ET) {
 
 	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {
-		return 0, Wrapper(GetOneRandomNextRoom10, nil)
+		return 0, wrapper(GetOneRandomNextRoom10, nil)
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return 0, Wrapper(GetOneRandomNextRoom10, nil)
+		return 0, wrapper(GetOneRandomNextRoom10, nil)
 	}
 
 	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
