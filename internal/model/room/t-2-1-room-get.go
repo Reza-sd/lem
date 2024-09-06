@@ -8,7 +8,7 @@ var hasOneFreeSeat_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "return true",
-			Got: SampleRoom.Middle_Name_3().get.hasOneFreeSeat(),
+			Got: SampleRoom.Middle_Name_3().hasOneFreeSeat(),
 			Exp: true,
 		},
 		//---------------------------------------
@@ -16,8 +16,8 @@ var hasOneFreeSeat_Cases = TestCasesForFunc{
 			Des: "return false",
 			Got: func() any {
 				myRoom := SampleRoom.Middle_Name_3()
-				myRoom.set.usedSeats(myRoom.get.allSeats())
-				return myRoom.get.hasOneFreeSeat()
+				myRoom.SetUsedSeats(myRoom.GetAllSeats())
+				return myRoom.hasOneFreeSeat()
 			},
 			Exp: false,
 		},
@@ -33,7 +33,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "return 0 if connection slice is empty",
-			Got: newPlainRoom().get.OneRandomNextRoom(),
+			Got: newPlainRoom().GetOneRandomNextRoom(),
 			Exp: mtr(0),
 		},
 		//---------------------------------------
@@ -41,7 +41,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 			Des: "return err if connection slice is empty",
 			Got: func() any {
 				r := newPlainRoom()
-				r.get.OneRandomNextRoom()
+				r.GetOneRandomNextRoom()
 				return r.Errdb[Room_get_OneRandomNextRoom] != null
 			},
 			Exp: true,
@@ -51,7 +51,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 			Des: "return nil if connection slice is not empty",
 			Got: func() any {
 				r := newPlainRoom()
-				r.set.connectionSlice([]mtr{1, 2, 3}).room.get.OneRandomNextRoom()
+				r.SetConnectionSlice([]mtr{1, 2, 3}).GetOneRandomNextRoom()
 				return r.Errdb[Room_get_OneRandomNextRoom] == null
 			},
 			Exp: true,
@@ -60,7 +60,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 		{
 			//Skip: true,
 			Des: "return random if connection slice is not empty",
-			Got: newPlainRoom().set.connectionSlice([]mtr{5}).room.get.OneRandomNextRoom(),
+			Got: newPlainRoom().SetConnectionSlice([]mtr{5}).GetOneRandomNextRoom(),
 			Exp: mtr(5),
 		},
 		//---------------------------------------
@@ -76,7 +76,7 @@ var Print_Cases = TestCasesForFunc{
 		{
 			Des: "Print",
 			Got: func() any {
-				SampleRoom.Middle_Name_3().set.connectionSlice([]mtr{1, 2, 3000}).room.Print()
+				SampleRoom.Middle_Name_3().SetConnectionSlice([]mtr{1, 2, 3000}).Print()
 
 				return true
 			},

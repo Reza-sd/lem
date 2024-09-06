@@ -15,32 +15,29 @@ var SampleRoom = SampleRoomSt{}
 
 // ====================================
 func (s *SampleRoomSt) End_Name_1() *room {
-	return newPlainRoom().set.
-		name(1).
-		allSeats(MaxSeatsStartEnd).
-		usedSeats(UsedSeatsStartEnd).
-		connectionSlice([]mtr{}).
-		room
+	return newPlainRoom().
+		SetName(1).
+		SetAllSeats(MaxSeatsStartEnd).
+		SetUsedSeats(UsedSeatsStartEnd).
+		SetConnectionSlice([]mtr{})
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Start_Name_0() *room {
-	return newPlainRoom().set.
-		name(0).
-		allSeats(MaxSeatsStartEnd).
-		usedSeats(UsedSeatsStartEnd).
-		connectionSlice([]mtr{}).
-		room
+	return newPlainRoom().
+		SetName(0).
+		SetAllSeats(MaxSeatsStartEnd).
+		SetUsedSeats(UsedSeatsStartEnd).
+		SetConnectionSlice([]mtr{})
 }
 
 // --------------------------------------
 func (s *SampleRoomSt) Middle_Name_3() *room {
-	return newPlainRoom().set.
-		name(3).
-		allSeats(1).
-		usedSeats(0).
-		connectionSlice([]mtr{}).
-		room
+	return newPlainRoom().
+		SetName(3).
+		SetAllSeats(1).
+		SetUsedSeats(0).
+		SetConnectionSlice([]mtr{})
 }
 
 // ====================================================================
@@ -52,36 +49,33 @@ var test_roomBuilder_Cases = TestCasesForFunc{
 		{
 			Des: "if name=startRoomName means start home",
 			Got: newRuledRoom(rmBuildArg{name: startRoomName, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
-			Exp: newPlainRoom().set.
-				name(startRoomName).
-				allSeats(MaxSeatsStartEnd).
-				usedSeats(UsedSeatsStartEnd).
-				connectionSlice([]mtr{1, 2, 3}).
-				room,
+			Exp: newPlainRoom().
+				SetName(startRoomName).
+				SetAllSeats(MaxSeatsStartEnd).
+				SetUsedSeats(UsedSeatsStartEnd).
+				SetConnectionSlice([]mtr{1, 2, 3}),
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "non start or end room",
 			Got: newRuledRoom(rmBuildArg{name: 3, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
-			Exp: newPlainRoom().set.
-				name(3).
-				allSeats(1).
-				usedSeats(0).
-				connectionSlice([]mtr{1, 2, 3}).
-				room,
+			Exp: newPlainRoom().
+				SetName(3).
+				SetAllSeats(1).
+				SetUsedSeats(0).
+				SetConnectionSlice([]mtr{1, 2, 3}),
 		},
 		//---------------------------------------
 		{
 			//Skip: true,
 			Des: "end room",
 			Got: newRuledRoom(rmBuildArg{name: 5, endRoomName: 5, connectionSlice: []mtr{1, 2, 3}}),
-			Exp: newPlainRoom().set.
-				name(5).
-				allSeats(MaxSeatsStartEnd).
-				usedSeats(UsedSeatsStartEnd).
-				connectionSlice([]mtr{1, 2, 3}).
-				room,
+			Exp: newPlainRoom().
+				SetName(5).
+				SetAllSeats(MaxSeatsStartEnd).
+				SetUsedSeats(UsedSeatsStartEnd).
+				SetConnectionSlice([]mtr{1, 2, 3}),
 		},
 		//---------------------------------------
 	}}

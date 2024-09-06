@@ -8,26 +8,24 @@ var oneCome_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in middle type",
-			Got: SampleRoom.Middle_Name_3().set.oneCome(),
+			Got: SampleRoom.Middle_Name_3().UpdateOneCome(),
 
-			Exp: newPlainRoom().set.
-				name(3).
-				allSeats(1).
-				usedSeats(1).
-				connectionSlice([]mtr{}).
-				room,
+			Exp: newPlainRoom().
+				SetName(3).
+				SetAllSeats(1).
+				SetUsedSeats(1).
+				SetConnectionSlice([]mtr{}),
 		},
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in End type",
-			Got: SampleRoom.End_Name_1().set.oneCome(),
+			Got: SampleRoom.End_Name_1().UpdateOneCome(),
 
-			Exp: newPlainRoom().set.
-				name(1).
-				allSeats(MaxSeatsStartEnd).
-				usedSeats(UsedSeatsStartEnd + 1).
-				connectionSlice([]mtr{}).
-				room,
+			Exp: newPlainRoom().
+				SetName(1).
+				SetAllSeats(MaxSeatsStartEnd).
+				SetUsedSeats(UsedSeatsStartEnd + 1).
+				SetConnectionSlice([]mtr{}),
 		},
 		//---------------------------------------
 	}}
@@ -40,26 +38,24 @@ var oneLeave_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "Do nothing if usedSeats=0",
-			Got: SampleRoom.Middle_Name_3().set.oneLeave(),
+			Got: SampleRoom.Middle_Name_3().UpdateOneLeave(),
 
-			Exp: newPlainRoom().set.
-				name(3).
-				allSeats(1).
-				usedSeats(0).
-				connectionSlice([]mtr{}).
-				room,
+			Exp: newPlainRoom().
+				SetName(3).
+				SetAllSeats(1).
+				SetUsedSeats(0).
+				SetConnectionSlice([]mtr{}),
 		},
 		//---------------------------------------
 		{
 			Des: "decrease one UsedSeats when Room in Start type",
-			Got: SampleRoom.Start_Name_0().set.oneLeave(),
+			Got: SampleRoom.Start_Name_0().UpdateOneLeave(),
 
-			Exp: newPlainRoom().set.
-				name(0).
-				allSeats(MaxSeatsStartEnd).
-				usedSeats(UsedSeatsStartEnd - 1).
-				connectionSlice([]mtr{}).
-				room,
+			Exp: newPlainRoom().
+				SetName(0).
+				SetAllSeats(MaxSeatsStartEnd).
+				SetUsedSeats(UsedSeatsStartEnd - 1).
+				SetConnectionSlice([]mtr{}),
 		},
 		//---------------------------------------
 	}}

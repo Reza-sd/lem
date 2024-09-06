@@ -6,45 +6,45 @@ import (
 )
 
 // ==================================================
-func (g *getter) name() mtr {
-	return g.room.name
+func (r *room) GetName() mtr {
+	return r.name
 }
 
-func (g *getter) allSeats() mtr {
-	return g.room.allSeats
+func (r *room) GetAllSeats() mtr {
+	return r.allSeats
 }
-func (g *getter) usedSeats() mtr {
-	return g.room.usedSeats
+func (r *room) GetUsedSeats() mtr {
+	return r.usedSeats
 }
-func (g *getter) connectionSlice() []mtr {
-	return g.room.connectionSlice
+func (r *room) GetConnectionSlice() []mtr {
+	return r.connectionSlice
 }
 
 //================hasOneFreeSeat===============================
 
-func (g *getter) hasOneFreeSeat() bool {
+func (r *room) hasOneFreeSeat() bool {
 
-	return g.usedSeats() < g.allSeats()
+	return r.GetUsedSeats() < r.GetAllSeats()
 }
 
 //==================OneRandomNextRoom=============================
 
-func (g *getter) OneRandomNextRoom() mtr {
+func (r *room) GetOneRandomNextRoom() mtr {
 
-	lenConnectionSlice := len(g.connectionSlice())
+	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {
 
-		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_code_10, g.room)
+		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_code_10, r)
 	}
 
 	randomNextRoomIndex := rand.Intn(lenConnectionSlice) // len 4 => random :0,1,2,3
 
 	if randomNextRoomIndex >= lenConnectionSlice {
-		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_Code_20, g.room)
+		return Answer[mtr](0, Room_get_OneRandomNextRoom, Room_get_OneRandomNextRoom_Code_20, r)
 	}
 
-	nextRandomRoomName := g.connectionSlice()[randomNextRoomIndex]
-	return Answer[mtr](nextRandomRoomName, Room_get_OneRandomNextRoom, null, g.room)
+	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
+	return Answer[mtr](nextRandomRoomName, Room_get_OneRandomNextRoom, null, r)
 }
 
 // ==========================================================

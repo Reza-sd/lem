@@ -43,11 +43,11 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 
 	r := newPlainRoom()
-	r.set.name(rm.name).connectionSlice(rm.connectionSlice)
+	r.SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
-		r.set.allSeats(MaxSeatsStartEnd).usedSeats(UsedSeatsStartEnd)
+		r.SetAllSeats(MaxSeatsStartEnd).SetUsedSeats(UsedSeatsStartEnd)
 	} else {
-		r.set.allSeats(AllSeatsNormalRoom).usedSeats(0)
+		r.SetAllSeats(AllSeatsNormalRoom).SetUsedSeats(0)
 
 	}
 	return r
@@ -63,7 +63,7 @@ func Answer[T any](returnedValue T, funcNameCode, statusCode uint8, r *room) T {
 // ---------------------------------------------------------------
 func (r *room) Print() {
 
-	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.get.name(), r.get.allSeats(), r.get.usedSeats(), r.get.connectionSlice())
+	fmt.Printf("\nRoom: Name=%v, AllSeats=%v, UsedSeats=%v, ConnectionSlice=%v\n", r.GetName(), r.GetAllSeats(), r.GetUsedSeats(), r.GetConnectionSlice())
 
 }
 

@@ -1,43 +1,43 @@
 package room
 
 // ================================
-func (s *setter) name(name mtr) *setter {
-	s.room.name = name
-	return s
+func (r *room) SetName(name mtr) *room {
+	r.name = name
+	return r
 }
-func (s *setter) allSeats(allSeats mtr) *setter {
-	s.room.allSeats = allSeats
-	return s
+func (r *room) SetAllSeats(allSeats mtr) *room {
+	r.allSeats = allSeats
+	return r
 }
-func (s *setter) usedSeats(usedSeats mtr) *setter {
-	s.room.usedSeats = usedSeats
-	return s
+func (r *room) SetUsedSeats(usedSeats mtr) *room {
+	r.usedSeats = usedSeats
+	return r
 }
-func (s *setter) connectionSlice(connectionSlice []mtr) *setter {
-	s.room.connectionSlice = make([]mtr, len(connectionSlice), maxLenConnectionSlice)
-	copy(s.room.connectionSlice, connectionSlice)
+func (r *room) SetConnectionSlice(connectionSlice []mtr) *room {
+	r.connectionSlice = make([]mtr, len(connectionSlice), maxLenConnectionSlice)
+	copy(r.connectionSlice, connectionSlice)
 
-	return s
+	return r
 }
 
 // ===============================================================
-func (s *setter) oneCome() *room {
+func (r *room) UpdateOneCome() *room {
 
-	if s.room.get.usedSeats() == s.room.get.allSeats() || s.room.get.usedSeats()+1 > s.room.get.allSeats() {
-		return Answer[*room](s.room, Room_set_oneCome, Room_set_oneCome_code_10, s.room)
+	if r.GetUsedSeats() == r.GetAllSeats() || r.GetUsedSeats()+1 > r.GetAllSeats() {
+		return Answer[*room](r, Room_set_oneCome, Room_set_oneCome_code_10, r)
 	}
 
-	s.room.set.usedSeats(s.room.get.usedSeats() + 1)
-	return Answer[*room](s.room, Room_set_oneCome, null, s.room)
+	r.SetUsedSeats(r.GetUsedSeats() + 1)
+	return Answer[*room](r, Room_set_oneCome, null, r)
 }
 
 // =====================================================
-func (s *setter) oneLeave() *room {
-	if s.room.get.usedSeats() == 0 {
-		return Answer[*room](s.room, Room_set_oneLeave, Room_set_oneLeave_code_10, s.room)
+func (r *room) UpdateOneLeave() *room {
+	if r.GetUsedSeats() == 0 {
+		return Answer[*room](r, Room_set_oneLeave, Room_set_oneLeave_code_10, r)
 	}
-	s.room.set.usedSeats(s.room.get.usedSeats() - 1)
-	return Answer[*room](s.room, Room_set_oneLeave, null, s.room)
+	r.SetUsedSeats(r.GetUsedSeats() - 1)
+	return Answer[*room](r, Room_set_oneLeave, null, r)
 }
 
 // =====================================================
