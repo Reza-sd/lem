@@ -8,4 +8,7 @@ update:
 	sudo apt upgrade -y && sudo apt update -y
 lint:
 	golint ./... && echo "========vet============" && go vet ./... && echo "======================="
+git:
+	git add . && git commit -m "." && git push
+
 
