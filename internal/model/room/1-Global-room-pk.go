@@ -20,8 +20,8 @@ const ( //func or method status code
 	Room_set_oneCome
 	Room_set_oneCome_code_10
 
-	Room_set_oneLeave
-	Room_set_oneLeave_code_10
+	Room_UpdateOneLeave
+	Room_UpdateOneLeave_code_10
 
 	//-----setter--------------------
 

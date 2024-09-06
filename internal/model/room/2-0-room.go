@@ -11,18 +11,19 @@ type room struct {
 	usedSeats       mtr
 	connectionSlice []mtr
 	//IsAvailable bool
-	get getter
-	set setter
+	// get getter
+	// set setter
 	//update updater
 	Errdb map[uint8]uint8
 }
-type getter struct {
-	room *room
-}
 
-type setter struct {
-	room *room
-}
+// type getter struct {
+// 	room *room
+// }
+
+// type setter struct {
+// 	room *room
+// }
 
 type rmBuildArg struct {
 	name            mtr
@@ -33,9 +34,9 @@ type rmBuildArg struct {
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
 	r := &room{}
-	r.get = getter{room: r}
-	r.set = setter{room: r}
-	r.Errdb = make(map[uint8]uint8)
+	// r.get = getter{room: r}
+	// r.set = setter{room: r}
+	r.Errdb = map[uint8]uint8{null: null}
 	return r
 }
 

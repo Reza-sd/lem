@@ -28,16 +28,16 @@ func (r *room) UpdateOneCome() *room {
 	}
 
 	r.SetUsedSeats(r.GetUsedSeats() + 1)
-	return Answer[*room](r, Room_set_oneCome, null, r)
+	return Answer[*room](r, null, null, r)
 }
 
 // =====================================================
 func (r *room) UpdateOneLeave() *room {
 	if r.GetUsedSeats() == 0 {
-		return Answer[*room](r, Room_set_oneLeave, Room_set_oneLeave_code_10, r)
+		return Answer[*room](r, Room_UpdateOneLeave, Room_UpdateOneLeave_code_10, r)
 	}
 	r.SetUsedSeats(r.GetUsedSeats() - 1)
-	return Answer[*room](r, Room_set_oneLeave, null, r)
+	return Answer[*room](r, null, null, r)
 }
 
 // =====================================================
