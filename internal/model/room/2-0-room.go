@@ -19,7 +19,7 @@ type rmBuildArg struct {
 // ------------------------------------
 // func (r *room)wrapper(statLevel uint8, statCode uint8, preStatCodesSlice []uint8) []uint8
 func wrapper(statCode uint8, preStatCodesSlice []uint8) []uint8 {
-	if statCode == 0 && preStatCodesSlice == nil {
+	if statCode == 0 && len(preStatCodesSlice)==0 {
 		return nil
 	}
 
@@ -78,7 +78,8 @@ func (r *room) Print() {
 
 	}
 	println()
-	// var a []int
+	//var a []int
+	//print(len(a))
 	// println(a==nil)
 	// a=[]int{1}
 	// println(a[0])
