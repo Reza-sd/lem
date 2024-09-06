@@ -10,5 +10,8 @@ lint:
 	golint ./... && echo "========vet============" && go vet ./... && echo "======================="
 git:
 	git add . && git commit -m "." && git push
+re:
+	git restore .
+
 
 
