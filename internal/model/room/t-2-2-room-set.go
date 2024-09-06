@@ -15,7 +15,7 @@ var oneCome_Cases = TestCasesForFunc{
 				allSeats:        1,
 				usedSeats:       1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{null: null},
+				Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
@@ -28,7 +28,7 @@ var oneCome_Cases = TestCasesForFunc{
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd + 1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{null: null},
+				Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
@@ -50,7 +50,7 @@ var oneLeave_Cases = TestCasesForFunc{
 				usedSeats:       0,
 				connectionSlice: []m{},
 				Errdb: map[e]e{
-					null:           null,
+					Null:           Null,
 					UpdateOneLeave: UpdateOneLeave10,
 				},
 			},
@@ -65,7 +65,7 @@ var oneLeave_Cases = TestCasesForFunc{
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd - 1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{null: null},
+				Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------

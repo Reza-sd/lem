@@ -2,7 +2,7 @@ package room
 
 // =========================================
 type m = uint16
-type e = uint8
+type e = uint8 //error type
 
 // -----------------------------------------
 const (
@@ -17,7 +17,7 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	null = iota
+	Null = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20

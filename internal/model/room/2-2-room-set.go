@@ -28,7 +28,7 @@ func (r *room) UpdateOneCome() *room {
 	}
 
 	r.SetUsedSeats(r.GetUsedSeats() + 1)
-	return Answer[*room](r, null, null, r)
+	return Answer[*room](r, Null, Null, r)
 }
 
 // =====================================================
@@ -37,7 +37,7 @@ func (r *room) UpdateOneLeave() *room {
 		return Answer[*room](r, UpdateOneLeave, UpdateOneLeave10, r)
 	}
 	r.SetUsedSeats(r.GetUsedSeats() - 1)
-	return Answer[*room](r, null, null, r)
+	return Answer[*room](r, Null, Null, r)
 }
 
 // =====================================================

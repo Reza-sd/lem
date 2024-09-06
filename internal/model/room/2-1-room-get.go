@@ -44,7 +44,7 @@ func (r *room) GetOneRandomNextRoom() m {
 	}
 
 	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
-	return Answer[m](nextRandomRoomName, GetOneRandomNextRoom, null, r)
+	return Answer[m](nextRandomRoomName, GetOneRandomNextRoom, Null, r)
 }
 
 // ==========================================================

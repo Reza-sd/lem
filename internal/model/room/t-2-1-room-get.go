@@ -42,7 +42,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 			Got: func() any {
 				r := newPlainRoom()
 				r.GetOneRandomNextRoom()
-				return r.Errdb[GetOneRandomNextRoom] != null
+				return r.Errdb[GetOneRandomNextRoom] != Null
 			},
 			Exp: true,
 		},
@@ -52,7 +52,7 @@ var test_oneRandomNextRoom_Cases = TestCasesForFunc{
 			Got: func() any {
 				r := newPlainRoom()
 				r.SetConnectionSlice([]m{1, 2, 3}).GetOneRandomNextRoom()
-				return r.Errdb[GetOneRandomNextRoom] == null
+				return r.Errdb[GetOneRandomNextRoom] == Null
 			},
 			Exp: true,
 		},
