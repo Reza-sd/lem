@@ -23,10 +23,16 @@ const ( //func or method status code
 	GetOneRandomNextRoom20
 
 	UpdateOneCome
-	Room_set_oneCome_code_10
+	UpdateOneCome10
 
 	UpdateOneLeave
 	UpdateOneLeave10
 )
 
+// var errorMap = map[int]string{
+// 	ErrorCodeUnauthorized: "Unauthorized",
+// 	ErrorCodeNotFound: "Not Found",
+// 	ErrorCodeInternalServerError: "Internal Server Error",
+// 	// ... other error codes
+//   }
 //=========================================

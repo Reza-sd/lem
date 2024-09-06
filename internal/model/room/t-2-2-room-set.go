@@ -8,27 +8,34 @@ var oneCome_Cases = TestCasesForFunc{
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in middle type",
-			Got: SampleRoom.Middle_Name_3().UpdateOneCome(),
+			Got: func() any {
+				r, _ := SampleRoom.Middle_Name_3().UpdateOneCome()
+				return r
+			},
 
 			Exp: &room{
 				name:            3,
 				allSeats:        1,
 				usedSeats:       1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{Null: Null},
+				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
 		{
 			Des: "increase one UsedSeats when Room in End type",
-			Got: SampleRoom.End_Name_1().UpdateOneCome(),
+			Got: func() any {
+				r, _ := SampleRoom.End_Name_1().UpdateOneCome()
+				return r
+			},
+			//Got: SampleRoom.End_Name_1().UpdateOneCome(),
 
 			Exp: &room{
 				name:            1,
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd + 1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{Null: Null},
+				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------
@@ -49,10 +56,10 @@ var oneLeave_Cases = TestCasesForFunc{
 				allSeats:        1,
 				usedSeats:       0,
 				connectionSlice: []m{},
-				Errdb: map[e]e{
-					Null:           Null,
-					UpdateOneLeave: UpdateOneLeave10,
-				},
+				//Errdb: map[e]e{
+				// 	Null:           Null,
+				// 	UpdateOneLeave: UpdateOneLeave10,
+				// },
 			},
 		},
 		//---------------------------------------
@@ -65,7 +72,7 @@ var oneLeave_Cases = TestCasesForFunc{
 				allSeats:        MaxSeatsStartEnd,
 				usedSeats:       UsedSeatsStartEnd - 1,
 				connectionSlice: []m{},
-				Errdb:           map[e]e{Null: Null},
+				//Errdb:           map[e]e{Null: Null},
 			},
 		},
 		//---------------------------------------

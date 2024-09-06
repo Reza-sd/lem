@@ -11,7 +11,7 @@ type room struct {
 	usedSeats       m
 	connectionSlice []m
 
-	Errdb      map[e]e
+	//Errdb      map[e]e
 	statusLine []uint8
 }
 
@@ -34,18 +34,18 @@ func statusWrapper(statusCode uint8, previousStatusCodeSlice []uint8) []uint8 {
 }
 
 // -------------------------------
-func Answer[T any](returnedValue T, funcNameCode, statusCode e, r *room) T {
-	//statusWrapper(statusCode,r.statusLine)
-	r.Errdb[funcNameCode] = statusCode
-	return returnedValue
-}
+// func Answer[T any](returnedValue T, funcNameCode, statusCode e, r *room) T {
+// 	//statusWrapper(statusCode,r.statusLine)
+// 	r.Errdb[funcNameCode] = statusCode
+// 	return returnedValue
+// }
 
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
 	return &room{
 		connectionSlice: []m{},
-		Errdb:           map[e]e{Null: Null},
-		statusLine:      nil,
+		//Errdb:           map[e]e{Null: Null},
+		statusLine: nil,
 	}
 }
 
