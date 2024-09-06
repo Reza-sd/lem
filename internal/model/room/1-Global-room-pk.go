@@ -25,14 +25,17 @@ const ( //func or method status code
 	UpdateOneCome
 	UpdateOneCome10
 
+
 	UpdateOneLeave
 	UpdateOneLeave10
 )
 
-// var errorMap = map[int]string{
+// var errorMap = map[int]string{ // for log purpose
+
 // 	ErrorCodeUnauthorized: "Unauthorized",
 // 	ErrorCodeNotFound: "Not Found",
 // 	ErrorCodeInternalServerError: "Internal Server Error",
 // 	// ... other error codes
+
 //   }
 //=========================================
