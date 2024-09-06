@@ -22,10 +22,10 @@ type rmBuildArg struct {
 
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
-	r := &room{}
-	r.connectionSlice=[]m{}
-	r.Errdb = map[e]e{Null: Null}
-	return r
+	return &room{
+		connectionSlice: []m{},
+		Errdb:           map[e]e{Null: Null},
+	}
 }
 
 // -----------------------------------------------------------
