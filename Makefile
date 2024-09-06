@@ -8,10 +8,10 @@ update:
 	sudo apt upgrade -y && sudo apt update -y
 lint:
 	golint ./... && echo "========vet============" && go vet ./... && echo "======================="
-git:
+push:
 	git add . && git commit -m "." && git push
 # If you only want to undo changes in the working directory without affecting the staging area
-re:
+undo:
 	git restore .
 
 
