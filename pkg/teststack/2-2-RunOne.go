@@ -26,8 +26,8 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesforFunc, skip
 	//for i := 0; i < len(allTestCasesPkSlice); i++ {
 	//fmt.Println(mySlice[i])
 	for j := 0; j < len(testcaseFuncSlice); j++ {
-
-		if testcaseFuncSlice[j].Skip {
+		theTestCase :=testcaseFuncSlice[j]
+		if theTestCase.Skip {
 			t.Skip()
 		}
 
@@ -37,10 +37,12 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesforFunc, skip
 			// if testcaseFuncSlice[j].Skip {
 			// 	t.Skip()
 			// }
-			got := testcaseFuncSlice[j].Got
+			// _,input:=theTestCase.Setup()
 
-			exp := testcaseFuncSlice[j].Exp
-			myTester.Assert(t, got, exp)
+			// got := theTestCase.Got
+
+			// exp := theTestCase.Exp
+			myTester.Assert(t, theTestCase)
 		})
 	}
 

@@ -43,10 +43,11 @@ func (myTester *Tester) RunAll(t *testing.T) {
 				if ThisTestCase.Skip {
 					t.Skip()
 				}
-				got := ThisTestCase.Got
+				// _,input:=ThisTestCase.Setup()
+				// got := ThisTestCase.Got
 
-				exp := ThisTestCase.Exp
-				myTester.Assert(t, got, exp)
+				// exp := ThisTestCase.Exp
+				myTester.Assert(t, ThisTestCase)
 
 			})
 		}

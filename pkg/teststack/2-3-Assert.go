@@ -8,8 +8,14 @@ import (
 )
 
 // =======================================================
-func (myTester *Tester) Assert(t testing.TB, got, exp any) {
+func (myTester *Tester) Assert(t testing.TB, testCase TestCase) {
 	t.Helper()
+
+	//_,input:=testCase.Setup()
+
+	got := testCase.Got
+
+	exp := testCase.Exp
 
 	var gotValue any
 	var expValue any
