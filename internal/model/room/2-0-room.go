@@ -7,7 +7,7 @@ type room struct {
 	usedSeats       RT
 	connectionSlice []RT
 
-	statusLine []ET
+	//statusLine []ET // to store current statusLine, to ckeck if this instance healthy or not
 }
 
 type rmBuildArg struct {
@@ -40,7 +40,7 @@ func wrapper(statCode uint8, preStatCodesSlice []uint8) []uint8 {
 func newPlainRoom() *room { //Constructor=factory function=builder
 	return &room{
 		connectionSlice: []RT{},
-		statusLine:      nil,
+		//statusLine:      nil,
 	}
 }
 
