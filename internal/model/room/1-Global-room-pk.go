@@ -2,7 +2,7 @@ package room
 
 // =========================================
 type RT = uint16
-type ET = uint8 //error type
+type errT = uint8 //error type
 
 // -----------------------------------------
 const (
@@ -17,7 +17,7 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	Null ET = iota
+	Null errT = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20
@@ -29,7 +29,7 @@ const ( //func or method status code
 	UpdateOneLeave10
 )
 
-var StatusCodeDescription = map[ET]string{ //for log purpose
+var StatusCodeDescription = map[errT]string{ //for log purpose
 	GetOneRandomNextRoom:   "GetOneRandomNextRoom",
 	GetOneRandomNextRoom10: "  ",
 	GetOneRandomNextRoom20: "  ",

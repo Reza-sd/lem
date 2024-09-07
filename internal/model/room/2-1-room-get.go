@@ -29,7 +29,7 @@ func (r *room) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (r *room) GetOneRandomNextRoom() (RT, []ET) {
+func (r *room) GetOneRandomNextRoom() (RT, []errT) {
 
 	lenConnectionSlice := len(r.GetConnectionSlice())
 	if lenConnectionSlice == 0 {
