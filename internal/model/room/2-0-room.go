@@ -7,6 +7,7 @@ type room struct {
 	usedSeats       RT
 	connectionSlice []RT
 
+	//isSick bool //check if the object healthy?
 	//statusLine []ET // to store current statusLine, to ckeck if this instance healthy or not
 }
 
