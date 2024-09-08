@@ -8,30 +8,42 @@ var myTester_Cases_2 = TestCasesforFunc{
 	TestCases: []TestCase{
 		{
 			Des: "test1111",
-			Got: func() any {
-				// a := 1
-				// b := 3
-				// c := b - a
-				return 3
+			Setup: func()(any,string){
+				return 3,"input value"
 			},
+			// Got: func() any {
+			// 	// a := 1
+			// 	// b := 3
+			// 	// c := b - a
+			// 	return 3
+			// },
 			Exp: 3,
 		},
 		{
 			//Skip: true,
 			Des: "test 22222",
-			Got: 4,
+			Setup: func()(any,string){
+				return 4,"input value"
+			},
+			//Got: 4,
 			Exp: 4,
 		},
 		{
 			//Skip: true,
 			Des: "test 3333",
-			Got: "mio",
+			Setup: func()(any,string){
+				return "mio","input value"
+			},
+			//Got: "mio",
 			Exp: "mio",
 		},
 		{
 			//Skip: true,
 			Des: "test 444",
-			Got: 5,
+			Setup: func()(any,string){
+				return 5,"input value"
+			},
+			//Got: 5,
 			Exp: func() any {
 				a := 1
 				b := 6
@@ -43,7 +55,10 @@ var myTester_Cases_2 = TestCasesforFunc{
 		{
 			//Skip: true,
 			Des: "test 5555",
-			Got: true,
+			Setup: func()(any,string){
+				return true,"input value"
+			},
+			//Got: true,
 			Exp: func() any {
 				a := 1
 				b := 6
@@ -55,7 +70,10 @@ var myTester_Cases_2 = TestCasesforFunc{
 		{
 			//Skip: true,
 			Des: "test 6666",
-			Got: struct{ mio bool }{mio: true},
+			Setup: func()(any,string){
+				return struct{ mio bool }{mio: true},"input value"
+			},
+			//Got: struct{ mio bool }{mio: true},
 			Exp: struct{ mio bool }{mio: true},
 		},
 
@@ -63,14 +81,20 @@ var myTester_Cases_2 = TestCasesforFunc{
 		{
 			//Skip: true,
 			Des: "test 77777",
-			Got: &struct{ mio bool }{mio: true},
+			Setup: func()(any,string){
+				return &struct{ mio bool }{mio: true},"input value"
+			},
+			//Got: &struct{ mio bool }{mio: true},
 			Exp: &struct{ mio bool }{mio: true},
 		},
 		//--------------------------
 		{
 			//Skip: true,
 			Des: "test 8888",
-			Got: fmt.Errorf("err msg"),
+			Setup: func()(any,string){
+				return fmt.Errorf("err msg"),"input value"
+			},
+			//Got: fmt.Errorf("err msg"),
 			Exp: fmt.Errorf("err msg"),
 		},
 		//--------------------------

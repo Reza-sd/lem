@@ -11,21 +11,21 @@ import (
 func (myTester *Tester) Assert(t testing.TB, testCase TestCase) {
 	t.Helper()
 
-	//_,input:=testCase.Setup()
+	gotValue,input:=testCase.Setup()
 
-	got := testCase.Got
+	//got := testCase.Got
 
 	exp := testCase.Exp
 
-	var gotValue any
+	//var gotValue any
 	var expValue any
 
-	switch g := got.(type) {
-	case func() any:
-		gotValue = got.(func() any)() //call function
-	default:
-		gotValue = g
-	}
+	// switch g := got.(type) {
+	// case func() any:
+	// 	gotValue = got.(func() any)() //call function
+	// default:
+	// 	gotValue = g
+	// }
 
 	switch e := exp.(type) {
 	case func() any:
@@ -36,7 +36,7 @@ func (myTester *Tester) Assert(t testing.TB, testCase TestCase) {
 
 	if !reflect.DeepEqual(gotValue, expValue) {
 		//t.Fatalf("\n>>>not same: \n got=%v<<\n exp=%v<<", got, exp)
-		t.Errorf("\n\n|----> Got=%v<<<Type of %T>>>\n|----> Exp=%v<<<Type of %T>>>", gotValue, gotValue, expValue, expValue)
+		t.Errorf("\n\n|---->Input=>>%v<<<\n|---->Got=%v<<<Type of %T>>>\n|---->Exp=%v<<<Type of %T>>>", input,gotValue, gotValue, expValue, expValue)
 	}
 
 }

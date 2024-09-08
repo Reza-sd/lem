@@ -6,7 +6,7 @@ type TestCase struct {
 	Des  string
 	//Input String //a report of setup generat by fmt.sprintf
 	//GotInp struct{Got any,}
-	Setup func()(any,string)
+	Case func()(input any,got any, exp any)
 	Got  any
 	Exp  any
 }
