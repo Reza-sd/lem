@@ -2,21 +2,11 @@ package teststack
 
 import (
 	"fmt"
-
 	"testing"
 )
 
 // ===========================
 func (myTester *Tester) RunAll(t *testing.T) {
-
-	//--------------------------------------------------
-	defer func() {
-		if r := recover(); r != nil {
-			t.Errorf("\n\n>>>>>>###### panic RunAll ########<<<<\n%v\n\n", r)
-			//err = fmt.Errorf("panic: %v", r)
-
-		}
-	}()
 	//--------------------------------------------------
 	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
@@ -43,10 +33,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 				if ThisTestCase.Skip {
 					t.Skip()
 				}
-				// _,input:=ThisTestCase.Setup()
-				// got := ThisTestCase.Got
 
-				// exp := ThisTestCase.Exp
 				myTester.Assert(t, ThisTestCase)
 
 			})

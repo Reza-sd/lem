@@ -1,7 +1,7 @@
 package teststack
 
 var Method1_test = TestCasesforFunc{
-	FuncName: "MyTester.Method2",
+	FuncName: "MyTester.Method1",
 	//Skip: true,
 	TestCases: []TestCase{
 		{
