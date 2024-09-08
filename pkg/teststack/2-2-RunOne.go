@@ -26,7 +26,7 @@ func (myTester *Tester) RunOne(t *testing.T, testCaseFunc TestCasesforFunc, skip
 	//for i := 0; i < len(allTestCasesPkSlice); i++ {
 	//fmt.Println(mySlice[i])
 	for j := 0; j < len(testcaseFuncSlice); j++ {
-		theTestCase :=testcaseFuncSlice[j]
+		theTestCase := testcaseFuncSlice[j]
 		if theTestCase.Skip {
 			t.Skip()
 		}

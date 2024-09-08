@@ -10,8 +10,8 @@ var (
 
 		AllTestCasesPkStSlice: []AllTestCasesPkSt{
 			//{TestCasesFunc: Init_Test, Skip: true},
-			{TestCasesforFunc: myTester1_test, Skip: false},
-			{TestCasesforFunc: myTester_Cases_2},
+			{TestCasesforFunc: Method1_test, Skip: false},
+			{TestCasesforFunc: Method2_test},
 			//{TestCasesFunc: myTester_Cases_1, Skip: true},
 		},
 	}
