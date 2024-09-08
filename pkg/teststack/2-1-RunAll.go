@@ -45,3 +45,15 @@ func (myTester *Tester) RunAll(t *testing.T) {
 }
 
 //==============================
+// ====================================
+func Inp(inputs ...any) string {
+	var str string
+	var count int
+	for _, item := range inputs {
+		count++
+		str = str + fmt.Sprintf("%d-inp=type:(%T) value:(%v)\n", count, item, item)
+	}
+	return str
+}
+
+// ====================================

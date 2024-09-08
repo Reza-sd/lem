@@ -1,14 +1,13 @@
 package teststack
 
-import (
-	"testing"
-)
+import "testing"
 
+// ========================================
 var (
 	MyTester = Tester{
-		//PackageName: "mio",
+		PackageName: "mio",
 
-		AllTestCasesPkStSlice: []AllTestCasesPkSt{
+		AllTestCasesPkStSlice: []AllTestCasesPkStruct{
 			//{TestCasesFunc: Init_Test, Skip: true},
 			{TestCasesforFunc: Method1_test, Skip: false},
 			{TestCasesforFunc: Method2_test},
@@ -20,6 +19,6 @@ var (
 // ========================================
 func Test_Tester_pk(t *testing.T) {
 	MyTester.RunAll(t)
-	//MyTester.RunOne(t, Init_Test, true)
-	//MyTester.RunOne(t, Init_Test, false)
 }
+
+//========================================
