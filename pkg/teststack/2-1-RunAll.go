@@ -6,14 +6,14 @@ import (
 )
 
 // ===========================
-func (myTester *Tester) RunAll(t *testing.T) {
+func RunAll(t *testing.T, PackageName string, allTestCasesPkSlice []AllCasesPkg) {
 	//--------------------------------------------------
-	allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
+	//allTestCasesPkSlice := myTester.AllTestCasesPkStSlice
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
 
 		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesforFunc
-		ThisTestCasesFuncSkip := allTestCasesPkSlice[i].Skip
+		ThisTestCasesFuncSkip := ThisTestCasesFunc.Skip
 		print("\n")
 
 		for j := 0; j < len(ThisTestCasesFunc.TestCases); j++ {
@@ -34,7 +34,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 					t.Skip()
 				}
 
-				myTester.Assert(t, ThisTestCase)
+				assert(t, &ThisTestCase)
 
 			})
 		}
@@ -44,7 +44,7 @@ func (myTester *Tester) RunAll(t *testing.T) {
 
 }
 
-//==============================
+// ==============================
 // ====================================
 func Inp(inputs ...any) string {
 	var str string

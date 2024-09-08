@@ -7,7 +7,7 @@ import (
 
 var (
 	MyTester = ts.Tester{
-		AllTestCasesPkStSlice: []ts.AllTestCasesPkStruct{
+		AllTestCasesPkStSlice: []ts.AllCasesPkg{
 			{TestCasesforFunc: test_roomBuilder_Cases},
 			{TestCasesforFunc: hasOneFreeSeat_Cases},
 			{TestCasesforFunc: oneCome_Cases},

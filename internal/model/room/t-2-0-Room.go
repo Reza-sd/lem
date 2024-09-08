@@ -6,8 +6,8 @@ import (
 
 // ====================================
 
-type TestCasesForFunc = ts.TestCasesforFunc
-type TestCase = ts.TestCase
+type TestCasesForFunc = ts.AllCasesFunc
+type TestCase = ts.Case
 
 type SampleRoomSt struct{}
 

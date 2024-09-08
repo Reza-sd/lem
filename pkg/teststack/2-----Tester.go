@@ -1,25 +1,25 @@
 package teststack
 
-//====================================
-type TestCase struct {
+// ====================================
+type Case struct {
 	Skip bool
 	Des  string
-	Case func() (input string, got any, exp any)
+	Set  func() (input string, got any, exp any)
+}
+type Case2 struct {
+
+	set []func() (string,any,any)
 }
 
-type TestCasesforFunc struct {
-	Skip      bool
-	FuncName  string
-	TestCases []TestCase
+type AllCasesFunc struct {
+	//Skip      bool
+	//FuncName  string
+	TestCases []Case
 }
 
-type Tester struct {
-	PackageName           string
-	AllTestCasesPkStSlice []AllTestCasesPkStruct
-}
-
-type AllTestCasesPkStruct struct {
-	TestCasesforFunc TestCasesforFunc
+type AllCasesPkg struct {
 	Skip             bool
+	TestCasesforFunc AllCasesFunc
 }
+
 //====================================

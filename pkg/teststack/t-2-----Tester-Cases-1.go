@@ -1,32 +1,42 @@
 package teststack
 
-var Method1_test = TestCasesforFunc{
+var me1_test= map[string]any{
+	"func me1":[]any{
+		func() (string,any,any){
+			return "mio",2,3
+		},
+	},
+
+}
+
+//-------------------
+var Method1_test = AllCasesFunc{
 	FuncName: "MyTester.Method1",
 	//Skip: true,
-	TestCases: []TestCase{
+	TestCases: []Case{
 		{
 			//Skip: true,
 			Des: "test int description",
-			Case: func() (string, any, any) {
+			Set: func() (string, any, any) {
 				a := 1
 				b := 5
-				input := Inp(a, b)
+				inp := Inp(a, b)
 				got := (b - a)
 				exp := 4
-				return input, got, exp
+				return inp, got, exp
 			},
 		},
 		//--------------------------
 		{
 			//Skip: true,
 			Des: "test string",
-			Case: func() (string, any, any) {
+			Set: func() (string, any, any) {
 				inp1 := "ali"
 				inp2 := "reza"
-				input := Inp(inp1)
+				inp := Inp(inp1)
 				got := inp1 + inp2
 				exp := "alireza"
-				return input, got, exp
+				return inp, got, exp
 			},
 		},
 
@@ -34,26 +44,26 @@ var Method1_test = TestCasesforFunc{
 		{
 			//Skip: true,
 			Des: "test struct",
-			Case: func() (string, any, any) {
+			Set: func() (string, any, any) {
 				inp1 := true
-				input := Inp(inp1)
+				inp := Inp(inp1)
 				got := struct{ mio bool }{mio: inp1}
 				exp := struct{ mio bool }{mio: true}
-				return input, got, exp
+				return inp, got, exp
 			},
 		},
 		//--------------------------
 		{
 			//Skip: true,
 			Des: "test error type",
-			Case: func() (string, any, any) {
+			Set: func() (string, any, any) {
 				var inp1 error
 				//Des:="test1111"
-				input := Inp(inp1)
+				inp := Inp(inp1)
 				got := inp1
 				var out error
 				exp := out
-				return input, got, exp
+				return inp, got, exp
 			},
 		},
 		//--------------------------
