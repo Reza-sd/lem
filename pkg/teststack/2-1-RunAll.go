@@ -12,7 +12,7 @@ func RunAll(t *testing.T, PackageName string, allTestCasesPkSlice []AllCasesPkg)
 
 	for i := 0; i < len(allTestCasesPkSlice); i++ {
 
-		ThisTestCasesFunc := allTestCasesPkSlice[i].TestCasesforFunc
+		ThisTestCasesFunc := allTestCasesPkSlice[i].CasesMap
 		ThisTestCasesFuncSkip := ThisTestCasesFunc.Skip
 		print("\n")
 

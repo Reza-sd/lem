@@ -8,12 +8,12 @@ import (
 var (
 	MyTester = ts.Tester{
 		AllTestCasesPkStSlice: []ts.AllCasesPkg{
-			{TestCasesforFunc: test_roomBuilder_Cases},
-			{TestCasesforFunc: hasOneFreeSeat_Cases},
-			{TestCasesforFunc: oneCome_Cases},
-			{TestCasesforFunc: Print_Cases},
-			{TestCasesforFunc: oneLeave_Cases},
-			{TestCasesforFunc: test_oneRandomNextRoom_Cases},
+			{CasesMap: test_roomBuilder_Cases},
+			{CasesMap: hasOneFreeSeat_Cases},
+			{CasesMap: oneCome_Cases},
+			{CasesMap: Print_Cases},
+			{CasesMap: oneLeave_Cases},
+			{CasesMap: test_oneRandomNextRoom_Cases},
 		},
 	}
 )
