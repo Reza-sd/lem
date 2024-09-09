@@ -18,6 +18,7 @@ func (get *roomGetter) UsedSeats() RT {
 }
 func (get *roomGetter) ConnectionSlice() []RT {
 	return get.room.data.connectionSlice
+	
 }
 
 //================hasOneFreeSeat===============================
