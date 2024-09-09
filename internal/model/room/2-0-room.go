@@ -2,13 +2,26 @@ package room
 
 // =======================================================
 type room struct {
-	name            RT
-	allSeats        RT
-	usedSeats       RT
-	connectionSlice []RT
+	data struct {
+		name            RT
+		allSeats        RT
+		usedSeats       RT
+		connectionSlice []RT
+	}
 
-	//isSick bool //check if the object healthy?
-	//statusLine []ET // to store current statusLine, to ckeck if this instance healthy or not
+	get roomGetter
+	set roomSetter
+	act roomAction
+}
+
+type roomGetter struct {
+	room *room
+}
+type roomSetter struct {
+	room *room
+}
+type roomAction struct {
+	room *room
 }
 
 type rmBuildArg struct {
@@ -39,42 +52,48 @@ func wrapper(statCode statType, preStatCodesSlice []statType) []statType {
 
 // -------------------------------------------------------------
 func newPlainRoom() *room { //Constructor=factory function=builder
-	return &room{
-		connectionSlice: []RT{},
-		//statusLine:      nil,
-	}
+
+	r := &room{}
+
+	r.data.connectionSlice = []RT{}
+
+	r.get.room = r
+	r.set.room = r
+	r.act.room = r
+
+	return r
 }
 
 // -----------------------------------------------------------
-func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
-	r := newPlainRoom().SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
-	if rm.name == startRoomName || rm.name == rm.endRoomName {
-		r.SetAllSeats(MaxSeatsStartEnd).SetUsedSeats(UsedSeatsStartEnd)
-	} else {
-		r.SetAllSeats(AllSeatsNormalRoom).SetUsedSeats(0)
+// func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
+// 	r := newPlainRoom().SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
+// 	if rm.name == startRoomName || rm.name == rm.endRoomName {
+// 		r.SetAllSeats(MaxSeatsStartEnd).SetUsedSeats(UsedSeatsStartEnd)
+// 	} else {
+// 		r.SetAllSeats(AllSeatsNormalRoom).SetUsedSeats(0)
 
-	}
+// 	}
 
-	return r
-	// if its first then? if end then
-}
+// 	return r
+// 	// if its first then? if end then
+// }
 
 // ---------------------------------------------------------------
-func (r *room) Print() {
+func (act *roomAction) Print() {
 
 	println()
 
 	print("Room: Name=")
-	print(r.GetName())
+	print(act.room.get.Name())
 
 	print(", AllSeats=")
-	print(r.GetAllSeats())
+	print(act.room.get.AllSeats())
 
 	print(", UsedSeats=")
-	print(r.GetUsedSeats())
+	print(act.room.get.UsedSeats())
 
 	print(", ConnectionSlice[]index:(value)=")
-	for index, value := range r.GetConnectionSlice() {
+	for index, value := range act.room.get.ConnectionSlice() {
 		print(index, ":(", value, "),")
 
 	}

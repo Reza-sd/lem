@@ -6,32 +6,35 @@ import (
 )
 
 // ==================================================
-func (r *room) GetName() RT {
-	return r.name
+func (get *roomGetter) Name() RT {
+	return get.room.data.name //r.data.name
 }
 
-func (r *room) GetAllSeats() RT {
-	return r.allSeats
+func (get *roomGetter) AllSeats() RT {
+	return get.room.data.allSeats
 }
-func (r *room) GetUsedSeats() RT {
-	return r.usedSeats
+func (get *roomGetter) UsedSeats() RT {
+	return get.room.data.usedSeats
 }
-func (r *room) GetConnectionSlice() []RT {
-	return r.connectionSlice
+func (get *roomGetter) ConnectionSlice() []RT {
+	return get.room.data.connectionSlice
 }
 
+// func (d *roomData)mio() {
+
+// }
 //================hasOneFreeSeat===============================
 
-func (r *room) hasOneFreeSeat() bool {
+func (get *roomGetter) hasOneFreeSeat() bool {
 
-	return r.GetUsedSeats() < r.GetAllSeats()
+	return get.UsedSeats() < get.AllSeats()
 }
 
 //==================OneRandomNextRoom=============================
 
-func (r *room) GetOneRandomNextRoom() (RT, []statType) {
+func (get *roomGetter) GetOneRandomNextRoom() (RT, []statType) {
 
-	lenConnectionSlice := len(r.GetConnectionSlice())
+	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {
 		return 0, wrapper(GetOneRandomNextRoom10, nil)
 	}
@@ -42,7 +45,7 @@ func (r *room) GetOneRandomNextRoom() (RT, []statType) {
 		return 0, wrapper(GetOneRandomNextRoom10, nil)
 	}
 
-	nextRandomRoomName := r.GetConnectionSlice()[randomNextRoomIndex]
+	nextRandomRoomName := get.ConnectionSlice()[randomNextRoomIndex]
 	return nextRandomRoomName, nil
 }
 
