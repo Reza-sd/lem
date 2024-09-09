@@ -13,3 +13,16 @@ L3 = [""-1-3-4-0]
 
 
 # strings.Builder
+-------------------------------------------------------
+var me1_test = map[string]any{
+	"return 3 if...": func() []any {
+		skip := false
+		inp1 := 1
+		inp2 := 5
+		//inp := Inp(inp1, inp2)
+		got := (inp2 - inp1)
+		exp := 4
+		return []any{skip, got, exp, inp1, inp2}
+	},
+}
+---------------------------------------------------
