@@ -68,6 +68,7 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
 	//r := newPlainRoom().SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
 	r := newPlainRoom().set.Name(rm.name).ConnectionSlice(rm.connectionSlice).room
+
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 
 		r.set.AllSeats(MaxSeatsStartEnd).UsedSeats(UsedSeatsStartEnd)

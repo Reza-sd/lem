@@ -20,9 +20,6 @@ func (get *roomGetter) ConnectionSlice() []RT {
 	return get.room.data.connectionSlice
 }
 
-// func (d *roomData)mio() {
-
-// }
 //================hasOneFreeSeat===============================
 
 func (get *roomGetter) hasOneFreeSeat() bool {
@@ -32,7 +29,7 @@ func (get *roomGetter) hasOneFreeSeat() bool {
 
 //==================OneRandomNextRoom=============================
 
-func (get *roomGetter) GetOneRandomNextRoom() (RT, []statType) {
+func (get *roomGetter) OneRandomNextRoom() (RT, []statType) {
 
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {
