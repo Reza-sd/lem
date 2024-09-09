@@ -13,7 +13,7 @@ func (s *roomSetter) UsedSeats(usedSeats RT) *roomSetter {
 	s.room.data.usedSeats = usedSeats
 	return s
 }
-func (s *roomSetter) SetConnectionSlice(connectionSlice []RT) *roomSetter {
+func (s *roomSetter) ConnectionSlice(connectionSlice []RT) *roomSetter {
 	s.room.data.connectionSlice = make([]RT, len(connectionSlice), maxLenConnectionSlice)
 	copy(s.room.data.connectionSlice, connectionSlice)
 
