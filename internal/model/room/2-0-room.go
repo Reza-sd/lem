@@ -19,13 +19,13 @@ type rmBuildArg struct {
 
 // ------------------------------------
 // func (r *room)wrapper(statLevel uint8, statCode uint8, preStatCodesSlice []uint8) []uint8
-func wrapper(statCode errT, preStatCodesSlice []errT) []errT {
+func wrapper(statCode statType, preStatCodesSlice []statType) []statType {
 	if statCode == 0 && len(preStatCodesSlice) == 0 {
 		return nil
 	}
 
 	if preStatCodesSlice == nil {
-		preStatCodesSlice = []errT{}
+		preStatCodesSlice = []statType{}
 	}
 	return append(preStatCodesSlice, statCode)
 }
