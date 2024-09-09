@@ -75,7 +75,7 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 // ==========================================================
 func assert(t testing.TB, got, exp any, inputsArr ...any) {
 	t.Helper()
-	inputsStr := Inp(inputsArr)
+	inputsStr := InputsArrToString(inputsArr)
 
 	if !reflect.DeepEqual(got, exp) {
 		t.Errorf("\n>------------------\nInputs:\n%v\nGot=type:(%T) value:(%v)\nExp=type:(%T) value:(%v)\n>------------------\n",
@@ -84,7 +84,7 @@ func assert(t testing.TB, got, exp any, inputsArr ...any) {
 }
 
 // ==========================================================
-func Inp(inputs []any) string {
+func InputsArrToString(inputs []any) string {
 	var str string
 	var count int
 	for _, item := range inputs {
