@@ -3,46 +3,46 @@ package main
 import "fmt"
 
 // Define an interface
-type Animal interface {
-    Speak() string
+type getter interface {
+    AllSeats() string
+	UsedSeats()string
+}
+
+type setter interface {
+    AllSeats() string
+	UsedSeats()string
 }
 
 // Define a struct implementing the interface
-type Cat struct {
+type RoomData struct {
     Name string
+	allSeats int
+	usedSeats int
 }
 
 // Implement the Speak method for Cat
-func (c Cat) Speak() string {
-    return "Meow!"
+func (c RoomData) AllSeats() string {
+    return "111!"
+}
+func (c RoomData) UsedSeats() string {
+    return "222"
 }
 
-// Define another struct implementing the interface
-type Dog struct {
-    Name string
-}
-
-// Implement the Speak method for Dog
-func (d Dog) Speak() string {
-    return "Woof!"
-}
-
-// Define a Zoo struct that contains an Animal interface
-type Zoo struct {
-    animal Animal
+type Room struct {
+    get getter
+	set setter
 }
 
 func main() {
     // Create instances of Cat and Dog
-    myCat := Cat{Name: "Whiskers"}
-    myDog := Dog{Name: "Buddy"}
+    myRoomData := RoomData{Name: "Whiskers"}
 
-    // Create a Zoo instance with Cat
-    zoo1 := Zoo{animal: myCat}
+    myroom := Room{get: myRoomData,set: myRoomData}
 	
-    fmt.Println(zoo1.animal.Speak()) // Output: Meow!
+    fmt.Println(myroom.get.AllSeats()) 
+	myroom.get.AllSeats()
+	myroom.get.UsedSeats()
+	myroom.set.AllSeats()
+	fmt.Println(myroom)
 
-    // Create a Zoo instance with Dog
-    zoo2 := Zoo{animal: myDog}
-    fmt.Println(zoo2.animal.Speak()) // Output: Woof!
 }
