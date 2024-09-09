@@ -1,7 +1,7 @@
 package room
 
 // ===============================================================
-func (a *roomAction) UpdateOneCome() (*roomAction, []statType) {
+func (a *roomAction) UpdateOneCome() (*roomAction, statTypeArr) {
 	room := a.room
 	if room.get.UsedSeats() == room.get.AllSeats() || room.get.UsedSeats()+1 > room.get.AllSeats() {
 		return a, wrapper(UpdateOneCome10, nil)
@@ -12,7 +12,7 @@ func (a *roomAction) UpdateOneCome() (*roomAction, []statType) {
 }
 
 // =====================================================
-func (a *roomAction) UpdateOneLeave() (*roomAction, []statType) {
+func (a *roomAction) UpdateOneLeave() (*roomAction, statTypeArr) {
 	room := a.room
 	if room.get.UsedSeats() == 0 {
 		return a, wrapper(UpdateOneLeave10, nil)

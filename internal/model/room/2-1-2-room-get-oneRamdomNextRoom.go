@@ -6,7 +6,7 @@ import (
 )
 //==================OneRandomNextRoom=============================
 
-func (get *roomGetter) OneRandomNextRoom() (RT, []statType) {
+func (get *roomGetter) OneRandomNextRoom() (RT, statTypeArr) {
 
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {

@@ -3,7 +3,7 @@ package room
 // =========================================
 type RT = uint16
 type statType = uint8 //error type
-
+type statTypeArr =[]statType
 // -----------------------------------------
 const (
 	PkgName            string = "room"
