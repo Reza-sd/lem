@@ -2,16 +2,17 @@ package room
 
 // =======================================================
 type room struct {
-	data struct {
-		name            RT
-		allSeats        RT
-		usedSeats       RT
-		connectionSlice []RT
-	}
+	data Data
 
 	get roomGetter
 	set roomSetter
 	act roomAction
+}
+type Data struct {
+	name            RT
+	allSeats        RT
+	usedSeats       RT
+	connectionSlice []RT
 }
 
 type roomGetter struct {
