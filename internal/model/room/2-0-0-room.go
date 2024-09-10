@@ -71,22 +71,17 @@ func newRuledRoom(rm rmBuildArg) (*room, statArrT) { //Constructor=factory funct
 
 		if err := r.set.AllSeats(MaxSeatsStartEnd); err != nil {
 			return nil, stat(3, err)
-
 		}
 		if err := r.set.UsedSeats(UsedSeatsStartEnd); err != nil {
 			return nil, stat(4, err)
-
 		}
 	} else {
 		if err := r.set.AllSeats(AllSeatsNormalRoom); err != nil {
 			return nil, stat(5, err)
-
 		}
 		if err := r.set.UsedSeats(0); err != nil {
 			return nil, stat(6, err)
-
 		}
-
 	}
 
 	return r, nil
