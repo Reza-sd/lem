@@ -6,7 +6,7 @@ type room struct {
 
 	//categorise behaviour
 	Get rGetter
-	Set rSetter
+	set rSetter
 	Act rAction
 }
 type Data struct {
@@ -43,7 +43,7 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 	r.data.connectionSlice = []RT{}
 
 	r.Get.room = r
-	r.Set.room = r
+	r.set.room = r
 	r.Act.room = r
 
 	return r
@@ -59,29 +59,29 @@ type rmBuildArg struct {
 func newRuledRoom(rm rmBuildArg) (*room, statArrT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
-	if err := r.Set.Name(rm.name); err != nil {
+	if err := r.set.Name(rm.name); err != nil {
 		return nil, stat(1, err)
 	}
-	if err := r.Set.ConnectionSlice(rm.connectionSlice); err != nil {
+	if err := r.set.ConnectionSlice(rm.connectionSlice); err != nil {
 		return nil, stat(2, err)
 	}
 
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 
-		if err := r.Set.AllSeats(MaxSeatsStartEnd); err != nil {
+		if err := r.set.AllSeats(MaxSeatsStartEnd); err != nil {
 			return nil, stat(3, err)
 
 		}
-		if err := r.Set.UsedSeats(UsedSeatsStartEnd); err != nil {
+		if err := r.set.UsedSeats(UsedSeatsStartEnd); err != nil {
 			return nil, stat(4, err)
 
 		}
 	} else {
-		if err := r.Set.AllSeats(AllSeatsNormalRoom); err != nil {
+		if err := r.set.AllSeats(AllSeatsNormalRoom); err != nil {
 			return nil, stat(5, err)
 
 		}
-		if err := r.Set.UsedSeats(0); err != nil {
+		if err := r.set.UsedSeats(0); err != nil {
 			return nil, stat(6, err)
 
 		}

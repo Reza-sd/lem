@@ -7,7 +7,7 @@ func (a *rAction) UpdateOneCome() statArrT {
 		return stat(UpdateOneCome10, nil)
 	}
 
-	room.Set.UsedSeats(room.Get.UsedSeats() + 1)
+	room.set.UsedSeats(room.Get.UsedSeats() + 1)
 	return nil
 }
 
@@ -17,7 +17,7 @@ func (a *rAction) UpdateOneLeave() statArrT {
 	if room.Get.UsedSeats() == 0 {
 		return stat(UpdateOneLeave10, nil)
 	}
-	room.Set.UsedSeats(room.Get.UsedSeats() - 1)
+	room.set.UsedSeats(room.Get.UsedSeats() - 1)
 	return nil
 }
 
