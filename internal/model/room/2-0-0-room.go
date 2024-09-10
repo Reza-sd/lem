@@ -5,8 +5,9 @@ type room struct {
 	data Data //private
 
 	//categorise behaviour
-	Get rGetter //export (public)
 	set rSetter //private
+
+	Get rGetter //export (public)
 	Act rAction //export (public)
 }
 type Data struct {
