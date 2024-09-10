@@ -2,8 +2,9 @@ package room
 
 //================hasOneFreeSeat===============================
 
-func (get *roomGetter) hasOneFreeSeat() bool {
+func (get *rGetter) hasOneFreeSeat() bool {
 
 	return get.UsedSeats() < get.AllSeats()
 }
+
 //================================================

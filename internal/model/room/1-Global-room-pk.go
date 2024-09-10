@@ -2,8 +2,8 @@ package room
 
 // =========================================
 type RT = uint16
-type statCodeType = uint8 //error type
-type statArrTyp = []statCodeType
+type statCodeT = uint8 //error type
+type statArrT = []statCodeT
 
 // -----------------------------------------
 const (
@@ -18,7 +18,7 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	Null statCodeType = iota
+	Null statCodeT = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20
@@ -30,7 +30,7 @@ const ( //func or method status code
 	UpdateOneLeave10
 )
 
-var StatusCodeDescription = map[statCodeType]string{ //for log purpose
+var StatusCodeDescription = map[statCodeT]string{ //for log purpose
 	GetOneRandomNextRoom:   "GetOneRandomNextRoom",
 	GetOneRandomNextRoom10: "  ",
 	GetOneRandomNextRoom20: "  ",
@@ -42,4 +42,16 @@ var StatusCodeDescription = map[statCodeType]string{ //for log purpose
 	UpdateOneLeave10: "",
 }
 
-//=========================================
+// =========================================
+func stat(statusCode statCodeT, previousStatusCodesSlice statArrT) statArrT {
+	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
+		return nil
+	}
+
+	if previousStatusCodesSlice == nil {
+		previousStatusCodesSlice = statArrT{}
+	}
+	return append(previousStatusCodesSlice, statusCode)
+}
+
+//========================================

@@ -1,23 +1,19 @@
 package room
 
-
-
 // ==================================================
-func (get *roomGetter) Name() RT {
+func (get *rGetter) Name() RT {
 	return get.room.data.name //r.data.name
 }
 
-func (get *roomGetter) AllSeats() RT {
+func (get *rGetter) AllSeats() RT {
 	return get.room.data.allSeats
 }
-func (get *roomGetter) UsedSeats() RT {
+func (get *rGetter) UsedSeats() RT {
 	return get.room.data.usedSeats
 }
-func (get *roomGetter) ConnectionSlice() []RT {
+func (get *rGetter) ConnectionSlice() []RT {
 	return get.room.data.connectionSlice
-	
+
 }
 
 // ==========================================================
-
-

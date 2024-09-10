@@ -4,9 +4,10 @@ package room
 type room struct {
 	data Data
 
-	get roomGetter
-	set roomSetter
-	act roomAction
+	//categorise behaviour
+	get rGetter
+	set rSetter
+	act rAction
 }
 type Data struct {
 	name            RT
@@ -15,34 +16,17 @@ type Data struct {
 	connectionSlice []RT
 }
 
-type roomGetter struct {
+type rGetter struct {
 	room *room
 }
-type roomSetter struct {
+type rSetter struct {
 	room *room
 }
-type roomAction struct {
+type rAction struct {
 	room *room
 }
 
-// ------------------------------------
-type rmBuildArg struct {
-	name            RT
-	endRoomName     RT
-	connectionSlice []RT
-}
-
-// ------------------------------------
-func wrapper(statCode statCodeType, preStatCodesSlice statArrTyp) statArrTyp {
-	if statCode == 0 && len(preStatCodesSlice) == 0 {
-		return nil
-	}
-
-	if preStatCodesSlice == nil {
-		preStatCodesSlice = statArrTyp{}
-	}
-	return append(preStatCodesSlice, statCode)
-}
+//==========================================================
 
 // -------------------------------
 // func Answer[T any](returnedValue T, funcNameCode, statusCode e, r *room) T {
@@ -65,22 +49,42 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 	return r
 }
 
-// -----------------------------------------------------------
-func newRuledRoom(rm rmBuildArg) (*room, statArrTyp) { //Constructor=factory function=builder
+// ------------------------------------
+type rmBuildArg struct {
+	name            RT
+	endRoomName     RT
+	connectionSlice []RT
+}
+
+func newRuledRoom(rm rmBuildArg) (*room, statArrT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.Name(rm.name); err != nil {
-		return nil, wrapper(100, err)
+		return nil, stat(1, err)
 	}
-	r.set.ConnectionSlice(rm.connectionSlice)
+	if err := r.set.ConnectionSlice(rm.connectionSlice); err != nil {
+		return nil, stat(2, err)
+	}
 
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 
-		r.set.AllSeats(MaxSeatsStartEnd)
-		r.set.UsedSeats(UsedSeatsStartEnd)
+		if err := r.set.AllSeats(MaxSeatsStartEnd); err != nil {
+			return nil, stat(3, err)
+
+		}
+		if err := r.set.UsedSeats(UsedSeatsStartEnd); err != nil {
+			return nil, stat(4, err)
+
+		}
 	} else {
-		r.set.AllSeats(AllSeatsNormalRoom)
-		r.set.UsedSeats(0)
+		if err := r.set.AllSeats(AllSeatsNormalRoom); err != nil {
+			return nil, stat(5, err)
+
+		}
+		if err := r.set.UsedSeats(0); err != nil {
+			return nil, stat(6, err)
+
+		}
 
 	}
 
@@ -88,4 +92,4 @@ func newRuledRoom(rm rmBuildArg) (*room, statArrTyp) { //Constructor=factory fun
 	// if its first then? if end then
 }
 
-//
+//---------------------------------------

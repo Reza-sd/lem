@@ -1,21 +1,21 @@
 package room
 
 // ================================
-func (s *roomSetter) Name(name RT) statArrTyp {
+func (s *rSetter) Name(name RT) statArrT {
 	//check if name valid to set
 	s.room.data.name = name
 	return nil
 }
-func (s *roomSetter) AllSeats(allSeats RT) statArrTyp {
+func (s *rSetter) AllSeats(allSeats RT) statArrT {
 	//check validation
 	s.room.data.allSeats = allSeats
 	return nil
 }
-func (s *roomSetter) UsedSeats(usedSeats RT) statArrTyp {
+func (s *rSetter) UsedSeats(usedSeats RT) statArrT {
 	s.room.data.usedSeats = usedSeats
 	return nil
 }
-func (s *roomSetter) ConnectionSlice(connectionSlice []RT) statArrTyp {
+func (s *rSetter) ConnectionSlice(connectionSlice []RT) statArrT {
 	s.room.data.connectionSlice = make([]RT, len(connectionSlice), maxLenConnectionSlice)
 	copy(s.room.data.connectionSlice, connectionSlice)
 
