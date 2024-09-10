@@ -2,8 +2,9 @@ package room
 
 // =========================================
 type RT = uint16
-type statType = uint8 //error type
-type statTypeArr =[]statType
+type statCodeType = uint8 //error type
+type statArrTyp = []statCodeType
+
 // -----------------------------------------
 const (
 	PkgName            string = "room"
@@ -17,7 +18,7 @@ const (
 
 // -----------------------------------------
 const ( //func or method status code
-	Null statType = iota
+	Null statCodeType = iota
 	GetOneRandomNextRoom
 	GetOneRandomNextRoom10
 	GetOneRandomNextRoom20
@@ -29,7 +30,7 @@ const ( //func or method status code
 	UpdateOneLeave10
 )
 
-var StatusCodeDescription = map[statType]string{ //for log purpose
+var StatusCodeDescription = map[statCodeType]string{ //for log purpose
 	GetOneRandomNextRoom:   "GetOneRandomNextRoom",
 	GetOneRandomNextRoom10: "  ",
 	GetOneRandomNextRoom20: "  ",

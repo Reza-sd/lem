@@ -1,24 +1,24 @@
 package room
 
 // ===============================================================
-func (a *roomAction) UpdateOneCome() (*roomAction, statTypeArr) {
+func (a *roomAction) UpdateOneCome() statArrTyp {
 	room := a.room
 	if room.get.UsedSeats() == room.get.AllSeats() || room.get.UsedSeats()+1 > room.get.AllSeats() {
-		return a, wrapper(UpdateOneCome10, nil)
+		return wrapper(UpdateOneCome10, nil)
 	}
 
 	room.set.UsedSeats(room.get.UsedSeats() + 1)
-	return a, nil
+	return nil
 }
 
 // =====================================================
-func (a *roomAction) UpdateOneLeave() (*roomAction, statTypeArr) {
+func (a *roomAction) UpdateOneLeave() statArrTyp {
 	room := a.room
 	if room.get.UsedSeats() == 0 {
-		return a, wrapper(UpdateOneLeave10, nil)
+		return wrapper(UpdateOneLeave10, nil)
 	}
 	room.set.UsedSeats(room.get.UsedSeats() - 1)
-	return a, nil
+	return nil
 }
 
 // =====================================================
@@ -42,16 +42,7 @@ func (act *roomAction) Print() {
 
 	}
 	println()
-	//var a []int
-	//print(len(a))
-	// println(a==nil)
-	// a=[]int{1}
-	// println(a[0])
-	// clear(a)
-	// println(a)
-	// println(a==nil)
-	// a=nil
-	// println(a==nil)
+
 }
 
 //=============================================================

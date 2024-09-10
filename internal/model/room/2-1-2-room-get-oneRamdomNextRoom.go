@@ -4,9 +4,10 @@ import (
 	"math/rand"
 	//"crypto/rand"
 )
+
 //==================OneRandomNextRoom=============================
 
-func (get *roomGetter) OneRandomNextRoom() (RT, statTypeArr) {
+func (get *roomGetter) OneRandomNextRoom() (RT, statArrTyp) {
 
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {

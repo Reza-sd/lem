@@ -25,6 +25,7 @@ type roomAction struct {
 	room *room
 }
 
+// ------------------------------------
 type rmBuildArg struct {
 	name            RT
 	endRoomName     RT
@@ -32,14 +33,13 @@ type rmBuildArg struct {
 }
 
 // ------------------------------------
-// func (r *room)wrapper(statLevel uint8, statCode uint8, preStatCodesSlice []uint8) []uint8
-func wrapper(statCode statType, preStatCodesSlice statTypeArr) statTypeArr{
+func wrapper(statCode statCodeType, preStatCodesSlice statArrTyp) statArrTyp {
 	if statCode == 0 && len(preStatCodesSlice) == 0 {
 		return nil
 	}
 
 	if preStatCodesSlice == nil {
-		preStatCodesSlice = statTypeArr{}
+		preStatCodesSlice = statArrTyp{}
 	}
 	return append(preStatCodesSlice, statCode)
 }
@@ -66,20 +66,26 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 }
 
 // -----------------------------------------------------------
-func newRuledRoom(rm rmBuildArg) *room { //Constructor=factory function=builder
-	//r := newPlainRoom().SetName(rm.name).SetConnectionSlice(rm.connectionSlice)
-	r := newPlainRoom().set.Name(rm.name).ConnectionSlice(rm.connectionSlice).room
+func newRuledRoom(rm rmBuildArg) (*room, statArrTyp) { //Constructor=factory function=builder
+	r := newPlainRoom()
+
+	if err := r.set.Name(rm.name); err != nil {
+		return nil, wrapper(100, err)
+	}
+	r.set.ConnectionSlice(rm.connectionSlice)
 
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 
-		r.set.AllSeats(MaxSeatsStartEnd).UsedSeats(UsedSeatsStartEnd)
+		r.set.AllSeats(MaxSeatsStartEnd)
+		r.set.UsedSeats(UsedSeatsStartEnd)
 	} else {
-		r.set.AllSeats(AllSeatsNormalRoom).UsedSeats(0)
+		r.set.AllSeats(AllSeatsNormalRoom)
+		r.set.UsedSeats(0)
 
 	}
 
-	return r
+	return r, nil
 	// if its first then? if end then
 }
 
-// 
+//
