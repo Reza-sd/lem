@@ -22,9 +22,9 @@ func (s *SampleRoomSt) End_Name_1() *room {
 			connectionSlice: []RT{},
 		},
 	}
-	r.get.room = r
-	r.set.room = r
-	r.act.room = r
+	r.Get.room = r
+	r.Set.room = r
+	r.Act.room = r
 	return r
 }
 
@@ -38,9 +38,9 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 			connectionSlice: []RT{},
 		},
 	}
-	r.get.room = r
-	r.set.room = r
-	r.act.room = r
+	r.Get.room = r
+	r.Set.room = r
+	r.Act.room = r
 	return r
 
 }
@@ -55,9 +55,9 @@ func (s *SampleRoomSt) Middle_Name_3() *room {
 			connectionSlice: []RT{},
 		},
 	}
-	r.get.room = r
-	r.set.room = r
-	r.act.room = r
+	r.Get.room = r
+	r.Set.room = r
+	r.Act.room = r
 	return r
 
 }
