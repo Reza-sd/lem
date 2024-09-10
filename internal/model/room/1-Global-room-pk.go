@@ -19,27 +19,25 @@ const (
 // -----------------------------------------
 const ( //func or method status code
 	Null statCodeT = iota
-	GetOneRandomNextRoom
-	GetOneRandomNextRoom10
-	GetOneRandomNextRoom20
+	Get_OneRandomNextRoom
+	Get_OneRandomNextRoom_EmptyConnectionSlice
 
-	UpdateOneCome
-	UpdateOneCome10
+	Act_UpdateOneCome
+	Act_UpdateOneCome_OverCap
 
-	UpdateOneLeave
-	UpdateOneLeave10
+	Act_UpdateOneLeave
+	Act_UpdateOneLeave_OverCap
 )
 
 var StatusCodeDescription = map[statCodeT]string{ //for log purpose
-	GetOneRandomNextRoom:   "GetOneRandomNextRoom",
-	GetOneRandomNextRoom10: "  ",
-	GetOneRandomNextRoom20: "  ",
+	Get_OneRandomNextRoom:                      "Get_OneRandomNextRoom",
+	Get_OneRandomNextRoom_EmptyConnectionSlice: "EmptyConnectionSlice",
 
-	UpdateOneCome:   "UpdateOneCome",
-	UpdateOneCome10: "",
+	Act_UpdateOneCome:         "Act_UpdateOneCome",
+	Act_UpdateOneCome_OverCap: "no more free seat",
 
-	UpdateOneLeave:   "UpdateOneLeave",
-	UpdateOneLeave10: "",
+	Act_UpdateOneLeave:         "Act_UpdateOneLeave",
+	Act_UpdateOneLeave_OverCap: "no one is here!",
 }
 
 // =========================================

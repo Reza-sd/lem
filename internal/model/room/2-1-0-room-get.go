@@ -1,5 +1,10 @@
 package room
 
+// ======================================
+type rGetter struct {
+	room *room
+}
+
 // ==================================================
 func (get *rGetter) Name() RT {
 	return get.room.data.name //r.data.name

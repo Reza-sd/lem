@@ -17,16 +17,6 @@ type Data struct {
 	connectionSlice []RT
 }
 
-type rGetter struct {
-	room *room
-}
-type rSetter struct {
-	room *room
-}
-type rAction struct {
-	room *room
-}
-
 //==========================================================
 
 // -------------------------------

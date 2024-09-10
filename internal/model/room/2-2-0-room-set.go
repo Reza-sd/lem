@@ -1,6 +1,11 @@
 package room
 
 // ================================
+type rSetter struct {
+	room *room
+}
+
+// ================================
 func (set *rSetter) name(name RT) statArrT {
 	//check if name valid to set
 	set.room.data.name = name
@@ -22,4 +27,4 @@ func (set *rSetter) connectionSlice(connectionSlice []RT) statArrT {
 	return nil
 }
 
-// ================================
+//================================
