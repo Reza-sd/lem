@@ -45,7 +45,7 @@ var CodeDes = map[statCodeT]string{ //for log purpose
 }
 
 // =========================================
-func stat(statusCode statCodeT, previousStatusCodesSlice statArrT) statArrT {
+func stat(statusCode statCodeT, previousStatusCodesSlice []statCodeT) statArrT {
 	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
 		return nil
 	}
