@@ -15,7 +15,7 @@ var SampleRoom = SampleRoomSt{}
 // ====================================
 func (s *SampleRoomSt) End_Name_1() *room {
 	r := &room{
-		data: Data{
+		data: data{
 			name:            1,
 			allSeats:        MaxSeatsStartEnd,
 			usedSeats:       UsedSeatsStartEnd,
@@ -31,7 +31,7 @@ func (s *SampleRoomSt) End_Name_1() *room {
 // --------------------------------------
 func (s *SampleRoomSt) Start_Name_0() *room {
 	r := &room{
-		data: Data{
+		data: data{
 			name:            0,
 			allSeats:        MaxSeatsStartEnd,
 			usedSeats:       UsedSeatsStartEnd,
@@ -48,7 +48,7 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 // --------------------------------------
 func (s *SampleRoomSt) Middle_Name_3() *room {
 	r := &room{
-		data: Data{
+		data: data{
 			name:            3,
 			allSeats:        1,
 			usedSeats:       0,
