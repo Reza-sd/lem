@@ -6,7 +6,7 @@ const (
 )
 
 // =====================================================
-func (act *rAction) UpdateOneLeave() statArrT {
+func (act *rAction) UpdateOneLeave() errArrT {
 	room := act.room
 	if room.Get.UsedSeats() == 0 {
 		//Log.

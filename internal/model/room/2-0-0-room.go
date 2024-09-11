@@ -47,7 +47,7 @@ type rmBuildArg struct {
 	connectionSlice []RT
 }
 
-func newRuledRoom(rm rmBuildArg) (*room, statArrT) { //Constructor=factory function=builder
+func newRuledRoom(rm rmBuildArg) (*room, errArrT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.name(rm.name); err != nil {

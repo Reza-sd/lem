@@ -13,7 +13,7 @@ const (
 
 //==================OneRandomNextRoom=============================
 
-func (get *rGetter) OneRandomNextRoom() (RT, statArrT) {
+func (get *rGetter) OneRandomNextRoom() (RT, errArrT) {
 	//StatusCodeDescription[2]=3
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {

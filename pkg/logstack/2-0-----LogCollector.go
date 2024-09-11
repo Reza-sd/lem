@@ -26,15 +26,27 @@ Error: Serious errors that may prevent the application from functioning correctl
 
 Panic: Critical errors that should cause the application to crash.
 //--------------------------
+status codes: are used to communicate the result of an operation. 
+error= invalid condition
 */
 type Logger struct {
 	data data
 	get  getter
 
-	Info info
+	Info info //e.g: normal status code
 	Warn warn
-	Fail fail //
-
+	Err err //unexpected status code
+	// error means violation in business logic
+	// in software development, an "error" often refers to a violation of business logic.
+	// unexpected = Must not happen
+	Stat stat //http 400
+	//is it invalid but expected
+	// invalid and unexpected
+	// valid and expedted
+	// valid and unexpected
+	//error == 100% invalid and/or 100% unexpected and/or 100% violation of func operation.
+	
+//workflow
 }
 type data struct {
 	packageName string
@@ -47,7 +59,10 @@ type info struct {
 type warn struct {
 	logger *Logger
 }
-type fail struct {
+type err struct {
+	logger *Logger
+}
+type stat struct {
 	logger *Logger
 }
 type getter struct {

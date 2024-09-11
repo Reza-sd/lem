@@ -2,8 +2,8 @@ package room
 
 // =========================================
 type RT = uint16
-type statCodeT = uint8 //error type
-type statArrT = []statCodeT
+type errT = uint8 //error type
+type errArrT = []errT
 
 // -----------------------------------------
 const (
@@ -18,11 +18,11 @@ const (
 
 // =====================================
 // var stat=logstack.StatWapper
-var Log = logstack
+//var Log = logstack
 
 // ========================================
-const ( //func or method status code
-	Null statCodeT = iota
+const ( //func or method error code
+	Null errT = iota
 	PkgName
 	//Get
 	OneRandomNextRoom   //func name
@@ -36,7 +36,7 @@ const ( //func or method status code
 	UpdateOneLeave10 //OverCap
 )
 
-var CodeDes = map[statCodeT]string{ //for log purpose
+var ErrCodeDes = map[errT]string{ //for log purpose
 	PkgName: _roomPk,
 	//Get
 	OneRandomNextRoom:   _OneRandomNextRoom,
