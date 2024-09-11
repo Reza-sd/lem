@@ -1,9 +1,5 @@
 package room
 
-import (
-	logstack "main/pkg/logstack"
-)
-
 // =========================================
 type RT = uint16
 type statCodeT = uint8 //error type
@@ -29,7 +25,7 @@ const ( //func or method status code
 	Null statCodeT = iota
 	PkgName
 	//Get
-	OneRandomNextRoom
+	OneRandomNextRoom   //func name
 	OneRandomNextRoom10 //EmptyConnectionSlice
 
 	//Act

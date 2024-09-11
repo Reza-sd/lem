@@ -1,13 +1,14 @@
 package logstack
 
 // ---------------------------------
-func (l *Logger) InfoLog(FuncName string, OperationName string, operationDescription string) {
-	msg, agrs := LogMsgGenerator(l.packageName, FuncName, OperationName, operationDescription, nil)
-	if l.logToCli {
+func (i *info) Log(FuncName string, OperationName string, operationDescription string) {
+	logger = i.logger
+	msg, agrs := LogMsgGenerator(logger.packageName, FuncName, OperationName, operationDescription, nil)
+	if logger.logToCli {
 		loggerToCli.Info(msg, agrs)
 	}
 
-	if l.logToFile {
+	if logger.logToFile {
 		loggerToFile.Info(msg, agrs)
 	}
 
