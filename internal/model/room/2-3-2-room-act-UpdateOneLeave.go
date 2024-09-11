@@ -9,6 +9,7 @@ const (
 func (act *rAction) UpdateOneLeave() statArrT {
 	room := act.room
 	if room.Get.UsedSeats() == 0 {
+		//Log.
 		return stat(UpdateOneLeave10, nil)
 	}
 	room.set.usedSeats(room.Get.UsedSeats() - 1)

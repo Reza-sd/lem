@@ -5,7 +5,7 @@ import (
 )
 
 // -------------------RSlogErr-------------------------
-func (l *LogCollector) RSlogErr(packageName, funcName, opName, opDes string, err any) error {
+func (l *Logger) RSlogErr(packageName, funcName, opName, opDes string, err any) error {
 	msg, agrs := LogMsgGenerator(packageName, funcName, opName, opDes, err)
 
 	slog.Error(msg, agrs)

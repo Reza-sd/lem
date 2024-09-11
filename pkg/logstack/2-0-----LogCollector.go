@@ -1,16 +1,22 @@
 package logstack
 
 // ===================struct=========================
-// type Attr struct {
-// 	Key   string
-// 	Value interface{}
-// }
+//
+//	type Attr struct {
+//		Key   string
+//		Value interface{}
+//	}
+//
+// Debug, Info, Warn, Error, and Panic,
+type Logger struct {
+	packageName string
+	logToFile   bool
+	logToCli    bool
 
-type LogCollector struct {
-	PackageName string
-	LogToFile   bool
-	LogToCli    bool
+	Info info
 }
-
+type info struct{
+	
+}
 //=================================================
-var Log LogCollector
+//var Log LogCollector

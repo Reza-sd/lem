@@ -1,9 +1,9 @@
 package logstack
 
 var (
-	SampleLogger = LogCollector{
-		PackageName: "pkgName",
-		LogToFile:   false,
-		LogToCli:    true,
+	SampleLogger = Logger{
+		// PackageName: "pkgName",
+		// LogToFile:   false,
+		// LogToCli:    true,
 	}
 )

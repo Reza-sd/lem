@@ -22,7 +22,7 @@ const (
 
 // ------------------------------------------
 var (
-	logger = logstack.LogCollector{
+	logger = logstack.Logger{
 		PackageName: pkgName,
 		LogToFile:   logToFile,
 		LogToCli:    logToCli,
