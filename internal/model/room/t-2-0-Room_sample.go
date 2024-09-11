@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
-	
 )
 
 // ====================================
@@ -12,7 +11,6 @@ import (
 type SampleRoomSt struct{}
 
 var SampleRoom = SampleRoomSt{}
-
 
 // ====================================
 func (s *SampleRoomSt) End_Name_1() *room {
