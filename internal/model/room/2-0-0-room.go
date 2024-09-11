@@ -1,5 +1,6 @@
 package room
 
+
 // =======================================================
 type room struct {
 	data data //private

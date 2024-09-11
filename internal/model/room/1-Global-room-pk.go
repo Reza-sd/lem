@@ -1,5 +1,8 @@
 package room
 
+import (
+	logstack "main/pkg/logstack"
+)
 // =========================================
 type RT = uint16
 type statCodeT = uint8 //error type
@@ -15,8 +18,16 @@ const (
 
 	maxLenConnectionSlice = 5
 )
+//=====================================
+//var stat=logstack.StatWapper
+var Log = logstack.LogCollector{
+	PackageName: PkgName,
+	LogToFile: true,
+	LogToCli: true,
+}
 
-// -----------------------------------------
+
+//========================================
 const ( //func or method status code
 	Null statCodeT = iota
 	//Get
@@ -45,15 +56,4 @@ var CodeDes = map[statCodeT]string{ //for log purpose
 }
 
 // =========================================
-func stat(statusCode statCodeT, previousStatusCodesSlice []statCodeT) statArrT {
-	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
-		return nil
-	}
 
-	if previousStatusCodesSlice == nil {
-		previousStatusCodesSlice = statArrT{}
-	}
-	return append(previousStatusCodesSlice, statusCode)
-}
-
-//========================================

@@ -13,3 +13,4 @@ type LogCollector struct {
 }
 
 //=================================================
+var Log LogCollector
