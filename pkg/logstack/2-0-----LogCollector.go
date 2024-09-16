@@ -48,6 +48,23 @@ type LoggerT struct {
 
 	// workflow
 }
+
+/*
+
+    logger.Debug("This is a debug message")
+    logger.Info("This is an info message")
+    logger.Warn("This is a warning message")
+    logger.Error("This is an error message")
+    logger.Crit("This is a critical error message")
+
+logger.Info.Log()
+logger.Info.Rlog()
+logger.Warn.Log()
+logger.Warn.Rlog()
+logger.Err.log()
+logger.Err.Rlog() //(Rlog:return error + log)
+*/
+
 type data struct {
 	packageName      string
 	ifSaveLogsToFile bool
@@ -82,7 +99,7 @@ func (get *getter) ifPrintLogsToCli() bool {
 
 // =================================================
 // var Log LogCollector
-func NewLogger(packageName string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
+func BuildNewLogger(packageName string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
 	l := &LoggerT{}
 	l.data = data{
 		packageName:      packageName,
@@ -90,11 +107,12 @@ func NewLogger(packageName string, ifSaveLogsToFile bool, ifPrintLogsToCli bool)
 		ifPrintLogsToCli: ifPrintLogsToCli,
 	}
 	l.get.logger = l
-	l.Info.logger=l
-	l.Warn.logger=l
-	l.Err.logger=l
+	l.Info.logger = l
+	l.Warn.logger = l
+	l.Err.logger = l
 
 	return l
 }
-//===============================================
-var SampleLogger2 = NewLogger(pkgName,true,true)
+
+// ===============================================
+var SampleLogger2 = BuildNewLogger(pkgName, true, true)

@@ -1,3 +1,3 @@
 package logstack
 
-var SampleLogger1 = NewLogger(pkgName,true,true)
+var SampleLogger1 = BuildNewLogger(pkgName, true, true)
