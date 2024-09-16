@@ -1,9 +1,3 @@
 package logstack
 
-var (
-	SampleLogger = LoggerT{
-		// PackageName: "pkgName",
-		// LogToFile:   false,
-		// LogToCli:    true,
-	}
-)
+var SampleLogger1 = NewLogger(pkgName,true,true)

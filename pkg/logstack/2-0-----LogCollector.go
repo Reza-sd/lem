@@ -39,7 +39,7 @@ type LoggerT struct {
 	// error means violation in business logic
 	// in software development, an "error" often refers to a violation of business logic.
 	// unexpected = Must not happen
-	Stat stat //http 400
+	//Stat stat //http 400
 	//is it invalid but expected
 	// invalid and unexpected
 	// valid and expedted
@@ -90,5 +90,11 @@ func NewLogger(packageName string, ifSaveLogsToFile bool, ifPrintLogsToCli bool)
 		ifPrintLogsToCli: ifPrintLogsToCli,
 	}
 	l.get.logger = l
+	l.Info.logger=l
+	l.Warn.logger=l
+	l.Err.logger=l
 
+	return l
 }
+//===============================================
+var SampleLogger2 = NewLogger(pkgName,true,true)
