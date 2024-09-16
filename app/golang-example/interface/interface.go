@@ -35,6 +35,11 @@ type Room struct {
 
 func main() {
 	// Create instances of Cat and Dog
+	var r getter
+	r = RoomData{Name: "mio"}
+	fmt.Println(r.AllSeats())
+	
+
 	myRoomData := RoomData{Name: "Whiskers"}
 
 	myroom := Room{get: myRoomData, set: myRoomData}
