@@ -98,6 +98,7 @@ func (get *getter) ifPrintLogsToCli() bool {
 }
 
 // =================================================
+
 // var Log LogCollector
 //func BuildNewLogger(F func(any)any ) *LoggerT {
 func BuildNewLogger(packageName string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
