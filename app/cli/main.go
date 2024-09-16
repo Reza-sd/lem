@@ -14,7 +14,7 @@ const (
 
 // ------------------logger-instance------------
 var (
-	logger = logstack.Logger{
+	logger = logstack.LoggerT{
 		PackageName: pkgName,
 	}
 )

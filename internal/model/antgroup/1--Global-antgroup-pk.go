@@ -25,7 +25,7 @@ const (
 //======================================================
 
 var (
-	logger = logstack.Logger{
+	logger = logstack.LoggerT{
 		PackageName: pkgName,
 		LogToFile:   logToFile,
 		LogToCli:    logToCli,

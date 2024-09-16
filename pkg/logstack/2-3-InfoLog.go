@@ -1,7 +1,7 @@
 package logstack
 
 // ---------------------------------
-func (i *info) Log(FuncName string, OperationName string, operationDescription string) {
+func (i *infoLevelT) Log(FuncName string, OperationName string, operationDescription string) {
 	logger = i.logger
 	msg, agrs := LogMsgGenerator(logger.packageName, FuncName, OperationName, operationDescription, nil)
 	if logger.logToCli {

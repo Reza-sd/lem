@@ -1,7 +1,7 @@
 package logstack
 
 // ---------------------------------
-func (l *Logger) ErrLog(FuncName string, OperationName string, operationDescription string, err any) {
+func (l *LoggerT) ErrLog(FuncName string, OperationName string, operationDescription string, err any) {
 
 	msg, agrs := LogMsgGenerator(l.packageName, FuncName, OperationName, operationDescription, err)
 	//msg=fmt.Sprintf("%v-%v", "ErrLog",msg)
@@ -18,3 +18,10 @@ func (l *Logger) ErrLog(FuncName string, OperationName string, operationDescript
 }
 
 // ---------------------------------
+/*
+logger.Info.Log()
+logger.Info.Rlog()
+logger.Warn.Log()
+logger.Warn.Rlog()
+logger.Err.Rlog()
+*/

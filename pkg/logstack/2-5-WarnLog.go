@@ -1,7 +1,7 @@
 package logstack
 
 // ----------------WarnLog-----------------
-func (l *Logger) WarnLog(FuncName string, OperationName string, operationDescription string, err any) {
+func (l *LoggerT) WarnLog(FuncName string, OperationName string, operationDescription string, err any) {
 	msg, agrs := LogMsgGenerator(l.packageName, FuncName, OperationName, operationDescription, err)
 	if l.logToCli {
 		loggerToCli.Warn(msg, agrs)
