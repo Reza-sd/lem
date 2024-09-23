@@ -14,7 +14,7 @@ func LogMsgGenerator(packageName string, FuncName string, OperationName string, 
 		slog.String("pk", packageName),
 		slog.String("func", FuncName),
 		slog.String("op", OperationName),
-		slog.String("error", fmt.Sprintf("%v", RetunedError)),
+		slog.String("errMsg", fmt.Sprintf("%v", RetunedError)),
 	)
 
 }

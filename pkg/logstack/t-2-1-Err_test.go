@@ -17,6 +17,7 @@ func Test_ErrLog(t *testing.T) {
 		
 		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
 		//SampleLogger1.
+		//println()
 	})
 	t.Run(`1-RSlogErr`, func(t *testing.T) {
 		fnName := "Err.Log()"
@@ -26,32 +27,36 @@ func Test_ErrLog(t *testing.T) {
 		
 		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
 		//SampleLogger1.
+		//println()
 	})
 
 	t.Run(`2-RSlogErr`, func(t *testing.T) {
 		fnName := "Err.Rlog()"
 		opName := "opName"
 		opDes := "opDes"
-		errMsg := "error???"
+		//errMsg := "error???"
 		errCode :=errT(10)
 		
-		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errMsg,errCode,nil)
+		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errCode,nil)
 		//println("Rerr=",Rerr)
 		fmt.Println("Rerr=",Rerr)
 		//SampleLogger1.
+
+		//println()
 	})
 
 	t.Run(`2-RSlogErr`, func(t *testing.T) {
 		fnName := "Err.Rlog()"
 		opName := "opName"
 		opDes := "opDes"
-		errMsg := "error!!!"
+		//errMsg := "error!!!"
 		errCode :=errT(12)
 		preErrSlice :=[]errT{10,11}
-		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errMsg,errCode,preErrSlice)
+		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errCode,preErrSlice)
 		//println("Rerr=",Rerr)
 		fmt.Println("Rerr=",Rerr)
 		//SampleLogger1.
+		//println()
 	})
 }
 
