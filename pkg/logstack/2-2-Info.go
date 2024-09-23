@@ -18,7 +18,7 @@ func (i *infoLevelT) Log(errCode errT) {
 }
 
 // ---------------------------------
-func (i *infoLevelT) Rlog(FuncName string, OperationName string, operationDescription string, errCode errT, previousStatusCodesSlice []errT) []errT {
+func (i *infoLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT) []errT {
 
 	i.Log(errCode)
 
