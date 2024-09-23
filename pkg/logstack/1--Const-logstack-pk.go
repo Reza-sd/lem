@@ -9,6 +9,7 @@ import (
 
 // --------------const-----------------------------
 type errT = uint8
+
 //type errArrT = []errT
 
 const (

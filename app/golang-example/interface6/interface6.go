@@ -1,35 +1,38 @@
 package main
 
 type Logger interface {
-    Log(message string)
+	Log(message string)
 }
 
 type Service interface {
-    DoSomething() error
+	DoSomething() error
 }
 
 type ConsoleLogger struct{}
 
 func (l *ConsoleLogger) Log(message string) {
-    println(message)
+	println(message)
 }
+
 //-------
 type MyService struct {
-    logger Logger
+	logger Logger
 }
 
 func (s *MyService) DoSomething() error {
-    s.logger.Log("Doing something")
-    // Implementation
-    return nil
+	s.logger.Log("Doing something")
+	// Implementation
+	return nil
 }
+
 //------------
 func NewMyService(logger Logger) Service {
-    return &MyService{logger: logger}
+	return &MyService{logger: logger}
 }
+
 // Usage
 func main() {
-   logger := &ConsoleLogger{}
-    service := NewMyService(logger)
-    service.DoSomething()
+	logger := &ConsoleLogger{}
+	service := NewMyService(logger)
+	service.DoSomething()
 }

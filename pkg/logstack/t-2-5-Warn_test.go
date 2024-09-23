@@ -6,7 +6,7 @@ import (
 )
 
 // -----------------------------------------------------
-func Test_Err(t *testing.T) {
+func Test_Warn(t *testing.T) {
 	//t.Skip()
 	t.Run(`1-RSlogErr`, func(t *testing.T) {
 		fnName := "Err.Log()"
@@ -14,7 +14,7 @@ func Test_Err(t *testing.T) {
 		opDes := "opDes"
 		errMsg := "error###" //string
 
-		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
+		SampleLogger1.Warn.Log(fnName, opName, opDes, errMsg)
 		//SampleLogger1.
 		//println()
 	})
@@ -24,7 +24,7 @@ func Test_Err(t *testing.T) {
 		opDes := "opDes"
 		errMsg := fmt.Errorf("miooo") //error type
 
-		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
+		SampleLogger1.Warn.Log(fnName, opName, opDes, errMsg)
 		//SampleLogger1.
 		//println()
 	})
@@ -36,7 +36,7 @@ func Test_Err(t *testing.T) {
 		//errMsg := "error???"
 		errCode := errT(10)
 
-		Rerr := SampleLogger1.Err.Rlog(fnName, opName, opDes, errCode, nil)
+		Rerr := SampleLogger1.Warn.Rlog(fnName, opName, opDes, errCode, nil)
 		//println("Rerr=",Rerr)
 		fmt.Println("Rerr=", Rerr)
 		//SampleLogger1.
@@ -51,7 +51,7 @@ func Test_Err(t *testing.T) {
 		//errMsg := "error!!!"
 		errCode := errT(12)
 		preErrSlice := []errT{10, 11}
-		Rerr := SampleLogger1.Err.Rlog(fnName, opName, opDes, errCode, preErrSlice)
+		Rerr := SampleLogger1.Warn.Rlog(fnName, opName, opDes, errCode, preErrSlice)
 		//println("Rerr=",Rerr)
 		fmt.Println("Rerr=", Rerr)
 		//SampleLogger1.

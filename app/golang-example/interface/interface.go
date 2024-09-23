@@ -38,7 +38,6 @@ func main() {
 	var r getter
 	r = RoomData{Name: "mio"}
 	fmt.Println(r.AllSeats())
-	
 
 	myRoomData := RoomData{Name: "Whiskers"}
 

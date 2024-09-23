@@ -69,7 +69,7 @@ type data struct {
 	packageName      string
 	ifSaveLogsToFile bool
 	ifPrintLogsToCli bool
-	ErrCodeDes map[errT]string
+	ErrCodeDes       map[errT]string
 }
 type infoLevelT struct {
 	logger *LoggerT
@@ -80,6 +80,7 @@ type warnLevelT struct {
 type errLevelT struct {
 	logger *LoggerT
 }
+
 // type stat struct {
 // 	logger *LoggerT
 // }
@@ -99,7 +100,7 @@ func (get *getter) ifPrintLogsToCli() bool {
 }
 func (get *getter) DesForErrCode(CodeNumber errT) string {
 
-	st,ok:= get.logger.data.ErrCodeDes[CodeNumber]
+	st, ok := get.logger.data.ErrCodeDes[CodeNumber]
 	if ok {
 		return st
 	}
@@ -111,13 +112,13 @@ func (get *getter) DesForErrCode(CodeNumber errT) string {
 
 // var Log LogCollector
 //func BuildNewLogger(F func(any)any ) *LoggerT {
-func BuildNewLogger(packageName string,errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
+func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
 	l := &LoggerT{}
 	l.data = data{
 		packageName:      packageName,
 		ifSaveLogsToFile: ifSaveLogsToFile,
 		ifPrintLogsToCli: ifPrintLogsToCli,
-		ErrCodeDes: errCodeDes,
+		ErrCodeDes:       errCodeDes,
 	}
 	l.get.logger = l
 	l.Info.logger = l
@@ -130,8 +131,8 @@ func BuildNewLogger(packageName string,errCodeDes map[errT]string, ifSaveLogsToF
 // ===============================================
 
 var errCodeDes1 = map[errT]string{
-	10 : "10-not happy",
-	11 : "11-is not ok",
+	10: "10-not happy",
+	11: "11-is not ok",
 	12: "12-cant handle user",
 }
-var SampleLogger2 = BuildNewLogger(pkgName, errCodeDes1,true, true)
+var SampleLogger2 = BuildNewLogger(pkgName, errCodeDes1, true, true)
