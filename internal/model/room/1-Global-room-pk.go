@@ -1,5 +1,7 @@
 package room
 
+import "main/pkg/logstack"
+
 // =========================================
 type RT = uint16
 type errT = uint8 //error type
@@ -7,7 +9,7 @@ type errArrT = []errT
 
 // -----------------------------------------
 const (
-	_roomPk            string = "room"
+	_pkgName           string = "room"
 	MaxSeatsStartEnd   RT     = 5000
 	UsedSeatsStartEnd  RT     = 1000
 	AllSeatsNormalRoom RT     = 1
@@ -37,7 +39,7 @@ const ( //func or method error code
 )
 
 var ErrCodeDes = map[errT]string{ //for log purpose
-	PkgName: _roomPk,
+	PkgName: _pkgName,
 	//Get
 	OneRandomNextRoom:   _OneRandomNextRoom,
 	OneRandomNextRoom10: _OneRandomNextRoom10,
@@ -51,3 +53,4 @@ var ErrCodeDes = map[errT]string{ //for log purpose
 }
 
 // =========================================
+var l = logstack.BuildNewLogger(_pkgName, ErrCodeDes, true, true)

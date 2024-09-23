@@ -2,8 +2,7 @@ package main
 
 import (
 	_ "fmt"
-
-	logstack "main/pkg/logstack"
+	//	logstack "main/pkg/logstack"
 	//"time"
 )
 
@@ -14,9 +13,9 @@ const (
 
 // ------------------logger-instance------------
 var (
-	logger = logstack.LoggerT{
-		PackageName: pkgName,
-	}
+// logger = logstack.LoggerT{
+// 	PackageName: pkgName,
+// }
 )
 
 // --------------------------------------------

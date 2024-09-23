@@ -1,13 +1,16 @@
 package antgroup
 
+import "fmt"
+
 //"fmt"
 
 func (myAntGroup *AntGroup) Init(numberOfAnts Mtag) error {
-	funcName := "AntsInit"
+	//funcName := "AntsInit"
 	//var err error
 	//-----input validation-----
 	if numberOfAnts < 1 || numberOfAnts > MaxHandleableAntsNumber {
-		return logger.WarnLogRErrMsg(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
+		return fmt.Errorf("mio")
+		//logger.WarnLogRErrMsg(funcName, "numberOfAnts[1-max]", "is not valid", "input validation numberOfAnts")
 	}
 	//--------------------------
 	myAntGroup.AntsDb = make(map[Mtag]*Ant) //initiate map

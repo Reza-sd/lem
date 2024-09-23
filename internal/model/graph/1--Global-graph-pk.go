@@ -1,8 +1,6 @@
 package graphpk
 
-import (
-	logstack "main/pkg/logstack"
-)
+//logstack "main/pkg/logstack"
 
 // =========================================================
 type Mtg = uint16
@@ -21,12 +19,13 @@ const (
 )
 
 // ------------------------------------------
-var (
-	logger = logstack.LoggerT{
-		PackageName: pkgName,
-		LogToFile:   logToFile,
-		LogToCli:    logToCli,
-	}
-)
+// var (
+// 	logger = logstack.LoggerT{
+// 		PackageName: pkgName,
+// 		LogToFile:   logToFile,
+// 		LogToCli:    logToCli,
+// 	}
+// )
+//var l = logstack.BuildNewLogger(_pkgName, ErrCodeDes, true, true)
 
 //=========================================================

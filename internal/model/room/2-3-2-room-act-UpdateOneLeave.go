@@ -10,7 +10,7 @@ func (act *rAction) UpdateOneLeave() errArrT {
 	room := act.room
 	if room.Get.UsedSeats() == 0 {
 		//Log.
-		return stat(UpdateOneLeave10, nil)
+		return l.Err.Rlog(UpdateOneLeave10, nil)
 	}
 	room.set.usedSeats(room.Get.UsedSeats() - 1)
 	return nil

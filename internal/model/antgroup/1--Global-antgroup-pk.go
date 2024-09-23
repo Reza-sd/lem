@@ -2,7 +2,7 @@ package antgroup
 
 import (
 	antpk "main/internal/model/ant"
-	logstack "main/pkg/logstack"
+	//logstack "main/pkg/logstack"
 )
 
 // ===========data type=================
@@ -25,11 +25,11 @@ const (
 //======================================================
 
 var (
-	logger = logstack.LoggerT{
-		PackageName: pkgName,
-		LogToFile:   logToFile,
-		LogToCli:    logToCli,
-	}
+// logger = logstack.LoggerT{
+// 	PackageName: pkgName,
+// 	LogToFile:   logToFile,
+// 	LogToCli:    logToCli,
+// }
 )
 
 //======================================================
