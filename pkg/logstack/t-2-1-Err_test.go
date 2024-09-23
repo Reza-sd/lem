@@ -1,8 +1,9 @@
 package logstack
 
 import (
-	//"fmt"
+	"fmt"
 	"testing"
+	
 )
 
 // -----------------------------------------------------
@@ -12,9 +13,18 @@ func Test_ErrLog(t *testing.T) {
 		fnName := "Err.Log()"
 		opName := "opName"
 		opDes := "opDes"
-		err := "error###"
+		errMsg := "error###" //string
 		
-		SampleLogger1.Err.Log(fnName, opName, opDes, err)
+		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
+		//SampleLogger1.
+	})
+	t.Run(`1-RSlogErr`, func(t *testing.T) {
+		fnName := "Err.Log()"
+		opName := "opName"
+		opDes := "opDes"
+		errMsg := fmt.Errorf("miooo") //error type
+		
+		SampleLogger1.Err.Log(fnName, opName, opDes, errMsg)
 		//SampleLogger1.
 	})
 
@@ -22,9 +32,25 @@ func Test_ErrLog(t *testing.T) {
 		fnName := "Err.Rlog()"
 		opName := "opName"
 		opDes := "opDes"
-		err := "error***"
+		errMsg := "error???"
+		errCode :=errT(10)
 		
-		SampleLogger1.Err.Rlog(fnName, opName, opDes, err)
+		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errMsg,errCode,nil)
+		//println("Rerr=",Rerr)
+		fmt.Println("Rerr=",Rerr)
+		//SampleLogger1.
+	})
+
+	t.Run(`2-RSlogErr`, func(t *testing.T) {
+		fnName := "Err.Rlog()"
+		opName := "opName"
+		opDes := "opDes"
+		errMsg := "error!!!"
+		errCode :=errT(12)
+		preErrSlice :=[]errT{10,11}
+		Rerr:=SampleLogger1.Err.Rlog(fnName, opName, opDes, errMsg,errCode,preErrSlice)
+		//println("Rerr=",Rerr)
+		fmt.Println("Rerr=",Rerr)
 		//SampleLogger1.
 	})
 }
