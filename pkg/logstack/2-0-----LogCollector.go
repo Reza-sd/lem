@@ -48,7 +48,11 @@ type LoggerT struct {
 
 	// workflow
 }
-
+type LoggerTMethod interface{
+	Log()
+	Rlog()
+	
+}
 /*
 
     logger.Debug("This is a debug message")

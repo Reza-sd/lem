@@ -7,13 +7,14 @@ import (
 
 // -----------------------------------------------------
 func Test_ErrLog(t *testing.T) {
-	t.Skip()
+	//t.Skip()
 	t.Run(`1-RSlogErr`, func(t *testing.T) {
-		fnName := "ErrLog"
+		fnName := "Err.Log()"
 		opName := "opName"
 		opDes := "opDes"
-		err := "error"
-		SampleLogger.ErrLog(fnName, opName, opDes, err)
+		err := "error###"
+		
+		SampleLogger1.Err.Log(fnName, opName, opDes, err)
 
 	})
 }
