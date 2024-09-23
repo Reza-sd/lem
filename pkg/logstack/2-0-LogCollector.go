@@ -29,7 +29,7 @@ Panic: Critical errors that should cause the application to crash.
 status codes: are used to communicate the result of an operation.
 error= invalid condition
 */
-type LoggerT struct {
+type loggerT struct {
 	data data
 	get  getter
 
@@ -72,17 +72,17 @@ type data struct {
 	ErrCodeDes       map[errT]string
 }
 type infoLevelT struct {
-	logger *LoggerT
+	logger *loggerT
 }
 type warnLevelT struct {
-	logger *LoggerT
+	logger *loggerT
 }
 type errLevelT struct {
-	logger *LoggerT
+	logger *loggerT
 }
 
 type getter struct {
-	logger *LoggerT
+	logger *loggerT
 }
 
 // =================================================
@@ -107,8 +107,8 @@ func (get *getter) DesForErrCode(CodeNumber errT) string {
 
 // =================================================
 
-func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
-	l := &LoggerT{}
+func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *loggerT {
+	l := &loggerT{}
 	l.data = data{
 		packageName:      packageName,
 		ifSaveLogsToFile: ifSaveLogsToFile,

@@ -12,7 +12,7 @@ type errT = uint8
 const (
 	pkgName           = "logStack"
 	logFileNamePrefix = "z-log-"
-	LogFilesDirectory = "./"
+	logFilesDirectory = "./"
 )
 
 // -----------var----------------------
@@ -28,7 +28,7 @@ var (
 
 	//--------------------------
 	todayDate      = time.Now().Format("2006-01-02")
-	logFileAddress = LogFilesDirectory + logFileNamePrefix + todayDate + ".json"
+	logFileAddress = logFilesDirectory + logFileNamePrefix + todayDate + ".json"
 	logFile, _     = os.OpenFile(logFileAddress, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	//-------------------------------
 	logHandlerOptsFile = &slog.HandlerOptions{

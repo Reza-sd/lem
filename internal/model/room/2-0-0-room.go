@@ -76,6 +76,7 @@ func newRuledRoom(rm rmBuildArg) (*room, errArrT) { //Constructor=factory functi
 
 	return r, nil
 	// if its first then? if end then
+
 }
 
 //---------------------------------------
