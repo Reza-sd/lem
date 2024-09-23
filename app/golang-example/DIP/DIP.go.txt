@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+// Interface defining the behavior of a database
+type Database interface {
+    GetData() ([]string, error)
+}
+
+// Concrete implementation of the Database interface
+type MySQLDatabase struct {
+    // ...
+}
+
+func (db *MySQLDatabase) GetData() ([]string, error) {
+    // ...
+}
+
+// High-level module using the Database interface
+func ProcessData(db Database) {
+    data, err := db.GetData()
+    if err != nil {
+        // Handle error
+    }
+    // Process the data
+    fmt.Println(data)
+}
+
+func main() {
+    // Create a MySQLDatabase instance
+    db := &MySQLDatabase{}
+
+    // Process data using the Database interface
+    ProcessData(db)
+}
