@@ -53,6 +53,6 @@ var ErrCodeDes = map[errT]string{ //for log purpose
 }
 
 // =========================================
-var l = logstack.BuildNewLogger(_pkgName, ErrCodeDes, true, true)
+var logger = logstack.BuildNewLogger(_pkgName, ErrCodeDes, true, true)
 
 //var k= logstack

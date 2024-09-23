@@ -51,26 +51,26 @@ func newRuledRoom(rm rmBuildArg) (*room, errArrT) { //Constructor=factory functi
 	r := newPlainRoom()
 
 	if err := r.set.name(rm.name); err != nil {
-		return nil, l.Err.Rlog(1, err)
+		return nil, logger.Err.Rlog(1, err)
 	}
 	if err := r.set.connectionSlice(rm.connectionSlice); err != nil {
-		return nil, l.Err.Rlog(2, err)
+		return nil, logger.Err.Rlog(2, err)
 	}
 
 	if rm.name == startRoomName || rm.name == rm.endRoomName {
 
 		if err := r.set.allSeats(MaxSeatsStartEnd); err != nil {
-			return nil, l.Err.Rlog(3, err)
+			return nil, logger.Err.Rlog(3, err)
 		}
 		if err := r.set.usedSeats(UsedSeatsStartEnd); err != nil {
-			return nil, l.Err.Rlog(4, err)
+			return nil, logger.Err.Rlog(4, err)
 		}
 	} else {
 		if err := r.set.allSeats(AllSeatsNormalRoom); err != nil {
-			return nil, l.Err.Rlog(5, err)
+			return nil, logger.Err.Rlog(5, err)
 		}
 		if err := r.set.usedSeats(0); err != nil {
-			return nil, l.Err.Rlog(6, err)
+			return nil, logger.Err.Rlog(6, err)
 		}
 	}
 

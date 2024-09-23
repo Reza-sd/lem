@@ -22,7 +22,7 @@ func (e *errLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT) []errT {
 
 	e.Log(errCode)
 
-	return e.logger.statWrapper(errCode, previousStatusCodesSlice)
+	return e.logger.StatWrapper(errCode, previousStatusCodesSlice)
 }
 
 // ---------------------------------
