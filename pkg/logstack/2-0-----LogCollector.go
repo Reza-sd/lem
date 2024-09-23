@@ -129,4 +129,3 @@ func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsTo
 }
 
 // ===============================================
-
