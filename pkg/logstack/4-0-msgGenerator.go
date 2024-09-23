@@ -5,10 +5,8 @@ import (
 	"log/slog"
 )
 
-//import "go/types"
-
 // ----------------------------------------
-func LogMsgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError any) (string, slog.Attr) {
+func msgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError any) (string, slog.Attr) {
 
 	return description, slog.Group("",
 		slog.String("pk", packageName),

@@ -3,7 +3,7 @@ package logstack
 // ---------------------------------
 func (w *warnLevelT) Log(FuncName string, OperationName string, operationDescription string, errMsg any) {
 	//e.logger.
-	msg, agrs := LogMsgGenerator(w.logger.get.pkgName(), FuncName, OperationName, operationDescription, errMsg)
+	msg, agrs := msgGenerator(w.logger.get.pkgName(), FuncName, OperationName, operationDescription, errMsg)
 
 	if w.logger.get.ifPrintLogsToCli() {
 		println()
