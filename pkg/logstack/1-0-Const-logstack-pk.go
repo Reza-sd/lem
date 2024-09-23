@@ -10,8 +10,6 @@ import (
 // --------------const-----------------------------
 type errT = uint8
 
-//type errArrT = []errT
-
 const (
 	pkgName           = "logStack"
 	logFileNamePrefix = "z-log-"
@@ -20,7 +18,6 @@ const (
 
 // -----------var----------------------
 var (
-	//-----------------------------------
 	//----------------------------------
 
 	logHandlerOptsCli = &slog.HandlerOptions{

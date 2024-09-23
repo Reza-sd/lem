@@ -81,9 +81,7 @@ type errLevelT struct {
 	logger *LoggerT
 }
 
-// type stat struct {
-// 	logger *LoggerT
-// }
+
 type getter struct {
 	logger *LoggerT
 }
@@ -110,8 +108,6 @@ func (get *getter) DesForErrCode(CodeNumber errT) string {
 
 // =================================================
 
-// var Log LogCollector
-//func BuildNewLogger(F func(any)any ) *LoggerT {
 func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *LoggerT {
 	l := &LoggerT{}
 	l.data = data{
