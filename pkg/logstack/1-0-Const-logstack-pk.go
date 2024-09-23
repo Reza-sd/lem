@@ -1,7 +1,6 @@
 package logstack
 
 import (
-	//"errors"
 	"log/slog"
 	"os"
 	"time"
