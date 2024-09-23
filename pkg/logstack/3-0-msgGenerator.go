@@ -6,13 +6,13 @@ import (
 )
 
 // ----------------------------------------
-func msgGenerator(packageName string, FuncName string, OperationName string, description string, RetunedError any) (string, slog.Attr) {
-
-	return description, slog.Group("",
-		slog.String("pk", packageName),
-		slog.String("func", FuncName),
-		slog.String("op", OperationName),
-		slog.String("errMsg", fmt.Sprintf("%v", RetunedError)),
+func (l *LoggerT) msgGenerator(errCode errT) (string, slog.Attr) {
+	// we can separate method.func.,... by string dot separator
+	return fmt.Sprintf("%v", l.get.DesForErrCode(errCode)), slog.Group("",
+		slog.String("pk", l.get.pkgName()),
+		//slog.String("func", FuncName),
+		//slog.String("op", OperationName),
+		//slog.String("errMsg", fmt.Sprintf("%v", errMsg)),
 	)
 
 }

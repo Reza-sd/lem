@@ -1,9 +1,9 @@
 package logstack
 
 // ---------------------------------
-func (e *errLevelT) Log(FuncName string, OperationName string, operationDescription string, errMsg any) {
-	//e.logger.
-	msg, agrs := msgGenerator(e.logger.get.pkgName(), FuncName, OperationName, operationDescription, errMsg)
+func (e *errLevelT) Log(errCode errT) {
+
+	msg, agrs := e.logger.msgGenerator(errCode)
 
 	if e.logger.get.ifPrintLogsToCli() {
 		println()
@@ -18,11 +18,11 @@ func (e *errLevelT) Log(FuncName string, OperationName string, operationDescript
 }
 
 // ---------------------------------
-func (e *errLevelT) Rlog(FuncName string, OperationName string, operationDescription string, errCode errT, previousStatusCodesSlice []errT) []errT {
+func (e *errLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT) []errT {
 
-	e.Log(FuncName, OperationName, operationDescription, e.logger.get.DesForErrCode(errCode))
+	e.Log(errCode)
 
-	return statwrapper(errCode, previousStatusCodesSlice)
+	return statWrapper(errCode, previousStatusCodesSlice)
 }
 
 // ---------------------------------

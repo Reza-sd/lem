@@ -8,7 +8,7 @@ import (
 const (
 	//description for log only
 	_OneRandomNextRoom   = "Get.OneRandomNextRoom."
-	_OneRandomNextRoom10 = "EmptyConnectionSlice"
+	_OneRandomNextRoom10 = _OneRandomNextRoom + "10:EmptyConnectionSlice"
 )
 
 //==================OneRandomNextRoom=============================

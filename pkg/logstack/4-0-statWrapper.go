@@ -1,7 +1,7 @@
 package logstack
 
 // =========================================
-func statwrapper(statusCode errT, previousStatusCodesSlice []errT) []errT {
+func statWrapper(statusCode errT, previousStatusCodesSlice []errT) []errT {
 	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
 		return nil
 	}

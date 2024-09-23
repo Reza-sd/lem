@@ -81,7 +81,6 @@ type errLevelT struct {
 	logger *LoggerT
 }
 
-
 type getter struct {
 	logger *LoggerT
 }
