@@ -1,15 +1,15 @@
 package room
 
 const (
-	_UpdateOneCome   = "Act.UpdateOneCome."
-	_UpdateOneCome10 = _UpdateOneCome + "no more free seat"
+	_Act_UpdateOneCome   = "Act.UpdateOneCome."
+	_Act_UpdateOneCome10 = _Act_UpdateOneCome + "no more free seat"
 )
 
 // ===============================================================
 func (act *rAction) UpdateOneCome() errArrT {
 	room := act.room
 	if room.Get.UsedSeats() == room.Get.AllSeats() || room.Get.UsedSeats()+1 > room.Get.AllSeats() {
-		return logger.Err.Rlog(UpdateOneCome10, nil)
+		return logger.Err.Rlog(Act_UpdateOneCome_10, nil)
 	}
 
 	room.set.usedSeats(room.Get.UsedSeats() + 1)

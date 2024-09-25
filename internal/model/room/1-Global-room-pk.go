@@ -9,12 +9,14 @@ type errArrT = []errT
 
 // -----------------------------------------
 const (
-	_pkgName           string = "room"
+	pkgName_           string = "room"
 	MaxSeatsStartEnd   RT     = 5000
 	UsedSeatsStartEnd  RT     = 1000
 	AllSeatsNormalRoom RT     = 1
 	startRoomName      RT     = 0 //always 1 (use 0 as null)
 
+	//Rules
+	maxName               = 1000
 	maxLenConnectionSlice = 5
 )
 
@@ -26,33 +28,57 @@ const (
 const ( //func or method error code
 	Null errT = iota
 	PkgName
+
+	NewRuledRoom_0
+	NewRuledRoom_10
+	NewRuledRoom_20
+	NewRuledRoom_30
+	NewRuledRoom_40
+	NewRuledRoom_50
+	NewRuledRoom_60
+
+	//set
+	set_name
+	set_name_10
 	//Get
-	OneRandomNextRoom   //func name
-	OneRandomNextRoom10 //EmptyConnectionSlice
+	Get_OneRandomNextRoom    //func name
+	Get_OneRandomNextRoom_10 //EmptyConnectionSlice
 
 	//Act
-	UpdateOneCome
-	UpdateOneCome10 //OverCap
+	Act_UpdateOneCome
+	Act_UpdateOneCome_10 //OverCap
 
-	UpdateOneLeave
-	UpdateOneLeave10 //OverCap
+	Act_UpdateOneLeave
+	Act_UpdateOneLeave_10 //OverCap
 )
 
 var ErrCodeDes = map[errT]string{ //for log purpose
-	PkgName: _pkgName,
+	Null:    "Null",
+	PkgName: pkgName_,
+	//room builder
+	NewRuledRoom_0:  _NewRuledRoom_0,
+	NewRuledRoom_10: _NewRuledRoom_10,
+	NewRuledRoom_20: _NewRuledRoom_20,
+	NewRuledRoom_30: _NewRuledRoom_30,
+	NewRuledRoom_40: _NewRuledRoom_40,
+	NewRuledRoom_50: _NewRuledRoom_50,
+	NewRuledRoom_60: _NewRuledRoom_60,
+	//Set
+	set_name:    _set_name,
+	set_name_10: _set_name_10,
 	//Get
-	OneRandomNextRoom:   _OneRandomNextRoom,
-	OneRandomNextRoom10: _OneRandomNextRoom10,
+	Get_OneRandomNextRoom:    _Get_OneRandomNextRoom,
+	Get_OneRandomNextRoom_10: _Get_OneRandomNextRoom_10,
 
 	//Act
-	UpdateOneCome:   _UpdateOneCome,
-	UpdateOneCome10: _UpdateOneCome10,
+	Act_UpdateOneCome:    _Act_UpdateOneCome,
+	Act_UpdateOneCome_10: _Act_UpdateOneCome10,
 
-	UpdateOneLeave:   _UpdateOneLeave,
-	UpdateOneLeave10: _UpdateOneLeave10,
+	Act_UpdateOneLeave:    _Act_UpdateOneLeave,
+	Act_UpdateOneLeave_10: _Act_UpdateOneLeave10,
 }
 
 // =========================================
-var logger = logstack.BuildNewLogger(_pkgName, ErrCodeDes, true, true)
+var logger = logstack.BuildNewLogger(pkgName_, ErrCodeDes, true, true)
 
 //var k= logstack

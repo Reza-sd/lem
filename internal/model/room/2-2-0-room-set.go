@@ -6,11 +6,21 @@ type rSetter struct {
 }
 
 // ================================
+const (
+	_set_name    = "set.name."
+	_set_name_10 = _set_name + ""
+)
+
 func (set *rSetter) name(name RT) errArrT {
+	if name > maxName {
+		//return logger.Err.Rlog(,nil)
+	}
 	//check if name valid to set
 	set.room.data.name = name
 	return nil
 }
+
+//-------------------------------------------------
 func (set *rSetter) allSeats(allSeats RT) errArrT {
 	//check validation
 	set.room.data.allSeats = allSeats

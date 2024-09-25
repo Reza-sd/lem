@@ -7,8 +7,8 @@ import (
 
 const (
 	//description for log only
-	_OneRandomNextRoom   = "Get.OneRandomNextRoom."
-	_OneRandomNextRoom10 = _OneRandomNextRoom + "10:EmptyConnectionSlice"
+	_Get_OneRandomNextRoom    = "Get.OneRandomNextRoom."
+	_Get_OneRandomNextRoom_10 = _Get_OneRandomNextRoom + "10:EmptyConnectionSlice"
 )
 
 //==================OneRandomNextRoom=============================
@@ -17,7 +17,7 @@ func (get *rGetter) OneRandomNextRoom() (RT, errArrT) {
 	//StatusCodeDescription[2]=3
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {
-		return 0, logger.Err.Rlog(OneRandomNextRoom10, nil)
+		return 0, logger.Err.Rlog(Get_OneRandomNextRoom_10, nil)
 		//return 0, stat(OneRandomNextRoom10, nil)
 	}
 
