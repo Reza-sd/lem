@@ -1,7 +1,7 @@
 package room
 
 const (
-	_NewRuledRoom_0  = "NewRuledRoom."
+	_NewRuledRoom_0  = "Room.NewRuledRoom."
 	_NewRuledRoom_10 = _NewRuledRoom_0 + "10:"
 	_NewRuledRoom_20 = _NewRuledRoom_0 + "20:"
 	_NewRuledRoom_30 = _NewRuledRoom_0 + "30:"
@@ -11,18 +11,18 @@ const (
 )
 
 // ---------------------------------------
-func NewRuledRoom(name RT, endRoomName RT, connectionSlice []RT) (*room, []errT) { //Constructor=factory function=builder
+func NewRuledRoom(name RT, connectionSlice []RT, isEndroom bool) (*room, []errT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.name(name); err != nil {
-		return nil, logger.Err.Rlog(NewRuledRoom_10, err)
+		return nil, logger.Err.Rlog(NewRuledRoom_10, err, "name:", name)
 	}
 	if err := r.set.connectionSlice(connectionSlice); err != nil {
 		return nil, logger.Err.Rlog(NewRuledRoom_20, err)
 	}
 
 	//if the room is start or end room
-	if name == startRoomName || name == endRoomName {
+	if name == startRoomName || isEndroom {
 
 		if err := r.set.allSeats(MaxSeatsStartEnd); err != nil {
 			return nil, logger.Err.Rlog(NewRuledRoom_30, err)
