@@ -6,7 +6,7 @@ const (
 )
 
 // ===============================================================
-func (act *rAction) UpdateOneCome() errArrT {
+func (act *rAction) UpdateOneCome() []errT {
 	room := act.room
 	if room.Get.UsedSeats() == room.Get.AllSeats() || room.Get.UsedSeats()+1 > room.Get.AllSeats() {
 		return logger.Err.Rlog(Act_UpdateOneCome_10, nil)

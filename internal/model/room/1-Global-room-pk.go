@@ -5,7 +5,7 @@ import "main/pkg/logstack"
 // =========================================
 type RT = uint16
 type errT = uint8 //error type
-type errArrT = []errT
+//type errArrT = []errT
 
 // -----------------------------------------
 const (
@@ -16,7 +16,7 @@ const (
 	startRoomName      RT     = 0 //always 1 (use 0 as null)
 
 	//Rules
-	maxName               = 1000
+	maxName               = 100
 	maxLenConnectionSlice = 5
 )
 

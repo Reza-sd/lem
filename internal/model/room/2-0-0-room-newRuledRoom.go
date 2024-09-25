@@ -2,16 +2,16 @@ package room
 
 const (
 	_NewRuledRoom_0  = "NewRuledRoom."
-	_NewRuledRoom_10 = _NewRuledRoom_0 + ""
-	_NewRuledRoom_20 = _NewRuledRoom_0 + ""
-	_NewRuledRoom_30 = _NewRuledRoom_0 + ""
-	_NewRuledRoom_40 = _NewRuledRoom_0 + ""
-	_NewRuledRoom_50 = _NewRuledRoom_0 + ""
-	_NewRuledRoom_60 = _NewRuledRoom_0 + ""
+	_NewRuledRoom_10 = _NewRuledRoom_0 + "10:"
+	_NewRuledRoom_20 = _NewRuledRoom_0 + "20:"
+	_NewRuledRoom_30 = _NewRuledRoom_0 + "30:"
+	_NewRuledRoom_40 = _NewRuledRoom_0 + "40:"
+	_NewRuledRoom_50 = _NewRuledRoom_0 + "50:"
+	_NewRuledRoom_60 = _NewRuledRoom_0 + "60:"
 )
 
 // ---------------------------------------
-func NewRuledRoom(name RT, endRoomName RT, connectionSlice []RT) (*room, errArrT) { //Constructor=factory function=builder
+func NewRuledRoom(name RT, endRoomName RT, connectionSlice []RT) (*room, []errT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.name(name); err != nil {

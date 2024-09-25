@@ -8,12 +8,13 @@ type rSetter struct {
 // ================================
 const (
 	_set_name    = "set.name."
-	_set_name_10 = _set_name + ""
+	_set_name_10 = _set_name + "10:exceed max Name"
 )
 
-func (set *rSetter) name(name RT) errArrT {
+func (set *rSetter) name(name RT) []errT {
+	//Guard clause
 	if name > maxName {
-		//return logger.Err.Rlog(,nil)
+		return logger.Err.Rlog(set_name_10, nil)
 	}
 	//check if name valid to set
 	set.room.data.name = name
@@ -21,16 +22,16 @@ func (set *rSetter) name(name RT) errArrT {
 }
 
 //-------------------------------------------------
-func (set *rSetter) allSeats(allSeats RT) errArrT {
+func (set *rSetter) allSeats(allSeats RT) []errT {
 	//check validation
 	set.room.data.allSeats = allSeats
 	return nil
 }
-func (set *rSetter) usedSeats(usedSeats RT) errArrT {
+func (set *rSetter) usedSeats(usedSeats RT) []errT {
 	set.room.data.usedSeats = usedSeats
 	return nil
 }
-func (set *rSetter) connectionSlice(connectionSlice []RT) errArrT {
+func (set *rSetter) connectionSlice(connectionSlice []RT) []errT {
 	set.room.data.connectionSlice = make([]RT, len(connectionSlice), maxLenConnectionSlice)
 	copy(set.room.data.connectionSlice, connectionSlice)
 
