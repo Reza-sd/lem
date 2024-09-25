@@ -20,8 +20,8 @@ var (
 	//----------------------------------
 
 	logHandlerOptsCli = &slog.HandlerOptions{
-		Level:     slog.LevelDebug,
-		AddSource: true,
+		Level: slog.LevelDebug,
+		//AddSource: true,
 	}
 	logHandler  = slog.NewTextHandler(os.Stderr, logHandlerOptsCli)
 	loggerToCli = slog.New(logHandler)
@@ -32,8 +32,8 @@ var (
 	logFile, _     = os.OpenFile(logFileAddress, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	//-------------------------------
 	logHandlerOptsFile = &slog.HandlerOptions{
-		Level:     slog.LevelDebug,
-		AddSource: true,
+		Level: slog.LevelDebug,
+		//AddSource: true,
 	}
 	loggerToFile = slog.New(slog.NewJSONHandler(logFile, logHandlerOptsFile))
 	//--------------------------

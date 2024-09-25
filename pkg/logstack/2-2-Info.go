@@ -1,7 +1,7 @@
 package logstack
 
 // ---------------------------------
-func (i *infoLevelT) Log(errCode errT) {
+func (i *infoLevelT) Log(errCode errT, des ...any) {
 
 	msg, agrs := i.logger.msgGenerator(errCode)
 
@@ -18,9 +18,9 @@ func (i *infoLevelT) Log(errCode errT) {
 }
 
 // ---------------------------------
-func (i *infoLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT) []errT {
+func (i *infoLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT, des ...any) []errT {
 
-	i.Log(errCode)
+	i.Log(errCode, des...)
 
 	return i.logger.StatWrapper(errCode, previousStatusCodesSlice)
 }

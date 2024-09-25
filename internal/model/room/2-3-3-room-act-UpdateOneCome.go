@@ -2,7 +2,7 @@ package room
 
 const (
 	_Act_UpdateOneCome   = "Act.UpdateOneCome."
-	_Act_UpdateOneCome10 = _Act_UpdateOneCome + "no more free seat"
+	_Act_UpdateOneCome10 = _Act_UpdateOneCome + "10:no more free seat"
 )
 
 // ===============================================================
