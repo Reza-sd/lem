@@ -14,7 +14,7 @@ func (act *rAction) UpdateOneCome() errArrT {
 
 	room.set.usedSeats(room.Get.UsedSeats() + 1)
 	return nil
-	
+
 }
 
 // =====================================================

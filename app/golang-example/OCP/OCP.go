@@ -1,4 +1,5 @@
 package main
+
 /*
 The Open-Closed Principle (OCP) is one of the five SOLID principles of object-oriented design. It states that software entities (like classes, modules, functions, etc.) should be open for extension but closed for modification. In practice, this means that the behavior of a module should be extendable without modifying its source code.
 

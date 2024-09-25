@@ -21,7 +21,7 @@ func newPlainRoom() *room { //Constructor=factory function=builder
 // 	connectionSlice []RT
 // }
 
-func NewRuledRoom(name RT,endRoomName RT,connectionSlice []RT) (*room, errArrT) { //Constructor=factory function=builder
+func NewRuledRoom(name RT, endRoomName RT, connectionSlice []RT) (*room, errArrT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.name(name); err != nil {

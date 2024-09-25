@@ -13,7 +13,7 @@ const (
 	MaxSeatsStartEnd   RT     = 5000
 	UsedSeatsStartEnd  RT     = 1000
 	AllSeatsNormalRoom RT     = 1
-	startRoomName      RT     = 1 //always 1 (use 0 as null)
+	startRoomName      RT     = 0 //always 1 (use 0 as null)
 
 	maxLenConnectionSlice = 5
 )

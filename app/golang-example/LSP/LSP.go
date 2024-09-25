@@ -1,4 +1,5 @@
 package main
+
 /*
 1. Liskov Substitution Principle (LSP)
 The Liskov Substitution Principle is one of the five SOLID principles of object-oriented programming. It states:

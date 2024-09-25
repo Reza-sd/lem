@@ -1,11 +1,11 @@
 package logstack
 
-import(
-	"testing"
-	"reflect"
+import (
 	"fmt"
-
+	"reflect"
+	"testing"
 )
+
 //-------------------
 func (l *loggerT) Assert(t testing.TB, got, exp any, inputsArr ...any) {
 	t.Helper()
@@ -16,6 +16,7 @@ func (l *loggerT) Assert(t testing.TB, got, exp any, inputsArr ...any) {
 			inputsStr, got, got, exp, exp)
 	}
 }
+
 //------------------
 func inputsArrToString(inputs []any) string {
 	var str string
@@ -26,4 +27,5 @@ func inputsArrToString(inputs []any) string {
 	}
 	return str
 }
+
 //---------------------
