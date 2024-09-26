@@ -14,15 +14,15 @@ const ( //func or method error code
 	//roomTsetT
 	roomTsetT_name_10
 	//roomTgetT
-	roomTgetT_OneRandomNextRoom
 	roomTgetT_OneRandomNextRoom_10
 
 	//roomTactT
 	roomTactT_UpdateOneCome_10
 	roomTactT_UpdateOneLeave_10
 )
-//-------------------------------
-var ErrCodeDes = map[errT]string{ //for log purpose
+
+// -------------------------------
+var ErrCodeDb = map[errT]string{ //for log purpose
 	//room builder
 	NewRuledRoom_10: "NewRuledRoom.10:",
 	NewRuledRoom_20: "NewRuledRoom.20:",
@@ -40,4 +40,5 @@ var ErrCodeDes = map[errT]string{ //for log purpose
 
 	roomTactT_UpdateOneLeave_10: "roomTactT_UpdateOneLeave_10:",
 }
+
 //------------------------------------------

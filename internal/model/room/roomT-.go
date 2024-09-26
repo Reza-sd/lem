@@ -18,4 +18,16 @@ type roomTdataT struct {
 	connectionSlice []rT
 }
 
+// Act
+type roomTactT struct {
+	room *roomT //private
+}
+type roomTgetT struct {
+	room *roomT
+}
+
+type roomTsetT struct {
+	room *roomT
+}
+
 //==========================================================

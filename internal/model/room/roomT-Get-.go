@@ -1,9 +1,6 @@
 package room
 
 // ===================================
-type roomTgetT struct {
-	room *roomT
-}
 
 // ================================================
 func (get *roomTgetT) Name() rT {
