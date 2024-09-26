@@ -4,7 +4,6 @@ package room
 const ( //func or method error code
 	Null errT = iota
 
-	NewRuledRoom_0
 	NewRuledRoom_10
 	NewRuledRoom_20
 	NewRuledRoom_30
@@ -22,7 +21,7 @@ const ( //func or method error code
 	roomTactT_UpdateOneCome_10
 	roomTactT_UpdateOneLeave_10
 )
-
+//-------------------------------
 var ErrCodeDes = map[errT]string{ //for log purpose
 	//room builder
 	NewRuledRoom_10: "NewRuledRoom.10:",
@@ -41,3 +40,4 @@ var ErrCodeDes = map[errT]string{ //for log purpose
 
 	roomTactT_UpdateOneLeave_10: "roomTactT_UpdateOneLeave_10:",
 }
+//------------------------------------------
