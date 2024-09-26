@@ -2,19 +2,19 @@ package room
 
 // =======================================================
 type room struct {
-	data data //private
+	data dataT //private
 
 	//categorise behaviour
-	set rSetter //private
+	set setT //private
 
-	Get rGetter //<--export (public)
-	Act rAction //<--export (public)
+	Get getT //<--export (public)
+	Act actT //<--export (public)
 }
-type data struct {
-	name            RT
-	allSeats        RT
-	usedSeats       RT
-	connectionSlice []RT
+type dataT struct {
+	name            rT
+	allSeats        rT
+	usedSeats       rT
+	connectionSlice []rT
 }
 
 //==========================================================

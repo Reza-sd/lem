@@ -1,5 +1,5 @@
 package room
 
-type rAction struct {
+type actT struct {
 	room *room //private
 }

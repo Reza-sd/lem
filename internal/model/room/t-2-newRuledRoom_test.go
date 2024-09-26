@@ -24,12 +24,12 @@ func Test_newRuledRoom(t *testing.T) {
 
 	})
 	t.Run("4-NewRuledRoom", func(t *testing.T) {
-		got, _ := NewRuledRoom(1, []RT{7, 3, 14}, false)
+		got, _ := NewRuledRoom(1, []rT{7, 3, 14}, false)
 		got.Act.Print()
 	})
 	t.Run("5-NewRuledRoom exceed maxname", func(t *testing.T) {
-		inp1 := RT(maxName + 1)
-		_, gotErr := NewRuledRoom(inp1, []RT{7, 3, 14}, false)
+		inp1 := rT(maxName + 1)
+		_, gotErr := NewRuledRoom(inp1, []rT{7, 3, 14}, false)
 		expErr := []errT{set_name_10, NewRuledRoom_10}
 		logger.Assert(t, gotErr, expErr, inp1)
 	})

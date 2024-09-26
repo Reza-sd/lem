@@ -3,26 +3,20 @@ package room
 import "main/pkg/logstack"
 
 // =========================================
-type RT = uint16
+type rT = uint16
 type errT = uint8 //error type
-//type errArrT = []errT
-
 // -----------------------------------------
 const (
 	pkgName_           string = "room"
-	MaxSeatsStartEnd   RT     = 5000
-	UsedSeatsStartEnd  RT     = 1000
-	AllSeatsNormalRoom RT     = 1
-	startRoomName      RT     = 0 //always 1 (use 0 as null)
+	MaxSeatsStartEnd   rT     = 5000
+	UsedSeatsStartEnd  rT     = 1000
+	AllSeatsNormalRoom rT     = 1
+	startRoomName      rT     = 0 //always 1 (use 0 as null)
 
 	//Rules
 	maxName               = 100
 	maxLenConnectionSlice = 5
 )
-
-// =====================================
-// var stat=logstack.StatWapper
-//var Log = logstack
 
 // ========================================
 const ( //func or method error code
@@ -78,7 +72,6 @@ var ErrCodeDes = map[errT]string{ //for log purpose
 	Act_UpdateOneLeave_10: _Act_UpdateOneLeave10,
 }
 
-// =========================================
+//------------------------------------
 var logger = logstack.BuildNewLogger(pkgName_, ErrCodeDes, true, true)
-
-//var k= logstack
+//---------------------------------
