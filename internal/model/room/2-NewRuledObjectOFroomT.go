@@ -1,15 +1,5 @@
 package room
 
-const (
-	_NewRuledRoom_0  = "Room.NewRuledRoom."
-	_NewRuledRoom_10 = _NewRuledRoom_0 + "10:"
-	_NewRuledRoom_20 = _NewRuledRoom_0 + "20:"
-	_NewRuledRoom_30 = _NewRuledRoom_0 + "30:"
-	_NewRuledRoom_40 = _NewRuledRoom_0 + "40:"
-	_NewRuledRoom_50 = _NewRuledRoom_0 + "50:"
-	_NewRuledRoom_60 = _NewRuledRoom_0 + "60:"
-)
-
 // ---------------------------------------
 func NewRuledObjectOFroomT(name rT, connectionSlice []rT, isEndroom bool) (*roomT, []errT) { //Constructor=factory function=builder
 	r := newPlainRoom()

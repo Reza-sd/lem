@@ -20,7 +20,7 @@ func processPayment(gateway PaymentGateway, amount float64) error {
 	return gateway.ProcessPayment(amount)
 }
 
-//-----------in a 2 month=later----------------------------
+// -----------in a 2 month=later----------------------------
 // PayPalPaymentGateway is another concrete implementation of PaymentGateway
 type PayPalPaymentGateway struct{}
 
@@ -30,7 +30,7 @@ func (p PayPalPaymentGateway) ProcessPayment(amount float64) error {
 	return nil
 }
 
-//-------------------------------------------------------
+// -------------------------------------------------------
 func main() {
 	//---------------------------------
 	stripe := StripePaymentGateway{}

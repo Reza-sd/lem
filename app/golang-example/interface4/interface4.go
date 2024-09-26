@@ -21,7 +21,7 @@ func notify(n Notifier, message string) error {
 	return n.SendNotification(message)
 }
 
-//------------------------------------------------
+// ------------------------------------------------
 // SMSNotifier is another concrete implementation of Notifier
 type SMSNotifier struct {
 	PhoneNumber string
@@ -33,7 +33,7 @@ func (s SMSNotifier) SendNotification(message string) error {
 	return nil
 }
 
-//-------------------------------------------------
+// -------------------------------------------------
 // SlackNotifier is another concrete implementation of Notifier
 type SlackNotifier struct {
 	SlackChannel string

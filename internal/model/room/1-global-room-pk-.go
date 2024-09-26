@@ -18,6 +18,7 @@ const (
 	maxLenConnectionSlice = 5
 )
 
-//------------------------------------
+// ------------------------------------
 var logger = logstack.BuildNewLogger(pkgName_, ErrCodeDes, true, true)
+
 //---------------------------------

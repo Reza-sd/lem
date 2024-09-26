@@ -31,7 +31,7 @@ func (cc CreditCard) Pay() { // implement behaviour of this type
 	fmt.Printf("Paid %.2f using CreditCard\n", cc.amount)
 }
 
-//-----add later-------------------------------
+// -----add later-------------------------------
 type PayPal struct { //another type of main class which has the same behaviour (method)
 	amount float64
 }
@@ -40,8 +40,8 @@ func (pp PayPal) Pay() { //another implement bahaviour of this type
 	fmt.Printf("Paid %.2f using PayPal\n", pp.amount)
 }
 
-//---------------------------
-//============================
+// ---------------------------
+// ============================
 func main() {
 	p := Payment{}          //main object of main class
 	cc := CreditCard{12.23} //the object of sub-type main class

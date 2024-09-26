@@ -37,9 +37,9 @@ import (
 	"time"
 )
 
-//--------------------------------------
+// --------------------------------------
 // Interfaces
-//1. Interface-based design: We define interfaces for `Logger`, `DataStore`, and `Service`.
+// 1. Interface-based design: We define interfaces for `Logger`, `DataStore`, and `Service`.
 type Logger interface {
 	Log(message string)
 }
@@ -53,7 +53,7 @@ type Service interface {
 	Process(ctx context.Context, input string) (string, error)
 }
 
-//---------------------------------------------
+// ---------------------------------------------
 // Logger implementation
 type SimpleLogger struct{}
 
@@ -129,13 +129,13 @@ func WithTimeout(timeout time.Duration) AppOption {
 }
 
 // App struct to tie everything together#
-//3. Composition: The `App` struct composes the `Service` interface.
+// 3. Composition: The `App` struct composes the `Service` interface.
 type App struct {
 	service Service
 	timeout time.Duration
 }
 
-//6. Functional options: The `NewApp` function uses functional options for configuration.
+// 6. Functional options: The `NewApp` function uses functional options for configuration.
 func NewApp(service Service, options ...AppOption) *App {
 	app := &App{
 		service: service,

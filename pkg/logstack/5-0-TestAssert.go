@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-//-------------------
+// -------------------
 func (l *loggerT) Assert(t testing.TB, got, exp any, inputsArr ...any) {
 	t.Helper()
 	inputsStr := inputsArrToString(inputsArr)
@@ -17,7 +17,7 @@ func (l *loggerT) Assert(t testing.TB, got, exp any, inputsArr ...any) {
 	}
 }
 
-//------------------
+// ------------------
 func inputsArrToString(inputs []any) string {
 	var str string
 	var count int

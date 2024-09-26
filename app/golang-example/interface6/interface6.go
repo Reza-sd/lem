@@ -14,7 +14,7 @@ func (l *ConsoleLogger) Log(message string) {
 	println(message)
 }
 
-//-------
+// -------
 type MyService struct {
 	logger Logger
 }
@@ -25,7 +25,7 @@ func (s *MyService) DoSomething() error {
 	return nil
 }
 
-//------------
+// ------------
 func NewMyService(logger Logger) Service {
 	return &MyService{logger: logger}
 }

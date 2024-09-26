@@ -20,7 +20,7 @@ func (l *loggerT) msgGenerator(errCode errT, des ...any) (string, slog.Attr) {
 
 }
 
-//----------------------------------------------
+// ----------------------------------------------
 func desArrToString(des []any) string {
 	var str string
 	for _, item := range des {

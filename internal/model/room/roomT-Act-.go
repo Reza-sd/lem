@@ -1,6 +1,6 @@
 package room
 
-//Act
+// Act
 type roomTactT struct {
 	room *roomT //private
 }
