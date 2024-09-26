@@ -10,7 +10,7 @@ const (
 func (set *setT) name(name rT) []errT {
 	//Guard clause
 	if name > maxName {
-		return logger.Err.Rlog(set_name_10, nil, "name:", name, ">", "maxName:", maxName)
+		return logger.Err.Rlog(roomT_setT_name_10, nil, "name:", name, ">", "maxName:", maxName)
 	}
 	//check if name valid to set
 	set.room.data.name = name
