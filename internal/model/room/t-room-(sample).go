@@ -7,8 +7,8 @@ type SampleRoomSt struct{}
 var SampleRoom = SampleRoomSt{}
 
 // ====================================
-func (s *SampleRoomSt) End_Name_1() *room {
-	r := &room{
+func (s *SampleRoomSt) End_Name_1() *roomT {
+	r := &roomT{
 		data: dataT{
 			name:            1,
 			allSeats:        MaxSeatsStartEnd,
@@ -23,8 +23,8 @@ func (s *SampleRoomSt) End_Name_1() *room {
 }
 
 // --------------------------------------
-func (s *SampleRoomSt) Start_Name_0() *room {
-	r := &room{
+func (s *SampleRoomSt) Start_Name_0() *roomT {
+	r := &roomT{
 		data: dataT{
 			name:            0,
 			allSeats:        MaxSeatsStartEnd,
@@ -40,8 +40,8 @@ func (s *SampleRoomSt) Start_Name_0() *room {
 }
 
 // --------------------------------------
-func (s *SampleRoomSt) Middle_Name_3() *room {
-	r := &room{
+func (s *SampleRoomSt) Middle_Name_3() *roomT {
+	r := &roomT{
 		data: dataT{
 			name:            3,
 			allSeats:        1,

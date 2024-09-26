@@ -11,7 +11,7 @@ const (
 )
 
 // ---------------------------------------
-func NewRuledRoom(name rT, connectionSlice []rT, isEndroom bool) (*room, []errT) { //Constructor=factory function=builder
+func NewRuledObjectOFroomT(name rT, connectionSlice []rT, isEndroom bool) (*roomT, []errT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
 	if err := r.set.name(name); err != nil {
@@ -43,10 +43,10 @@ func NewRuledRoom(name rT, connectionSlice []rT, isEndroom bool) (*room, []errT)
 
 }
 
-//---------------------------------------------------
-func newPlainRoom() *room { //Constructor=factory function=builder
+// ---------------------------------------------------
+func newPlainRoom() *roomT { //Constructor=factory function=builder
 
-	r := &room{}
+	r := &roomT{}
 
 	r.data.connectionSlice = []rT{}
 

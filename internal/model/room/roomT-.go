@@ -1,7 +1,8 @@
 package room
 
 // =======================================================
-type room struct {
+//Struct in Golang is a user-defined data type
+type roomT struct {
 	data dataT //private
 
 	//categorise behaviour
