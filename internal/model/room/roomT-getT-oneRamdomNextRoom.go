@@ -13,7 +13,7 @@ const (
 
 //==============================
 
-func (get *getT) OneRandomNextRoom() (rT, []errT) {
+func (get *roomTgetT) OneRandomNextRoom() (rT, []errT) {
 	lenConnectionSlice := len(get.ConnectionSlice())
 	if lenConnectionSlice == 0 {
 		return 0, logger.Err.Rlog(roomT_getT_OneRandomNextRoom_10, nil)

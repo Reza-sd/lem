@@ -7,7 +7,7 @@ const (
 )
 
 // ---------------------------------------------
-func (set *setT) name(name rT) []errT {
+func (set *roomTsetT) name(name rT) []errT {
 	//Guard clause
 	if name > maxName {
 		return logger.Err.Rlog(roomT_setT_name_10, nil, "name:", name, ">", "maxName:", maxName)

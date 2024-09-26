@@ -1,22 +1,22 @@
 package room
 
 // ===================================
-type getT struct {
+type roomTgetT struct {
 	room *roomT
 }
 
 // ================================================
-func (get *getT) Name() rT {
+func (get *roomTgetT) Name() rT {
 	return get.room.data.name //r.data.name
 }
 
-func (get *getT) AllSeats() rT {
+func (get *roomTgetT) AllSeats() rT {
 	return get.room.data.allSeats
 }
-func (get *getT) UsedSeats() rT {
+func (get *roomTgetT) UsedSeats() rT {
 	return get.room.data.usedSeats
 }
-func (get *getT) ConnectionSlice() []rT {
+func (get *roomTgetT) ConnectionSlice() []rT {
 	return get.room.data.connectionSlice
 
 }

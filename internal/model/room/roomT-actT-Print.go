@@ -1,7 +1,7 @@
 package room
 
-//==============================================
-func (act *actT) Print() {
+// ==============================================
+func (act *roomTactT) Print() {
 
 	println()
 

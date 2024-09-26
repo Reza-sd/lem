@@ -1,21 +1,21 @@
 package room
 
 // ================================
-type setT struct {
+type roomTsetT struct {
 	room *roomT
 }
 
 // -------------------------------------------------
-func (set *setT) allSeats(allSeats rT) []errT {
+func (set *roomTsetT) allSeats(allSeats rT) []errT {
 	//check validation
 	set.room.data.allSeats = allSeats
 	return nil
 }
-func (set *setT) usedSeats(usedSeats rT) []errT {
+func (set *roomTsetT) usedSeats(usedSeats rT) []errT {
 	set.room.data.usedSeats = usedSeats
 	return nil
 }
-func (set *setT) connectionSlice(connectionSlice []rT) []errT {
+func (set *roomTsetT) connectionSlice(connectionSlice []rT) []errT {
 	set.room.data.connectionSlice = make([]rT, len(connectionSlice), maxLenConnectionSlice)
 	copy(set.room.data.connectionSlice, connectionSlice)
 
