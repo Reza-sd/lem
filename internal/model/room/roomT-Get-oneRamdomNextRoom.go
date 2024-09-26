@@ -5,12 +5,6 @@ import (
 	//"crypto/rand"
 )
 
-const (
-	//description for log only
-	_roomT_getT_OneRandomNextRoom    = "Get.OneRandomNextRoom."
-	_roomT_getT_OneRandomNextRoom_10 = _roomT_getT_OneRandomNextRoom + "10:EmptyConnectionSlice"
-)
-
 //==============================
 
 func (get *roomTgetT) OneRandomNextRoom() (rT, []errT) {
