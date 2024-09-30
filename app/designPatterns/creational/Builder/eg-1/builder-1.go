@@ -83,7 +83,18 @@ func (b *PCBuilder) Build() Computer {
     }
 }
 
+//===========================================
+/*
+Advantages of the Builder Pattern:
 
+- Separation of Concerns: The creation logic is separated from the object itself, making it easier to manage the construction of complex objects.
+
+- Fluent API: The method chaining allows for a clean, readable API for object construction.
+
+- Immutability: Once the Computer is built, it is immutable (since we don't expose setters), which can help prevent unintended changes.
+
+- Scalability: You can easily add more methods to the builder to configure additional properties of the object.
+*/
 
 //==============================================
 
