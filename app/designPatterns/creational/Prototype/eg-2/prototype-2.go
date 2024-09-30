@@ -11,7 +11,7 @@ The Prototype pattern is a creational design pattern that provides a way to crea
 type Prototype interface {
     Clone() Prototype
 }
-
+//==============================================
 // ConcreteProductA implements the Prototype interface.
 type ConcreteProductA struct {
     Name string
@@ -20,7 +20,7 @@ type ConcreteProductA struct {
 func (a *ConcreteProductA) Clone() Prototype {
     return &ConcreteProductA{Name: a.Name}
 }
-
+//---------------------
 // ConcreteProductB implements the Prototype interface.
 type ConcreteProductB struct {
     Name string
@@ -30,7 +30,7 @@ type ConcreteProductB struct {
 func (b *ConcreteProductB) Clone() Prototype {
     return &ConcreteProductB{Name: b.Name, Value: b.Value}
 }
-
+//==============================================
 func main() {
     // Create a prototype object.
     prototypeA := &ConcreteProductA{Name: "Product A"}
@@ -46,3 +46,4 @@ func main() {
     cloneB := prototypeB.Clone().(*ConcreteProductB)
     fmt.Println("Clone B:", cloneB)
 }
+//==============================================
