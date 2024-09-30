@@ -56,6 +56,7 @@ func main() {
 	// Check if both logger1 and logger2 point to the same instance
 	if logger1 == logger2 {
 		fmt.Println("logger1 and logger2 are the same instance.")
+		println()
 	}
 	//===============================================
 	/*
