@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 /*
@@ -19,6 +20,7 @@ type Chair interface {
 type Sofa interface {
 	LieOn()
 }
+
 //==============================================
 //Step 2: Concrete Implementations of Products
 
@@ -51,6 +53,7 @@ type ModernSofa struct{}
 func (ms *ModernSofa) LieOn() {
 	fmt.Println("Lying on a modern sofa.")
 }
+
 //==============================================
 //Step 3: Define the Abstract Factory Interface
 // FurnitureFactory interface (Abstract Factory)
@@ -59,6 +62,7 @@ type FurnitureFactory interface {
 	MakeChair() Chair
 	MakeSofa() Sofa
 }
+
 //==============================================
 //Step 4: Concrete Factories
 // Victorian Furniture Factory (Concrete Factory 1)
@@ -82,6 +86,7 @@ func (mf *ModernFurnitureFactory) MakeChair() Chair {
 func (mf *ModernFurnitureFactory) MakeSofa() Sofa {
 	return &ModernSofa{}
 }
+
 //==============================================
 ///Step 5: Client Code
 //Finally, the client can work with the abstract factory to create different types of furniture without knowing the concrete implementations.
@@ -105,4 +110,5 @@ func main() {
 	modernChair.SitOn()
 	modernSofa.LieOn()
 }
+
 //==============================================

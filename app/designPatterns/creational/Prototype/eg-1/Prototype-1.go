@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 /*
@@ -14,56 +15,56 @@ We will create an example where we define a Shape interface, and two types of sh
 //1. Define the Prototype Interface (Shape):
 // Shape is the prototype interface
 type Shape interface {
-    Clone() Shape
-    GetDetails() string
+	Clone() Shape
+	GetDetails() string
 }
+
 //==============================================
 //2. Concrete Prototypes (Circle and Rectangle):
 // Circle is a concrete prototype
 type Circle struct {
-    Radius int
+	Radius int
 }
 
 func (c *Circle) Clone() Shape {
-    // Return a copy of the circle
-    return &Circle{Radius: c.Radius}
+	// Return a copy of the circle
+	return &Circle{Radius: c.Radius}
 }
 
 func (c *Circle) GetDetails() string {
-    return fmt.Sprintf("Circle with radius %d", c.Radius)
+	return fmt.Sprintf("Circle with radius %d", c.Radius)
 }
 
 // Rectangle is another concrete prototype
 type Rectangle struct {
-    Width  int
-    Height int
+	Width  int
+	Height int
 }
 
 func (r *Rectangle) Clone() Shape {
-    // Return a copy of the rectangle
-    return &Rectangle{Width: r.Width, Height: r.Height}
+	// Return a copy of the rectangle
+	return &Rectangle{Width: r.Width, Height: r.Height}
 }
 
 func (r *Rectangle) GetDetails() string {
-    return fmt.Sprintf("Rectangle with width %d and height %d", r.Width, r.Height)
+	return fmt.Sprintf("Rectangle with width %d and height %d", r.Width, r.Height)
 }
-
 
 //==============================================
 func main() {
-    // Create a circle and clone it
-    circle := &Circle{Radius: 10}
-    clonedCircle := circle.Clone()
+	// Create a circle and clone it
+	circle := &Circle{Radius: 10}
+	clonedCircle := circle.Clone()
 
-    fmt.Println(circle.GetDetails())        // Output: Circle with radius 10
-    fmt.Println(clonedCircle.GetDetails())  // Output: Circle with radius 10
+	fmt.Println(circle.GetDetails())       // Output: Circle with radius 10
+	fmt.Println(clonedCircle.GetDetails()) // Output: Circle with radius 10
 
-    // Create a rectangle and clone it
-    rectangle := &Rectangle{Width: 20, Height: 10}
-    clonedRectangle := rectangle.Clone()
+	// Create a rectangle and clone it
+	rectangle := &Rectangle{Width: 20, Height: 10}
+	clonedRectangle := rectangle.Clone()
 
-    fmt.Println(rectangle.GetDetails())       // Output: Rectangle with width 20 and height 10
-    fmt.Println(clonedRectangle.GetDetails()) // Output: Rectangle with width 20 and height 10
+	fmt.Println(rectangle.GetDetails())       // Output: Rectangle with width 20 and height 10
+	fmt.Println(clonedRectangle.GetDetails()) // Output: Rectangle with width 20 and height 10
 }
 
 //==============================================

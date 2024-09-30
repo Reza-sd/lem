@@ -13,14 +13,14 @@ In this example, we'll build a Computer object step by step, which has multiple 
 //1. Define the Product (Computer):
 // Computer is the product that is constructed using the builder
 type Computer struct {
-    CPU     string
-    RAM     string
-    Storage string
-    GPU     string
+	CPU     string
+	RAM     string
+	Storage string
+	GPU     string
 }
 
 func (c *Computer) String() string {
-    return fmt.Sprintf("Computer Specifications:\nCPU: %s\nRAM: %s\nStorage: %s\nGPU: %s", c.CPU, c.RAM, c.Storage, c.GPU)
+	return fmt.Sprintf("Computer Specifications:\nCPU: %s\nRAM: %s\nStorage: %s\nGPU: %s", c.CPU, c.RAM, c.Storage, c.GPU)
 }
 
 //==============================================
@@ -29,12 +29,12 @@ func (c *Computer) String() string {
 
 // ComputerBuilder defines the interface for building a computer
 type ComputerBuilder interface {
-    SetCPU(cpu string) ComputerBuilder
-    SetRAM(ram string) ComputerBuilder
-    SetStorage(storage string) ComputerBuilder
-    SetGPU(gpu string) ComputerBuilder
+	SetCPU(cpu string) ComputerBuilder
+	SetRAM(ram string) ComputerBuilder
+	SetStorage(storage string) ComputerBuilder
+	SetGPU(gpu string) ComputerBuilder
 
-    Build() Computer
+	Build() Computer
 }
 
 //==============================================
@@ -43,44 +43,44 @@ type ComputerBuilder interface {
 
 // PCBuilder is the concrete builder that constructs the computer
 type PCBuilder struct {
-    cpu     string
-    ram     string
-    storage string
-    gpu     string
+	cpu     string
+	ram     string
+	storage string
+	gpu     string
 }
 
 // NewPCBuilder returns a new instance of PCBuilder
 func NewPCBuilder() *PCBuilder {
-    return &PCBuilder{}
+	return &PCBuilder{}
 }
 
 func (b *PCBuilder) SetCPU(cpu string) ComputerBuilder {
-    b.cpu = cpu
-    return b
+	b.cpu = cpu
+	return b
 }
 
 func (b *PCBuilder) SetRAM(ram string) ComputerBuilder {
-    b.ram = ram
-    return b
+	b.ram = ram
+	return b
 }
 
 func (b *PCBuilder) SetStorage(storage string) ComputerBuilder {
-    b.storage = storage
-    return b
+	b.storage = storage
+	return b
 }
 
 func (b *PCBuilder) SetGPU(gpu string) ComputerBuilder {
-    b.gpu = gpu
-    return b
+	b.gpu = gpu
+	return b
 }
 
 func (b *PCBuilder) Build() Computer {
-    return Computer{
-        CPU:     b.cpu,
-        RAM:     b.ram,
-        Storage: b.storage,
-        GPU:     b.gpu,
-    }
+	return Computer{
+		CPU:     b.cpu,
+		RAM:     b.ram,
+		Storage: b.storage,
+		GPU:     b.gpu,
+	}
 }
 
 //===========================================
@@ -99,25 +99,25 @@ Advantages of the Builder Pattern:
 //==============================================
 
 func main() {
-    // Create a Gaming PC using the builder pattern
-    gamingPC := NewPCBuilder().
-        SetCPU("Intel Core i9").
-        SetRAM("32GB").
-        SetStorage("1TB SSD").
-        SetGPU("NVIDIA RTX 3080").
-        Build()
+	// Create a Gaming PC using the builder pattern
+	gamingPC := NewPCBuilder().
+		SetCPU("Intel Core i9").
+		SetRAM("32GB").
+		SetStorage("1TB SSD").
+		SetGPU("NVIDIA RTX 3080").
+		Build()
 
-    fmt.Println(gamingPC)
+	fmt.Println(gamingPC)
 
-    // Create an Office PC with different specs
-    officePC := NewPCBuilder().
-        SetCPU("Intel Core i5").
-        SetRAM("16GB").
-        SetStorage("512GB SSD").
-        SetGPU("Intel Integrated Graphics").
-        Build()
+	// Create an Office PC with different specs
+	officePC := NewPCBuilder().
+		SetCPU("Intel Core i5").
+		SetRAM("16GB").
+		SetStorage("512GB SSD").
+		SetGPU("Intel Integrated Graphics").
+		Build()
 
-    fmt.Println(officePC)
+	fmt.Println(officePC)
 }
 
 //==============================================

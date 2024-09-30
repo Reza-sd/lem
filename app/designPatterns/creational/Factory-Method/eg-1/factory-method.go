@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 /*
@@ -15,7 +16,7 @@ The Factory Method pattern is a creational design pattern that provides an inter
 //1. Define the Product Interface (Transport):
 // Transport is the product interface
 type Transport interface {
-    Deliver() string
+	Deliver() string
 }
 
 //==============================================
@@ -24,29 +25,29 @@ type Transport interface {
 type Car struct{}
 
 func (c *Car) Deliver() string {
-    return "Delivering by car"
+	return "Delivering by car"
 }
 
 // Bike is another concrete product implementing the Transport interface
 type Bike struct{}
 
 func (b *Bike) Deliver() string {
-    return "Delivering by bike"
+	return "Delivering by bike"
 }
-
 
 //==============================================
 //3. Define the Creator Interface:
 // TransportFactory is the factory method that returns a Transport
 func TransportFactory(transportType string) Transport {
-    if transportType == "car" {
-        return &Car{}
-    }
-    if transportType == "bike" {
-        return &Bike{}
-    }
-    return nil
+	if transportType == "car" {
+		return &Car{}
+	}
+	if transportType == "bike" {
+		return &Bike{}
+	}
+	return nil
 }
+
 //==============================
 /*
 Advantages of Factory Method Pattern:
@@ -58,10 +59,10 @@ Advantages of Factory Method Pattern:
 */
 
 //==============================================
-func main(){
-    car := TransportFactory("car")
-    bike := TransportFactory("bike")
+func main() {
+	car := TransportFactory("car")
+	bike := TransportFactory("bike")
 
-    fmt.Println(car.Deliver())  // Output: Delivering by car
-    fmt.Println(bike.Deliver()) // Output: Delivering by bike
+	fmt.Println(car.Deliver())  // Output: Delivering by car
+	fmt.Println(bike.Deliver()) // Output: Delivering by bike
 }

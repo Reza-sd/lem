@@ -34,12 +34,14 @@ type SportySedan struct{}
 func (s *SportySedan) Drive() {
 	fmt.Println("Driving a sporty sedan!")
 }
+
 // Concrete Product A2: Luxury Sedan
 type LuxurySedan struct{}
 
 func (l *LuxurySedan) Drive() {
 	fmt.Println("Driving a luxury sedan!")
 }
+
 //--------
 
 // Concrete Product B1: Sporty SUV
@@ -60,12 +62,12 @@ func (l *LuxurySUV) Offroad() {
 // Step 3: Define the Abstract Factory Interface
 // We then define the abstract factory interface that will be responsible for creating the products.
 
-
 // Abstract Factory Interface
 type CarFactory interface {
 	MakeSedan() Sedan
 	MakeSUV() SUV
 }
+
 //==========================================
 //Step 4: Concrete Factories
 //Now, let's implement the concrete factories that produce the actual cars (Sporty or Luxury).
@@ -92,11 +94,8 @@ func (f *LuxuryCarFactory) MakeSUV() SUV {
 	return &LuxurySUV{}
 }
 
-
-
-
 //==========================================
-func main(){
+func main() {
 	var factory CarFactory
 
 	// Using the SportyCarFactory
@@ -116,4 +115,5 @@ func main(){
 	luxurySUV.Offroad()
 
 }
+
 //==========================================
