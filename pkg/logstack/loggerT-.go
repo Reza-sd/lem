@@ -95,7 +95,7 @@ func (get *getter) ifSaveLogsToFile() bool {
 func (get *getter) ifPrintLogsToCli() bool {
 	return get.logger.data.ifPrintLogsToCli
 }
-func (get *getter) DesForErrCode(CodeNumber errT) string {
+func (get *getter) desForErrCode(CodeNumber errT) string {
 
 	st, ok := get.logger.data.ErrCodeDes[CodeNumber]
 	if ok {
@@ -105,22 +105,4 @@ func (get *getter) DesForErrCode(CodeNumber errT) string {
 
 }
 
-// =================================================
 
-func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *loggerT {
-	l := &loggerT{}
-	l.data = data{
-		packageName:      packageName,
-		ifSaveLogsToFile: ifSaveLogsToFile,
-		ifPrintLogsToCli: ifPrintLogsToCli,
-		ErrCodeDes:       errCodeDes,
-	}
-	l.get.logger = l
-	l.Info.logger = l
-	l.Warn.logger = l
-	l.Err.logger = l
-
-	return l
-}
-
-// ===============================================
