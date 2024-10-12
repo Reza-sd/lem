@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-//=============================
+// =============================
 // 1. Define the Product Interface (Notifier):
 // Notifier is the product interface that all concrete products will implement
 type Notifier interface {
 	SendNotification(message string) string
 }
 
-//==============================================
-//2. Concrete Products (SMSNotifier, EmailNotifier, and PushNotifier):
+// ==============================================
+// 2. Concrete Products (SMSNotifier, EmailNotifier, and PushNotifier):
 // SMSNotifier is a concrete product implementing the Notifier interface
 type SMSNotifier struct{}
 
@@ -32,8 +32,8 @@ func (p *PushNotifier) SendNotification(message string) string {
 	return fmt.Sprintf("Sending Push notification: %s", message)
 }
 
-//==============================================
-//3. Factory Method (NotificationFactory):
+// ==============================================
+// 3. Factory Method (NotificationFactory):
 // NotificationFactory is the factory method that creates and returns a Notifier
 func NotificationFactory(notificationType string) Notifier {
 	if notificationType == "sms" {
@@ -48,7 +48,7 @@ func NotificationFactory(notificationType string) Notifier {
 	return nil
 }
 
-//==============================================
+// ==============================================
 func main() {
 	smsNotifier := NotificationFactory("sms")
 	emailNotifier := NotificationFactory("email")

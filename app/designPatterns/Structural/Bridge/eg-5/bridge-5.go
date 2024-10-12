@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-//=================================
+// =================================
 type Printer interface {
 	PrintFile()
 }
 
-//----------------------------------
+// ----------------------------------
 type Epson struct {
 }
 
@@ -15,7 +15,7 @@ func (p *Epson) PrintFile() {
 	fmt.Println("Printing by a EPSON Printer")
 }
 
-//----------------------------------
+// ----------------------------------
 type Hp struct {
 }
 
@@ -23,13 +23,13 @@ func (p *Hp) PrintFile() {
 	fmt.Println("Printing by a HP Printer")
 }
 
-//=================================
+// =================================
 type Computer interface {
 	Print()
 	SetPrinter(Printer)
 }
 
-//=================================
+// =================================
 type Mac struct {
 	printer Printer
 }
@@ -43,7 +43,7 @@ func (m *Mac) SetPrinter(p Printer) {
 	m.printer = p
 }
 
-//=================================
+// =================================
 type Windows struct {
 	printer Printer
 }
@@ -57,7 +57,7 @@ func (w *Windows) SetPrinter(p Printer) {
 	w.printer = p
 }
 
-//=================================
+// =================================
 func main() {
 
 	hpPrinter := &Hp{}

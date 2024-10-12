@@ -3,7 +3,7 @@ package logstack
 // ---------------------------------
 func (w *warnLevelT) Log(errCode errT, des ...any) {
 	//e.logger.
-	msg, agrs := w.logger.msgGenerator(errCode)
+	msg, agrs := w.logger.get.msgGenerator(errCode, des...)
 
 	if w.logger.get.ifPrintLogsToCli() {
 		println()
@@ -22,7 +22,7 @@ func (w *warnLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT, des ...
 
 	w.Log(errCode, des...)
 
-	return w.logger.StatWrapper(errCode, previousStatusCodesSlice)
+	return w.logger.Function.StatWrapper(errCode, previousStatusCodesSlice)
 }
 
 // ---------------------------------

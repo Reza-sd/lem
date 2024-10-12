@@ -19,8 +19,8 @@ type Transport interface {
 	Deliver() string
 }
 
-//==============================================
-//2. Concrete Products (Car and Bike):
+// ==============================================
+// 2. Concrete Products (Car and Bike):
 // Car is a concrete product implementing the Transport interface
 type Car struct{}
 
@@ -35,8 +35,8 @@ func (b *Bike) Deliver() string {
 	return "Delivering by bike"
 }
 
-//==============================================
-//3. Define the Creator Interface:
+// ==============================================
+// 3. Define the Creator Interface:
 // TransportFactory is the factory method that returns a Transport
 func TransportFactory(transportType string) Transport {
 	if transportType == "car" {
@@ -58,7 +58,7 @@ Advantages of Factory Method Pattern:
 3- Single Responsibility Principle: The factory method takes care of creating objects, while other parts of the system can focus on using the objects.
 */
 
-//==============================================
+// ==============================================
 func main() {
 	car := TransportFactory("car")
 	bike := TransportFactory("bike")

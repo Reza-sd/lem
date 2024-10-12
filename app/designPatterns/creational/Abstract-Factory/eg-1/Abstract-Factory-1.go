@@ -94,7 +94,7 @@ func (f *LuxuryCarFactory) MakeSUV() SUV {
 	return &LuxurySUV{}
 }
 
-//==========================================
+// ==========================================
 func main() {
 	var factory CarFactory
 

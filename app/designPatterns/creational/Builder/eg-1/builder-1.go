@@ -9,8 +9,8 @@ Example: Building a Computer
 In this example, we'll build a Computer object step by step, which has multiple components like CPU, RAM, Storage, and GPU. The Builder will allow us to configure and build different kinds of computers.
 */
 
-//==============================================
-//1. Define the Product (Computer):
+// ==============================================
+// 1. Define the Product (Computer):
 // Computer is the product that is constructed using the builder
 type Computer struct {
 	CPU     string

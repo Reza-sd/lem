@@ -12,7 +12,7 @@ type Component interface {
 	Operation() string
 }
 
-//==============================================
+// ==============================================
 // Leaf
 type Leaf struct {
 	name string
@@ -22,7 +22,7 @@ func (l *Leaf) Operation() string {
 	return l.name
 }
 
-//==============================================
+// ==============================================
 // Composite
 type Composite struct {
 	name       string
@@ -41,7 +41,7 @@ func (c *Composite) Operation() string {
 	return result
 }
 
-//---------------------------------
+// ---------------------------------
 func (c *Composite) Add(component Component) {
 	c.components = append(c.components, component)
 }
@@ -55,7 +55,7 @@ func (c *Composite) Remove(component Component) {
 	}
 }
 
-//==============================================
+// ==============================================
 func main() {
 	leaf1 := &Leaf{name: "Leaf 1"}
 	leaf2 := &Leaf{name: "Leaf 2"}

@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-//=================================
+// =================================
 var lock = &sync.Mutex{}
 
 type single struct {
@@ -13,7 +13,7 @@ type single struct {
 
 var singleInstance *single
 
-//-------------------------
+// -------------------------
 func getInstance(i int) *single {
 
 	if singleInstance == nil {

@@ -14,14 +14,14 @@ Key Components:
 - Concrete Implementor: Implements the Implementor interface.
 */
 
-//=======================================
+// =======================================
 // Implementor
 type Renderer interface {
 	RenderCircle(radius float64)
 	RenderSquare(side float64)
 }
 
-//---------------------------
+// ---------------------------
 // Concrete Implementors
 type VectorRenderer struct{}
 
@@ -33,7 +33,7 @@ func (v *VectorRenderer) RenderSquare(side float64) {
 	fmt.Printf("Drawing a square of side %.2f as vectors\n", side)
 }
 
-//---------------------------
+// ---------------------------
 type RasterRenderer struct{}
 
 func (r *RasterRenderer) RenderCircle(radius float64) {
@@ -44,13 +44,13 @@ func (r *RasterRenderer) RenderSquare(side float64) {
 	fmt.Printf("Drawing a square of side %.2f as pixels\n", side)
 }
 
-//---------------------------
+// ---------------------------
 // Abstraction
 type Shape interface {
 	Draw()
 }
 
-//---------------------------
+// ---------------------------
 // Refined Abstractions
 type Circle struct {
 	renderer Renderer
@@ -61,7 +61,7 @@ func (c *Circle) Draw() {
 	c.renderer.RenderCircle(c.radius)
 }
 
-//---------------------------
+// ---------------------------
 type Square struct {
 	renderer Renderer
 	side     float64
@@ -71,7 +71,7 @@ func (s *Square) Draw() {
 	s.renderer.RenderSquare(s.side)
 }
 
-//=======================================
+// =======================================
 // Client code
 func main() {
 	vectorRenderer := &VectorRenderer{}

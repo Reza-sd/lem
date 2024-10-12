@@ -18,7 +18,7 @@ type Target interface {
 	Request() string
 }
 
-//=========================================
+// =========================================
 // Adaptee with an incompatible interface
 type Adaptee struct{}
 
@@ -35,7 +35,7 @@ func (a *Adapter) Request() string {
 	return a.adaptee.SpecificRequest()
 }
 
-//=========================================
+// =========================================
 func main() {
 	adaptee := &Adaptee{}
 	adapter := &Adapter{adaptee}

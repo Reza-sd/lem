@@ -114,7 +114,7 @@ func (a *AdvancedRemoteControl) Mute() {
 	a.device.SetVolume(0)
 }
 
-//===================================================
+// ===================================================
 func main() {
 	// Using TV with RemoteControl
 	tv := &TV{}

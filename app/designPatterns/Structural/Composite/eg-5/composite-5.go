@@ -99,7 +99,7 @@ func (p *Playlist) GetName() string {
 The Composite Pattern is useful when dealing with tree-like structures where you want to treat both individual objects and groups of objects in the same way. In Go, this can be achieved using interfaces and composition, as demonstrated with songs, podcasts, and playlists. This pattern helps simplify client code by allowing uniform treatment of both simple and composite objects.
 */
 
-//========================================
+// ========================================
 func main() {
 	// Create leaf components
 	song1 := &Song{name: "Song A"}

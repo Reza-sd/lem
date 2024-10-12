@@ -5,13 +5,13 @@ import (
 	"fmt"
 )
 
-//==================================
+// ==================================
 // Prototype interface
 type Cloneable interface {
 	Clone() Cloneable
 }
 
-//==================================
+// ==================================
 // Concrete prototype: File
 type File struct {
 	Name    string
@@ -26,7 +26,7 @@ func (f *File) Clone() Cloneable {
 	return newFile
 }
 
-//----------------------
+// ----------------------
 // Concrete prototype: Folder
 type Folder struct {
 	Name  string
@@ -41,7 +41,7 @@ func (f *Folder) Clone() Cloneable {
 	return newFolder
 }
 
-//==================================
+// ==================================
 // Prototype registry
 type FileSystem struct {
 	Prototypes map[string]Cloneable

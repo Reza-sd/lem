@@ -8,7 +8,7 @@ import (
 // PaymentGatewayType defines the type of payment gateway.
 type PaymentGatewayType int
 
-//F = flag
+// F = flag
 const (
 	PayPalGatewayF PaymentGatewayType = iota
 	StripeGatewayF

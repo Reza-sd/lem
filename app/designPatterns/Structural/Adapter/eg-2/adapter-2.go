@@ -20,7 +20,7 @@ type Target interface {
 	Request() string
 }
 
-//==============================================
+// ==============================================
 // Adaptee defines the existing interface.
 type Adaptee struct{}
 
@@ -37,7 +37,7 @@ func (a *Adapter) Request() string {
 	return a.adaptee.SpecificRequest()
 }
 
-//==============================================
+// ==============================================
 func main() {
 	// Create an Adaptee object.
 	adaptee := &Adaptee{}

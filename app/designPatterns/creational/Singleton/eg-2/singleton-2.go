@@ -43,7 +43,7 @@ func (l *Logger) Log(message string) {
 	fmt.Printf("[%s] %s\n", l.LogLevel, message)
 }
 
-//==============================================
+// ==============================================
 func main() {
 	// First call to get the logger instance
 	logger1 := GetLoggerInstance()

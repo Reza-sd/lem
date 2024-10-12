@@ -14,8 +14,8 @@ type Component interface {
 	search(string)
 }
 
-//====================================
-//Composite
+// ====================================
+// Composite
 type Folder struct {
 	components []Component
 	name       string

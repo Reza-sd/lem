@@ -30,12 +30,24 @@ status codes: are used to communicate the result of an operation.
 error= invalid condition
 */
 type loggerT struct {
-	data data
-	get  getter
+	data struct {
+		packageName      string
+		ifSaveLogsToFile bool
+		ifPrintLogsToCli bool
+		ErrCodeDes       map[errT]string
+	}
 
-	Info infoLevelT //e.g: normal status code
-	Warn warnLevelT
-	Err  errLevelT //unexpected status code
+	get getter
+
+	Act struct {
+		//logger *loggerT
+
+		Info infoLevelT //e.g: normal status code
+		Warn warnLevelT
+		Err  errLevelT //unexpected status code
+	}
+
+	Function function
 	// error means violation in business logic
 	// in software development, an "error" often refers to a violation of business logic.
 	// unexpected = Must not happen
@@ -65,12 +77,12 @@ logger.Err.log()
 logger.Err.Rlog() //(Rlog:return error + log)
 */
 
-type data struct {
-	packageName      string
-	ifSaveLogsToFile bool
-	ifPrintLogsToCli bool
-	ErrCodeDes       map[errT]string
-}
+//	type data struct {
+//		packageName      string
+//		ifSaveLogsToFile bool
+//		ifPrintLogsToCli bool
+//		ErrCodeDes       map[errT]string
+//	}
 type infoLevelT struct {
 	logger *loggerT
 }
@@ -83,6 +95,17 @@ type errLevelT struct {
 
 type getter struct {
 	logger *loggerT
+}
+
+// type action struct{
+// 	//logger *loggerT
+
+// 	Info infoLevelT //e.g: normal status code
+// 	Warn warnLevelT
+// 	Err  errLevelT //unexpected status code
+// }
+
+type function struct {
 }
 
 // =================================================
@@ -104,5 +127,3 @@ func (get *getter) desForErrCode(CodeNumber errT) string {
 	return ""
 
 }
-
-

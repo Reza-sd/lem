@@ -24,7 +24,7 @@ func (sa *StripeAdapter) ProcessPayment(amount float64) bool {
 	return sa.stripePayment.ChargeCard(amount, "USD")
 }
 
-//=======================================
+// =======================================
 func main() {
 	adaptee := &StripePayment{}
 	adapter := &StripeAdapter{stripePayment: adaptee}

@@ -5,27 +5,27 @@ func NewRuledObjectOFroomT(name rT, connectionSlice []rT, isEndroom bool) (*room
 	r := newPlainRoom()
 
 	if err := r.set.name(name); err != nil {
-		return nil, logger.Err.Rlog(NewRuledRoom_10, err,"set.name(name):", "name:", name)
+		return nil, logger.Act.Err.Rlog(NewRuledRoom_10, err, "set.name(name):", "name:", name)
 	}
 	if err := r.set.connectionSlice(connectionSlice); err != nil {
-		return nil, logger.Err.Rlog(NewRuledRoom_20, err,"r.set.connectionSlice")
+		return nil, logger.Act.Err.Rlog(NewRuledRoom_20, err, "r.set.connectionSlice")
 	}
 
 	//if the room is start or end room
 	if name == startRoomName || isEndroom {
 
 		if err := r.set.allSeats(MaxSeatsStartEnd); err != nil {
-			return nil, logger.Err.Rlog(NewRuledRoom_30, err,"r.set.allSeats")
+			return nil, logger.Act.Err.Rlog(NewRuledRoom_30, err, "r.set.allSeats")
 		}
 		if err := r.set.usedSeats(UsedSeatsStartEnd); err != nil {
-			return nil, logger.Err.Rlog(NewRuledRoom_40, err,"r.set.usedSeats")
+			return nil, logger.Act.Err.Rlog(NewRuledRoom_40, err, "r.set.usedSeats")
 		}
 	} else {
 		if err := r.set.allSeats(AllSeatsNormalRoom); err != nil {
-			return nil, logger.Err.Rlog(NewRuledRoom_50, err,"r.set.allSeats")
+			return nil, logger.Act.Err.Rlog(NewRuledRoom_50, err, "r.set.allSeats")
 		}
 		if err := r.set.usedSeats(0); err != nil {
-			return nil, logger.Err.Rlog(NewRuledRoom_60, err,"r.set.usedSeats(0)")
+			return nil, logger.Act.Err.Rlog(NewRuledRoom_60, err, "r.set.usedSeats(0)")
 		}
 	}
 

@@ -12,7 +12,7 @@ type Prototype interface {
 	Clone() Prototype
 }
 
-//==============================================
+// ==============================================
 // ConcreteProductA implements the Prototype interface.
 type ConcreteProductA struct {
 	Name string
@@ -22,7 +22,7 @@ func (a *ConcreteProductA) Clone() Prototype {
 	return &ConcreteProductA{Name: a.Name}
 }
 
-//---------------------
+// ---------------------
 // ConcreteProductB implements the Prototype interface.
 type ConcreteProductB struct {
 	Name  string
@@ -33,7 +33,7 @@ func (b *ConcreteProductB) Clone() Prototype {
 	return &ConcreteProductB{Name: b.Name, Value: b.Value}
 }
 
-//==============================================
+// ==============================================
 func main() {
 	// Create a prototype object.
 	prototypeA := &ConcreteProductA{Name: "Product A"}

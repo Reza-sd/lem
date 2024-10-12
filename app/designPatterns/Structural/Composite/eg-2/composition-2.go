@@ -13,13 +13,13 @@ Key Components
 
 */
 
-//=================================================
+// =================================================
 // Component interface
 type FileSystemComponent interface {
 	Display(indent string)
 }
 
-//=================================================
+// =================================================
 // Leaf
 type File struct {
 	name string
@@ -42,14 +42,14 @@ func (d *Directory) Display(indent string) {
 	}
 }
 
-//=================================================
+// =================================================
 func (d *Directory) Add(component FileSystemComponent) {
 	d.children = append(d.children, component)
 }
 
 //=================================================
 
-//=================================================
+// =================================================
 func main() {
 	root := &Directory{name: "Root"}
 

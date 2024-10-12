@@ -69,7 +69,7 @@ func ClientCode(formatter TextFormatter) {
 	fmt.Println(result)
 }
 
-//=================================================
+// =================================================
 func main() {
 	fmt.Println("Client code with LowerCaseFormatter:")
 	lowerCaseFormatter := NewLowerCaseFormatter()

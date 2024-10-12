@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-//========================================================
+// ========================================================
 // Singleton struct
 type Singleton struct {
 	data string
@@ -16,7 +16,7 @@ var (
 	once     sync.Once
 )
 
-//-----------------------------------
+// -----------------------------------
 // GetInstance returns the single instance of Singleton
 func GetInstance() *Singleton {
 	once.Do(func() {
@@ -35,7 +35,7 @@ func (s *Singleton) GetData() string {
 	return s.data
 }
 
-//========================================================
+// ========================================================
 func main() {
 	// Get the Singleton instance
 	instance1 := GetInstance()

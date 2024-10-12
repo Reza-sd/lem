@@ -7,7 +7,7 @@ import "fmt"
 The Bridge Pattern is a structural design pattern that helps to decouple an abstraction from its implementation, allowing both to vary independently. This pattern is particularly useful when you have an abstraction that can have multiple implementations, and you want to be able to switch between them at runtime.
 */
 
-//==========================================
+// ==========================================
 // Implementor interface
 type Device interface {
 	On()
@@ -33,7 +33,7 @@ func (tv *TV) SetVolume(volume int) {
 	fmt.Printf("TV volume set to %d\n", tv.volume)
 }
 
-//==========================================
+// ==========================================
 // Concrete Implementor 2
 type Radio struct {
 	volume int
@@ -52,7 +52,7 @@ func (r *Radio) SetVolume(volume int) {
 	fmt.Printf("Radio volume set to %d\n", r.volume)
 }
 
-//==========================================
+// ==========================================
 // Abstraction
 type RemoteControl struct {
 	device Device

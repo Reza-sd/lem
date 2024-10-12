@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-//==============================================
-//Define a Cloneable interface:
+// ==============================================
+// Define a Cloneable interface:
 type Cloneable interface {
 	Clone() Cloneable
 }
 
-//==============================================
-//Create concrete types that implement the Cloneable interface:
+// ==============================================
+// Create concrete types that implement the Cloneable interface:
 type ConcretePrototype struct {
 	name string
 }
@@ -18,7 +18,7 @@ func (p *ConcretePrototype) Clone() Cloneable {
 	return &ConcretePrototype{name: p.name + "_clone"}
 }
 
-//==============================================
+// ==============================================
 func main() {
 	original := &ConcretePrototype{name: "Original"}
 	clone := original.Clone().(*ConcretePrototype)

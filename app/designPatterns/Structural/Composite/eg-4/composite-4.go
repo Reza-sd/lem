@@ -25,7 +25,7 @@ type Component interface {
 	Operation() string
 }
 
-//=======================================================
+// =======================================================
 // Leaf implements Component
 type Leaf struct {
 	name string
@@ -66,7 +66,7 @@ func (c *Composite) Operation() string {
 	return result
 }
 
-//=======================================================
+// =======================================================
 func main() {
 	// Create leaf objects
 	leaf1 := &Leaf{name: "Leaf 1"}

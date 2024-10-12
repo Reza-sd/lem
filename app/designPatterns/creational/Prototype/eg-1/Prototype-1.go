@@ -19,8 +19,8 @@ type Shape interface {
 	GetDetails() string
 }
 
-//==============================================
-//2. Concrete Prototypes (Circle and Rectangle):
+// ==============================================
+// 2. Concrete Prototypes (Circle and Rectangle):
 // Circle is a concrete prototype
 type Circle struct {
 	Radius int
@@ -50,7 +50,7 @@ func (r *Rectangle) GetDetails() string {
 	return fmt.Sprintf("Rectangle with width %d and height %d", r.Width, r.Height)
 }
 
-//==============================================
+// ==============================================
 func main() {
 	// Create a circle and clone it
 	circle := &Circle{Radius: 10}

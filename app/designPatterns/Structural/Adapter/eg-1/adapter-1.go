@@ -91,7 +91,7 @@ func (p *AudioPlayer) Play(format string, file string) {
 	}
 }
 
-//==============================================
+// ==============================================
 func main() {
 	player := &AudioPlayer{}
 
