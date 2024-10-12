@@ -1,0 +1,16 @@
+@startuml
+namespace goisawesome {
+    class Foo {
+        - field int
+        + PublicField bool
+        - myPrivateFunction() 
+        + GetValue() 
+        + MyPublicFunction() 
+    }
+    interface MyInterface {
+        + GetValue() 
+    }
+}
+strings.Builder *-- goisawesome.Foo
+goisawesome.MyInterface <|-- goisawesome.Foo
+@enduml
