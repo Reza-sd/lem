@@ -22,7 +22,7 @@ func (i *infoLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT, des ...
 
 	i.Log(errCode, des...)
 
-	return i.logger.Function.StatWrapper(errCode, previousStatusCodesSlice)
+	return i.logger.Functions.StatWrapper(errCode, previousStatusCodesSlice)
 }
 
 // ---------------------------------

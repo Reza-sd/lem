@@ -22,7 +22,7 @@ func (w *warnLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT, des ...
 
 	w.Log(errCode, des...)
 
-	return w.logger.Function.StatWrapper(errCode, previousStatusCodesSlice)
+	return w.logger.Functions.StatWrapper(errCode, previousStatusCodesSlice)
 }
 
 // ---------------------------------
