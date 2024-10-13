@@ -47,7 +47,7 @@ type loggerT struct {
 		Err  errLevelT //unexpected status code
 	}
 
-	Functions function
+	Help helperFn
 	// error means violation in business logic
 	// in software development, an "error" often refers to a violation of business logic.
 	// unexpected = Must not happen
@@ -105,7 +105,7 @@ type getter struct {
 // 	Err  errLevelT //unexpected status code
 // }
 
-type function struct {
+type helperFn struct {
 }
 
 // =================================================
