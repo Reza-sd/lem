@@ -1,13 +1,13 @@
 package logstack
 
 // =========================================
-func (f *helperFn) StatWrapper(statusCode errT, previousStatusCodesSlice []errT) []errT {
+func (f *helperFn[T]) StatWrapper(statusCode T, previousStatusCodesSlice []T) []T {
 	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
 		return nil
 	}
 
 	if previousStatusCodesSlice == nil {
-		previousStatusCodesSlice = []errT{}
+		previousStatusCodesSlice = []T{}
 	}
 	return append(previousStatusCodesSlice, statusCode)
 }

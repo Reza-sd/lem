@@ -29,25 +29,25 @@ Panic: Critical errors that should cause the application to crash.
 status codes: are used to communicate the result of an operation.
 error= invalid condition
 */
-type loggerT struct {
+type loggerT[T errType] struct {
 	data struct {
 		packageName      string
 		ifSaveLogsToFile bool
 		ifPrintLogsToCli bool
-		ErrCodeDes       map[errT]string
+		ErrCodeDes       map[T]string
 	}
 
-	get getter
+	get getter[T]
 
 	Act struct {
 		//logger *loggerT
 
-		Info infoLevelT //e.g: normal status code
-		Warn warnLevelT
-		Err  errLevelT //unexpected status code
+		Info infoLevelT[T] //e.g: normal status code
+		Warn warnLevelT[T]
+		Err  errLevelT[T] //unexpected status code
 	}
 
-	Help helperFn
+	Help helperFn[T]
 	// error means violation in business logic
 	// in software development, an "error" often refers to a violation of business logic.
 	// unexpected = Must not happen
@@ -83,18 +83,18 @@ logger.Err.Rlog() //(Rlog:return error + log)
 //		ifPrintLogsToCli bool
 //		ErrCodeDes       map[errT]string
 //	}
-type infoLevelT struct {
-	logger *loggerT
+type infoLevelT[T errType] struct {
+	logger *loggerT[T]
 }
-type warnLevelT struct {
-	logger *loggerT
+type warnLevelT[T errType] struct {
+	logger *loggerT[T]
 }
-type errLevelT struct {
-	logger *loggerT
+type errLevelT[T errType] struct {
+	logger *loggerT[T]
 }
 
-type getter struct {
-	logger *loggerT
+type getter[T errType] struct {
+	logger *loggerT[T]
 }
 
 // type action struct{
@@ -105,20 +105,20 @@ type getter struct {
 // 	Err  errLevelT //unexpected status code
 // }
 
-type helperFn struct {
+type helperFn[T errType] struct {
 }
 
 // =================================================
-func (get *getter) pkgName() string {
+func (get *getter[T]) pkgName() string {
 	return get.logger.data.packageName
 }
-func (get *getter) ifSaveLogsToFile() bool {
+func (get *getter[T]) ifSaveLogsToFile() bool {
 	return get.logger.data.ifSaveLogsToFile
 }
-func (get *getter) ifPrintLogsToCli() bool {
+func (get *getter[T]) ifPrintLogsToCli() bool {
 	return get.logger.data.ifPrintLogsToCli
 }
-func (get *getter) desForErrCode(CodeNumber errT) string {
+func (get *getter[T]) desForErrCode(CodeNumber T) string {
 
 	st, ok := get.logger.data.ErrCodeDes[CodeNumber]
 	if ok {

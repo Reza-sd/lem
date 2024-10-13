@@ -1,6 +1,6 @@
 package logstack
 
-var errCodeDes1 = map[errT]string{
+var errCodeDes1 = map[uint8]string{
 	10: "10-not happy",
 	11: "11-is not ok",
 	12: "12-cant handle user",

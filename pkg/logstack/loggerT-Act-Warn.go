@@ -1,12 +1,12 @@
 package logstack
 
 // ---------------------------------
-func (w *warnLevelT) Log(errCode errT, des ...any) {
+func (w *warnLevelT[T]) Log(errCode T, des ...any) {
 	help_logCreator(w.logger, errCode, des, loggerToCli.Warn)
 }
 
 // ---------------------------------
-func (w *warnLevelT) Rlog(errCode errT, previousStatusCodesSlice []errT, des ...any) []errT {
+func (w *warnLevelT[T]) Rlog(errCode T, previousStatusCodesSlice []T, des ...any) []T {
 
 	w.Log(errCode, des...)
 

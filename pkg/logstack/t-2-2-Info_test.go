@@ -9,13 +9,13 @@ import (
 func Test_Info(t *testing.T) {
 	//t.Skip()
 	t.Run(`1-RSlogErr`, func(t *testing.T) {
-		errCode := errT(10)
+		errCode := uint8(10)
 		sampleLogger1.Act.Info.Log(errCode)
 
 	})
 
 	t.Run(`2-RSlogErr`, func(t *testing.T) {
-		errCode := errT(10)
+		errCode := uint8(10)
 
 		Rerr := sampleLogger1.Act.Info.Rlog(errCode, nil)
 		fmt.Println("Rerr=", Rerr)
@@ -24,8 +24,8 @@ func Test_Info(t *testing.T) {
 
 	t.Run(`2-RSlogErr`, func(t *testing.T) {
 
-		errCode := errT(12)
-		preErrSlice := []errT{10, 11}
+		errCode := uint8(12)
+		preErrSlice := []uint8{10, 11}
 		Rerr := sampleLogger1.Act.Info.Rlog(errCode, preErrSlice)
 
 		fmt.Println("Rerr=", Rerr)

@@ -6,7 +6,7 @@ import (
 )
 
 // ----------------------------------------
-func (get *getter) msgGenerator(errCode errT, des ...any) (string, slog.Attr) {
+func (get *getter[T]) msgGenerator(errCode T, des ...any) (string, slog.Attr) {
 
 	desStr := desArrToString(des)
 	// we can separate method.func.,... by string dot separator

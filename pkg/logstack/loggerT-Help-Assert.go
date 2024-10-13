@@ -7,7 +7,7 @@ import (
 )
 
 // -------------------
-func (f *helperFn) Assert(t testing.TB, got, exp any, inputsArr ...any) {
+func (f *helperFn[T]) Assert(t testing.TB, got, exp any, inputsArr ...any) {
 	t.Helper()
 	inputsStr := inputsArrToString(inputsArr)
 

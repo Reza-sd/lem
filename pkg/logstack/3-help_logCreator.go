@@ -1,7 +1,7 @@
 package logstack
 
 // ---------------------------------
-func help_logCreator(l *loggerT, errCode errT, desArr []any, fnLevel func(string, ...any)) {
+func help_logCreator[T errType](l *loggerT[T], errCode T, desArr []any, fnLevel func(string, ...any)) {
 	msg, agrs := l.get.msgGenerator(errCode, desArr...)
 
 	if l.get.ifPrintLogsToCli() {
