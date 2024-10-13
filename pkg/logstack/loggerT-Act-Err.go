@@ -3,17 +3,19 @@ package logstack
 // ---------------------------------
 func (e *errLevelT) Log(errCode errT, des ...any) {
 
-	msg, agrs := e.logger.get.msgGenerator(errCode, des...)
+	logHelper(e.logger, errCode, des, loggerToCli.Error)
 
-	if e.logger.get.ifPrintLogsToCli() {
-		println()
-		loggerToCli.Error(msg, agrs)
+	// msg, agrs := e.logger.get.msgGenerator(errCode, des...)
 
-	}
+	// if e.logger.get.ifPrintLogsToCli() {
+	// 	println()
+	// 	loggerToCli.Error(msg, agrs)
 
-	if e.logger.get.ifSaveLogsToFile() {
-		loggerToFile.Error(msg, agrs)
-	}
+	// }
+
+	// if e.logger.get.ifSaveLogsToFile() {
+	// 	loggerToFile.Error(msg, agrs)
+	// }
 
 }
 
