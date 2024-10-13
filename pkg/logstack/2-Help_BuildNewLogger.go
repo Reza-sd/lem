@@ -2,7 +2,7 @@ package logstack
 
 // =================================================
 
-func BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *loggerT {
+func Help_BuildNewLogger(packageName string, errCodeDes map[errT]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *loggerT {
 	l := &loggerT{}
 	// l.data = struct{
 	// 	packageName:      packageName,

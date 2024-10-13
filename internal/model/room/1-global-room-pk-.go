@@ -19,6 +19,6 @@ const (
 )
 
 // ------------------------------------
-var logger = logstack.BuildNewLogger(pkgName, ErrCodeDb, true, true)
+var logger = logstack.Help_BuildNewLogger(pkgName, ErrCodeDb, true, true)
 
 //---------------------------------

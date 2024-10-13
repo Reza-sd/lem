@@ -2,21 +2,7 @@ package logstack
 
 // ---------------------------------
 func (w *warnLevelT) Log(errCode errT, des ...any) {
-	//e.logger.
-	logHelper(w.logger, errCode, des, loggerToCli.Warn)
-
-	// msg, agrs := w.logger.get.msgGenerator(errCode, des...)
-
-	// if w.logger.get.ifPrintLogsToCli() {
-	// 	println()
-	// 	loggerToCli.Warn(msg, agrs)
-
-	// }
-
-	// if w.logger.get.ifSaveLogsToFile() {
-	// 	loggerToFile.Warn(msg, agrs)
-	// }
-
+	help_log(w.logger, errCode, des, loggerToCli.Warn)
 }
 
 // ---------------------------------
