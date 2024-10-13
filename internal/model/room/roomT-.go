@@ -15,14 +15,8 @@ type roomT struct {
 
 	Get roomTgetT //<--export (public)
 	Act roomTactT //<--export (public)
-}
-// type roomTdataT struct {
-// 	name            rT
-// 	allSeats        rT
-// 	usedSeats       rT
-// 	connectionSlice []rT
-// }
 
+}
 // Act
 type roomTactT struct {
 	room *roomT //private
