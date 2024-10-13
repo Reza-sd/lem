@@ -2,6 +2,7 @@ package logstack
 
 // =========================================
 func (f *helperFn[T]) StatWrapper(statusCode T, previousStatusCodesSlice []T) []T {
+
 	if statusCode == 0 && len(previousStatusCodesSlice) == 0 { //nill or empty
 		return nil
 	}
@@ -9,7 +10,9 @@ func (f *helperFn[T]) StatWrapper(statusCode T, previousStatusCodesSlice []T) []
 	if previousStatusCodesSlice == nil {
 		previousStatusCodesSlice = []T{}
 	}
+	
 	return append(previousStatusCodesSlice, statusCode)
+
 }
 
 //========================================

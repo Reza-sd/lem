@@ -3,6 +3,8 @@ package logstack
 // =================================================
 
 func Help_BuildNewLogger[T errType](packageName string, errCodeDes map[T]string, ifSaveLogsToFile bool, ifPrintLogsToCli bool) *loggerT[T] {
+
+	
 	l := &loggerT[T]{}
 
 	l.data.packageName = packageName

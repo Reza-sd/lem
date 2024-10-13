@@ -2,7 +2,8 @@ package logstack
 
 // ---------------------------------
 func (f *helperFn[T]) logCreator(errCode T, desArr []any, fnLevel func(string, ...any)) {
-	msg, agrs := f.logger.get.msgGenerator(errCode, desArr...)
+
+	msg, agrs := f.logger.get.msgGenerator(errCode, desArr)
 
 	if f.logger.get.ifPrintLogsToCli() {
 		println()
@@ -13,6 +14,7 @@ func (f *helperFn[T]) logCreator(errCode T, desArr []any, fnLevel func(string, .
 	if f.logger.get.ifSaveLogsToFile() {
 		fnLevel(msg, agrs)
 	}
+
 }
 
 // ---------------------------------

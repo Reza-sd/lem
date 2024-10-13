@@ -6,9 +6,9 @@ import (
 )
 
 // ----------------------------------------
-func (get *getter[T]) msgGenerator(errCode T, des ...any) (string, slog.Attr) {
+func (get *getter[T]) msgGenerator(errCode T, desArr []any) (string, slog.Attr) {
 
-	desStr := desArrToString(des)
+	desStr := desArrToString(desArr)
 	// we can separate method.func.,... by string dot separator
 	return fmt.Sprintf("%v", get.desForErrCode(errCode)), slog.Group("",
 		slog.String("pk", get.pkgName()),
@@ -21,9 +21,9 @@ func (get *getter[T]) msgGenerator(errCode T, des ...any) (string, slog.Attr) {
 }
 
 // ----------------------------------------------
-func desArrToString(des []any) string {
+func desArrToString(desArr []any) string {
 	var str string
-	for _, item := range des {
+	for _, item := range desArr {
 		str = str + fmt.Sprintf("%v", item)
 	}
 	return str
