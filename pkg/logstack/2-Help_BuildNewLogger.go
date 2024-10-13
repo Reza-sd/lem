@@ -10,12 +10,13 @@ func Help_BuildNewLogger[T errType](packageName string, errCodeDes map[T]string,
 	l.data.ifSaveLogsToFile = ifSaveLogsToFile
 	l.data.ErrCodeDes = errCodeDes
 	l.get.logger = l
-	
+
 	l.Act.Info.logger = l
 	l.Act.Warn.logger = l
 	l.Act.Err.logger = l
 
-	
+	l.Help.logger = l
+
 	return l
 }
 

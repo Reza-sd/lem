@@ -106,6 +106,7 @@ type getter[T errType] struct {
 // }
 
 type helperFn[T errType] struct {
+	logger *loggerT[T]
 }
 
 // =================================================

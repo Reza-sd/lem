@@ -2,7 +2,9 @@ package logstack
 
 // ---------------------------------
 func (w *warnLevelT[T]) Log(errCode T, des ...any) {
-	help_logCreator(w.logger, errCode, des, loggerToCli.Warn)
+
+	w.logger.Help.logCreator(errCode, des, loggerToCli.Error)
+
 }
 
 // ---------------------------------

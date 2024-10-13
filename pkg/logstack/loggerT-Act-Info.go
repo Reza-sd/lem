@@ -3,7 +3,7 @@ package logstack
 // ---------------------------------
 func (i *infoLevelT[T]) Log(errCode T, des ...any) {
 
-	help_logCreator(i.logger, errCode, des, loggerToCli.Info)
+	i.logger.Help.logCreator(errCode, des, loggerToCli.Error)
 
 }
 
