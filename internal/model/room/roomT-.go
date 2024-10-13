@@ -3,7 +3,12 @@ package room
 // =======================================================
 // Struct in Golang is a user-defined data type
 type roomT struct {
-	data roomTdataT //private
+	data struct {
+		name            rT
+		allSeats        rT
+		usedSeats       rT
+		connectionSlice []rT
+	} //private
 
 	//categorise behaviour
 	set roomTsetT //private
@@ -11,12 +16,12 @@ type roomT struct {
 	Get roomTgetT //<--export (public)
 	Act roomTactT //<--export (public)
 }
-type roomTdataT struct {
-	name            rT
-	allSeats        rT
-	usedSeats       rT
-	connectionSlice []rT
-}
+// type roomTdataT struct {
+// 	name            rT
+// 	allSeats        rT
+// 	usedSeats       rT
+// 	connectionSlice []rT
+// }
 
 // Act
 type roomTactT struct {
