@@ -7,7 +7,6 @@ import (
 )
 
 // --------------const-----------------------------
-//type errT = uint8
 
 type errType interface {
 	uint8 | uint16 | uint32
