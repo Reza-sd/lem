@@ -15,7 +15,7 @@ func Help_BuildNewLogger[T errType](packageName string, errCodeDes map[T]string,
 	l.Act.Warn.logger = l
 	l.Act.Err.logger = l
 
-	l.Help.logger = l
+	l.Helper.logger = l
 
 	return l
 }

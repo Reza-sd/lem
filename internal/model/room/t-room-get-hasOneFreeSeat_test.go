@@ -10,12 +10,12 @@ func Test_hasOneFreeSeat(t *testing.T) {
 		inp1 := SampleRoom.Middle_Name_3()
 		got := inp1.Get.hasOneFreeSeat()
 		exp := true
-		logger.Help.Assert(t, got, exp, inp1)
+		logger.Helper.Assert(t, got, exp, inp1)
 	})
 	t.Run("2-hasOneFreeSeat", func(t *testing.T) {
 		inp1 := SampleRoom.Middle_Name_3()
 		got := inp1.Get.hasOneFreeSeat()
 		exp := true
-		logger.Help.Assert(t, got, exp, inp1)
+		logger.Helper.Assert(t, got, exp, inp1)
 	})
 }

@@ -47,7 +47,7 @@ type loggerT[T errType] struct {
 		Err  errLevelT[T] //unexpected status code
 	}
 
-	Help helperFn[T]
+	Helper helperFn[T]
 	// error means violation in business logic
 	// in software development, an "error" often refers to a violation of business logic.
 	// unexpected = Must not happen
