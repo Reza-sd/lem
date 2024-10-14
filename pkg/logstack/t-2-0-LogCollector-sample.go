@@ -8,7 +8,7 @@ var errCodeDes1 = map[uint16]string{
 
 //var sampleLogger2 = BuildNewLogger(pkgName, errCodeDes1, true, true)
 
-var sampleLogger1 = Help_BuildNewLogger(pkgName, errCodeDes1, true, true)
+var sampleLogger1 = Help_BuildNewLogger(_PKG_NAME, errCodeDes1, true, true)
 
 ///
 

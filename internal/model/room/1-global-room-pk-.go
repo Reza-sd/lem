@@ -20,5 +20,6 @@ const (
 
 // ------------------------------------
 var logger = logstack.Help_BuildNewLogger(pkgName, ErrCodeDb, true, true)
+//var kir = logstack
 
 //---------------------------------
