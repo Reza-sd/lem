@@ -109,7 +109,7 @@ type helperFn[T errType] struct {
 	logger *loggerT[T]
 }
 
-// =================================================
+//=================================================
 func (get *getter[T]) pkgName() string {
 	return get.logger.data.packageName
 }
@@ -128,3 +128,4 @@ func (get *getter[T]) desForErrCode(CodeNumber T) string {
 	return ""
 
 }
+//=================================================
