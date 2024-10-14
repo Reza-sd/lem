@@ -7,7 +7,7 @@ type rT = uint16
 type errT = uint8 //error type
 // -----------------------------------------
 const (
-	pkgName            string = "room"
+	_PKG_NAME            string = "room"
 	MaxSeatsStartEnd   rT     = 5000
 	UsedSeatsStartEnd  rT     = 1000
 	AllSeatsNormalRoom rT     = 1
@@ -19,7 +19,7 @@ const (
 )
 
 // ------------------------------------
-var logger = logstack.Help_BuildNewLogger(pkgName, ErrCodeDb, true, true)
+var logger = logstack.Help_BuildNewLogger(_PKG_NAME, ErrCodeDb, true, true)
 //var kir = logstack
 
 //---------------------------------
