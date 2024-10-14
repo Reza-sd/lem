@@ -16,7 +16,7 @@ const (
 	_PKG_NAME         = "logStack"
 	_LOG_FILE_NAME_PREFIX = "z-log-"
 	_LOG_FILES_DIRECTORY = "./"
-	OP = 2
+	
 )
 
 // -----------var----------------------
