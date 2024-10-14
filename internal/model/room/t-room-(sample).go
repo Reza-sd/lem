@@ -16,10 +16,10 @@ func (s *SampleRoomSt) End_Name_1() *roomT {
 	// 		connectionSlice: []rT{},
 	// 	},
 	// }
-	r.data.name=1
-	r.data.allSeats=MaxSeatsStartEnd
-	r.data.usedSeats=UsedSeatsStartEnd
-	r.data.connectionSlice=[]rT{}
+	r.data.name = 1
+	r.data.allSeats = _MAX_SEATS_START_END
+	r.data.usedSeats = _USED_SEATS_START_END
+	r.data.connectionSlice = []rT{}
 
 	r.Get.room = r
 	r.set.room = r
@@ -37,10 +37,10 @@ func (s *SampleRoomSt) Start_Name_0() *roomT {
 	// 		connectionSlice: []rT{},
 	// 	},
 	// }
-	r.data.name=0
-	r.data.allSeats=MaxSeatsStartEnd
-	r.data.usedSeats=UsedSeatsStartEnd
-	r.data.connectionSlice=[]rT{}
+	r.data.name = 0
+	r.data.allSeats = _MAX_SEATS_START_END
+	r.data.usedSeats = _USED_SEATS_START_END
+	r.data.connectionSlice = []rT{}
 
 	r.Get.room = r
 	r.set.room = r
@@ -59,10 +59,10 @@ func (s *SampleRoomSt) Middle_Name_3() *roomT {
 	// 		connectionSlice: []rT{},
 	// 	},
 	// }
-	r.data.name=3
-	r.data.allSeats=1
-	r.data.usedSeats=0
-	r.data.connectionSlice=[]rT{}
+	r.data.name = 3
+	r.data.allSeats = 1
+	r.data.usedSeats = 0
+	r.data.connectionSlice = []rT{}
 
 	r.Get.room = r
 	r.set.room = r

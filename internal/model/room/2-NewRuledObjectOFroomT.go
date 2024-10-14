@@ -12,16 +12,16 @@ func NewRuledObjectOFroomT(name rT, connectionSlice []rT, isEndroom bool) (*room
 	}
 
 	//if the room is start or end room
-	if name == startRoomName || isEndroom {
+	if name == _START_ROOM_NAME || isEndroom {
 
-		if err := r.set.allSeats(MaxSeatsStartEnd); err != nil {
+		if err := r.set.allSeats(_MAX_SEATS_START_END); err != nil {
 			return nil, logger.Act.Err.Rlog(NewRuledRoom_30, err, "r.set.allSeats")
 		}
-		if err := r.set.usedSeats(UsedSeatsStartEnd); err != nil {
+		if err := r.set.usedSeats(_USED_SEATS_START_END); err != nil {
 			return nil, logger.Act.Err.Rlog(NewRuledRoom_40, err, "r.set.usedSeats")
 		}
 	} else {
-		if err := r.set.allSeats(AllSeatsNormalRoom); err != nil {
+		if err := r.set.allSeats(_ALL_SEATS_NORMAL_ROOM); err != nil {
 			return nil, logger.Act.Err.Rlog(NewRuledRoom_50, err, "r.set.allSeats")
 		}
 		if err := r.set.usedSeats(0); err != nil {
