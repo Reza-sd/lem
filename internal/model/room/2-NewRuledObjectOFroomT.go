@@ -24,6 +24,7 @@ func Return_NewRuledObjectOFroomT(name_param rT, connectionSlice_param []rT, isE
 		}
 
 	} else {
+
 		if err_set_allSeats := myRoom.set.allSeats(_ALL_SEATS_NORMAL_ROOM); err_set_allSeats != nil {
 			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_50, err_set_allSeats, "r.set.allSeats")
 		}
@@ -31,6 +32,7 @@ func Return_NewRuledObjectOFroomT(name_param rT, connectionSlice_param []rT, isE
 		if err_set_usedSeats := myRoom.set.usedSeats(_EMPTY_USED_SEATS); err_set_usedSeats != nil {
 			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_60, err_set_usedSeats, "r.set.usedSeats(_EMPTY_USED_SEATS)", "_EMPTY_USED_SEATS=", _EMPTY_USED_SEATS)
 		}
+		
 	}
 
 	return myRoom, nil
