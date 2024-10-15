@@ -13,6 +13,8 @@ const (
 	_ALL_SEATS_NORMAL_ROOM rT     = 1
 	_START_ROOM_NAME       rT     = 0 //always 1 (use 0 as null)
 
+	_EMPTY_USED_SEATS       = 0
+	_EMPTY_CONNECTION_SLICE = 0
 	//Rules
 	_MAX_NAME                 = 100
 	_MAX_LEN_CONNECTION_SLICE = 5

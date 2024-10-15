@@ -6,7 +6,7 @@ import (
 )
 
 // ==============================
-const _EMPTY_CONNECTION_SLICE = 0
+//const _EMPTY_CONNECTION_SLICE = 0
 
 func (get *roomTgetT) OneRandomNextRoom() (rT, []errT) {
 	lenConnectionSlice := len(get.ConnectionSlice())

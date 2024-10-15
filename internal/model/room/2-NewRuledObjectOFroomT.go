@@ -2,34 +2,34 @@ package room
 
 // ---------------------------------------
 func NewRuledObjectOFroomT(name_param rT, connectionSlice_param []rT, isEndroom_param bool) (*roomT, []errT) { //Constructor=factory function=builder
-	r := newPlainRoom()
+	room := newPlainRoom()
 
-	if err := r.set.name(name_param); err != nil {
-		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_10, err, "set.name(name):", "name:", name_param)
+	if err_set_name := room.set.name(name_param); err_set_name != nil {
+		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_10, err_set_name, "set.name(name):", "name:", name_param)
 	}
-	if err := r.set.connectionSlice(connectionSlice_param); err != nil {
-		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_20, err, "r.set.connectionSlice")
+	if err_set_connectionSlice := room.set.connectionSlice(connectionSlice_param); err_set_connectionSlice != nil {
+		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_20, err_set_connectionSlice, "r.set.connectionSlice")
 	}
 
 	//if the room is start or end room
 	if name_param == _START_ROOM_NAME || isEndroom_param {
 
-		if err := r.set.allSeats(_MAX_SEATS_START_END); err != nil {
-			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_30, err, "r.set.allSeats")
+		if err_set_allSeats := room.set.allSeats(_MAX_SEATS_START_END); err_set_allSeats != nil {
+			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_30, err_set_allSeats, "r.set.allSeats")
 		}
-		if err := r.set.usedSeats(_USED_SEATS_START_END); err != nil {
-			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_40, err, "r.set.usedSeats")
+		if err_set_usedSeats := room.set.usedSeats(_USED_SEATS_START_END); err_set_usedSeats != nil {
+			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_40, err_set_usedSeats, "r.set.usedSeats")
 		}
 	} else {
-		if err := r.set.allSeats(_ALL_SEATS_NORMAL_ROOM); err != nil {
-			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_50, err, "r.set.allSeats")
+		if err_set_allSeats := room.set.allSeats(_ALL_SEATS_NORMAL_ROOM); err_set_allSeats != nil {
+			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_50, err_set_allSeats, "r.set.allSeats")
 		}
-		if err := r.set.usedSeats(0); err != nil {
-			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_60, err, "r.set.usedSeats(0)")
+		if err_set_usedSeats := room.set.usedSeats(_EMPTY_USED_SEATS); err_set_usedSeats != nil {
+			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_60, err_set_usedSeats, "r.set.usedSeats(_EMPTY_USED_SEATS)", "_EMPTY_USED_SEATS=", _EMPTY_USED_SEATS)
 		}
 	}
 
-	return r, nil
+	return room, nil
 
 }
 

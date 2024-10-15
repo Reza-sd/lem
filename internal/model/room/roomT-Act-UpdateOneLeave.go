@@ -1,7 +1,7 @@
 package room
 
 // ==========================================
-const _EMPTY_USED_SEATS = 0
+//const _EMPTY_USED_SEATS = 0
 
 func (act *roomTactT) UpdateOneLeave() []errT {
 
