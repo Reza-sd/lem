@@ -2,7 +2,7 @@ package room
 
 // ========================================
 const ( //func or method error code
-	_ERR_Null errT = iota
+	_ errT = iota
 
 	_ERR_NewRuledRoom_10
 	_ERR_NewRuledRoom_20
