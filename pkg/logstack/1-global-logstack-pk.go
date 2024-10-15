@@ -13,10 +13,9 @@ type errType interface {
 }
 
 const (
-	_PKG_NAME         = "logStack"
+	_PKG_NAME             = "logStack"
 	_LOG_FILE_NAME_PREFIX = "z-log-"
-	_LOG_FILES_DIRECTORY = "./"
-	
+	_LOG_FILES_DIRECTORY  = "./"
 )
 
 // -----------var----------------------

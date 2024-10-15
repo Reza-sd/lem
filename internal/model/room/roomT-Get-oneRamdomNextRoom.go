@@ -5,11 +5,12 @@ import (
 	//"crypto/rand"
 )
 
-//==============================
+// ==============================
+const _EMPTY_CONNECTION_SLICE = 0
 
 func (get *roomTgetT) OneRandomNextRoom() (rT, []errT) {
 	lenConnectionSlice := len(get.ConnectionSlice())
-	if lenConnectionSlice == 0 {
+	if lenConnectionSlice == _EMPTY_CONNECTION_SLICE {
 		return 0, logger.Act.Err.Rlog(_roomTgetT_OneRandomNextRoom_10, nil, "if lenConnectionSlice == 0")
 	}
 

@@ -17,6 +17,7 @@ type roomT struct {
 	Act roomTactT //<--export (public)
 
 }
+
 // Act
 type roomTactT struct {
 	room *roomT //private

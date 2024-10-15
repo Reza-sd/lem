@@ -10,7 +10,7 @@ func (f *helperFn[T]) StatWrapper(statusCode T, previousStatusCodesSlice []T) []
 	if previousStatusCodesSlice == nil {
 		previousStatusCodesSlice = []T{}
 	}
-	
+
 	return append(previousStatusCodesSlice, statusCode)
 
 }
