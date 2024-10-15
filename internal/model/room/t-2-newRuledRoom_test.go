@@ -30,7 +30,7 @@ func Test_newRuledRoom(t *testing.T) {
 	t.Run("5-NewRuledRoom exceed maxname", func(t *testing.T) {
 		inp1 := rT(_MAX_NAME + 1)
 		_, gotErr := NewRuledObjectOFroomT(inp1, []rT{7, 3, 14}, false)
-		expErr := []errT{_CODE_roomTsetT_name_10, _CODE_NewRuledRoom_10}
+		expErr := []errT{_ERR_roomT_setT_name_10, _ERR_NewRuledRoom_10}
 		logger.Helper.Assert(t, gotErr, expErr, inp1)
 	})
 
