@@ -1,18 +1,18 @@
 package room
 
 // ---------------------------------------
-func NewRuledObjectOFroomT(name rT, connectionSlice []rT, isEndroom bool) (*roomT, []errT) { //Constructor=factory function=builder
+func NewRuledObjectOFroomT(name_param rT, connectionSlice_param []rT, isEndroom_param bool) (*roomT, []errT) { //Constructor=factory function=builder
 	r := newPlainRoom()
 
-	if err := r.set.name(name); err != nil {
-		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_10, err, "set.name(name):", "name:", name)
+	if err := r.set.name(name_param); err != nil {
+		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_10, err, "set.name(name):", "name:", name_param)
 	}
-	if err := r.set.connectionSlice(connectionSlice); err != nil {
+	if err := r.set.connectionSlice(connectionSlice_param); err != nil {
 		return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_20, err, "r.set.connectionSlice")
 	}
 
 	//if the room is start or end room
-	if name == _START_ROOM_NAME || isEndroom {
+	if name_param == _START_ROOM_NAME || isEndroom_param {
 
 		if err := r.set.allSeats(_MAX_SEATS_START_END); err != nil {
 			return nil, logger.Act.Err.Rlog(_ERR_NewRuledRoom_30, err, "r.set.allSeats")
