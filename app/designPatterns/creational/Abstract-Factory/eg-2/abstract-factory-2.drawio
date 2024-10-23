@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="KUEobTJNzFjchIPSe8lg" name="Page-1">
-        <mxGraphModel dx="977" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#4D4D4D" math="0" shadow="0">
+        <mxGraphModel dx="1322" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#4D4D4D" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -109,10 +109,16 @@
                     <mxGeometry x="1020" y="70" width="170" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="Step 4: &lt;br&gt;Concrete Factories" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="650" y="80" width="170" height="80" as="geometry"/>
+                    <mxGeometry x="650" y="60" width="170" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="Step 3: &lt;br&gt;Define the Abstract Factory Interface" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="430" y="80" width="170" height="80" as="geometry"/>
+                    <mxGeometry x="430" y="70" width="170" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1230" y="140" as="sourcePoint"/>
+                        <mxPoint x="320" y="140" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
