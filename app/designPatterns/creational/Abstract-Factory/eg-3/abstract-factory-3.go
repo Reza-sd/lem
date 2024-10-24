@@ -64,9 +64,9 @@ func (f *DarkThemeFactory) CreateCheckbox() Checkbox {
 }
 //--------------------------------
 // Client code
-func createUI(factory UIFactory) {
-    button := factory.CreateButton()
-    checkbox := factory.CreateCheckbox()
+func createUI(thisFactory UIFactory) {
+    button := thisFactory.CreateButton()
+    checkbox := thisFactory.CreateCheckbox()
 
     fmt.Println(button.Render())
     fmt.Println(checkbox.Render())

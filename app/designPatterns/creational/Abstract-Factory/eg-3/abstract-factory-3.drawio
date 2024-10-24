@@ -39,8 +39,8 @@
                         <mxPoint x="730" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="230" y="340" width="120" height="60" as="geometry"/>
+                <mxCell id="10" value="Client&lt;br&gt;&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;createUI&lt;/span&gt;(&lt;span style=&quot;color: #9cdcfe;&quot;&gt;thisFactory&lt;/span&gt; &lt;span style=&quot;color: #4ec9b0;&quot;&gt;UIFactory&lt;/span&gt;)&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="335" width="230" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.011;entryY=0.622;entryDx=0;entryDy=0;entryPerimeter=0;elbow=vertical;" parent="1" source="13" target="20" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -117,8 +117,11 @@
                 <mxCell id="39" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1230" y="140" as="sourcePoint"/>
-                        <mxPoint x="320" y="140" as="targetPoint"/>
+                        <mxPoint x="100" y="140" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="END&lt;br&gt;Client -Use" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="70" width="170" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
