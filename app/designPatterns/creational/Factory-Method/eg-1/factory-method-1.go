@@ -11,6 +11,15 @@ The Factory Method pattern is a creational design pattern that provides an inter
 - Creator Interface: Declares the factory method that returns an object of the product type.
 - Concrete Creators: Override the factory method to produce specific types of products.
 
+
+//-----------
+Components:
+1- Product Interface: Defines the interface that all concrete products must implement.
+2- Concrete Products: Specific implementations of the product interface.
+3- Creator Interface: Declares the factory method for creating products.
+4- Concrete Creators: Implement the factory method to create specific products.
+
+//-----------
 */
 //==============================================
 //1. Define the Product Interface (Transport):
@@ -37,16 +46,40 @@ func (b *Bike) Deliver() string {
 
 // ==============================================
 // 3. Define the Creator Interface:
-// TransportFactory is the factory method that returns a Transport
-func TransportFactory(transportType string) Transport {
-	if transportType == "car" {
-		return &Car{}
-	}
-	if transportType == "bike" {
-		return &Bike{}
-	}
-	return nil
+// TransportFactory is the creator interface that declares the factory method.
+type TransportFactory interface {
+	CreateTransport() Transport
 }
+
+// ==============================================
+// 4. Concrete Creators (CarFactory and BikeFactory)
+// CarFactory is a concrete creator that returns a Car.
+type CarFactory struct{}
+
+func (cf *CarFactory) CreateTransport() Transport {
+	return &Car{}
+}
+
+// BikeFactory is a concrete creator that returns a Bike.
+type BikeFactory struct{}
+
+func (bf *BikeFactory) CreateTransport() Transport {
+	return &Bike{}
+}
+
+//==============================
+//OR
+
+// TransportFactory is the factory method that returns a Transport
+// func TransportFactory(transportType string) Transport {
+// 	if transportType == "car" {
+// 		return &Car{}
+// 	}
+// 	if transportType == "bike" {
+// 		return &Bike{}
+// 	}
+// 	return nil
+// }
 
 //==============================
 /*
@@ -60,9 +93,18 @@ Advantages of Factory Method Pattern:
 
 // ==============================================
 func main() {
-	car := TransportFactory("car")
-	bike := TransportFactory("bike")
+	// Create a Car using the CarFactory
+	var factory TransportFactory = &CarFactory{}
+	car := factory.CreateTransport()
+	fmt.Println(car.Deliver())
 
-	fmt.Println(car.Deliver())  // Output: Delivering by car
-	fmt.Println(bike.Deliver()) // Output: Delivering by bike
+	// Create a Bike using the BikeFactory
+	factory = &BikeFactory{}
+	bike := factory.CreateTransport()
+	fmt.Println(bike.Deliver())
+	// car := TransportFactory("car")
+	// bike := TransportFactory("bike")
+
+	// fmt.Println(car.Deliver())  // Output: Delivering by car
+	// fmt.Println(bike.Deliver()) // Output: Delivering by bike
 }
