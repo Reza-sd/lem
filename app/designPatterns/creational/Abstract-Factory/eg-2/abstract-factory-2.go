@@ -87,11 +87,26 @@ func (mf *ModernFurnitureFactory) MakeSofa() Sofa {
 	return &ModernSofa{}
 }
 
+// ------------------------
+func createFurniture(thisFactory FurnitureFactory) {
+	Chair := thisFactory.MakeChair()
+	Sofa := thisFactory.MakeSofa()
+
+	Chair.SitOn()
+	Sofa.LieOn()
+}
+
 // ==============================================
 // /Step 5: Client Code
 // Finally, the client can work with the abstract factory to create different types of furniture without knowing the concrete implementations.
 // Client code
 func main() {
+	//-------using func ----------
+	createFurniture(&VictorianFurnitureFactory{})
+
+	myFactory := &ModernFurnitureFactory{}
+	createFurniture(myFactory)
+	//-------------------
 	var factory FurnitureFactory
 
 	// Using the Victorian Furniture Factory

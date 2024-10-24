@@ -4,85 +4,93 @@ import "fmt"
 
 // Abstract Products
 type Button interface {
-    Render() string
+	Render() string
 }
 
 type Checkbox interface {
-    Render() string
+	Render() string
 }
-//--------------------------------
-// Concrete Products 
+
+// --------------------------------
+// Concrete Products
 type LightButton struct{}
 
 func (b *LightButton) Render() string {
-    return "Rendering a light button with white background"
+	return "Rendering a light button with white background"
 }
 
 type DarkButton struct{}
 
 func (b *DarkButton) Render() string {
-    return "Rendering a dark button with black background"
+	return "Rendering a dark button with black background"
 }
-//---------
+
+// ---------
 type LightCheckbox struct{}
 
 func (c *LightCheckbox) Render() string {
-    return "Rendering a light checkbox with white background"
+	return "Rendering a light checkbox with white background"
 }
 
 type DarkCheckbox struct{}
 
 func (c *DarkCheckbox) Render() string {
-    return "Rendering a dark checkbox with black background"
+	return "Rendering a dark checkbox with black background"
 }
-//--------------------------------
+
+// --------------------------------
 // Abstract Factory interface
 type UIFactory interface {
-    CreateButton() Button
-    CreateCheckbox() Checkbox
+	CreateButton() Button
+	CreateCheckbox() Checkbox
 }
-//--------------------------------
+
+// --------------------------------
 // Concrete Factories
 type LightThemeFactory struct{}
 
 func (f *LightThemeFactory) CreateButton() Button {
-    return &LightButton{}
+	return &LightButton{}
 }
 
 func (f *LightThemeFactory) CreateCheckbox() Checkbox {
-    return &LightCheckbox{}
+	return &LightCheckbox{}
 }
-//-------
+
+// -------
 type DarkThemeFactory struct{}
 
 func (f *DarkThemeFactory) CreateButton() Button {
-    return &DarkButton{}
+	return &DarkButton{}
 }
 
 func (f *DarkThemeFactory) CreateCheckbox() Checkbox {
-    return &DarkCheckbox{}
+	return &DarkCheckbox{}
 }
-//--------------------------------
+
+// --------------------------------
 // Client code
 func createUI(thisFactory UIFactory) {
-    button := thisFactory.CreateButton()
-    checkbox := thisFactory.CreateCheckbox()
+	button := thisFactory.CreateButton()
+	checkbox := thisFactory.CreateCheckbox()
 
-    fmt.Println(button.Render())
-    fmt.Println(checkbox.Render())
+	fmt.Println(button.Render())
+	fmt.Println(checkbox.Render())
 }
-//--------------------------------
+
+// --------------------------------
 func main() {
-    // Create UI with light theme
-    lightFactory := &LightThemeFactory{}
-    fmt.Println("Creating Light Theme UI:")
-    createUI(lightFactory)
+	// Create UI with light theme
+	lightFactory := &LightThemeFactory{}
+	fmt.Println("Creating Light Theme UI:")
+	createUI(lightFactory)
 
-    fmt.Println()
+	fmt.Println()
 
-    // Create UI with dark theme
-    darkFactory := &DarkThemeFactory{}
-    fmt.Println("Creating Dark Theme UI:")
-    createUI(darkFactory)
+	// Create UI with dark theme
+	darkFactory := &DarkThemeFactory{}
+	fmt.Println("Creating Dark Theme UI:")
+	createUI(darkFactory)
 }
+
 //--------------------------------
