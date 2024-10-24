@@ -93,11 +93,19 @@ func (f *LuxuryCarFactory) MakeSedan() Sedan {
 func (f *LuxuryCarFactory) MakeSUV() SUV {
 	return &LuxurySUV{}
 }
+//---------------------------
+func creatCars(thisFactory CarFactory){
+	Sedan := thisFactory.MakeSedan()
+	SUV := thisFactory.MakeSUV()
+
+	Sedan.Drive()
+	SUV.Offroad()
+}
 
 // ==========================================
 func main() {
 	var factory CarFactory
-
+//----------------------
 	// Using the SportyCarFactory
 	factory = &SportyCarFactory{}
 	sportySedan := factory.MakeSedan()
@@ -105,7 +113,7 @@ func main() {
 
 	sportySedan.Drive()
 	sportySUV.Offroad()
-
+//----------------------
 	// Using the LuxuryCarFactory
 	factory = &LuxuryCarFactory{}
 	luxurySedan := factory.MakeSedan()
@@ -113,6 +121,11 @@ func main() {
 
 	luxurySedan.Drive()
 	luxurySUV.Offroad()
+
+//----------------------
+	//using creation function
+	thisFactory := &LuxuryCarFactory{}
+	creatCars(thisFactory)
 
 }
 
