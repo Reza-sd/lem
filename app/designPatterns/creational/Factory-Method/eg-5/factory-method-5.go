@@ -13,12 +13,12 @@ const (
 	PayPalGatewayF PaymentGatewayType = iota
 	StripeGatewayF
 )
-
+//------------------------------------------------
 // PaymentGateway represents the common interface for payment gateways.
 type PaymentGateway interface {
 	ProcessPayment(amount float64) error
 }
-
+//------------------------------------------------
 // PayPalGateway is a concrete payment gateway.
 type PayPalGateway struct{}
 
@@ -36,7 +36,7 @@ func (sg *StripeGateway) ProcessPayment(amount float64) error {
 	// Simulate Stripe payment processing logic.
 	return nil
 }
-
+//------------------------------------------------
 // NewPaymentGateway creates a payment gateway based on the provided type.
 func NewPaymentGateway(gwType PaymentGatewayType) (PaymentGateway, error) {
 	switch gwType {
@@ -48,7 +48,7 @@ func NewPaymentGateway(gwType PaymentGatewayType) (PaymentGateway, error) {
 		return nil, errors.New("unsupported payment gateway type")
 	}
 }
-
+//------------------------------------------------
 func main() {
 	payPalGateway, _ := NewPaymentGateway(PayPalGatewayF)
 	payPalGateway.ProcessPayment(100.00)
