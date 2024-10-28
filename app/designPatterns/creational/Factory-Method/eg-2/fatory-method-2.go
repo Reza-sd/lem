@@ -31,28 +31,61 @@ type PushNotifier struct{}
 func (p *PushNotifier) SendNotification(message string) string {
 	return fmt.Sprintf("Sending Push notification: %s", message)
 }
+// ==============================================
+//3. Define  the Factory interface
+type NotificationFactory interface {
+	CreateNotification() Notifier
+}
+//================================================
+//4. Define concrete creator (factories)
+type SmsFactory struct{}
+func (thisSmsFactory *SmsFactory)CreateNotification()Notifier{
+	return &SMSNotifier{}
+}
 
+type EmailFactory struct{}
+func (thisEmailFactory *EmailFactory)CreateNotification()Notifier{
+	return &EmailNotifier{}
+}
+
+type PushFactory struct{}
+func (thisPushFactory *PushFactory)CreateNotification()Notifier{
+	return &PushNotifier{}
+}
 // ==============================================
 // 3. Factory Method (NotificationFactory):
 // NotificationFactory is the factory method that creates and returns a Notifier
-func NotificationFactory(notificationType string) Notifier {
-	if notificationType == "sms" {
-		return &SMSNotifier{}
-	}
-	if notificationType == "email" {
-		return &EmailNotifier{}
-	}
-	if notificationType == "push" {
-		return &PushNotifier{}
-	}
-	return nil
-}
+// func NotificationFactory(notificationType string) Notifier {
+// 	if notificationType == "sms" {
+// 		return &SMSNotifier{}
+// 	}
+// 	if notificationType == "email" {
+// 		return &EmailNotifier{}
+// 	}
+// 	if notificationType == "push" {
+// 		return &PushNotifier{}
+// 	}
+// 	return nil
+// }
 
 // ==============================================
 func main() {
-	smsNotifier := NotificationFactory("sms")
-	emailNotifier := NotificationFactory("email")
-	pushNotifier := NotificationFactory("push")
+	// smsNotifier := NotificationFactory("sms")
+	// emailNotifier := NotificationFactory("email")
+	// pushNotifier := NotificationFactory("push")
+
+	var myFactory NotificationFactory 
+	
+
+	myFactory= &SmsFactory{}
+	smsNotifier := myFactory.CreateNotification()
+	
+	myFactory= &EmailFactory{}
+	emailNotifier := myFactory.CreateNotification()
+	
+	myFactory= &PushFactory{}
+	pushNotifier := myFactory.CreateNotification()
+
 
 	fmt.Println(smsNotifier.SendNotification("Hello via SMS!"))     // Output: Sending SMS notification: Hello via SMS!
 	fmt.Println(emailNotifier.SendNotification("Hello via Email!")) // Output: Sending Email notification: Hello via Email!
