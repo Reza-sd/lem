@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+
 //---------------------------------------
 // Product
 type House struct {
@@ -10,6 +11,7 @@ type House struct {
 	roof    string
 	garage  bool
 }
+
 //---------------------------------------
 // Builder interface
 type HouseBuilder interface {
@@ -21,6 +23,7 @@ type HouseBuilder interface {
 
 	Build() *House
 }
+
 //---------------------------------------
 // Concrete Builder
 type ConcreteHouseBuilder struct {
@@ -59,6 +62,7 @@ func (b *ConcreteHouseBuilder) SetGarage(garage bool) HouseBuilder {
 func (b *ConcreteHouseBuilder) Build() *House {
 	return b.house
 }
+
 //---------------------------------------
 // Director (optional)
 type HouseDirector struct {
@@ -76,6 +80,7 @@ func (d *HouseDirector) ConstructSimpleHouse() *House {
 func (d *HouseDirector) ConstructLuxuryHouse() *House {
 	return d.builder.SetWalls(6).SetDoors(3).SetWindows(8).SetRoof("Slate").SetGarage(true).Build()
 }
+
 //---------------------------------------
 func main() {
 	builder := NewConcreteHouseBuilder()
@@ -93,4 +98,5 @@ func main() {
 	luxuryHouse := director.ConstructLuxuryHouse()
 	fmt.Printf("Luxury House: %+v\n", luxuryHouse)
 }
+
 //---------------------------------------

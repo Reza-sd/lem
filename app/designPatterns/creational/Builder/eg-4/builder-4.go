@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+
 //------------------------------------------------
 // Car represents the complex object being built.
 type Car struct {
@@ -9,6 +10,7 @@ type Car struct {
 	hasSunroof    bool
 	hasNavigation bool
 }
+
 //------------------------------------------------
 // CarBuilder provides an interface for constructing the parts of the car.
 type CarBuilder interface {
@@ -18,6 +20,7 @@ type CarBuilder interface {
 	SetNavigation(hasNavigation bool) CarBuilder
 	Build() *Car
 }
+
 //------------------------------------------------
 // NewCarBuilder creates a new CarBuilder.
 func NewCarBuilder() CarBuilder {
@@ -25,6 +28,7 @@ func NewCarBuilder() CarBuilder {
 		car: &Car{}, // Initialize the car attribute
 	}
 }
+
 //------------------------------------------------
 // carBuilder implements the CarBuilder interface.
 type carBuilder struct {
@@ -54,6 +58,7 @@ func (cb *carBuilder) SetNavigation(hasNavigation bool) CarBuilder {
 func (cb *carBuilder) Build() *Car {
 	return cb.car
 }
+
 //------------------------------------------------
 // Director provides an interface to build cars.
 type Director struct {
@@ -68,6 +73,7 @@ func (d *Director) ConstructCar(color, engineType string, hasSunroof, hasNavigat
 
 	return d.builder.Build()
 }
+
 //------------------------------------------------
 func main() {
 	// Create a new car builder.
