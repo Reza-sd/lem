@@ -31,27 +31,33 @@ type PushNotifier struct{}
 func (p *PushNotifier) SendNotification(message string) string {
 	return fmt.Sprintf("Sending Push notification: %s", message)
 }
+
 // ==============================================
 //3. Define  the Factory interface
 type NotificationFactory interface {
 	CreateNotification() Notifier
 }
+
 //================================================
 //4. Define concrete creator (factories)
 type SmsFactory struct{}
-func (thisSmsFactory *SmsFactory)CreateNotification()Notifier{
+
+func (thisSmsFactory *SmsFactory) CreateNotification() Notifier {
 	return &SMSNotifier{}
 }
 
 type EmailFactory struct{}
-func (thisEmailFactory *EmailFactory)CreateNotification()Notifier{
+
+func (thisEmailFactory *EmailFactory) CreateNotification() Notifier {
 	return &EmailNotifier{}
 }
 
 type PushFactory struct{}
-func (thisPushFactory *PushFactory)CreateNotification()Notifier{
+
+func (thisPushFactory *PushFactory) CreateNotification() Notifier {
 	return &PushNotifier{}
 }
+
 // ==============================================
 // 3. Factory Method (NotificationFactory):
 // NotificationFactory is the factory method that creates and returns a Notifier
@@ -74,18 +80,16 @@ func main() {
 	// emailNotifier := NotificationFactory("email")
 	// pushNotifier := NotificationFactory("push")
 
-	var myFactory NotificationFactory 
-	
+	var myFactory NotificationFactory
 
-	myFactory= &SmsFactory{}
+	myFactory = &SmsFactory{}
 	smsNotifier := myFactory.CreateNotification()
-	
-	myFactory= &EmailFactory{}
-	emailNotifier := myFactory.CreateNotification()
-	
-	myFactory= &PushFactory{}
-	pushNotifier := myFactory.CreateNotification()
 
+	myFactory = &EmailFactory{}
+	emailNotifier := myFactory.CreateNotification()
+
+	myFactory = &PushFactory{}
+	pushNotifier := myFactory.CreateNotification()
 
 	fmt.Println(smsNotifier.SendNotification("Hello via SMS!"))     // Output: Sending SMS notification: Hello via SMS!
 	fmt.Println(emailNotifier.SendNotification("Hello via Email!")) // Output: Sending Email notification: Hello via Email!

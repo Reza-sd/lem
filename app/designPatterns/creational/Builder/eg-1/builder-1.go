@@ -10,10 +10,12 @@ In this example, we'll build a Computer object step by step, which has multiple 
 */
 //=====================================
 type PcType uint8
+
 const (
 	officePc PcType = iota
 	GamingPc
 )
+
 // ==============================================
 // 1. Define the Product (Computer):
 // Computer is the product that is constructed using the builder
@@ -41,17 +43,19 @@ type ComputerBuilderInterface interface {
 
 	Build() Computer
 }
+
 //----------------------------------
 func Director(builderType PcType) ComputerBuilderInterface {
-    if builderType == officePc {
-        return PcBuilderFunc()
-    }
+	if builderType == officePc {
+		return PcBuilderFunc()
+	}
 
-    if builderType == GamingPc {
-        return GamingBuilderFunc()
-    }
-    return nil
+	if builderType == GamingPc {
+		return GamingBuilderFunc()
+	}
+	return nil
 }
+
 //==============================================
 //3. Concrete Builder (PCBuilder):
 //The PCBuilder will implement the ComputerBuilder interface, providing concrete implementations of the build steps.
@@ -73,17 +77,17 @@ func (b *GamingBuilder) SetCPU(cpu string) ComputerBuilderInterface {
 }
 
 func (b *GamingBuilder) SetRAM(ram string) ComputerBuilderInterface {
-	b.ram = ram+ " high speed"
+	b.ram = ram + " high speed"
 	return b
 }
 
 func (b *GamingBuilder) SetStorage(storage string) ComputerBuilderInterface {
-	b.storage = storage+ " high speed ssd"
+	b.storage = storage + " high speed ssd"
 	return b
 }
 
 func (b *GamingBuilder) SetGPU(gpu string) ComputerBuilderInterface {
-	b.gpu = gpu+ " gaming nvdia"
+	b.gpu = gpu + " gaming nvdia"
 	return b
 }
 
@@ -95,6 +99,7 @@ func (b *GamingBuilder) Build() Computer {
 		GPU:     b.gpu,
 	}
 }
+
 //--------------------------
 // PCBuilder is the concrete builder that constructs the computer
 type PCBuilder struct {
@@ -137,6 +142,7 @@ func (b *PCBuilder) Build() Computer {
 		GPU:     b.gpu,
 	}
 }
+
 //===============================
 
 /*
@@ -187,14 +193,13 @@ func main() {
 
 	fmt.Println(officePC)
 
+	gamingPcFromDriector := Director(GamingPc).
+		SetCPU("Intel Core i5").
+		SetRAM("16GB").
+		SetStorage("512GB SSD").
+		SetGPU("Intel Integrated Graphics").
+		Build()
 
-	gamingPcFromDriector :=Director(GamingPc).
-	SetCPU("Intel Core i5").
-	SetRAM("16GB").
-	SetStorage("512GB SSD").
-	SetGPU("Intel Integrated Graphics").
-	Build()
-	
 	fmt.Println(gamingPcFromDriector)
 }
 
