@@ -1,12 +1,12 @@
 package main
 
 import "fmt"
-
+//---------------------------------------
 // Product interface
 type Vehicle interface {
 	Drive()
 }
-
+//---------------------------------------
 // Concrete Products
 type Car struct{}
 
@@ -19,12 +19,12 @@ type Bike struct{}
 func (b *Bike) Drive() {
 	fmt.Println("Riding a bike")
 }
-
+//---------------------------------------
 // Creator interface
 type VehicleFactory interface {
 	CreateVehicle() Vehicle
 }
-
+//---------------------------------------
 // Concrete Creators
 type CarFactory struct{}
 
@@ -37,7 +37,7 @@ type BikeFactory struct{}
 func (bf *BikeFactory) CreateVehicle() Vehicle {
 	return &Bike{}
 }
-
+//---------------------------------------
 // Client code
 func main() {
 	carFactory := &CarFactory{}
