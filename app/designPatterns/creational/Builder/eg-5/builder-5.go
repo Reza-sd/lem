@@ -5,7 +5,6 @@ import "fmt"
 //=============================================
 type BuilderType uint8
 
-// F = flag
 const (
 	normal BuilderType = iota
 	igloo
