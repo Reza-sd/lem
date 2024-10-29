@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //------------------------------------------------
-// Car represents the complex object being built.
+// 1-Car represents the complex object being built.
 type Car struct {
 	color         string
 	engineType    string
@@ -12,7 +12,7 @@ type Car struct {
 }
 
 //------------------------------------------------
-// CarBuilder provides an interface for constructing the parts of the car.
+// 2- CarBuilder provides an interface for constructing the parts of the car.
 type CarBuilder interface {
 	SetColor(color string) CarBuilder
 	SetEngineType(engineType string) CarBuilder
