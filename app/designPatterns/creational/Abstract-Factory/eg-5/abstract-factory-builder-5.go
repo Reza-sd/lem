@@ -34,6 +34,8 @@ type iShort interface {
 	setSize(size uint8)
 	getLogo() string
 	getSize() uint8
+
+	toString() string
 }
 
 //-------------------
@@ -43,6 +45,7 @@ type iShoe interface {
 	setSize(size uint8)
 	getLogo() string
 	getSize() uint8
+	toString() string
 }
 
 //=============================================
@@ -69,6 +72,10 @@ func (s *shoe) getSize() uint8 {
 	return s.size
 }
 
+func (s *shoe) toString() string {
+	return fmt.Sprintf("logo:%v, size:%v", s.getLogo(), s.getSize())
+}
+
 //---------------------
 //product B
 type short struct {
@@ -90,6 +97,10 @@ func (s *short) setSize(size uint8) {
 
 func (s *short) getSize() uint8 {
 	return s.size
+}
+
+func (s *short) toString() string {
+	return fmt.Sprintf("logo:%v, size:%v", s.getLogo(), s.getSize())
 }
 
 //=============================================
@@ -162,11 +173,11 @@ func main() {
 	adidasShoe := adidasFactory.makeShoe(32)
 	adidasShort := adidasFactory.makeShort(41)
 
-	fmt.Println(adidasShoe.getLogo(), adidasShoe.getSize())
-	fmt.Println(adidasShort.getLogo(), adidasShort.getSize())
+	fmt.Println(adidasShoe.toString())
+	fmt.Println(adidasShort.toString())
 
-	fmt.Println(nikeShoe.getLogo(), nikeShoe.getSize())
-	fmt.Println(nikeShort.getLogo(), nikeShort.getSize())
+	fmt.Println(nikeShoe.toString())
+	fmt.Println(nikeShort.toString())
 
 }
 
