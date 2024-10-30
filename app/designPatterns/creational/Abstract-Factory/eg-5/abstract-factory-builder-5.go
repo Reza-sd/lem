@@ -36,6 +36,7 @@ type iShort interface {
 	getSize() uint8
 
 	toString() string
+	print()
 }
 
 //-------------------
@@ -45,7 +46,9 @@ type iShoe interface {
 	setSize(size uint8)
 	getLogo() string
 	getSize() uint8
+
 	toString() string
+	print()
 }
 
 //=============================================
@@ -75,6 +78,9 @@ func (s *shoe) getSize() uint8 {
 func (s *shoe) toString() string {
 	return fmt.Sprintf("logo:%v, size:%v", s.getLogo(), s.getSize())
 }
+func (s *shoe) print() {
+	println(s.toString())
+}
 
 //---------------------
 //product B
@@ -101,6 +107,10 @@ func (s *short) getSize() uint8 {
 
 func (s *short) toString() string {
 	return fmt.Sprintf("logo:%v, size:%v", s.getLogo(), s.getSize())
+}
+
+func (s *short) print() {
+	println(s.toString())
 }
 
 //=============================================
@@ -154,7 +164,7 @@ func (n *nikeFactory) makeShort(theSize uint8) iShort {
 
 //=============================================
 
-func getSportsFactory(brand BrandType) (iSportsFactory, error) {
+func getFactory(brand BrandType) (iSportsFactory, error) {
 	if brand == adidasType {
 		return &adidasFactory{}, nil
 	}
@@ -166,8 +176,8 @@ func getSportsFactory(brand BrandType) (iSportsFactory, error) {
 
 //=============================================
 func main() {
-	adidasFactory, _ := getSportsFactory(adidasType)
-	nikeFactory, _ := getSportsFactory(nikeType)
+	adidasFactory, _ := getFactory(adidasType)
+	nikeFactory, _ := getFactory(nikeType)
 	nikeShoe := nikeFactory.makeShoe(30)
 	nikeShort := nikeFactory.makeShort(45)
 	adidasShoe := adidasFactory.makeShoe(32)
@@ -179,6 +189,7 @@ func main() {
 	fmt.Println(nikeShoe.toString())
 	fmt.Println(nikeShort.toString())
 
+	nikeFactory.makeShoe(27).print()
 }
 
 //=============================================
