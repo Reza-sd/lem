@@ -11,6 +11,8 @@ const (
 )
 
 //==============Product===================
+//step 1:
+
 type House struct {
 	windowType string
 	doorType   string
@@ -18,6 +20,8 @@ type House struct {
 }
 
 //=========== Builder interface======================
+//step 2:
+
 type IBuilder interface {
 	setWindowType()
 	setDoorType()
@@ -26,6 +30,7 @@ type IBuilder interface {
 }
 
 //========Concrete builder=NormalBuilder=======
+//step 3:
 type NormalBuilder struct {
 	windowType string
 	doorType   string
