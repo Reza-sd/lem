@@ -9,6 +9,18 @@ const (
 	_IGLOO_BUILDER
 )
 
+var (
+	windowTypeMap = map[BuilderType]string{
+		_NORMAL_BUILDER: "Wooden Window",
+		_IGLOO_BUILDER:  "snow window",
+	}
+
+	doorTypeMap = map[BuilderType]string{
+		_NORMAL_BUILDER: "Wooden door",
+		_IGLOO_BUILDER:  "Snow Door",
+	}
+)
+
 //===================================
 // 1- Define Product
 
@@ -24,7 +36,7 @@ type iBuilder interface {
 	setWindowType()
 	setDoorType()
 	setNumFloor()
-	getHouse() house
+	buildHouse() *house
 }
 
 //===================================
@@ -36,28 +48,28 @@ type normalBuilder struct {
 	floor      int
 }
 
-// func newNormalBuilder() *normalBuilder {
-//     return &normalBuilder{}
-// }
+func newNormalBuilder() *normalBuilder {
+	return new(normalBuilder)
+}
 
 func (b *normalBuilder) setWindowType() {
-	b.windowType = "Wooden Window"
+	b.windowType = windowTypeMap[_NORMAL_BUILDER]
 }
 
 func (b *normalBuilder) setDoorType() {
-	b.doorType = "Wooden Door"
+	b.doorType = doorTypeMap[_NORMAL_BUILDER]
 }
 
 func (b *normalBuilder) setNumFloor() {
 	b.floor = 2
 }
 
-func (b *normalBuilder) getHouse() house {
-	return house{
-		doorType:   b.doorType,
-		windowType: b.windowType,
-		floor:      b.floor,
-	}
+func (b *normalBuilder) buildHouse() *house {
+	h := new(house)
+	h.doorType = b.doorType
+	h.windowType = b.windowType
+	h.floor = b.floor
+	return h
 }
 
 //----------------------
@@ -68,28 +80,29 @@ type iglooBuilder struct {
 	floor      int
 }
 
-// func newIglooBuilder() *iglooBuilder {
-//     return &iglooBuilder{}
-// }
+func newIglooBuilder() *iglooBuilder {
+	return new(iglooBuilder)
+}
 
 func (b *iglooBuilder) setWindowType() {
-	b.windowType = "Snow Window"
+	b.windowType = windowTypeMap[_IGLOO_BUILDER]
 }
 
 func (b *iglooBuilder) setDoorType() {
-	b.doorType = "Snow Door"
+	b.doorType = doorTypeMap[_IGLOO_BUILDER]
 }
 
 func (b *iglooBuilder) setNumFloor() {
 	b.floor = 1
 }
 
-func (b *iglooBuilder) getHouse() house {
-	return house{
-		doorType:   b.doorType,
-		windowType: b.windowType,
-		floor:      b.floor,
-	}
+func (b *iglooBuilder) buildHouse() *house {
+	h := new(house)
+	h.doorType = b.doorType
+	h.windowType = b.windowType
+	h.floor = b.floor
+
+	return h
 }
 
 //===================================
@@ -99,20 +112,20 @@ type director struct {
 }
 
 func newDirector(b iBuilder) *director {
-	return &director{
-		builder: b,
-	}
+	d := new(director)
+	d.builder = b
+	return d
 }
 
 func (d *director) setBuilder(b iBuilder) {
 	d.builder = b
 }
 
-func (d *director) buildHouse() house {
+func (d *director) buildHouse() *house {
 	d.builder.setDoorType()
 	d.builder.setWindowType()
 	d.builder.setNumFloor()
-	return d.builder.getHouse()
+	return d.builder.buildHouse()
 }
 
 //===================================
@@ -120,10 +133,10 @@ func (d *director) buildHouse() house {
 
 func getBuilder(builderType BuilderType) iBuilder {
 	if builderType == _NORMAL_BUILDER {
-		return &normalBuilder{}
+		return newNormalBuilder()
 	}
 	if builderType == _IGLOO_BUILDER {
-		return &iglooBuilder{}
+		return newIglooBuilder()
 	}
 	return nil
 }
