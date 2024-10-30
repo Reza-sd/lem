@@ -27,8 +27,8 @@ var (
 // 1- Define Product
 
 type house_struct struct {
-	windowType_string string
-	doorType_string   string
+	window_string string
+	door_string   string
 	floor_uint8      uint8
 }
 
@@ -68,8 +68,8 @@ func (b *normalBuilder_struct) setNumFloor() {
 
 func (b *normalBuilder_struct) buildHouse() *house_struct {
 	h := new(house_struct)
-	h.doorType_string = b.doorType_string
-	h.windowType_string = b.windowType_string
+	h.door_string = b.doorType_string
+	h.window_string = b.windowType_string
 	h.floor_uint8 = b.floor_uint8
 	return h
 }
@@ -100,8 +100,8 @@ func (b *iglooBuilder_struct) setNumFloor() {
 
 func (b *iglooBuilder_struct) buildHouse() *house_struct {
 	h := new(house_struct)
-	h.doorType_string = b.doorType_string
-	h.windowType_string = b.windowType_string
+	h.door_string = b.doorType_string
+	h.window_string = b.windowType_string
 	h.floor_uint8 = b.floor_uint8
 
 	return h
@@ -150,15 +150,15 @@ func main() {
 	director := newDirector(normalBuilder)
 	normalHouse := director.buildHouse()
 
-	fmt.Printf("Normal House Door Type: %s\n", normalHouse.doorType_string)
-	fmt.Printf("Normal House Window Type: %s\n", normalHouse.windowType_string)
+	fmt.Printf("Normal House Door Type: %s\n", normalHouse.door_string)
+	fmt.Printf("Normal House Window Type: %s\n", normalHouse.window_string)
 	fmt.Printf("Normal House Num Floor: %d\n", normalHouse.floor_uint8)
 
 	director.setBuilder(iglooBuilder)
 	iglooHouse := director.buildHouse()
 
-	fmt.Printf("\nIgloo House Door Type: %s\n", iglooHouse.doorType_string)
-	fmt.Printf("Igloo House Window Type: %s\n", iglooHouse.windowType_string)
+	fmt.Printf("\nIgloo House Door Type: %s\n", iglooHouse.door_string)
+	fmt.Printf("Igloo House Window Type: %s\n", iglooHouse.window_string)
 	fmt.Printf("Igloo House Num Floor: %d\n", iglooHouse.floor_uint8)
 }
 
