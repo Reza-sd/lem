@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+
+//============Global========================
 type BuilderType uint8
 
 const (
