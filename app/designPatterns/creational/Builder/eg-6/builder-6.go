@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 //============Global========================
 type builderType_uint8 uint8
 
@@ -29,7 +28,7 @@ var (
 type house_struct struct {
 	window_string string
 	door_string   string
-	floor_uint8      uint8
+	floor_uint8   uint8
 }
 
 //===================================
@@ -48,7 +47,7 @@ type Builder_interface interface {
 type normalBuilder_struct struct {
 	window_string string
 	door_string   string
-	floor_uint8      uint8
+	floor_uint8   uint8
 }
 
 func newNormalBuilder() *normalBuilder_struct {
@@ -64,7 +63,7 @@ func (b *normalBuilder_struct) set_DoorType() {
 }
 
 func (b *normalBuilder_struct) set_NumFloor() {
-	b.floor_uint8 =uint8(2)
+	b.floor_uint8 = uint8(2)
 }
 
 func (b *normalBuilder_struct) get_House() *house_struct {
@@ -80,7 +79,7 @@ func (b *normalBuilder_struct) get_House() *house_struct {
 type iglooBuilder_struct struct {
 	window_string string
 	door_string   string
-	floor_uint8      uint8
+	floor_uint8   uint8
 }
 
 func newIglooBuilder() *iglooBuilder_struct {
