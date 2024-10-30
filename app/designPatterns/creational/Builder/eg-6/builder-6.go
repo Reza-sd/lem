@@ -129,7 +129,6 @@ func (d *director) buildHouse() *house {
 }
 
 //===================================
-//_normalBuilder BuilderType = iota
 
 func getBuilder(builderType BuilderType) iBuilder {
 	if builderType == _NORMAL_BUILDER {
