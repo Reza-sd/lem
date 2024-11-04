@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 /*
@@ -32,7 +31,7 @@ type ObjectPool struct {
 }
 
 //-------
-func NewObjectPool(size int, theFactory func() Poolable) *ObjectPool {
+func NewObjectPool(size uint8, theFactory func() Poolable) *ObjectPool {
 	println("new objectpool")
 	p := &ObjectPool{
 		pool:    make(chan Poolable, size),
@@ -40,7 +39,7 @@ func NewObjectPool(size int, theFactory func() Poolable) *ObjectPool {
 	}
 
 	// Pre-populate the pool
-	for i := 0; i < size; i++ {
+	for i := 0; i < int(size); i++ {
 		p.pool <- p.factory()
 	}
 
@@ -48,7 +47,7 @@ func NewObjectPool(size int, theFactory func() Poolable) *ObjectPool {
 }
 
 //-------
-func (p *ObjectPool) Get() (Poolable, error) {
+func (p *ObjectPool) Acquire() (Poolable, error) {
 	select {
 	case obj := <-p.pool: // Try to get an object from the pool
 		return obj, nil
@@ -62,9 +61,18 @@ func (p *ObjectPool) Get() (Poolable, error) {
 }
 
 //-------
-func (p *ObjectPool) Put(obj Poolable) {
-	println("put the object")
-	p.pool <- obj
+func (p *ObjectPool) Release(obj Poolable) {
+	// Try to put the object back in the pool
+	select {
+	case p.pool <- obj:
+		// Successfully returned to pool
+		println("put the object")
+	default:
+		// Pool is full, discard the object
+		println("put the object")
+	}
+	// println("put the object")
+	// p.pool <- obj
 }
 
 //============================================
@@ -77,48 +85,43 @@ func (m *MyObject) Init() {
 	// Initialize the object here
 	println("initialize the object")
 }
-func (m *MyObject) Do() {
-	// Initialize the object here
-	println("start Doing...")
-	time.Sleep(3 * time.Second) // Pause for 5 seconds
-
-	println("...END")
-}
 
 //============================================
 func main() {
-	myPool := NewObjectPool(1, func() Poolable {
+	//---------------
+	myPool := NewObjectPool(0, func() Poolable {
 		return &MyObject{}
 	})
-
+	//---------------
 	// Acquire objects from the pool
-	obj1, err := myPool.Get() //.(*MyObject)
+	obj1, err := myPool.Acquire() //.(*MyObject)
 	if err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj1=%+v\n", obj1.(*MyObject))
 	}
-
+	//---------------
 	// Use the object
 	// ...
 	//obj1.Do()
-	obj2, err := myPool.Get() //.(*MyObject)
+	obj2, err := myPool.Acquire() //.(*MyObject)
 	if err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj2=%+v\n", obj2.(*MyObject))
 	}
 	// fmt.Printf("obj2=%+v\n",obj2)
+	//---------------
 	// // Return the object to the pool
-	myPool.Put(obj1)
-
-	obj3, err := myPool.Get() //.(*MyObject)
+	myPool.Release(obj1)
+	//---------------
+	obj3, err := myPool.Acquire() //.(*MyObject)
 	if err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj3=%+v\n", obj3.(*MyObject))
 	}
-
+	//---------------
 }
 
 //============================================
