@@ -12,12 +12,11 @@ func main() {
 
 	mySlice := []string{"A", "B", "C", "D", "E"}
 
-
 	for _, ch := range mySlice {
 		go paint(ch)
 	}
 
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
 }
 
 func paint(item string) {

@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 )
+
 //======================================
 func paint(item string) {
 	println(item)
@@ -18,11 +19,11 @@ func main() {
 
 	mySlice := []string{"A", "B", "C", "D", "E"}
 
-
 	for _, ch := range mySlice {
 		go paint(ch)
 	}
 
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
 }
+
 //======================================
