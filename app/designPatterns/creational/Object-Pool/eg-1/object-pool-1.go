@@ -86,6 +86,11 @@ func (m *MyObject) Init() {
 	println("initialize the object")
 }
 
+func (m *MyObject) Do(n uint8) {
+	// Initialize the object here
+	println(n, " Do some jobs....")
+}
+
 //============================================
 func main() {
 	//---------------
@@ -99,6 +104,8 @@ func main() {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj1=%+v\n", obj1.(*MyObject))
+		obj1.(*MyObject).Do(1)
+
 	}
 	//---------------
 	// Use the object
@@ -109,6 +116,7 @@ func main() {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj2=%+v\n", obj2.(*MyObject))
+		obj2.(*MyObject).Do(2)
 	}
 	// fmt.Printf("obj2=%+v\n",obj2)
 	//---------------
@@ -120,6 +128,7 @@ func main() {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("obj3=%+v\n", obj3.(*MyObject))
+		obj3.(*MyObject).Do(3)
 	}
 	//---------------
 }
