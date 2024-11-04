@@ -18,6 +18,7 @@ type File struct {
 	Content string
 }
 
+//--------
 func (f *File) Clone() Cloneable {
 	// Perform a deep copy
 	newFile := &File{}
@@ -26,13 +27,14 @@ func (f *File) Clone() Cloneable {
 	return newFile
 }
 
-// ----------------------
+////=============================================
 // Concrete prototype: Folder
 type Folder struct {
 	Name  string
 	Files []Cloneable
 }
 
+//--------
 func (f *Folder) Clone() Cloneable {
 	newFolder := &Folder{Name: f.Name}
 	for _, file := range f.Files {
@@ -43,27 +45,32 @@ func (f *Folder) Clone() Cloneable {
 
 // ==================================
 // Prototype registry
-type FileSystem struct {
+type FileSystem_PrototypeRegistry struct {
 	Prototypes map[string]Cloneable
 }
 
-func NewFileSystem() *FileSystem {
-	return &FileSystem{
+//--------
+func NewFileSystem() *FileSystem_PrototypeRegistry {
+	return &FileSystem_PrototypeRegistry{
 		Prototypes: make(map[string]Cloneable),
 	}
 }
 
-func (fs *FileSystem) AddPrototype(name string, prototype Cloneable) {
+//--------
+func (fs *FileSystem_PrototypeRegistry) AddPrototype(name string, prototype Cloneable) {
 	fs.Prototypes[name] = prototype
 }
 
-func (fs *FileSystem) CreateFromPrototype(name string) Cloneable {
+//--------
+//give me a deep copy of...
+func (fs *FileSystem_PrototypeRegistry) CreateFromPrototype(name string) Cloneable {
 	if prototype, ok := fs.Prototypes[name]; ok {
 		return prototype.Clone()
 	}
 	return nil
 }
 
+//=============================================
 func main() {
 	fs := NewFileSystem()
 
@@ -90,3 +97,5 @@ func main() {
 	fmt.Printf("Folder: %+v\n", folder)
 	fmt.Printf("Folder's first file: %+v\n", folder.Files[0])
 }
+
+//=============================================

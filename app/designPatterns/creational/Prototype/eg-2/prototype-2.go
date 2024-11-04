@@ -62,14 +62,15 @@ func main() {
 	prototypeA := &ConcreteProductA{Name: "Product A"}
 
 	// Clone the prototype to create a new object.
-	cloneA := prototypeA.Clone().(*ConcreteProductA)
+
+	cloneA := prototypeA.Clone()
 	fmt.Println("Clone A:", cloneA)
 
 	// Create another prototype object.
 	prototypeB := &ConcreteProductB{Name: "Product B", Value: 10}
 
 	// Clone the prototype to create a new object.
-	cloneB := prototypeB.Clone().(*ConcreteProductB)
+	cloneB := prototypeB.Clone()
 	fmt.Println("Clone B:", cloneB)
 	//--------------------------------
 	// Initialize the prototype registry.
@@ -79,6 +80,20 @@ func main() {
 	myRegistry.RegisterPrototype("B", &ConcreteProductB{Name: "Product B", Value: 10})
 
 	// Retrieve and clone prototypes from the registry.
+	/*
+			%s
+
+		This is a verb that formats the first argument as a string.
+		It's commonly used to print plain text strings.
+		%+v
+
+		This is a verb with a flag +.
+		The %v part formats the second argument in its default format.
+		The + flag adds additional information, typically:
+		For structs: It includes field names along with their values.
+		For other types: It might provide more detailed output, such as pointers or addresses.
+	*/
+
 	clone1_A, err := myRegistry.GetPrototype("A")
 	if err != nil {
 		fmt.Println("Error:", err)
