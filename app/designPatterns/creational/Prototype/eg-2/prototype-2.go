@@ -34,6 +34,29 @@ func (b *ConcreteProductB) Clone() Prototype {
 }
 
 // ==============================================
+type PrototypeRegistry struct {
+	items map[string]Prototype
+}
+
+// NewPrototypeRegistry initializes a new registry with an empty prototype map.
+func NewPrototypeRegistry() *PrototypeRegistry {
+	return &PrototypeRegistry{items: make(map[string]Prototype)}
+}
+
+// RegisterPrototype adds a new prototype to the registry.
+func (r *PrototypeRegistry) RegisterPrototype(key string, prototype Prototype) {
+	r.items[key] = prototype
+}
+
+// GetPrototype retrieves a clone of the prototype associated with the given key.
+func (r *PrototypeRegistry) GetPrototype(key string) (Prototype, error) {
+	if prototype, exists := r.items[key]; exists {
+		return prototype.Clone(), nil
+	}
+	return nil, fmt.Errorf("prototype not found for key: %s", key)
+}
+
+// ==============================================
 func main() {
 	// Create a prototype object.
 	prototypeA := &ConcreteProductA{Name: "Product A"}
@@ -48,6 +71,30 @@ func main() {
 	// Clone the prototype to create a new object.
 	cloneB := prototypeB.Clone().(*ConcreteProductB)
 	fmt.Println("Clone B:", cloneB)
+	//--------------------------------
+	// Initialize the prototype registry.
+	myRegistry := NewPrototypeRegistry()
+	// Register prototypes with unique keys.
+	myRegistry.RegisterPrototype("A", &ConcreteProductA{Name: "Product A"})
+	myRegistry.RegisterPrototype("B", &ConcreteProductB{Name: "Product B", Value: 10})
+
+	// Retrieve and clone prototypes from the registry.
+	clone1_A, err := myRegistry.GetPrototype("A")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Printf("Cloned A %+v\n", clone1_A)
+	}
+
+	clone2_B, err := myRegistry.GetPrototype("B")
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Printf("Cloned B %+v\n", clone2_B)
+	}
+	//
+
+	//------------------------------------
 }
 
 //==============================================
