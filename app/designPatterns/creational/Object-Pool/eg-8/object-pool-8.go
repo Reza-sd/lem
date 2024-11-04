@@ -56,7 +56,7 @@ func (p *ObjectPool) Acquire() (Object, error) {
 //Select statements in Go are inherently thread-safe.
 
 /*
-However, it's important to note that while select statements are thread-safe, the code within each case block might not be. 
+However, it's important to note that while select statements are thread-safe, the code within each case block might not be.
 
 To ensure thread safety within a case block, you should use appropriate synchronization mechanisms like mutexes or channels to protect shared resources.
 
