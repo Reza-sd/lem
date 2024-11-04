@@ -32,7 +32,7 @@ type ObjectPool struct {
 
 //-------
 func NewObjectPool(size uint8, theFactory func() Poolable) *ObjectPool {
-	println("new objectpool")
+	println("new objectpool,size:", size)
 	p := &ObjectPool{
 		pool:    make(chan Poolable, size),
 		factory: theFactory,
