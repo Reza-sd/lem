@@ -53,6 +53,14 @@ func (p *ObjectPool) Acquire() (Object, error) {
 
 //--------------
 //Concurrency Safety: The select statement in Get() ensures thread-safe access to the pool.
+//Select statements in Go are inherently thread-safe.
+
+/*
+However, it's important to note that while select statements are thread-safe, the code within each case block might not be. 
+
+To ensure thread safety within a case block, you should use appropriate synchronization mechanisms like mutexes or channels to protect shared resources.
+
+*/
 //----------------
 //Return an Object to the Pool:
 
