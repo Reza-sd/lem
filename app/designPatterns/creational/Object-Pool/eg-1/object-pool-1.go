@@ -52,7 +52,7 @@ func (p *ObjectPool) Acquire() (Poolable, error) {
 	case obj := <-p.pool: // Try to get an object from the pool
 		return obj, nil
 	default:
-		return nil, fmt.Errorf("no more object") // Create a new object if pool is empty
+		return nil, fmt.Errorf("error: no more object to Acquire") // Create a new object if pool is empty
 	}
 	// println("get the object")
 	// obj := <-p.pool
@@ -66,10 +66,10 @@ func (p *ObjectPool) Release(obj Poolable) {
 	select {
 	case p.pool <- obj:
 		// Successfully returned to pool
-		println("put the object")
+		println("Release the object")
 	default:
 		// Pool is full, discard the object
-		println("put the object")
+		println("error: nothing to release")
 	}
 	// println("put the object")
 	// p.pool <- obj
@@ -89,7 +89,7 @@ func (m *MyObject) Init() {
 //============================================
 func main() {
 	//---------------
-	myPool := NewObjectPool(0, func() Poolable {
+	myPool := NewObjectPool(1, func() Poolable {
 		return &MyObject{}
 	})
 	//---------------
