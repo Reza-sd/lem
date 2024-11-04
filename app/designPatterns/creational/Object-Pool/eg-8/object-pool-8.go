@@ -4,6 +4,12 @@ import (
 	"fmt"
 )
 
+//==================================
+/*
+The Object Pool design pattern is a creational design pattern that manages a pool of objects, reusing them to avoid the overhead of creating and destroying objects repeatedly.
+
+This is particularly useful for resource-intensive objects like database connections, network sockets, or thread pools.
+*/
 //====================================
 type Object interface {
 	// Initialize the object for reuse
@@ -11,6 +17,10 @@ type Object interface {
 }
 
 //====================================
+//Define the Object Pool Structure:
+//pool: A channel to hold available objects.
+//factory: A function to create new objects when the pool is empty.
+
 type ObjectPool struct {
 	pool    chan Object
 	factory func() Object
@@ -27,6 +37,10 @@ func NewObjectPool(size int, factory func() Object) *ObjectPool {
 }
 
 //----------------
+//Get an Object from the Pool:
+//Tries to get an object from the pool.
+//If the pool is empty, return an error.
+
 func (p *ObjectPool) Acquire() (Object, error) {
 	select {
 	case obj := <-p.pool:
@@ -37,7 +51,11 @@ func (p *ObjectPool) Acquire() (Object, error) {
 	}
 }
 
+//--------------
+//Concurrency Safety: The select statement in Get() ensures thread-safe access to the pool.
 //----------------
+//Return an Object to the Pool:
+
 func (p *ObjectPool) Release(obj Object) {
 	// Try to put the object back in the pool
 	select {
