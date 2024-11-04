@@ -52,24 +52,30 @@ func (r *Rectangle) GetDetails() string {
 
 // ==============================================
 // PrototypeRegistry holds a collection of prototypes and allows cloning them.
+/*
+The Prototype Registry provides an easy way to access frequently-used prototypes.
 
+It stores a set of pre-built objects that are ready to be copied. The simplest prototype registry is a name → prototype hash map.
+
+However, if you need better search criteria than a simple name, you can build a much more robust version of the registry.
+*/
 type PrototypeRegistry struct {
-	prototypes map[string]ShapePrototype
+	items map[string]ShapePrototype
 }
 
 // NewPrototypeRegistry initializes a new registry with an empty prototype map.
 func NewPrototypeRegistry() *PrototypeRegistry {
-	return &PrototypeRegistry{prototypes: make(map[string]ShapePrototype)}
+	return &PrototypeRegistry{items: make(map[string]ShapePrototype)}
 }
 
 // RegisterPrototype adds a new prototype to the registry.
 func (r *PrototypeRegistry) RegisterPrototype(key string, prototype ShapePrototype) {
-	r.prototypes[key] = prototype
+	r.items[key] = prototype
 }
 
 // GetPrototype retrieves a clone of the prototype associated with the given key.
 func (r *PrototypeRegistry) GetPrototype(key string) (ShapePrototype, error) {
-	if prototype, exists := r.prototypes[key]; exists {
+	if prototype, exists := r.items[key]; exists {
 		return prototype.Clone(), nil
 	}
 	return nil, fmt.Errorf("prototype not found for key: %s", key)
