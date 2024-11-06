@@ -5,19 +5,22 @@ import "time"
 
 //==========================
 func bidirectional(ch chan int) {
-	println("start")
 
+	println("set")
 	ch <- 999
-	value := <-ch
-	println("value=",value)
+
 }
 
+func recieve(ch chan int){
+	println(<-ch)
+}
 //==================================
 func main() {
 
 	ch := make(chan int)
 	go bidirectional(ch)
-
+	go recieve(ch)
+	
 	time.Sleep(time.Second * 1)
 }
 
