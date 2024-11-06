@@ -1,7 +1,5 @@
 package main
-
 import "time"
-
 
 //==========================
 func bidirectional(ch chan int) {
@@ -10,8 +8,8 @@ func bidirectional(ch chan int) {
 	ch <- 999
 
 }
-
-func recieve(ch chan int){
+//==========================
+func reciever(ch chan int){
 	println(<-ch)
 }
 //==================================
@@ -19,8 +17,8 @@ func main() {
 
 	ch := make(chan int)
 	go bidirectional(ch)
-	go recieve(ch)
-	
+	go reciever(ch)
+
 	time.Sleep(time.Second * 1)
 }
 
