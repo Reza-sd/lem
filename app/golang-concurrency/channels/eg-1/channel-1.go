@@ -5,6 +5,11 @@ import (
 	//"fmt"
 )
 
+//======================
+/*
+channel is like share memory.
+
+*/
 //======================================
 func paint(item string, signal chan bool) {
 	println(item)
