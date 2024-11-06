@@ -7,9 +7,11 @@ import (
 
 //============================
 func operation() error {
-	duration := 5 //sec
-	println("Doing operation...it takes:", duration, "second")
-	time.Sleep(time.Second * time.Duration(duration))
+	duration := time.Duration(5) //sec
+	println("Doing operation...wait...it takes:", duration, "second")
+	//println(time.Duration(duration))
+	time.Sleep(time.Second * duration)
+
 	println("END")
 	return nil
 }
