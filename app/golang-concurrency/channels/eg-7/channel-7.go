@@ -1,4 +1,5 @@
 package main
+
 import "time"
 
 //==========================
@@ -8,10 +9,12 @@ func bidirectional(ch chan int) {
 	ch <- 999
 
 }
+
 //==========================
-func reciever(ch chan int){
+func reciever(ch chan int) {
 	println(<-ch)
 }
+
 //==================================
 func main() {
 
