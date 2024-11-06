@@ -4,7 +4,15 @@ import (
 	"fmt"
 	"time"
 )
+//=====================================
+/*
+Why Use Channel Directions?
+- Improved type safety: By specifying the direction of a channel, the compiler can enforce correct usage, preventing accidental sends or receives.
 
+- Enhanced code clarity: Explicitly declaring channel directions makes code more readable and easier to understand.
+
+- Better concurrency control: Unidirectional channels can be used to create more complex synchronization patterns and avoid race conditions.
+*/
 //=========================================
 func sender(ch chan<- int) {
 	for i := 0; i < 5; i++ {
