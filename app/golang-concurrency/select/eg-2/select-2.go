@@ -7,8 +7,10 @@ import (
 
 //============================
 func operation() error {
-	println("Do operation...")
-	time.Sleep(time.Second * 2)
+	duration := 5 //sec
+	println("Doing operation...it takes:", duration, "second")
+	time.Sleep(time.Second * time.Duration(duration))
+	println("END")
 	return nil
 }
 
@@ -32,5 +34,11 @@ func doSomething(timeout time.Duration) error {
 //=================================================
 func main() {
 
-	doSomething(time.Second * 3)
+	err := doSomething(time.Second * 3)
+	if err != nil {
+
+		println(err.Error())
+	}
 }
+
+//=================================================
