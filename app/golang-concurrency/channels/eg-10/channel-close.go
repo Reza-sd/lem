@@ -22,6 +22,7 @@ func main() {
 	//------------------
 	for {
 		v, ok := <-c
+		//If ok is false, the channel is closed.
 		if !ok {
 			fmt.Println("Channel closed")
 			break
