@@ -17,10 +17,12 @@ func main() {
 		for i := 0; i < 5; i++ {
 			c <- i
 		}
+		//close must be from sending side
 		close(c)
 	}()
 	//------------------
 	for {
+		//receiving
 		v, ok := <-c
 		//If ok is false, the channel is closed.
 		if !ok {
