@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"time"
+	//"time"
 )
 
 //=====================================
@@ -40,7 +40,11 @@ func main() {
 	go receiver(ch)
 
 	// Wait for the goroutines to finish
-	time.Sleep(5 * time.Second)
+	select {
+	case <-ch:
+
+	}
+	//time.Sleep(5 * time.Second)
 }
 
 //=========================================

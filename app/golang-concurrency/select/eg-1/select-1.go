@@ -1,6 +1,7 @@
 package main
 
-func m() {
+//====================================
+func main() {
 	c := make(chan int)
 	//d := 2
 
@@ -13,14 +14,11 @@ func m() {
 	case res := <-c:
 		println("Received result:", res)
 
-	default:
-		println("Timed out")
+		//default:
+		//println("Timed out")
 
 	}
 
 }
 
-func main() {
-	m()
-
-}
+//==========================
