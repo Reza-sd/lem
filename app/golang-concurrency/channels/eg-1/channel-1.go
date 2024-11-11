@@ -35,7 +35,7 @@ func main() {
 	//--------------------
 	//time.Sleep(time.Second * 2)
 	println(<-exitSignalChannel)
-	
+
 }
 
 //======================================
