@@ -19,7 +19,7 @@ Channel Directions in Golang:
 
 func sender(ch chan<- string) {
 	for i := 1; i <= 4; i++ {
-		ch <- fmt.Sprintf("Msg %v ,send at time: %v",i,time.Now().UnixMilli())
+		ch <- fmt.Sprintf("Msg %v ,send at time: %v", i, time.Now().UnixMilli())
 		time.Sleep(time.Millisecond * 150)
 	}
 	close(ch)
@@ -30,7 +30,7 @@ func sender(ch chan<- string) {
 
 func receiver(ch <-chan string) {
 	for v := range ch {
-		fmt.Println(v,",receive at time",time.Now().UnixMilli())
+		fmt.Println(v, ",receive at time", time.Now().UnixMilli())
 		time.Sleep(time.Millisecond * 500)
 	}
 }
