@@ -17,9 +17,10 @@ Channel Directions in Golang:
 //==================================
 //Send-only channels : These channels can only be used to send values. They are declared as chan<- T.
 
-func producer(ch chan<- int) {
-	for i := 0; i < 10; i++ {
-		ch <- i
+func sender(ch chan<- string) {
+	for i := 1; i <= 4; i++ {
+		ch <- fmt.Sprintf("Msg %v ,send at time: %v",i,time.Now().UnixMilli())
+		time.Sleep(time.Millisecond * 150)
 	}
 	close(ch)
 }
@@ -27,35 +28,37 @@ func producer(ch chan<- int) {
 //==================================
 //Receive-only channels : These channels can only be used to receive values. They are declared as <-chan T.
 
-func consumer(ch <-chan int) {
+func receiver(ch <-chan string) {
 	for v := range ch {
-		fmt.Println(v)
+		fmt.Println(v,",receive at time",time.Now().UnixMilli())
+		time.Sleep(time.Millisecond * 500)
 	}
 }
 
 //==========================
-func bidirectional(ch chan int) {
-	println("start")
+// func bidirectional(ch chan int) {
+// 	println("start")
 
-	ch <- 999
-	value := <-ch
-	fmt.Println(value)
-	println("END: bidirectional")
-}
+// 	ch <- 999
+// 	value := <-ch
+// 	fmt.Println(value)
+// 	println("END: bidirectional")
+// }
 
 //==================================
 func main() {
-	// ch1 := make(chan int)
+	//ch1 := make(chan int)
 	// go bidirectional(ch1)
 
-	// ch := make(chan int)
-	// go producer(ch)
-	// go consumer(ch)
+	ch := make(chan string)
+	go sender(ch)
+
+	receiver(ch)
 
 	//time.Sleep(time.Second*1)
 
-	ch1 := make(chan int)
-	go bidirectional(ch1)
+	//ch1 := make(chan int)
+	//go bidirectional(ch1)
 
 	time.Sleep(time.Second * 1)
 }
