@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -7,9 +6,9 @@ import (
 )
 
 func periodicTask(done chan bool) {
-    ticker := time.NewTicker(1 * time.Second)
+	ticker := time.NewTicker(1 * time.Second)
 	//duration:=time.Duration()
-    defer ticker.Stop()
+	defer ticker.Stop()
 
 	for {
 		select {
@@ -24,26 +23,26 @@ func periodicTask(done chan bool) {
 	// 	fmt.Println("Tick at", time.Now())
 	// }
 
-    // for {
-    //     select {
-    //     case <-ticker.C:
-    //         fmt.Println("Doing work...at time=",time.Now())
-    //     case <-time.After(5 * time.Second):
-    //         fmt.Println("No activity for 5 seconds, exiting...")
-    //         return
-    //     }
-    // }
+	// for {
+	//     select {
+	//     case <-ticker.C:
+	//         fmt.Println("Doing work...at time=",time.Now())
+	//     case <-time.After(5 * time.Second):
+	//         fmt.Println("No activity for 5 seconds, exiting...")
+	//         return
+	//     }
+	// }
 }
 
-func main(){
-    //ticker := time.NewTicker(2 * time.Second) // Ticks every 2 seconds
-    done := make(chan bool)
+func main() {
+	//ticker := time.NewTicker(2 * time.Second) // Ticks every 2 seconds
+	done := make(chan bool)
 
 	go periodicTask(done)
 
 	time.Sleep(5 * time.Second) // Run for 10 seconds
-    //ticker.Stop()                // Stop the ticker
-    done <- true                 // Signal the goroutine to stop
-    fmt.Println("Ticker stopped")
+	//ticker.Stop()                // Stop the ticker
+	done <- true // Signal the goroutine to stop
+	fmt.Println("Ticker stopped")
 
 }

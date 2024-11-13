@@ -1,18 +1,18 @@
 package main
 
 import (
-        "fmt"
-        "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-        ticker := time.NewTicker(time.Second)
-        defer ticker.Stop()
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
 
-        for {
-                select {
-                case <-ticker.C:
-                        fmt.Println("Tick at", time.Now())
-                }
-        }
+	for {
+		select {
+		case <-ticker.C:
+			fmt.Println("Tick at", time.Now())
+		}
+	}
 }
