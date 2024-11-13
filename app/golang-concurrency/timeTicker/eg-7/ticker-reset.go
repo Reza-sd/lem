@@ -16,6 +16,8 @@ func doSomething(t *time.Ticker) {
 func main() {
 	fmt.Println("Start App: ", time.Now())
 	ticker := time.NewTicker(time.Second * 2) // Initial 2-second interval
+
+        //Stopping the Ticker: Always remember to stop the ticker when you're done with it to free up resources:
 	defer ticker.Stop()
 
 	go doSomething(ticker)
