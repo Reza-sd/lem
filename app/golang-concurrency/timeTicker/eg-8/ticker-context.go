@@ -17,6 +17,8 @@ func main() {
 
 	// Run a loop that checks both the ticker and the context
 	for {
+		//Select Statement: The select statement listens to both ctx.Done() and ticker.C.
+
 		select {
 		case <-ctx.Done():
 			// Context was canceled, either due to timeout or explicit cancel
