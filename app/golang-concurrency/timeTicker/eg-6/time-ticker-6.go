@@ -27,7 +27,10 @@ func doSomething() error {
 //=====================================
 func main() {
 	//ctx, cancel := context.WithCancel(context.Background())
+	// creates a new context that is canceled after the specified duration (7 seconds in this case).
+	//Context Cancellation: The context.WithTimeout function ensures that the context is automatically canceled after 7 seconds.
 	ctx, cancel := context.WithTimeout(context.Background(), 7*time.Second)
+	//Clean Exit: The defer cancel() statement guarantees that the context is canceled even if the task exits prematurely.
 	defer cancel()
 	//------------------------
 	ticker, err := safeNewTicker(1 * time.Second)
