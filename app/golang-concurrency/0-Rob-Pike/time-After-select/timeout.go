@@ -18,7 +18,6 @@ func boringChannel(msg string) <-chan string {
 }
 //=========================
 func main() {
-	//c := fanIn(boringChannel("Joe"), boringChannel("Ann"))
 	c := boringChannel("Joe")
 	start := time.Now()
 	for {
