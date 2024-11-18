@@ -22,11 +22,16 @@ func boringChannel(msg string) <-chan string {
 func main() {
 	c := boringChannel("Joe")
 	start := time.Now()
+
+	//Timeout for whole conversation using select
+	timeout := time.After(1 * time.Second)
 	for {
 		select {
 		case s := <-c:
 			fmt.Println(s)
-		case t := <-time.After(1 * time.Second): //return a channel that blocks for specified duration. After the interval.the channel delivers the current time,once.
+		case t := <-timeout: //Create the timer once, outside the loop, to time out the entire conversation. |
+			//(In the previous program, we had a timeout for each message.)
+
 			fmt.Println("You are too slow. time:", t)
 			// Calculate elapsed time
 			elapsed := time.Since(start)
