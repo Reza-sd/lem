@@ -23,7 +23,7 @@ func generateBoringChannel(msg string, quit chan bool) <-chan string {
 
 //=========================
 func main() {
-	quit := make(chan bool)
+	quit := make(chan bool) //as a quit signal
 	c := generateBoringChannel("Joe", quit)
 	for i := rand.Intn(10); i >= 0; i-- {
 		fmt.Println(<-c)
