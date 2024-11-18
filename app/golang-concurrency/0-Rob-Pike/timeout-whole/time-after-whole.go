@@ -17,6 +17,7 @@ func boringChannel(msg string) <-chan string {
 	}()
 	return c
 }
+
 //=========================
 func main() {
 	c := boringChannel("Joe")
@@ -29,8 +30,8 @@ func main() {
 		case s := <-c:
 			fmt.Println(s)
 		case t := <-timeout:
-			 //Create the timer once, outside the loop, to time out the entire conversation. (In the previous program, we had a timeout for each message.)
-			
+			//Create the timer once, outside the loop, to time out the entire conversation. (In the previous program, we had a timeout for each message.)
+
 			fmt.Println("You are too slow. time:", t)
 			// Calculate elapsed time
 			elapsed := time.Since(start)
@@ -39,4 +40,5 @@ func main() {
 		}
 	}
 }
+
 //=========================
