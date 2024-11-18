@@ -6,7 +6,7 @@ import (
 )
 
 //=========================
-func boringChannel(msg string, quit chan bool) <-chan string {
+func boringFuncRchannel(msg string, quit chan bool) <-chan string {
 	c := make(chan string)
 	go func() {
 		for i := 0; i < 500; i++ {
@@ -24,7 +24,7 @@ func boringChannel(msg string, quit chan bool) <-chan string {
 //=========================
 func main() {
 	quit := make(chan bool)
-	c := boringChannel("Joe", quit)
+	c := boringFuncRchannel("Joe", quit)
 	for i := rand.Intn(10); i >= 0; i-- {
 		fmt.Println(<-c)
 	}
